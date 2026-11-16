@@ -570,6 +570,11 @@ table.bb-t{width:100%;border-collapse:collapse;font:12px var(--mono)}
 .cv h3{font:700 20px var(--display);letter-spacing:.5px;margin:0}.cv h4{font:700 11px var(--mono);letter-spacing:1.4px;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:4px;margin:20px 0 8px}
 .cv .sub{color:var(--muted);margin:2px 0 0}.cv ul{margin:6px 0 0 18px;padding:0}.cv li{margin:3px 0}.cv .role{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px}.cv .role b{font-weight:700}.cv .role span{color:var(--muted);font-family:var(--mono);font-size:12px}
 @media print{body *{visibility:hidden!important}#cvPage,#cvPage *{visibility:visible!important}#cvPage{position:absolute;left:0;top:0;width:100%;padding:0;margin:0}.cv{border:0;padding:0;max-width:none}#cvPrint,.cv-tools{display:none!important}@page{margin:16mm}}
+.mot-spin{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:14px 0;padding:12px 16px;background:#fff;border:1px solid var(--line)}
+.mot-spin svg{flex:none;width:120px;height:120px}.mot-spin .rot{transform-origin:60px 60px;animation:motspin var(--d,1s) linear infinite;animation-direction:var(--r,normal)}.mot-spin.off .rot{animation:none}
+.mot-spin b{display:block;font:700 11px var(--mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}.mot-spin span{font:700 22px var(--display)}
+@keyframes motspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.mot-spin .rot{animation:none!important}}
 .sol-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
 .sol-tabs button,.sol-seg button{font:700 11px var(--mono);letter-spacing:.8px;text-transform:uppercase;padding:9px 12px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:var(--radius);cursor:pointer}
 .sol-tabs button.on,.sol-seg button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -4171,7 +4176,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
   <div class="wrap">
     <div class="sec-head"><div class="k">Version notes</div><h2>Changelog</h2></div>
     <p class="mono-note" style="margin:0 0 12px">WHAT CHANGED IN EACH BUILD OF THIS PORTFOLIO, NEWEST FIRST.</p>
-    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 39</a><span>Accessibility pass: heading order, labels on selects, button contrast, correct roles. Playground and tools split.</span></li><li><a style="color:var(--ink);cursor:default">Build 36</a><span>Favicon, share preview, installable manifest, printable CV.</span></li><li><a style="color:var(--ink);cursor:default">Build 35</a><span>Guides: formula sheet, bench how-to, failure-mode atlas, links.</span></li><li><a style="color:var(--ink);cursor:default">Build 34</a><span>Bench notes in drawing.cad. Module cards for the analog and audio labs.</span></li><li><a style="color:var(--ink);cursor:default">Build 33</a><span>Metric thread table and shop notes (drawing.cad).</span></li><li><a style="color:var(--ink);cursor:default">Build 32</a><span>Class A, AB, D amplifiers and a split-rail linear supply in schematics.sim.</span></li><li><a style="color:var(--ink);cursor:default">Build 31</a><span>audio.lab: amp and speaker maths, amplifier classes, supply, digital audio, crossover, room modes.</span></li><li><a style="color:var(--ink);cursor:default">Build 30</a><span>Skill levels and project statuses updated. Toys moved to playground/.</span></li><li><a style="color:var(--ink);cursor:default">Build 29</a><span>analog.lab: op-amp gain, filters, ADC, thermistor, 4-20 mA.</span></li><li><a style="color:var(--ink);cursor:default">Build 28</a><span>solar.guide: payback, battery sizing, flow diagram.</span></li><li><a style="color:var(--ink);cursor:default">Build 27</a><span>Twelve power schematics, breadboard scope.</span></li><li><a style="color:var(--ink);cursor:default">Build 26</a><span>Wiring diagrams: breaker and wire sizing, single-line.</span></li><li><a style="color:var(--ink);cursor:default">Build 25</a><span>drawing.cad: caliper, micrometer, isometric, fits.</span></li><li><a style="color:var(--ink);cursor:default">Build 24</a><span>motor.ctl: DOL, forward and reverse, star-delta.</span></li><li><a style="color:var(--ink);cursor:default">Build 23</a><span>IDE workspace shell.</span></li></ul></div></div>
+    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 40</a><span>Accessibility pass: heading order, labels on selects, button contrast, correct roles. Playground and tools split.</span></li><li><a style="color:var(--ink);cursor:default">Build 36</a><span>Favicon, share preview, installable manifest, printable CV.</span></li><li><a style="color:var(--ink);cursor:default">Build 35</a><span>Guides: formula sheet, bench how-to, failure-mode atlas, links.</span></li><li><a style="color:var(--ink);cursor:default">Build 34</a><span>Bench notes in drawing.cad. Module cards for the analog and audio labs.</span></li><li><a style="color:var(--ink);cursor:default">Build 33</a><span>Metric thread table and shop notes (drawing.cad).</span></li><li><a style="color:var(--ink);cursor:default">Build 32</a><span>Class A, AB, D amplifiers and a split-rail linear supply in schematics.sim.</span></li><li><a style="color:var(--ink);cursor:default">Build 31</a><span>audio.lab: amp and speaker maths, amplifier classes, supply, digital audio, crossover, room modes.</span></li><li><a style="color:var(--ink);cursor:default">Build 30</a><span>Skill levels and project statuses updated. Toys moved to playground/.</span></li><li><a style="color:var(--ink);cursor:default">Build 29</a><span>analog.lab: op-amp gain, filters, ADC, thermistor, 4-20 mA.</span></li><li><a style="color:var(--ink);cursor:default">Build 28</a><span>solar.guide: payback, battery sizing, flow diagram.</span></li><li><a style="color:var(--ink);cursor:default">Build 27</a><span>Twelve power schematics, breadboard scope.</span></li><li><a style="color:var(--ink);cursor:default">Build 26</a><span>Wiring diagrams: breaker and wire sizing, single-line.</span></li><li><a style="color:var(--ink);cursor:default">Build 25</a><span>drawing.cad: caliper, micrometer, isometric, fits.</span></li><li><a style="color:var(--ink);cursor:default">Build 24</a><span>motor.ctl: DOL, forward and reverse, star-delta.</span></li><li><a style="color:var(--ink);cursor:default">Build 23</a><span>IDE workspace shell.</span></li></ul></div></div>
   </div>
 </section>
 
@@ -4200,7 +4205,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
 <section class="term" id="term" aria-label="Terminal"><div class="term-log" id="termLog"></div><label class="term-in"><span>diyelo@bench:~$</span><input id="termIn" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command"></label></section>
 
 <!-- ========== STATUS BAR ========== -->
-<footer class="status"><span class="branch">&#9095; main</span><span class="errs">0 errors</span><span class="hint">Ctrl K search</span><span class="sp"></span><button id="termBtn" type="button">&gt;_ Terminal</button><button class="fx-btn" id="fxBtn" type="button" aria-live="polite">FX: AUTO</button><span class="copy">&copy;&nbsp;<span id="yr">2026</span>&nbsp;Diyelo Dulay</span><span class="copy">Build 39</span></footer>
+<footer class="status"><span class="branch">&#9095; main</span><span class="errs">0 errors</span><span class="hint">Ctrl K search</span><span class="sp"></span><button id="termBtn" type="button">&gt;_ Terminal</button><button class="fx-btn" id="fxBtn" type="button" aria-live="polite">FX: AUTO</button><span class="copy">&copy;&nbsp;<span id="yr">2026</span>&nbsp;Diyelo Dulay</span><span class="copy">Build 40</span></footer>
 </div>
 
 <!-- ========== COMMAND PALETTE ========== -->
@@ -6118,10 +6123,23 @@ renderQuiz();
     if(S.trip)ms+=' / overload tripped';
     return `<div class="mot-stat">${items.map(i=>`<span class="${i[2]&&i[1]?'bad':i[1]?'on':''}">${esc(i[0])}</span>`).join('')}<span class="${c.KM1||c.KM2?'on':''}">${esc(ms)}</span></div>`+(S.fault?`<div class="mot-note" style="border-left-color:#C62828"><b>Fault</b><br>${esc(S.fault)}</div>`:'');
   }
+  function spinView(){
+    const c=S.c,ok=S.q1&&!S.trip;let run=false,rev=false,d=.8,lab='Stopped',sub='Motor is not powered';
+    if(ok){
+      if(ck==='dol'&&c.KM1){run=true;lab='Running';sub='Full speed, clockwise'}
+      else if(ck==='fr'&&(c.KM1||c.KM2)){run=true;rev=!!c.KM2;lab=rev?'Reverse':'Forward';sub=rev?'Two supply lines swapped, so it turns the other way':'Clockwise, full speed'}
+      else if(ck==='sd'&&c.KM1&&c.KM2){run=true;d=2.4;lab='Star';sub='Low speed and torque, one third of the line current'}
+      else if(ck==='sd'&&c.KM1&&c.KM3){run=true;lab='Delta';sub='Full speed and torque'}
+    }
+    const col=run?'#E8590C':'#9AA1A6';
+    const blades=[0,90,180,270].map(a=>`<path d="M60 60L60 22" stroke="${col}" stroke-width="5" stroke-linecap="round" transform="rotate(${a} 60 60)"/>`).join('');
+    return {k:lab+'|'+d+'|'+rev,h:`<div class="mot-spin${run?'':' off'}" id="motSpinBox"><svg viewBox="0 0 120 120" role="img" aria-label="Motor shaft: ${lab}"><circle cx="60" cy="60" r="54" fill="none" stroke="#14181B" stroke-width="3"/><g class="rot" style="--d:${d}s;--r:${rev?'reverse':'normal'}"><path d="M60 14A46 46 0 1 1 14 60" fill="none" stroke="${col}" stroke-width="6" stroke-linecap="round"/><path d="M4 68L14 52L24 68Z" fill="${col}"/>${blades}</g><circle cx="60" cy="60" r="9" fill="#14181B"/></svg><div><b>Shaft</b><span>${lab}</span><div style="color:var(--muted);max-width:340px">${sub}</div></div></div>`};
+  }
   function render(){
     const C=CK[ck];
     $('motLad').innerHTML=ladder();
     $('motPow').innerHTML=ck==='dol'?powerDOL():ck==='fr'?powerFR():powerSD();
+    {const sv=spinView(),el=$('motSpin');if(el&&el.dataset.k!==sv.k){el.dataset.k=sv.k;el.innerHTML=sv.h}}
     $('motStat').innerHTML=status();
   }
   function build(){
@@ -6129,7 +6147,7 @@ renderQuiz();
     root.innerHTML=`<div class="sol-tabs" id="motTabs">${TABS.map(t=>`<button type="button" data-c="${t[0]}" class="${t[0]===ck?'on':''}">${t[1]}</button>`).join('')}</div>
     <div class="mot-grid"><div id="motLad"></div><div id="motPow"></div></div>
     <div class="mot-ctl" id="motBtns">${C.btn.map(b=>`<button type="button" class="${b[1]}" data-in="${b[0]}">${b[0]}</button>`).join('')}<span style="flex:1"></span><button type="button" id="motTrip">${S.trip?'Reset overload':'Trip overload'}</button>${S.q1?'':'<button type="button" id="motQ">Reset breaker</button>'}${C.ilk?`<button type="button" id="motIl" class="${S.ilk?'on':''}">Interlock: ${S.ilk?'ON':'OFF'}</button>`:''}${C.timer?`<label>Timer <input type="range" id="motT" min="2" max="10" value="${timerT}" aria-label="Star-delta timer"> <span id="motTv">${timerT} s</span></label>`:''}</div>
-    <div id="motStat"></div><div class="mot-note"><b>Try this</b><ol>${C.info.map(t=>`<li>${esc(t)}</li>`).join('')}</ol></div>`;
+    <div id="motSpin"></div><div id="motStat"></div><div class="mot-note"><b>Try this</b><ol>${C.info.map(t=>`<li>${esc(t)}</li>`).join('')}</ol></div>`;
     render();
   }
   const press=(n,v)=>{if(v){S.in[n]=true;S.hold=S.hold||{};S.hold[n]=Date.now()+400}else{const t=(S.hold&&S.hold[n])||0;const d=Math.max(0,t-Date.now());setTimeout(()=>{S.in[n]=false},d)}};
