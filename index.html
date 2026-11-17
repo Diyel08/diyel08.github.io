@@ -751,6 +751,60 @@ html,body{background:#c9d3ee}
 }
 @media(prefers-reduced-motion:reduce){.win,.win.min,.dk{transition:none;animation:none}}
 html[data-fx=light] .win{animation:none}
+/* ===== macOS content skin: SF type, sentence case, rounded groups, system blue ===== */
+.win-body{--acc:#0a7aff;--acc-d:#0062d6;--radius:10px;--sec:#6e6e73;--hair:rgba(60,60,67,.18);--card:rgba(255,255,255,.82);--mono:var(--body);background-image:none;font-feature-settings:"tnum","cv11";-webkit-font-smoothing:antialiased}
+.win-body code,.win-body pre,.win-body kbd,.win-body textarea,.win-body .calc-display,.win-body .url-item code{--mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,monospace;font-family:var(--mono)}
+.win-body *{text-transform:none!important;letter-spacing:normal!important}
+.win-body svg text{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif!important}
+.win .view{padding:22px 0 56px}
+.win-body .wrap{width:min(1040px,100% - 48px)}
+/* headings */
+.win-body .sec-head{border:0;padding:0;margin:4px 0 20px}
+.win-body .sec-head .k{display:block;border:0;background:none;padding:0;margin:0 0 4px;font:600 13px/1.3 var(--body);color:var(--sec)}
+.win-body .sec-head .k:before{content:none}
+.win-body .sec-head h2{font:700 clamp(28px,3.6vw,38px)/1.1 var(--display);letter-spacing:-.025em!important;color:var(--ink);margin:0}
+.win-body .sec-head+p,.win-body .sec-head~.lead,.win-body .sec-intro,.win-body .view .wrap>p.lead{font:400 15px/1.5 var(--body);color:var(--sec);max-width:68ch}
+.win-body h3,.win-body h4,.win-body .panel-title{font-family:var(--display);font-weight:650;letter-spacing:-.01em!important;color:var(--ink)}
+.win-body .panel-title{font-size:17px;line-height:1.25}
+.win-body .panel-title i{color:var(--acc);font-family:var(--body);font-size:13px;margin-right:6px}
+.win-body p.mono-note{font:400 14px/1.5 var(--body);color:var(--sec);max-width:72ch}
+.win-body .panel-spec,.win-body .mono-note,.win-body small{font:400 12px/1.4 var(--body);color:var(--sec)}
+.win-body label{font-weight:500}
+/* cards */
+.win-body .panel{background:var(--card);border:0;border-top:0;border-radius:12px;box-shadow:0 0 0 .5px var(--hair),0 1px 3px rgba(0,0,0,.07)}
+.win-body .panel-body{padding:18px}
+.win-body .panel-head{border-bottom:.5px solid var(--hair)}
+/* buttons */
+.win-body button:not(.l-c):not(.l-m):not(.l-z):not(.dk),.win-body .btn{font-family:var(--body);font-size:13px;font-weight:500;line-height:1.2;border-radius:8px}
+.win-body .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 16px;border:0;background:var(--acc);color:#fff;box-shadow:0 .5px 1px rgba(0,0,0,.25);transition:filter .15s,transform .1s}
+.win-body .btn:hover{filter:none;background:var(--acc-d)}.win-body .btn:active{transform:scale(.97)}
+.win-body .btn.red{background:var(--acc);border:0}
+.win-body .btn.ghost{background:rgba(255,255,255,.9);color:var(--ink);box-shadow:0 0 0 .5px var(--hair),0 1px 2px rgba(0,0,0,.08)}
+.hero .btn.ghost{background:rgba(255,255,255,.12);color:#fff;box-shadow:0 0 0 .5px rgba(255,255,255,.3)}
+.win-body :is(.sch-tabs,.sol-seg,.mot-tabs,.seg,.tabs-row,.bb-tabs,.sol-tabs,[role=tablist]) button,.win-body .sol-seg button,.win-body .sch-tabs button{padding:7px 12px;border:0;background:rgba(255,255,255,.85);color:var(--ink);box-shadow:0 0 0 .5px var(--hair),0 1px 2px rgba(0,0,0,.06);display:inline-flex;align-items:center;gap:6px}
+.win-body :is(.sch-tabs,.sol-seg,[role=tablist]) button:hover{background:#fff}
+.win-body :is(.sch-tabs,.sol-seg,[role=tablist]) button:is(.on,[aria-selected=true],[aria-pressed=true]){background:var(--acc);color:#fff;box-shadow:0 1px 3px rgba(10,122,255,.4);border:0}
+.win-body .psy{flex:none;opacity:.85}
+.win-body button:focus-visible,.win-body a:focus-visible,.win-body .btn:focus-visible{outline:3px solid rgba(10,122,255,.45);outline-offset:1px}
+.win-body .sch-tabs button.on{border-color:transparent}
+/* fields */
+.win-body .input,.win-body select,.win-body input:not([type=range]):not([type=checkbox]):not([type=radio]),.win-body textarea{border:0;border-radius:8px;background:#fff;box-shadow:0 0 0 .5px rgba(60,60,67,.3),inset 0 1px 1px rgba(0,0,0,.05);padding:8px 10px;font-family:var(--body)}
+.win-body .input:focus,.win-body select:focus,.win-body input:focus,.win-body textarea:focus{outline:0;box-shadow:0 0 0 3.5px rgba(10,122,255,.4),0 0 0 .5px var(--acc)}
+.win-body input[type=range]{accent-color:var(--acc)}.win-body input[type=checkbox],.win-body input[type=radio]{accent-color:var(--acc)}
+/* tables / lists */
+.win-body table{border-collapse:collapse}.win-body th{font-weight:600;color:var(--sec);font-size:12px}
+.win-body td,.win-body th{border-color:var(--hair)}
+/* hero */
+.win-body .hero{border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.win-body .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,5.6vw,68px);line-height:1.04;letter-spacing:-.035em!important}
+.win-body .hero .vol{border:0;padding:0;font:600 13px var(--body);color:rgba(255,255,255,.62)}
+.win-body .hero .lead{font:400 clamp(16px,1.6vw,19px)/1.55 var(--body);color:rgba(255,255,255,.82)}
+.win-body .stat{border-color:rgba(255,255,255,.14)}.win-body .stat span{font:500 12px var(--body);color:rgba(255,255,255,.6)}
+/* skills squares and misc boxes */
+.win-body .tl .when{font:600 12px var(--body);color:var(--acc)}
+.win-body .facts span:first-child{font:500 12px var(--body);color:var(--sec)}
+.win-body a{color:var(--acc)}
+.win-body .empty{border-radius:10px}
 /* 2D motion */
 svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
@@ -938,7 +992,7 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 <section class="view" id="schematics" data-title="schematics.sim">
   <div class="wrap">
     <div class="sec-head"><div class="k">Entry 04A · Power electronics</div><h2>Power schematics</h2></div>
-    <p class="mono-note" style="margin:0 0 14px">PICK A CIRCUIT, THEN STEP THROUGH ITS SWITCHING STATES. THE ORANGE LINE SHOWS WHERE THE CURRENT FLOWS. IDEAL PARTS, TEACHING DIAGRAMS, NOT A DESIGN FOR PRODUCTION.</p>
+    <p class="mono-note" style="margin:0 0 14px">Pick a circuit, then step through its switching states. The orange line shows where the current flows. Ideal parts, teaching diagrams, not a design for production.</p>
     <div class="panel sch-panel"><div class="panel-body"><div id="schRoot"></div></div></div>
   </div>
 </section>
@@ -946,7 +1000,7 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 <section class="view" id="motor" data-title="motor.ctl">
   <div class="wrap">
     <div class="sec-head"><div class="k">Motor control</div><h2>Motor control</h2></div>
-    <p class="mono-note" style="margin:0 0 12px">HOLD A BUTTON TO PRESS IT. THE LEFT DIAGRAM IS THE CONTROL CIRCUIT (LADDER), THE RIGHT ONE IS THE POWER CIRCUIT. ORANGE MEANS CURRENT FLOWS. EDUCATIONAL MODEL, NOT A WIRING PLAN FOR A REAL PANEL.</p>
+    <p class="mono-note" style="margin:0 0 12px">Hold a button to press it. The left diagram is the control circuit (ladder), the right one is the power circuit. Orange means current flows. Educational model, not a wiring plan for a real panel.</p>
     <div class="panel"><div class="panel-body"><div id="motRoot"></div></div></div>
   </div>
 </section>
@@ -954,28 +1008,28 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 <section class="view" id="wiring" data-title="wiring.dwg">
   <div class="wrap">
     <div class="sec-head"><div class="k">Wiring diagrams</div><h2>Wiring diagrams</h2></div>
-    <p class="mono-note" style="margin:0 0 12px">PRESS THE SWITCH BUTTONS. ORANGE WIRE CARRIES CURRENT. TEACHING MODEL: FOLLOW YOUR LOCAL WIRING CODE FOR REAL INSTALLATIONS.</p>
+    <p class="mono-note" style="margin:0 0 12px">Press the switch buttons. Orange wire carries current. Teaching model: follow your local wiring code for real installations.</p>
     <div class="panel"><div class="panel-body"><div id="wirRoot"></div></div></div>
   </div>
 </section>
 <section class="view" id="drawing" data-title="drawing.cad">
   <div class="wrap">
     <div class="sec-head"><div class="k">Technical drawing and shop</div><h2>Drawing &amp; shop</h2></div>
-    <p class="mono-note" style="margin:0 0 12px">PRACTISE READING A CALIPER AND A MICROMETER, BUILD A PART IN ISOMETRIC AND SEE ITS VIEWS, AND CHECK LIMITS AND FITS.</p>
+    <p class="mono-note" style="margin:0 0 12px">Practise reading a caliper and a micrometer, build a part in isometric and see its views, and check limits and fits.</p>
     <div class="panel"><div class="panel-body"><div id="drwRoot"></div></div></div>
   </div>
 </section>
 <section class="view" id="analog" data-title="analog.lab">
   <div class="wrap">
     <div class="sec-head"><div class="k">Analog</div><h2>Analog lab</h2></div>
-    <p class="mono-note" style="margin:0 0 12px">STANDARD FORMULAS FOR OP-AMP GAIN, FILTERS, ADC RESOLUTION, THERMISTORS AND 4-20 MA LOOPS. IDEAL PARTS, SO CHECK THE DATASHEET FOR YOUR REAL ONES.</p>
+    <p class="mono-note" style="margin:0 0 12px">Standard formulas for op-amp gain, filters, ADC resolution, thermistors and 4-20 ma loops. Ideal parts, so check the datasheet for your real ones.</p>
     <div class="panel"><div class="panel-body"><div id="anaRoot"></div></div></div>
   </div>
 </section>
 <section class="view" id="audio" data-title="audio.lab">
   <div class="wrap">
     <div class="sec-head"><div class="k">Audio</div><h2>Audio lab</h2></div>
-    <p class="mono-note" style="margin:0 0 12px">AMP AND SPEAKER MATHS, CLASS A / AB / D AMPLIFIERS, A SPLIT-RAIL LINEAR SUPPLY, DIGITAL AUDIO AND CROSSOVERS. IDEAL-PART FORMULAS, SO REAL SPEAKERS AND AMPS WILL DIFFER.</p>
+    <p class="mono-note" style="margin:0 0 12px">Amp and speaker maths, class a / ab / d amplifiers, a split-rail linear supply, digital audio and crossovers. Ideal-part formulas, so real speakers and amps will differ.</p>
     <div class="panel"><div class="panel-body"><div id="audRoot"></div></div></div>
   </div>
 </section>
@@ -983,7 +1037,7 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 <section class="view" id="solar" data-title="solar.guide">
   <div class="wrap">
     <div class="sec-head"><div class="k">Solar setup guide</div><h2>Solar</h2></div>
-    <p class="mono-note" style="margin:0 0 12px">ON-GRID, OFF-GRID AND HYBRID: HOW THE ENERGY FLOWS, HOW TO SIZE A SYSTEM, HOW TO CHECK A PANEL STRING, AND THE ORDER TO INSTALL IT. LEARNING NOTES, NOT A DESIGN. A LICENSED PROFESSIONAL MUST SIGN OFF A REAL INSTALLATION.</p>
+    <p class="mono-note" style="margin:0 0 12px">On-grid, off-grid and hybrid: how the energy flows, how to size a system, how to check a panel string, and the order to install it. Learning notes, not a design. A licensed professional must sign off a real installation.</p>
     <div class="panel"><div class="panel-body"><div id="solRoot"></div></div></div>
   </div>
 </section>
@@ -991,7 +1045,7 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 <section class="view" id="monitor" data-title="monitor.lab">
   <div class="wrap">
     <div class="sec-head"><div class="k">Experiment</div><h2>Monitor</h2></div>
-    <p class="mono-note" style="margin:0 0 12px">A DIY MONITORING SYSTEM FOR ANY SOLAR SETUP, BRANDED OR NOT. SENSE THE INPUT AND OUTPUT OF EVERY DEVICE, SEE HARVEST, CONSUMPTION AND BATTERY, AND KNOW WHEN THE LINE MUST BACK THE SYSTEM UP. THE DASHBOARD RUNS ON THE SYSTEM YOU BUILT IN SOLAR / ASSEMBLE. SIMULATED READINGS, WITH THE HARDWARE DESIGN FOR A REAL BUILD. MAINS AND BATTERY WIRING MUST BE DONE BY A LICENSED ELECTRICIAN.</p>
+    <p class="mono-note" style="margin:0 0 12px">A diy monitoring system for any solar setup, branded or not. Sense the input and output of every device, see harvest, consumption and battery, and know when the line must back the system up. The dashboard runs on the system you built in solar / assemble. Simulated readings, with the hardware design for a real build. Mains and battery wiring must be done by a licensed electrician.</p>
     <div class="panel"><div class="panel-body"><div id="monRoot"></div></div></div>
   </div>
 </section>
@@ -999,7 +1053,7 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 <section class="view" id="breadboard" data-title="breadboard.sim">
   <div class="wrap">
     <div class="sec-head"><div class="k">Virtual lab</div><h2>Breadboard</h2></div>
-    <p class="mono-note" style="margin:0 0 12px">PICK A PART, TAP TWO HOLES TO PLACE IT, THEN READ THE RESULT. HOLES IN THE SAME COLUMN HALF ARE CONNECTED. THE LONG RAILS RUN ALONG THE WHOLE BOARD. THREE-LEG PARTS TAKE THREE TAPS. THE METER IS DC; THE SCOPE RUNS A TIME-DOMAIN SIMULATION. SIMPLIFIED TEACHING MODELS.</p>
+    <p class="mono-note" style="margin:0 0 12px">Pick a part, tap two holes to place it, then read the result. Holes in the same column half are connected. The long rails run along the whole board. Three-leg parts take three taps. The meter is DC; the scope runs a time-domain simulation. Simplified teaching models.</p>
     <div class="panel"><div class="panel-body"><div id="bbRoot"></div></div></div>
   </div>
 </section>
@@ -1007,7 +1061,7 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 <section class="view" id="modules" data-title="modules/">
   <div class="wrap">
     <div class="sec-head"><div class="k">Entry 05 · Projects</div><h2>Projects</h2></div>
-    <p class="mono-note" style="margin:0 0 16px">EACH PROJECT IS A MODULE: PROBLEM, WHAT I BUILT, RESULT, WHAT I LEARNED. DEMO DATA ONLY. NO COMPANY DATA.</p>
+    <p class="mono-note" style="margin:0 0 16px">Each project is a module: problem, what i built, result, what i learned. Demo data only. No company data.</p>
     <div class="mods" id="modGrid"></div>
   </div>
 </section>
@@ -4227,7 +4281,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
         <div class="panel-body">
           <select class="input" id="wxCity" aria-label="City"></select>
           <div class="wx" id="wxOut"><div class="temp">--</div><div><div class="desc">Loading</div><div class="meta">&nbsp;</div></div></div>
-          <div class="mono-note" id="wxSrc">Source: Open-Meteo (free, no key)</div>
+          <div class="mono-note" id="wxSrc">Source: open-Meteo (free, no key)</div>
         </div></div>
 
       <!-- 04 -->
@@ -4273,7 +4327,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
 <section class="view" id="guides" data-title="guides.md">
   <div class="wrap">
     <div class="sec-head"><div class="k">Reference</div><h2>Guides</h2></div>
-    <p class="mono-note" style="margin:0 0 12px">A FORMULA SHEET, SHORT HOW-TO GUIDES FOR THE BENCH, A GENERIC FAILURE-MODE ATLAS AND A LIST OF REFERENCES I USE. GENERAL KNOWLEDGE ONLY, NO COMPANY DATA.</p>
+    <p class="mono-note" style="margin:0 0 12px">A formula sheet, short how-to guides for the bench, a generic failure-mode atlas and a list of references i use. General knowledge only, no company data.</p>
     <div class="panel"><div class="panel-body"><div id="gdRoot"></div></div></div>
   </div>
 </section>
@@ -4307,7 +4361,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
 <section class="view" id="changelog" data-title="CHANGELOG.md">
   <div class="wrap">
     <div class="sec-head"><div class="k">Version notes</div><h2>Changelog</h2></div>
-    <p class="mono-note" style="margin:0 0 12px">WHAT CHANGED IN EACH BUILD OF THIS PORTFOLIO, NEWEST FIRST.</p>
+    <p class="mono-note" style="margin:0 0 12px">What changed in each build of this portfolio, newest first.</p>
     <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 51</a><span>Home: new headline and a personal intro. 2D drawings now update in place and glide between states. San Francisco system fonts (SF Pro, SF Mono) and SF Symbols-style icons on rounded-square tiles.</span></li><li><a style="color:var(--ink);cursor:default">Build 50</a><span>macOS-style desktop: wallpaper, menu bar, dock, frosted windows, Finder and Spotlight search. Chrome follows the system light or dark setting.</span></li><li><a style="color:var(--ink);cursor:default">Build 49</a><span>monitor.lab: DIY solar monitoring experiment. Live dashboard on the Assemble system, sensor map, shunt, CT and divider calculators, Modbus map, MQTT topics and firmware outline.</span></li><li><a style="color:var(--ink);cursor:default">Build 48</a><span>solar.guide: Assemble tab. Place panels, batteries, inverters and real loads (fridge, fan, induction cooker, e-vehicle, pump) on a canvas, wire them, and run the day.</span></li><li><a style="color:var(--ink);cursor:default">Build 47</a><span>solar.guide: Quick design (the step-by-step builder). Panels, strings, inverter, battery and loads, then run a 24-hour day with live design checks.</span></li><li><a style="color:var(--ink);cursor:default">Build 46</a><span>About: off_duty.txt with hobbies and personality.</span></li><li><a style="color:var(--ink);cursor:default">Build 45</a><span>Experience log: company context for ATEC, Beauchem Thermtech and Advanced Energy. ETEEAP at MSEUF marked as planned.</span></li><li><a style="color:var(--ink);cursor:default">Build 44</a><span>Accessibility pass: heading order, labels on selects, button contrast, correct roles. Playground and tools split.</span></li><li><a style="color:var(--ink);cursor:default">Build 36</a><span>Favicon, share preview, installable manifest, printable CV.</span></li><li><a style="color:var(--ink);cursor:default">Build 35</a><span>Guides: formula sheet, bench how-to, failure-mode atlas, links.</span></li><li><a style="color:var(--ink);cursor:default">Build 34</a><span>Bench notes in drawing.cad. Module cards for the analog and audio labs.</span></li><li><a style="color:var(--ink);cursor:default">Build 33</a><span>Metric thread table and shop notes (drawing.cad).</span></li><li><a style="color:var(--ink);cursor:default">Build 32</a><span>Class A, AB, D amplifiers and a split-rail linear supply in schematics.sim.</span></li><li><a style="color:var(--ink);cursor:default">Build 31</a><span>audio.lab: amp and speaker maths, amplifier classes, supply, digital audio, crossover, room modes.</span></li><li><a style="color:var(--ink);cursor:default">Build 30</a><span>Skill levels and project statuses updated. Toys moved to playground/.</span></li><li><a style="color:var(--ink);cursor:default">Build 29</a><span>analog.lab: op-amp gain, filters, ADC, thermistor, 4-20 mA.</span></li><li><a style="color:var(--ink);cursor:default">Build 28</a><span>solar.guide: payback, battery sizing, flow diagram.</span></li><li><a style="color:var(--ink);cursor:default">Build 27</a><span>Twelve power schematics, breadboard scope.</span></li><li><a style="color:var(--ink);cursor:default">Build 26</a><span>Wiring diagrams: breaker and wire sizing, single-line.</span></li><li><a style="color:var(--ink);cursor:default">Build 25</a><span>drawing.cad: caliper, micrometer, isometric, fits.</span></li><li><a style="color:var(--ink);cursor:default">Build 24</a><span>motor.ctl: DOL, forward and reverse, star-delta.</span></li><li><a style="color:var(--ink);cursor:default">Build 23</a><span>IDE workspace shell.</span></li></ul></div></div>
   </div>
 </section>
@@ -4528,7 +4582,7 @@ $('yrs').textContent=Math.max(1,new Date().getFullYear()-2019)+'+';
    playground:'<circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/>',
    projects:'<path d="M12 3l9 5-9 5-9-5zM3 12.5l9 5 9-5M3 16.5l9 5 9-5"/>'
   };
-  const glyph=(id,fb)=>SYM[id]?`<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${SYM[id]}</svg>`:fb;
+  const glyph=(id,fb,z)=>SYM[id]?`<svg viewBox="0 0 24 24" width="${z||26}" height="${z||26}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${SYM[id]}</svg>`:fb;
   const grad=id=>{const g=(GR[id]||'#7a8793,#36424b').split(',');return `linear-gradient(145deg,${g[0]},${g[1]})`};
   /* finder + home cards */
   const GRP=[['all','All files',''],['','Home','⌂'],['lab/','Lab','⚙'],['work/','Work','▣']];
@@ -4550,7 +4604,7 @@ $('yrs').textContent=Math.max(1,new Date().getFullYear()-2019)+'+';
   function mkWin(id){
     const f=byId(id),sec=document.getElementById(id),w=document.createElement('div');
     w.className='win';w.dataset.win=id;w.setAttribute('role','group');w.setAttribute('aria-label',f.n);
-    w.innerHTML=`<div class="win-bar"><span class="lights"><button type="button" class="l-c" aria-label="Close ${esc(f.n)}"></button><button type="button" class="l-m" aria-label="Minimize ${esc(f.n)}"></button><button type="button" class="l-z" aria-label="Zoom ${esc(f.n)}"></button></span><span class="win-title"><i>${f.ic}</i>${esc(f.n)}</span></div><div class="win-body"></div><span class="win-rs" aria-hidden="true"></span>`;
+    w.innerHTML=`<div class="win-bar"><span class="lights"><button type="button" class="l-c" aria-label="Close ${esc(f.n)}"></button><button type="button" class="l-m" aria-label="Minimize ${esc(f.n)}"></button><button type="button" class="l-z" aria-label="Zoom ${esc(f.n)}"></button></span><span class="win-title"><i>${glyph(f.id,f.ic,14)}</i>${esc(f.n)}</span></div><div class="win-body"></div><span class="win-rs" aria-hidden="true"></span>`;
     w.querySelector('.win-body').appendChild(sec);layer.appendChild(w);
     const vw=layer.clientWidth,vh=layer.clientHeight,L=layout[id],step=(Object.keys(wins).length%7)*30;
     let W,H,X,Y;
@@ -6415,6 +6469,25 @@ renderQuiz();
   const LS={all:['All day',[[0,24]]],morn:['Morning 6-9',[[6,9]]],day:['Daytime 9-16',[[9,16]]],eve:['Evening 17-22',[[17,22]]],night:['Night 22-6',[[22,24],[0,6]]],cook:['Meals 11-12, 18-19',[[11,12],[18,19]]]};
   const T2=(d,a)=>Object.assign({},d,a);
   const LD=(n,ic,w,duty,sch,note)=>({n,ic,w:132,h:44,load:1,rw:w,duty,sch,note,t:{'AC':[-66,0,'ac']}});
+  const PSYM={
+   pv:'<path d="M5 6h14l2 12H3zM9.7 6L8 18M14.3 6L16 18M4 12h16"/>',
+   bat:'<rect x="3" y="7" width="16" height="10" rx="2.2"/><path d="M21.5 10.5v3M7 10.5v3M11 10.5v3"/>',
+   hyb:'<rect x="4" y="4" width="16" height="16" rx="3.5"/><path d="M7.5 14c1.4-3 2.8-3 4.5 0s3.1 3 4.5 0M8 8h2.5M14 8h2"/>',
+   gti:'<rect x="4" y="4" width="16" height="16" rx="3.5"/><path d="M7.5 12h9M13 8l3.5 4-3.5 4"/>',
+   oginv:'<rect x="4" y="4" width="16" height="16" rx="3.5"/><path d="M7 13.5c1.5-4.5 3.5-4.5 5 0s3.5 4.5 5 0"/>',
+   mppt:'<path d="M13 3L6 13.5h5L10 21l8-11h-5.5z"/>',
+   grid:'<path d="M12 3L7 21M12 3l5 18M8.8 10h6.4M7.8 15h8.4M4 8h16"/>',
+   fridge:'<rect x="6" y="3" width="12" height="18" rx="2.5"/><path d="M6 10.5h12M9 6.5v2M9 13.5v3"/>',
+   fan:'<circle cx="12" cy="12" r="1.6"/><path d="M12 10.4C12 5.5 8.5 4.5 8.5 7.2c0 1.8 2.2 2.8 3.5 3.2zM13.6 12c4.9 0 5.9 3.5 3.2 3.5-1.8 0-2.8-2.2-3.2-3.5zM12 13.6c0 4.9 3.5 5.9 3.5 3.2 0-1.8-2.2-2.8-3.5-3.2zM10.4 12c-4.9 0-5.9-3.5-3.2-3.5 1.8 0 2.8 2.2 3.2 3.5z"/>',
+   cooker:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r=".8"/>',
+   ev:'<path d="M5 15l1.6-4.6A2 2 0 0 1 8.5 9h7a2 2 0 0 1 1.9 1.4L19 15"/><rect x="3" y="15" width="18" height="4" rx="1.5"/><path d="M7 19v1.5M17 19v1.5"/>',
+   pump:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
+   aircon:'<path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/>',
+   lights:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
+   tv:'<rect x="3" y="5" width="18" height="12" rx="2.5"/><path d="M8 21h8M12 17v4"/>'
+  };
+  const psym=(t,x,y,sz,col)=>PSYM[t]?`<svg x="${x}" y="${y}" width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="none" stroke="${col}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">${PSYM[t]}</svg>`:'';
+  const psymH=t=>PSYM[t]?`<svg class="psy" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${PSYM[t]}</svg>`:'';
   const AP={
    pv:{n:'Solar panel',ic:'☀',w:64,h:40,t:{'+':[32,0,'dc'],'-':[-32,0,'dc']},p:{wp:550}},
    bat:{n:'Battery 12.8 V',ic:'▮',w:64,h:40,t:{'+':[32,0,'dc'],'-':[-32,0,'dc']},p:{ah:100}},
@@ -6422,7 +6495,7 @@ renderQuiz();
    gti:{n:'Grid-tie inverter',ic:'⌁',w:130,h:70,t:{'PV+':[-65,-14,'dc'],'PV-':[-65,10,'dc'],'AC':[65,0,'ac']},p:{kw:3}},
    mppt:{n:'MPPT controller',ic:'↯',w:110,h:70,t:{'PV+':[-55,-14,'dc'],'PV-':[-55,10,'dc'],'BAT+':[55,-14,'dc'],'BAT-':[55,10,'dc']},p:{amps:60,bv:24}},
    oginv:{n:'Off-grid inverter',ic:'⌁',w:130,h:70,t:{'BAT+':[-65,-14,'dc'],'BAT-':[-65,10,'dc'],'AC':[65,0,'ac']},p:{kw:3,bv:24}},
-   grid:{n:'Utility grid',ic:'⎓',w:84,h:40,t:{'AC':[-42,0,'ac']},p:{}},
+   grid:{n:'Utility grid',ic:'⎓',w:116,h:40,t:{'AC':[-58,0,'ac']},p:{}},
    fridge:LD('Refrigerator','❄',150,.4,'all','Compressor cycles, so average 40 % of 150 W.'),
    fan:LD('Electric fan','✲',55,1,'night',''),
    cooker:LD('Induction cooker','◎',1800,.7,'cook','High power for short periods.'),
@@ -6587,9 +6660,9 @@ renderQuiz();
       o+=`<g data-part="${p.id}" style="cursor:move"${off?' opacity=".5"':''}><rect x="${p.x-d.w/2}" y="${p.y-d.h/2}" width="${d.w}" height="${d.h}" rx="3" fill="${p.t==='pv'?'#1F3A5F':'#fff'}" stroke="${sel?'#1F5FAE':'#14181B'}" stroke-width="${sel?3:1.5}"/>`;
       const tc=p.t==='pv'?'#fff':'#14181B';
       if(d.load||p.t==='grid'){
-        o+=`<text x="${p.x-d.w/2+20}" y="${p.y+6}" text-anchor="middle" font-size="16" fill="#E8590C" pointer-events="none">${d.ic}</text><text x="${p.x+12}" y="${p.y+(d.load?-2:4)}" text-anchor="middle" font-family="-apple-system,'SF Pro Display',Helvetica,Arial,sans-serif" font-weight="700" font-size="12.5" fill="#14181B" pointer-events="none">${d.n}</text>${d.load?`<text x="${p.x+12}" y="${p.y+12}" text-anchor="middle" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="9" fill="#666" pointer-events="none">${d.rw} W</text>`:''}`;
+        o+=`${psym(p.t,p.x-d.w/2+8,p.y-11,22,'#E8590C')}<text x="${p.x+12}" y="${p.y+(d.load?-2:4)}" text-anchor="middle" font-family="-apple-system,'SF Pro Display',Helvetica,Arial,sans-serif" font-weight="700" font-size="12.5" fill="#14181B" pointer-events="none">${d.n}</text>${d.load?`<text x="${p.x+12}" y="${p.y+12}" text-anchor="middle" font-family="ui-monospace,'SF Mono',Menlo,monospace" font-size="9" fill="#666" pointer-events="none">${d.rw} W</text>`:''}`;
       }else{
-      o+=`<text x="${p.x}" y="${p.y-(d.h>50?10:2)}" text-anchor="middle" font-size="${d.h>50?18:15}" fill="${p.t==='pv'?'#F5B301':'#E8590C'}" pointer-events="none">${d.ic}</text>`;
+      o+=psym(p.t,p.x-(d.h>50?12:9),p.y-(d.h>50?34:21),d.h>50?24:18,p.t==='pv'?'#F5B301':'#E8590C');;
       let sub=p.t==='pv'?p.p.wp+' W':p.t==='bat'?p.p.ah+' Ah':p.t==='hyb'||p.t==='gti'||p.t==='oginv'?p.p.kw+' kW'+(p.p.bv?' \u00b7 '+p.p.bv+' V':''):p.t==='mppt'?p.p.amps+' A \u00b7 '+p.p.bv+' V':'';
       const tc=p.t==='pv'?'#fff':'#14181B';
       o+=`<text x="${p.x}" y="${p.y+(d.h>50?10:12)}" text-anchor="middle" font-family="-apple-system,'SF Pro Display',Helvetica,Arial,sans-serif" font-weight="700" font-size="${p.t==='pv'||p.t==='bat'?11:12}" fill="${tc}" pointer-events="none">${p.t==='pv'||p.t==='bat'?sub:d.n}</text>`;
@@ -6603,7 +6676,7 @@ renderQuiz();
     return o+'</svg>';
   }
   function asmPalette(){
-    return GROUPS.map(g=>`<div class="asm-grp"><small>${g[0]}</small><div class="sol-seg">${g[1].map(t=>`<button type="button" data-asm="place" data-v="${t}" class="${asm.place===t?'on':''}">${AP[t].ic} ${AP[t].n}</button>`).join('')}</div></div>`).join('');
+    return GROUPS.map(g=>`<div class="asm-grp"><small>${g[0]}</small><div class="sol-seg">${g[1].map(t=>`<button type="button" data-asm="place" data-v="${t}" class="${asm.place===t?'on':''}">${psymH(t)}${AP[t].n}</button>`).join('')}</div></div>`).join('');
   }
   function asmInspector(){
     const sel=asm.sel;if(!sel)return '<p class="bc-note">Tap a part or a wire to edit it. Drag a part to move it. Tap one terminal, then another, to run a wire.</p>';
