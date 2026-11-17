@@ -1260,6 +1260,80 @@ html[data-wall=graphite] .wall{background:radial-gradient(50% 55% at 12% 36%,#8b
 @keyframes iosOut{to{opacity:0;transform:scale(.88);border-radius:34px}}
 @keyframes ihIn{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.ide .win.front,.ide .win.front.ios-out,.ide.home .ios-home{animation:none!important}}
+/* ========== BUILD 61: dark theme for window contents ========== */
+@media(prefers-color-scheme:dark){
+  .win,.win-body{--bg:#1c1c1e;--panel:#2c2c2e;--line:rgba(255,255,255,.14);--ink:#f5f5f7;--muted:#a1a1a6;--navy:#f5f5f7;--paper2:#2c2c2e;--sec:#a1a1a6;--hair:rgba(255,255,255,.14);--card:rgba(44,44,46,.82);--ok:#32d74b;--danger:#ff6961;color-scheme:dark}
+  .win-body{background:#1c1c1e;color:#f5f5f7}
+}
+@media(prefers-color-scheme:dark){
+  html .win .win-body :is(.skill,.input,select.input,textarea.input,.calc-btn,.q-opt,.world div,.chat-log,.msg.bot,.contact-grid a,.map-wrap,.map-mode,.map-mode button,.bd input,.bd select,.fx-btn,.bench-steps button,.bench-info,.mod,.ov-card,.ov-nav button,.bc-tabs button,.bc-out div,.bc-btn,.sch-tabs button,.sch-st,.dircard,.sk-group,.sk-group h3,.bb-bar button,.bb-bar select,.bb-bar input,.bb-wrap,.bb-msg div,.bb-scope,.bb-sc-bar select,.gd-c,.sol-tabs button,.sol-seg button,.sol-info,.sol-parts div,.sol-app input,.sol-chk label,.mon-st,.mon-t,.mot-ctl button,.mot-ctl label,.mot-stat span,.mot-note,.panel,.btn.ghost,.fnd-side,.fnd-bar input,.ab-chk li,.gl,.gcard,.tl-c,.ct-card,.ss-card,.st-card,select,textarea,input:not([type=range]):not([type=checkbox]):not([type=radio]):not([type=color])){background-color:#2c2c2e;color:#f5f5f7;border-color:rgba(255,255,255,.14)}
+  html .win .win-body :is(.sol-tabs,.sol-seg,.sch-tabs,.bc-tabs,.fnd-seg) button.on{background:#0a7aff;color:#fff}
+  html .win .win-body ::placeholder{color:#8e8e93}
+  html .win .win-body :is(h1,h2,h3,h4,.sec-head h2){color:#f5f5f7}
+  html .win .win-body :is(a:not([class])){color:#64a8ff}
+  html .win .win-body .gl{background:#2c2c2e;box-shadow:0 0 0 .5px rgba(255,255,255,.1)}
+  html .win .win-body .gl>div+div{border-top-color:rgba(255,255,255,.12)}
+  html .win .win-body .gl dd{color:#a1a1a6}
+  html .win .win-body .gl dd.hl,html .win .win-body .gl dd a{color:#64a8ff}
+  html .win .win-body .ct-card .gl dt,html .win .win-body .gl dt small{color:#a1a1a6}
+  html .win .win-body #cvPage,html .win .win-body .cv{--ink:#14181b;--muted:#5e666c;--line:#d9d7cc;--navy:#14181b;background:#fff;color:#14181b}
+  html .win .win-body #cvPage :is(h1,h2,h3,h4,p,li,span,div,a,small,b,strong){color:inherit}
+  html .win .win-body #cvPage :is(h1,h2,h3,h4){color:#14181b}
+}
+@media(prefers-color-scheme:dark){html .win .win-body #cvPage a{color:#0a58b0}}
+/* ========== BUILD 62: README as a macOS Welcome ========== */
+.win-body .hero{background:transparent;color:var(--ink);border:0;box-shadow:none;border-radius:0;overflow:visible}
+.win-body .hero .pcb{display:none!important}
+.win-body .hero-in{display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 8px 6px}
+.win-body .wl-ic{width:88px;height:88px;border-radius:21px;background:var(--g);display:grid;place-items:center;color:#14181b;box-shadow:0 14px 34px rgba(255,170,0,.34),0 2px 6px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.45)}
+.win-body .hero .vol{margin-top:22px;color:var(--sec)}
+.win-body .hero h1{color:var(--ink);margin:8px 0 0;font-size:clamp(38px,6.2vw,76px);font-weight:800;letter-spacing:-.045em!important}
+.win-body .hero h1 em{background:linear-gradient(92deg,#0a7aff 0%,#bf5af2 38%,#ff375f 68%,#ff9f0a 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.win-body .hero p.lead{color:var(--sec);max-width:640px;margin:18px auto 0;font-size:clamp(16px,1.7vw,19px)}
+.win-body .hero .cta{justify-content:center;margin-top:26px}
+.win-body .hero .btn.ghost{background:rgba(10,122,255,.12);color:#0a7aff;box-shadow:none;border:0}
+.win-body .hero .btn.ghost:hover{background:rgba(10,122,255,.2)}
+.win-body .hero .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:none;border:0;margin-top:34px;width:100%}
+.win-body .hero .stat{background:var(--card);border:0;border-radius:18px;padding:16px 12px;box-shadow:var(--lg-edge),0 1px 3px rgba(0,0,0,.05);text-align:center}
+.win-body .hero .stat b{color:var(--ink);font:700 32px/1 var(--display)}
+.win-body .hero .stat span{color:var(--sec);margin-top:6px;display:block}
+.win-body .dirgrid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.win-body .dircard{display:flex;gap:14px;align-items:flex-start;padding:14px 16px}
+.win-body .dircard .dc-ic{flex:none;width:48px;height:48px;border-radius:12px;background:var(--g);display:grid;place-items:center;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.3)}
+.win-body .dircard .dc-t{display:block;min-width:0;margin:0}
+.win-body .dircard .dc-t b{display:block}
+.win-body .dircard .dc-t em{display:block;font-style:normal;margin-top:3px;font-size:13.5px;line-height:1.4;color:var(--sec)}
+@media(max-width:700px){.win-body .hero .stats{grid-template-columns:1fr 1fr}.win-body .wl-ic{width:76px;height:76px}}
+/* ========== BUILD 63: labs, Skills and Guides as macOS apps ========== */
+html .win .win-body .mono-note{font:400 15px/1.5 var(--body);color:var(--sec);max-width:720px}
+html .win .win-body .bc-f label,html .win .win-body .bc-grp>span,html .win .win-body .bc-out small,html .win .win-body .gd-c small,html .win .win-body .bench-info small{font:500 12px/1.3 var(--body);color:var(--sec)}
+html .win .win-body .bc-note{font:400 12.5px/1.5 var(--body);color:var(--sec)}
+html .win .win-body .bc-out{gap:10px;background:none;border:0}
+html .win .win-body .bc-out div{border-radius:14px;background:var(--card);box-shadow:var(--lg-edge),0 1px 3px rgba(0,0,0,.04);padding:14px 16px;border:0}
+html .win .win-body .bc-out b{font:700 26px/1.15 var(--display);color:var(--ink)}
+html .win .win-body .bc-f .input.calc{background:rgba(52,199,89,.14);border-color:rgba(52,199,89,.45)}
+html .win .win-body .sk-group{border:0;border-radius:14px;background:var(--card);box-shadow:var(--lg-edge),0 1px 3px rgba(0,0,0,.04);overflow:hidden;margin-bottom:18px}
+html .win .win-body .sk-group h3{font:600 13px var(--body);color:var(--sec);background:none;border:0;border-bottom:.5px solid var(--hair);padding:12px 16px 9px}
+html .win .win-body .sk-row{border-bottom:.5px solid var(--hair)}
+html .win .win-body .sk-row b{font-weight:600}
+html .win .win-body .sk-row .lvl{font:500 12px var(--body);color:var(--sec)}
+html .win .win-body .lv{gap:3px}
+html .win .win-body .lv i{width:15px;height:6px;border:0;border-radius:3px;background:var(--hair)}
+html .win .win-body .lv i.f{background:#0a7aff}
+html .win .win-body .gd-c{border:0;border-radius:12px;background:var(--card);box-shadow:var(--lg-edge),0 1px 3px rgba(0,0,0,.04)}
+html .win .win-body .gd-c code{font:500 13px ui-monospace,"SF Mono",Menlo,monospace}
+html .win .win-body .gd-t th{border-bottom:1px solid var(--hair);font:600 12px var(--body);color:var(--sec)}
+html .win .win-body .gd-t td{border-bottom:.5px solid var(--hair)}
+html .win .win-body .gd-l li{border-bottom:.5px solid var(--hair)}
+html .win .win-body .bench-board{border:0;border-radius:16px}
+html .win .win-body .bench-steps{gap:2px;background:var(--card);border-radius:14px;padding:6px;box-shadow:var(--lg-edge)}
+html .win .win-body .bench-steps button{border:0;background:transparent!important;border-radius:9px;padding:9px 10px;box-shadow:none;align-items:center;color:var(--ink)}
+html .win .win-body .bench-steps button b{width:24px;height:24px;border-radius:50%;background:var(--hair);display:grid;place-items:center;font:600 11px var(--body);color:var(--ink)}
+html .win .win-body .bench-steps button span{font:500 16px/1.2 var(--body);color:inherit}
+html .win .win-body .bench-steps button:hover:not(.on){background:rgba(120,120,128,.14)!important}
+html .win .win-body .bench-steps button.on{background:#0a7aff!important;color:#fff!important;box-shadow:none}
+html .win .win-body .bench-steps button.on b{background:rgba(255,255,255,.28);color:#fff}
+html .win .win-body .bench-info{border:0;border-radius:14px;background:var(--card);box-shadow:var(--lg-edge)}
 /* 2D motion */
 svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
@@ -1336,7 +1410,7 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
         <div class="stats"><div class="stat"><b id="yrs">7+</b><span>Years in FA</span></div><div class="stat"><b>13</b><span>Bench tools</span></div><div class="stat"><b>0</b><span>Dependencies</span></div><div class="stat"><b>1</b><span>HTML file</span></div></div>
       </div>
     </div>
-    <div class="sec-head" style="margin-top:30px"><div class="k">Open a file</div></div>
+    <div class="sec-head" style="margin-top:30px"><div class="k">Explore the workspace</div></div>
     <div class="dirgrid" id="dirGrid"></div>
   </div>
 </section>
@@ -4875,7 +4949,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
   <div class="wrap">
     <div class="sec-head"><div class="k">Version notes</div><h2>Changelog</h2></div>
     <p class="mono-note" style="margin:0 0 12px">What changed in each build of this portfolio, newest first.</p>
-    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 60</a><span>iOS mode on phones: a Home Screen with widgets, app icons on swipeable pages and a floating dock; apps open full screen with a Back to Home button, swipe from the left edge or up from the bottom to return, and pull down on the Home Screen for Search.</span></li><li><a style="color:var(--ink);cursor:default">Build 59</a><span>Finder: view as Icons, List (sortable by name, kind and location) or Columns with a live preview; a path bar at the bottom; a Get Info panel; right-click menus on files and on empty space; sidebar with Favorites and Folders and SF-style icons. The view you pick is remembered.</span></li>
+    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 63</a><span>The labs, Skills, Guides and the bench now use the same macOS look: rounded grouped cards, readable labels instead of tiny mono capitals, rounded result tiles, level bars on Skills, and a numbered step list on the bench with the current step in blue.</span></li><li><a style="color:var(--ink);cursor:default">Build 62</a><span>README is now a Welcome screen: the app icon, a large headline with a gradient, a short intro, blue buttons and rounded stat tiles. The file list below it shows each app as an icon with its name and a short description.</span></li><li><a style="color:var(--ink);cursor:default">Build 61</a><span>Dark mode now covers the window contents, not just the menu bar and dock: cards, fields, tabs, lists and text all switch together. Diagrams and the CV keep their white paper so they stay readable and print correctly.</span></li><li><a style="color:var(--ink);cursor:default">Build 60</a><span>iOS mode on phones: a Home Screen with widgets, app icons on swipeable pages and a floating dock; apps open full screen with a Back to Home button, swipe from the left edge or up from the bottom to return, and pull down on the Home Screen for Search.</span></li><li><a style="color:var(--ink);cursor:default">Build 59</a><span>Finder: view as Icons, List (sortable by name, kind and location) or Columns with a live preview; a path bar at the bottom; a Get Info panel; right-click menus on files and on empty space; sidebar with Favorites and Folders and SF-style icons. The view you pick is remembered.</span></li>
     <li><a style="color:var(--ink);cursor:default">Build 58</a><span>System Settings app (Appearance with Light, Dark or Auto and seven accent colors, Wallpaper, Desktop and Dock, Sound, About). The Apple menu can Lock Screen, Restart and Shut Down. Stage Manager keeps the front window in the middle with the others on the left. Hold Alt and press the backtick key for a window switcher with icons. Optional hot corners and dock magnification switches.</span></li>
     <li><a style="color:var(--ink);cursor:default">Build 57</a><span>The windows now hold real macOS-style apps. About is a System Settings page with a sidebar (Profile, My story, Off duty) and grouped rows. Experience is a timeline with dated cards. Contact is a Contacts card with Email, GitHub and LinkedIn buttons. The CV opens like Preview, a paper page on a grey canvas, and still prints. The Monitor status is a pill with a colored dot.</span></li>
     <li><a style="color:var(--ink);cursor:default">Build 56</a><span>Mission Control (F3 or Ctrl Up) shows every open window as a grid; click one to bring it forward. Drag a window to the left or right edge to tile it, or to the top to zoom; Alt with the left or right arrow also tiles. Wallpaper picker with five wallpapers (right-click the desktop). Sound: a startup chime when you enter, a soft ping for notifications and a pop on close, with an on/off switch in Control Center. Click the clock for Notification Center with a calendar and recent notifications.</span></li>
@@ -5152,7 +5226,8 @@ $('yrs').textContent=Math.max(1,new Date().getFullYear()-2019)+'+';
   $('finder').addEventListener('click',e=>{const d=e.target.closest('[data-fd]');if(d&&!d.closest('#fndSide')){fdir=d.dataset.fd;drawFinder();return}const so=e.target.closest('[data-sort]');if(so){const k=so.dataset.sort;if(fsort===k)fasc=!fasc;else{fsort=k;fasc=true}drawFinder()}});
   $('fndQ').addEventListener('input',e=>{fq=e.target.value.toLowerCase().trim();drawFinder()});
   drawFinder();
-  $('dirGrid').innerHTML=real().slice(1).map(f=>`<button type="button" class="dircard" data-open="${f.id}"><b>${esc(f.n)}</b><span>${esc(f.d)}</span></button>`).join('');
+  $('dirGrid').innerHTML=real().slice(1).map(f=>`<button type="button" class="dircard" data-open="${f.id}"><i class="dc-ic" style="--g:${grad(f.id)}" aria-hidden="true">${glyph(f.id,f.ic,26)}</i><span class="dc-t"><b>${esc(f.n)}</b><em>${esc(f.d)}</em></span></button>`).join('');
+  {const hi=document.querySelector('#top .hero-in');if(hi&&!hi.querySelector('.wl-ic'))hi.insertAdjacentHTML('afterbegin',`<div class="wl-ic" style="--g:${grad('top')}" aria-hidden="true">${glyph('top','',48)}</div>`)}
   /* windows */
   const SIZES={finder:[800,540],contact:[880,660]};
   const clampWin=w=>{const vw=layer.clientWidth,vh=layer.clientHeight;let x=parseFloat(w.style.left)||0,y=parseFloat(w.style.top)||0;x=Math.max(-w.offsetWidth+90,Math.min(vw-90,x));y=Math.max(0,Math.min(vh-40,y));w.style.left=x+'px';w.style.top=y+'px'};
@@ -5331,7 +5406,7 @@ $('yrs').textContent=Math.max(1,new Date().getFullYear()-2019)+'+';
   const MENUS={
     app:()=>{const id=cur&&wins[cur]&&!wins[cur].classList.contains('min')?cur:'',n=appName();return id?[{t:'About '+n,fn:()=>toast(n+': '+byId(id).d)},{sep:1},{t:'Hide '+n,k:'Alt M',fn:()=>minimize(id)},{t:'Quit '+n,k:'Alt W',fn:()=>close(id)}]:[{t:'About Finder',fn:()=>toast('Finder: Browse every file by location.')},{sep:1},{t:'Open Finder',fn:()=>go('finder')},{t:'Show desktop',fn:()=>open.slice().forEach(minimize),dis:!open.length}]},
     cc:()=>{const B=window.__b56;return [{hd:'Control Center'},{t:'Mission Control',k:'F3',fn:()=>B&&B.mc.toggle(),dis:mobile()},{t:'Notification Center',fn:()=>B&&B.nc.toggle()},{t:'Wallpaper\u2026',fn:()=>B&&B.wall.open()},{t:'Sound: '+(B&&!B.snd.on()?'Off':'On'),fn:()=>B&&B.snd.toggle()},{t:'Appearance: '+(window.__b58?window.__b58.scheme.label():'Auto'),fn:()=>window.__b58&&window.__b58.scheme.cycle()},{t:'Stage Manager: '+(window.__b58&&window.__b58.stage.on?'On':'Off'),fn:()=>window.__b58&&window.__b58.stage.toggle(),dis:mobile()},{sep:1},{t:'Effects: '+($('fxBtn').textContent.replace('FX: ','')),fn:()=>$('fxBtn').click()},{t:term.classList.contains('on')?'Hide Terminal':'Show Terminal',k:'Ctrl `',fn:()=>setTerm(!term.classList.contains('on'))},{t:'Spotlight Search',k:'/',fn:()=>openPal()},{sep:1},{t:'Show desktop',fn:()=>open.slice().forEach(minimize),dis:!open.length},{t:'Close all windows',fn:()=>open.slice().forEach(close),dis:!open.length}]},
-    apple:()=>[{t:'About this portfolio',fn:()=>go('about')},{t:'Experience log',fn:()=>go('experience')},{t:'Skills matrix',fn:()=>go('skills')},{sep:1},{t:'Effects: '+($('fxBtn').textContent.replace('FX: ','')),fn:()=>$('fxBtn').click()},{t:'Terminal',k:'Ctrl `',fn:()=>setTerm(!term.classList.contains('on'))},{sep:1},{t:'Build 60',dis:1},{sep:1},{t:'System Settings\u2026',fn:()=>go('settings')},{sep:1},{t:'Lock Screen',fn:()=>lock()},{t:'Restart',fn:()=>reboot()},{t:'Shut Down',fn:()=>shutdown()}],
+    apple:()=>[{t:'About this portfolio',fn:()=>go('about')},{t:'Experience log',fn:()=>go('experience')},{t:'Skills matrix',fn:()=>go('skills')},{sep:1},{t:'Effects: '+($('fxBtn').textContent.replace('FX: ','')),fn:()=>$('fxBtn').click()},{t:'Terminal',k:'Ctrl `',fn:()=>setTerm(!term.classList.contains('on'))},{sep:1},{t:'Build 63',dis:1},{sep:1},{t:'System Settings\u2026',fn:()=>go('settings')},{sep:1},{t:'Lock Screen',fn:()=>lock()},{t:'Restart',fn:()=>reboot()},{t:'Shut Down',fn:()=>shutdown()}],
     file:()=>[{t:'Open Finder',ic:'⌘',fn:()=>go('finder')},{t:'Search files and commands',ic:'⌕',k:'Ctrl K',fn:()=>openPal()},{sep:1},{t:'Close window',k:'Alt W',fn:()=>cur&&close(cur),dis:!cur},{t:'Close all windows',fn:()=>open.slice().forEach(close),dis:!open.length}],
     go:()=>{const r=[];let d='\u0000';FILES.forEach(f=>{if(f.dir!==d){d=f.dir;r.push({hd:d||'home'})}r.push({t:f.n,ic:f.ic,fn:()=>go(f.id)})});return r},
     win:()=>{const r=[{t:'Minimize',k:'Alt M',fn:()=>cur&&minimize(cur),dis:!cur},{t:'Zoom',k:'Alt Z',fn:()=>cur&&zoom(cur),dis:!cur},{t:'Enter full screen',k:'Alt F',fn:()=>cur&&full(cur),dis:!cur},{t:'Tile window to left',k:'Alt \u2190',fn:()=>cur&&tile(cur,'l'),dis:!cur||mobile()},{t:'Tile window to right',k:'Alt \u2192',fn:()=>cur&&tile(cur,'r'),dis:!cur||mobile()},{t:'Mission Control',k:'F3',fn:()=>window.__b56&&window.__b56.mc.toggle(),dis:mobile()},{t:'Close window',k:'Alt W',fn:()=>cur&&close(cur),dis:!cur},{sep:1},{t:'Show desktop',fn:()=>open.slice().forEach(minimize),dis:!open.length},{t:'Bring all to front',fn:()=>open.slice().forEach(id=>{const w=wins[id];if(w&&w.classList.contains('min'))go(id,{keep:1})}),dis:!open.length},{t:'Close all windows',fn:()=>open.slice().forEach(close),dis:!open.length}];if(open.length){r.push({sep:1});open.slice().reverse().forEach(id=>r.push({t:byId(id).n,ic:id===cur?'\u2713':'',fn:()=>go(id,{keep:1})}))}return r},
@@ -8622,7 +8697,7 @@ void loop() {
     if(ic){e.preventDefault();const x=IC[+ic.dataset.ic];dt.querySelectorAll('.dt-i.sel').forEach(z=>z.classList.remove('sel'));ic.classList.add('sel');showCtx(e.clientX,e.clientY,[{t:'Open',fn:x.fn},{sep:1},{t:'Get Info',fn:()=>I.toast(x.n+': desktop shortcut')}]);return}
     e.preventDefault();
     const allOn=ORDER.every(k=>!hidden.includes(k));
-    showCtx(e.clientX,e.clientY,[{t:'New Folder',fn:()=>{extra++;IC.push({k:'n'+extra,n:'untitled folder'+(extra>1?' '+extra:''),svg:FOLD,fn:()=>I.toast('This folder is empty')});drawIc()}},{t:'Get Info',fn:()=>I.toast('Diyelo Dulay portfolio, Build 60')},{t:'Change Wallpaper\u2026',fn:()=>window.__b56&&window.__b56.wall.open()},{sep:1},{t:'Open Finder',fn:()=>I.go('finder')},{t:'Search',k:'Ctrl K',fn:()=>$('palBtn').click()},{sep:1},{t:allOn?'Hide Widgets':'Show Widgets',fn:()=>{hidden=allOn?ORDER.slice():[];save();drawWg()}}]);
+    showCtx(e.clientX,e.clientY,[{t:'New Folder',fn:()=>{extra++;IC.push({k:'n'+extra,n:'untitled folder'+(extra>1?' '+extra:''),svg:FOLD,fn:()=>I.toast('This folder is empty')});drawIc()}},{t:'Get Info',fn:()=>I.toast('Diyelo Dulay portfolio, Build 63')},{t:'Change Wallpaper\u2026',fn:()=>window.__b56&&window.__b56.wall.open()},{sep:1},{t:'Open Finder',fn:()=>I.go('finder')},{t:'Search',k:'Ctrl K',fn:()=>$('palBtn').click()},{sep:1},{t:allOn?'Hide Widgets':'Show Widgets',fn:()=>{hidden=allOn?ORDER.slice():[];save();drawWg()}}]);
   });
   /* status */
   const wifi=$('mbWifi');const net=()=>{if(wifi)wifi.classList.toggle('off',navigator.onLine===false)};addEventListener('online',net);addEventListener('offline',net);net();
