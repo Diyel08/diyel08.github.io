@@ -816,6 +816,68 @@ html[data-fx=light] .win{animation:none}
 .ide.has-fs .dock,.ide.has-fs .mbar{opacity:0;pointer-events:none}
 .ide.has-fs .desktop{z-index:400}
 .ide.has-fs .term{z-index:700}
+/* ===== Liquid Glass (macOS 26 Tahoe): clear glass, specular rims, capsule controls, concentric corners ===== */
+:root{--lg-rim:inset 0 1px 0 rgba(255,255,255,.8),inset 0 0 0 .75px rgba(255,255,255,.5),inset 0 -1px 0 rgba(0,0,0,.05);--lg-edge:0 0 0 .5px rgba(0,0,0,.1);
+ --g-menu:transparent;--g-dock:rgba(255,255,255,.26);--g-bar:rgba(246,247,251,.5);--g-barb:rgba(0,0,0,.07);--g-pop:rgba(248,249,252,.74);--g-body:rgba(251,251,253,.84);--g-hover:rgba(0,0,0,.07);
+ --g-shadow:0 0 0 .5px rgba(0,0,0,.1),0 34px 90px rgba(20,30,80,.30),0 10px 28px rgba(20,30,80,.14);--g-shadow-b:0 0 0 .5px rgba(0,0,0,.08),0 16px 44px rgba(20,30,80,.20)}
+@media(prefers-color-scheme:dark){:root{--lg-rim:inset 0 1px 0 rgba(255,255,255,.28),inset 0 0 0 .75px rgba(255,255,255,.16),inset 0 -1px 0 rgba(0,0,0,.3);--g-dock:rgba(255,255,255,.12);--g-bar:rgba(44,44,52,.52);--g-barb:rgba(255,255,255,.08);--g-pop:rgba(40,40,48,.74);--g-body:rgba(251,251,253,.88);--g-hover:rgba(255,255,255,.12);--g-shadow:0 0 0 .5px rgba(0,0,0,.6),0 34px 90px rgba(0,0,0,.6),0 10px 28px rgba(0,0,0,.4);--g-shadow-b:0 0 0 .5px rgba(0,0,0,.6),0 16px 44px rgba(0,0,0,.5)}}
+.wall:after{opacity:.1}
+/* transparent menu bar */
+.mbar{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;height:30px;font-weight:600;text-shadow:0 0 10px rgba(255,255,255,.55)}
+@media(prefers-color-scheme:dark){.mbar{text-shadow:0 0 10px rgba(0,0,0,.5)}}
+.mb-i{border-radius:999px;padding:2px 11px}
+.mb-i:hover,.mb-i[aria-expanded=true]{background:rgba(255,255,255,.35);box-shadow:var(--lg-rim)}
+.desktop{top:30px}
+.mb-menu{top:34px;border-radius:18px;padding:7px;background:var(--g-pop);-webkit-backdrop-filter:blur(34px) saturate(2);backdrop-filter:blur(34px) saturate(2);box-shadow:var(--lg-edge),var(--lg-rim),0 22px 60px rgba(20,30,80,.32)}
+.mb-menu button{border-radius:10px;padding:5px 12px}
+.mb-menu button:hover:not(:disabled){background:#0a7aff;color:#fff}
+.mb-menu .sep{margin:6px 10px}
+/* windows */
+.win{border-radius:26px;background:var(--g-bar);-webkit-backdrop-filter:blur(44px) saturate(2);backdrop-filter:blur(44px) saturate(2)}
+.win:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:4;background:linear-gradient(135deg,rgba(255,255,255,.34) 0,rgba(255,255,255,0) 28%)}
+.win:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:5;box-shadow:var(--lg-rim)}
+.win-bar{height:48px;padding:0 20px;gap:14px;border-bottom:0;background:transparent}
+.lights{gap:9px;width:60px}.lights button{width:13px;height:13px}
+.win-title{font-weight:600;margin-right:60px}
+.win-body{margin:0 8px 8px;border-radius:18px;background-color:var(--g-body);box-shadow:0 0 0 .5px rgba(0,0,0,.08),0 1px 3px rgba(20,30,80,.08)}
+.win.max,.win.fs{border-radius:0}.win.max{border-radius:0}
+.win.fs .win-body{margin:0;border-radius:0}
+.win-rs{right:4px;bottom:4px}
+.term{border-radius:22px;background:rgba(20,22,28,.62);-webkit-backdrop-filter:blur(40px) saturate(1.9);backdrop-filter:blur(40px) saturate(1.9);box-shadow:var(--lg-edge),var(--lg-rim),0 30px 70px rgba(0,0,0,.45)}
+.term-bar{background:transparent;height:38px;padding:0 16px}
+/* dock */
+.dock{padding:8px 10px;border-radius:32px;background:var(--g-dock);-webkit-backdrop-filter:blur(26px) saturate(2.1);backdrop-filter:blur(26px) saturate(2.1);box-shadow:var(--lg-edge),var(--lg-rim),0 16px 44px rgba(20,30,80,.30)}
+.dock:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0) 55%)}
+.dock-in{position:relative;gap:8px}
+.dk,.fnd-t .ico{border-radius:24%;background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,0) 52%),var(--g,linear-gradient(145deg,#6b7a86,#2f3a42));box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 0 0 .75px rgba(255,255,255,.28),inset 0 -2px 4px rgba(0,0,0,.14),0 5px 12px rgba(20,30,80,.30)}
+.dk{width:54px;height:54px}
+.dk:before{border-radius:999px;padding:4px 12px;background:var(--g-pop);box-shadow:var(--lg-edge),var(--lg-rim),0 8px 22px rgba(20,30,80,.25)}
+.dk-sep{background:rgba(0,0,0,.16);width:1px}
+/* spotlight */
+.pal-box{border-radius:28px;background:var(--g-pop);-webkit-backdrop-filter:blur(40px) saturate(2.1);backdrop-filter:blur(40px) saturate(2.1);box-shadow:var(--lg-edge),var(--lg-rim),0 40px 90px rgba(20,30,80,.40)}
+.pal-list button{border-radius:12px}
+/* finder */
+.fnd-side{margin:8px 0 8px 8px;border:0;border-radius:18px;background:rgba(255,255,255,.55);box-shadow:var(--lg-edge),var(--lg-rim)}
+.fnd-side button{border-radius:10px}.fnd-side button.on{background:rgba(10,122,255,.16);color:#0a5fd0}
+.fnd-bar{border-bottom:0}.fnd-bar input{border:0;border-radius:999px;background:rgba(255,255,255,.8);box-shadow:var(--lg-edge),var(--lg-rim);padding:6px 14px}
+.fnd-t{border-radius:16px}.fnd-t:hover,.fnd-t:focus-visible{background:rgba(10,122,255,.12)}
+.fnd-t .ico{width:58px;height:58px}
+/* content: capsule controls, glass cards */
+.win-body{--radius:14px}
+.win-body .panel{border-radius:24px;background:rgba(255,255,255,.66);-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);box-shadow:var(--lg-edge),var(--lg-rim),0 6px 20px rgba(20,30,80,.08)}
+.win-body .panel-body{padding:20px}
+.win-body .hero{border-radius:28px;box-shadow:var(--lg-edge),inset 0 1px 0 rgba(255,255,255,.18),0 18px 44px rgba(20,30,80,.28)}
+.win-body button:not(.l-c):not(.l-m):not(.l-z):not(.dk),.win-body .btn{border-radius:999px}
+.win-body .btn{padding:9px 20px;background:linear-gradient(180deg,#43a0ff,#0a6cf0);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 0 .5px rgba(0,60,160,.5),0 3px 8px rgba(10,108,240,.35)}
+.win-body .btn:hover{background:linear-gradient(180deg,#52a9ff,#1673f5)}
+.win-body .btn.red{background:linear-gradient(180deg,#43a0ff,#0a6cf0)}
+.win-body .btn.ghost{background:rgba(255,255,255,.7);box-shadow:var(--lg-edge),var(--lg-rim)}
+.hero .btn.ghost{background:rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 0 0 .5px rgba(255,255,255,.3)}
+.win-body :is(.sch-tabs,.sol-seg,[role=tablist]) button,.win-body .sol-seg button,.win-body .sch-tabs button{background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:var(--lg-edge),var(--lg-rim);padding:7px 14px}
+.win-body :is(.sch-tabs,.sol-seg,[role=tablist]) button:is(.on,[aria-selected=true],[aria-pressed=true]){background:linear-gradient(180deg,#43a0ff,#0a6cf0);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 0 .5px rgba(0,60,160,.5),0 3px 8px rgba(10,108,240,.35)}
+.win-body .input,.win-body select,.win-body input:not([type=range]):not([type=checkbox]):not([type=radio]),.win-body textarea{border-radius:12px;background:rgba(255,255,255,.85);box-shadow:var(--lg-edge),inset 0 1px 2px rgba(0,0,0,.06)}
+.win-body .empty{border-radius:16px}
+@media(max-width:900px){.win{border-radius:0}.win-body{margin:0;border-radius:0}.win:before,.win:after{display:none}.dock{border-radius:26px}}
 /* 2D motion */
 svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
@@ -855,7 +917,7 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
     <button class="mb-i opt" type="button" data-menu="help" aria-haspopup="true" aria-expanded="false">Help</button>
   </div>
   <div class="mb-r">
-    <span class="mb-i mb-copy opt">&copy;&nbsp;<span id="yr">2026</span>&nbsp;Diyelo Dulay &middot; Build 51</span>
+    <span class="mb-i mb-copy opt">&copy;&nbsp;<span id="yr">2026</span>&nbsp;Diyelo Dulay &middot; Build 52</span>
     <button class="mb-i" id="fxBtn" type="button" aria-live="polite">FX: AUTO</button>
     <button class="mb-i" id="termBtn" type="button" aria-label="Terminal">&gt;_</button>
     <button class="mb-i" id="palBtn" type="button" aria-label="Search">&#8981;</button>
@@ -4373,7 +4435,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
   <div class="wrap">
     <div class="sec-head"><div class="k">Version notes</div><h2>Changelog</h2></div>
     <p class="mono-note" style="margin:0 0 12px">What changed in each build of this portfolio, newest first.</p>
-    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 51</a><span>Home: new headline and a personal intro. 2D drawings now update in place and glide between states. San Francisco system fonts (SF Pro, SF Mono) and SF Symbols-style icons on rounded-square tiles.</span></li><li><a style="color:var(--ink);cursor:default">Build 50</a><span>macOS-style desktop: wallpaper, menu bar, dock, frosted windows, Finder and Spotlight search. Chrome follows the system light or dark setting.</span></li><li><a style="color:var(--ink);cursor:default">Build 49</a><span>monitor.lab: DIY solar monitoring experiment. Live dashboard on the Assemble system, sensor map, shunt, CT and divider calculators, Modbus map, MQTT topics and firmware outline.</span></li><li><a style="color:var(--ink);cursor:default">Build 48</a><span>solar.guide: Assemble tab. Place panels, batteries, inverters and real loads (fridge, fan, induction cooker, e-vehicle, pump) on a canvas, wire them, and run the day.</span></li><li><a style="color:var(--ink);cursor:default">Build 47</a><span>solar.guide: Quick design (the step-by-step builder). Panels, strings, inverter, battery and loads, then run a 24-hour day with live design checks.</span></li><li><a style="color:var(--ink);cursor:default">Build 46</a><span>About: off_duty.txt with hobbies and personality.</span></li><li><a style="color:var(--ink);cursor:default">Build 45</a><span>Experience log: company context for ATEC, Beauchem Thermtech and Advanced Energy. ETEEAP at MSEUF marked as planned.</span></li><li><a style="color:var(--ink);cursor:default">Build 44</a><span>Accessibility pass: heading order, labels on selects, button contrast, correct roles. Playground and tools split.</span></li><li><a style="color:var(--ink);cursor:default">Build 36</a><span>Favicon, share preview, installable manifest, printable CV.</span></li><li><a style="color:var(--ink);cursor:default">Build 35</a><span>Guides: formula sheet, bench how-to, failure-mode atlas, links.</span></li><li><a style="color:var(--ink);cursor:default">Build 34</a><span>Bench notes in drawing.cad. Module cards for the analog and audio labs.</span></li><li><a style="color:var(--ink);cursor:default">Build 33</a><span>Metric thread table and shop notes (drawing.cad).</span></li><li><a style="color:var(--ink);cursor:default">Build 32</a><span>Class A, AB, D amplifiers and a split-rail linear supply in schematics.sim.</span></li><li><a style="color:var(--ink);cursor:default">Build 31</a><span>audio.lab: amp and speaker maths, amplifier classes, supply, digital audio, crossover, room modes.</span></li><li><a style="color:var(--ink);cursor:default">Build 30</a><span>Skill levels and project statuses updated. Toys moved to playground/.</span></li><li><a style="color:var(--ink);cursor:default">Build 29</a><span>analog.lab: op-amp gain, filters, ADC, thermistor, 4-20 mA.</span></li><li><a style="color:var(--ink);cursor:default">Build 28</a><span>solar.guide: payback, battery sizing, flow diagram.</span></li><li><a style="color:var(--ink);cursor:default">Build 27</a><span>Twelve power schematics, breadboard scope.</span></li><li><a style="color:var(--ink);cursor:default">Build 26</a><span>Wiring diagrams: breaker and wire sizing, single-line.</span></li><li><a style="color:var(--ink);cursor:default">Build 25</a><span>drawing.cad: caliper, micrometer, isometric, fits.</span></li><li><a style="color:var(--ink);cursor:default">Build 24</a><span>motor.ctl: DOL, forward and reverse, star-delta.</span></li><li><a style="color:var(--ink);cursor:default">Build 23</a><span>IDE workspace shell.</span></li></ul></div></div>
+    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 52</a><span>Liquid Glass look (macOS 26 Tahoe): transparent menu bar, floating glass dock and windows, capsule controls, specular edges. Real macOS traffic-light buttons, full screen and window shortcuts.</span></li><li><a style="color:var(--ink);cursor:default">Build 51</a><span>Home: new headline and a personal intro. 2D drawings now update in place and glide between states. San Francisco system fonts (SF Pro, SF Mono) and SF Symbols-style icons on rounded-square tiles.</span></li><li><a style="color:var(--ink);cursor:default">Build 50</a><span>macOS-style desktop: wallpaper, menu bar, dock, frosted windows, Finder and Spotlight search. Chrome follows the system light or dark setting.</span></li><li><a style="color:var(--ink);cursor:default">Build 49</a><span>monitor.lab: DIY solar monitoring experiment. Live dashboard on the Assemble system, sensor map, shunt, CT and divider calculators, Modbus map, MQTT topics and firmware outline.</span></li><li><a style="color:var(--ink);cursor:default">Build 48</a><span>solar.guide: Assemble tab. Place panels, batteries, inverters and real loads (fridge, fan, induction cooker, e-vehicle, pump) on a canvas, wire them, and run the day.</span></li><li><a style="color:var(--ink);cursor:default">Build 47</a><span>solar.guide: Quick design (the step-by-step builder). Panels, strings, inverter, battery and loads, then run a 24-hour day with live design checks.</span></li><li><a style="color:var(--ink);cursor:default">Build 46</a><span>About: off_duty.txt with hobbies and personality.</span></li><li><a style="color:var(--ink);cursor:default">Build 45</a><span>Experience log: company context for ATEC, Beauchem Thermtech and Advanced Energy. ETEEAP at MSEUF marked as planned.</span></li><li><a style="color:var(--ink);cursor:default">Build 44</a><span>Accessibility pass: heading order, labels on selects, button contrast, correct roles. Playground and tools split.</span></li><li><a style="color:var(--ink);cursor:default">Build 36</a><span>Favicon, share preview, installable manifest, printable CV.</span></li><li><a style="color:var(--ink);cursor:default">Build 35</a><span>Guides: formula sheet, bench how-to, failure-mode atlas, links.</span></li><li><a style="color:var(--ink);cursor:default">Build 34</a><span>Bench notes in drawing.cad. Module cards for the analog and audio labs.</span></li><li><a style="color:var(--ink);cursor:default">Build 33</a><span>Metric thread table and shop notes (drawing.cad).</span></li><li><a style="color:var(--ink);cursor:default">Build 32</a><span>Class A, AB, D amplifiers and a split-rail linear supply in schematics.sim.</span></li><li><a style="color:var(--ink);cursor:default">Build 31</a><span>audio.lab: amp and speaker maths, amplifier classes, supply, digital audio, crossover, room modes.</span></li><li><a style="color:var(--ink);cursor:default">Build 30</a><span>Skill levels and project statuses updated. Toys moved to playground/.</span></li><li><a style="color:var(--ink);cursor:default">Build 29</a><span>analog.lab: op-amp gain, filters, ADC, thermistor, 4-20 mA.</span></li><li><a style="color:var(--ink);cursor:default">Build 28</a><span>solar.guide: payback, battery sizing, flow diagram.</span></li><li><a style="color:var(--ink);cursor:default">Build 27</a><span>Twelve power schematics, breadboard scope.</span></li><li><a style="color:var(--ink);cursor:default">Build 26</a><span>Wiring diagrams: breaker and wire sizing, single-line.</span></li><li><a style="color:var(--ink);cursor:default">Build 25</a><span>drawing.cad: caliper, micrometer, isometric, fits.</span></li><li><a style="color:var(--ink);cursor:default">Build 24</a><span>motor.ctl: DOL, forward and reverse, star-delta.</span></li><li><a style="color:var(--ink);cursor:default">Build 23</a><span>IDE workspace shell.</span></li></ul></div></div>
   </div>
 </section>
 
@@ -4698,7 +4760,7 @@ $('yrs').textContent=Math.max(1,new Date().getFullYear()-2019)+'+';
   /* menu bar */
   let menuK='';
   const MENUS={
-    app:()=>[{t:'About this portfolio',ic:'ℹ',fn:()=>go('about')},{t:'Experience log',ic:'⑂',fn:()=>go('experience')},{t:'Skills matrix',ic:'#',fn:()=>go('skills')},{sep:1},{t:'Effects: '+($('fxBtn').textContent.replace('FX: ','')),ic:'✨',fn:()=>$('fxBtn').click()},{t:'Terminal',ic:'>',k:'Ctrl `',fn:()=>setTerm(!term.classList.contains('on'))},{sep:1},{t:'Build 51',dis:1}],
+    app:()=>[{t:'About this portfolio',ic:'ℹ',fn:()=>go('about')},{t:'Experience log',ic:'⑂',fn:()=>go('experience')},{t:'Skills matrix',ic:'#',fn:()=>go('skills')},{sep:1},{t:'Effects: '+($('fxBtn').textContent.replace('FX: ','')),ic:'✨',fn:()=>$('fxBtn').click()},{t:'Terminal',ic:'>',k:'Ctrl `',fn:()=>setTerm(!term.classList.contains('on'))},{sep:1},{t:'Build 52',dis:1}],
     file:()=>[{t:'Open Finder',ic:'⌘',fn:()=>go('finder')},{t:'Search files and commands',ic:'⌕',k:'Ctrl K',fn:()=>openPal()},{sep:1},{t:'Close window',k:'Alt W',fn:()=>cur&&close(cur),dis:!cur},{t:'Close all windows',fn:()=>open.slice().forEach(close),dis:!open.length}],
     go:()=>{const r=[];let d='\u0000';FILES.forEach(f=>{if(f.dir!==d){d=f.dir;r.push({hd:d||'home'})}r.push({t:f.n,ic:f.ic,fn:()=>go(f.id)})});return r},
     win:()=>{const r=[{t:'Minimize',k:'Alt M',fn:()=>cur&&minimize(cur),dis:!cur},{t:'Zoom',k:'Alt Z',fn:()=>cur&&zoom(cur),dis:!cur},{t:'Enter full screen',k:'Alt F',fn:()=>cur&&full(cur),dis:!cur},{t:'Close window',k:'Alt W',fn:()=>cur&&close(cur),dis:!cur},{sep:1},{t:'Show desktop',fn:()=>open.slice().forEach(minimize),dis:!open.length},{t:'Bring all to front',fn:()=>open.slice().forEach(id=>{const w=wins[id];if(w&&w.classList.contains('min'))go(id,{keep:1})}),dis:!open.length},{t:'Close all windows',fn:()=>open.slice().forEach(close),dis:!open.length}];if(open.length){r.push({sep:1});open.slice().reverse().forEach(id=>r.push({t:byId(id).n,ic:id===cur?'\u2713':'',fn:()=>go(id,{keep:1})}))}return r},
