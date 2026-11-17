@@ -600,7 +600,10 @@ html:not([data-fx=light]) #solSvg .e1{animation:schflow .8s linear infinite}
 .sol-chk li.done label{background:#EAF6EF;text-decoration:line-through;color:var(--muted)}
 .sol-chk h4{font:700 11px var(--mono);letter-spacing:1.4px;text-transform:uppercase;color:var(--red-dark);margin:16px 0 4px}
 .sol-bar{height:8px;background:var(--line);margin:8px 0 4px}.sol-bar i{display:block;height:100%;background:var(--ok);width:0}
-.sol-ok{color:var(--ok);font-weight:700}.sol-no{color:#B3261E;font-weight:700}
+.mon-top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}.mon-st{font:700 13px var(--mono);letter-spacing:1px;padding:10px 14px;border:2px solid var(--ink);background:#fff}.mon-st.ok{border-color:var(--ok);color:var(--ok)}.mon-st.warn{border-color:#B7791F;color:#8A5A12}.mon-st.bad{border-color:#B3261E;color:#B3261E}.mon-st.info{border-color:var(--navy);color:var(--navy)}
+.mon-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:10px 0}.mon-t{background:#fff;border:1px solid var(--line);border-left:4px solid var(--ink);padding:10px 12px;min-width:0}.mon-t small{display:block;font:700 10px var(--mono);letter-spacing:1px;text-transform:uppercase;color:var(--muted)}.mon-t b{display:block;font:700 26px/1.1 var(--display);margin:2px 0}.mon-t span{font:11px var(--mono);color:var(--muted)}.mon-t.pv{border-left-color:#E8590C}.mon-t.bt{border-left-color:#2F8F5B}.mon-t.gr{border-left-color:#1F5FAE}.mon-t.warn{border-left-color:#B7791F}.mon-t.ok{border-left-color:var(--ok)}
+.mon-h{margin:18px 0 6px;font:700 11px var(--mono);letter-spacing:1.2px;text-transform:uppercase}.mon-bar{display:grid;grid-template-columns:150px minmax(0,1fr) 70px;gap:8px;align-items:center;font-size:13px;padding:3px 0}.mon-bar i{display:block;height:10px;background:var(--red);min-width:2px}.mon-bar b{text-align:right;font:12px var(--mono)}@media(max-width:520px){.mon-bar{grid-template-columns:110px minmax(0,1fr) 60px}}
+.asm-grp{margin-bottom:8px}.asm-grp small{display:block;font:700 10px var(--mono);letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}.asm-on{display:flex;gap:6px;align-items:center;margin:8px 0;font-size:13.5px}.asm-f{stroke-dasharray:3 10;animation:asmd .8s linear infinite}@keyframes asmd{to{stroke-dashoffset:-13}}@media(prefers-reduced-motion:reduce){.asm-f{animation:none}}.sol-vbl{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px 12px}.sol-vbl label{font-size:13.5px;display:flex;gap:6px;align-items:baseline;flex-wrap:wrap}.sol-vbl span{color:var(--muted);font:11px var(--mono)}.sol-ck{list-style:none;margin:0 0 8px;padding:0}.sol-ck li{padding:6px 0;border-bottom:1px solid var(--line);font-size:13.5px}.vb-steps button{flex:1 1 auto}.sol-seg button:disabled{opacity:.4;cursor:default}.sol-ok{color:var(--ok);font-weight:700}.sol-no{color:#B3261E;font-weight:700}
 @media(max-width:900px){.sol-flow{grid-template-columns:1fr}}
 /* ---- motor control ---- */
 .mot-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:14px;align-items:start}
@@ -870,6 +873,14 @@ html:not([data-fx=light]) #solSvg .e1{animation:schflow .8s linear infinite}
     <div class="sec-head"><div class="k">Solar setup guide</div><h2>Solar</h2></div>
     <p class="mono-note" style="margin:0 0 12px">ON-GRID, OFF-GRID AND HYBRID: HOW THE ENERGY FLOWS, HOW TO SIZE A SYSTEM, HOW TO CHECK A PANEL STRING, AND THE ORDER TO INSTALL IT. LEARNING NOTES, NOT A DESIGN. A LICENSED PROFESSIONAL MUST SIGN OFF A REAL INSTALLATION.</p>
     <div class="panel"><div class="panel-body"><div id="solRoot"></div></div></div>
+  </div>
+</section>
+
+<section class="view" id="monitor" data-title="monitor.lab">
+  <div class="wrap">
+    <div class="sec-head"><div class="k">Experiment</div><h2>Monitor</h2></div>
+    <p class="mono-note" style="margin:0 0 12px">A DIY MONITORING SYSTEM FOR ANY SOLAR SETUP, BRANDED OR NOT. SENSE THE INPUT AND OUTPUT OF EVERY DEVICE, SEE HARVEST, CONSUMPTION AND BATTERY, AND KNOW WHEN THE LINE MUST BACK THE SYSTEM UP. THE DASHBOARD RUNS ON THE SYSTEM YOU BUILT IN SOLAR / ASSEMBLE. SIMULATED READINGS, WITH THE HARDWARE DESIGN FOR A REAL BUILD. MAINS AND BATTERY WIRING MUST BE DONE BY A LICENSED ELECTRICIAN.</p>
+    <div class="panel"><div class="panel-body"><div id="monRoot"></div></div></div>
   </div>
 </section>
 
@@ -4185,7 +4196,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
   <div class="wrap">
     <div class="sec-head"><div class="k">Version notes</div><h2>Changelog</h2></div>
     <p class="mono-note" style="margin:0 0 12px">WHAT CHANGED IN EACH BUILD OF THIS PORTFOLIO, NEWEST FIRST.</p>
-    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 46</a><span>About: off_duty.txt with hobbies and personality.</span></li><li><a style="color:var(--ink);cursor:default">Build 45</a><span>Experience log: company context for ATEC, Beauchem Thermtech and Advanced Energy. ETEEAP at MSEUF marked as planned.</span></li><li><a style="color:var(--ink);cursor:default">Build 44</a><span>Accessibility pass: heading order, labels on selects, button contrast, correct roles. Playground and tools split.</span></li><li><a style="color:var(--ink);cursor:default">Build 36</a><span>Favicon, share preview, installable manifest, printable CV.</span></li><li><a style="color:var(--ink);cursor:default">Build 35</a><span>Guides: formula sheet, bench how-to, failure-mode atlas, links.</span></li><li><a style="color:var(--ink);cursor:default">Build 34</a><span>Bench notes in drawing.cad. Module cards for the analog and audio labs.</span></li><li><a style="color:var(--ink);cursor:default">Build 33</a><span>Metric thread table and shop notes (drawing.cad).</span></li><li><a style="color:var(--ink);cursor:default">Build 32</a><span>Class A, AB, D amplifiers and a split-rail linear supply in schematics.sim.</span></li><li><a style="color:var(--ink);cursor:default">Build 31</a><span>audio.lab: amp and speaker maths, amplifier classes, supply, digital audio, crossover, room modes.</span></li><li><a style="color:var(--ink);cursor:default">Build 30</a><span>Skill levels and project statuses updated. Toys moved to playground/.</span></li><li><a style="color:var(--ink);cursor:default">Build 29</a><span>analog.lab: op-amp gain, filters, ADC, thermistor, 4-20 mA.</span></li><li><a style="color:var(--ink);cursor:default">Build 28</a><span>solar.guide: payback, battery sizing, flow diagram.</span></li><li><a style="color:var(--ink);cursor:default">Build 27</a><span>Twelve power schematics, breadboard scope.</span></li><li><a style="color:var(--ink);cursor:default">Build 26</a><span>Wiring diagrams: breaker and wire sizing, single-line.</span></li><li><a style="color:var(--ink);cursor:default">Build 25</a><span>drawing.cad: caliper, micrometer, isometric, fits.</span></li><li><a style="color:var(--ink);cursor:default">Build 24</a><span>motor.ctl: DOL, forward and reverse, star-delta.</span></li><li><a style="color:var(--ink);cursor:default">Build 23</a><span>IDE workspace shell.</span></li></ul></div></div>
+    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 49</a><span>monitor.lab: DIY solar monitoring experiment. Live dashboard on the Assemble system, sensor map, shunt, CT and divider calculators, Modbus map, MQTT topics and firmware outline.</span></li><li><a style="color:var(--ink);cursor:default">Build 48</a><span>solar.guide: Assemble tab. Place panels, batteries, inverters and real loads (fridge, fan, induction cooker, e-vehicle, pump) on a canvas, wire them, and run the day.</span></li><li><a style="color:var(--ink);cursor:default">Build 47</a><span>solar.guide: Quick design (the step-by-step builder). Panels, strings, inverter, battery and loads, then run a 24-hour day with live design checks.</span></li><li><a style="color:var(--ink);cursor:default">Build 46</a><span>About: off_duty.txt with hobbies and personality.</span></li><li><a style="color:var(--ink);cursor:default">Build 45</a><span>Experience log: company context for ATEC, Beauchem Thermtech and Advanced Energy. ETEEAP at MSEUF marked as planned.</span></li><li><a style="color:var(--ink);cursor:default">Build 44</a><span>Accessibility pass: heading order, labels on selects, button contrast, correct roles. Playground and tools split.</span></li><li><a style="color:var(--ink);cursor:default">Build 36</a><span>Favicon, share preview, installable manifest, printable CV.</span></li><li><a style="color:var(--ink);cursor:default">Build 35</a><span>Guides: formula sheet, bench how-to, failure-mode atlas, links.</span></li><li><a style="color:var(--ink);cursor:default">Build 34</a><span>Bench notes in drawing.cad. Module cards for the analog and audio labs.</span></li><li><a style="color:var(--ink);cursor:default">Build 33</a><span>Metric thread table and shop notes (drawing.cad).</span></li><li><a style="color:var(--ink);cursor:default">Build 32</a><span>Class A, AB, D amplifiers and a split-rail linear supply in schematics.sim.</span></li><li><a style="color:var(--ink);cursor:default">Build 31</a><span>audio.lab: amp and speaker maths, amplifier classes, supply, digital audio, crossover, room modes.</span></li><li><a style="color:var(--ink);cursor:default">Build 30</a><span>Skill levels and project statuses updated. Toys moved to playground/.</span></li><li><a style="color:var(--ink);cursor:default">Build 29</a><span>analog.lab: op-amp gain, filters, ADC, thermistor, 4-20 mA.</span></li><li><a style="color:var(--ink);cursor:default">Build 28</a><span>solar.guide: payback, battery sizing, flow diagram.</span></li><li><a style="color:var(--ink);cursor:default">Build 27</a><span>Twelve power schematics, breadboard scope.</span></li><li><a style="color:var(--ink);cursor:default">Build 26</a><span>Wiring diagrams: breaker and wire sizing, single-line.</span></li><li><a style="color:var(--ink);cursor:default">Build 25</a><span>drawing.cad: caliper, micrometer, isometric, fits.</span></li><li><a style="color:var(--ink);cursor:default">Build 24</a><span>motor.ctl: DOL, forward and reverse, star-delta.</span></li><li><a style="color:var(--ink);cursor:default">Build 23</a><span>IDE workspace shell.</span></li></ul></div></div>
   </div>
 </section>
 
@@ -4214,7 +4225,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
 <section class="term" id="term" aria-label="Terminal"><div class="term-log" id="termLog"></div><label class="term-in"><span>diyelo@bench:~$</span><input id="termIn" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command"></label></section>
 
 <!-- ========== STATUS BAR ========== -->
-<footer class="status"><span class="branch">&#9095; main</span><span class="errs">0 errors</span><span class="hint">Ctrl K search</span><span class="sp"></span><button id="termBtn" type="button">&gt;_ Terminal</button><button class="fx-btn" id="fxBtn" type="button" aria-live="polite">FX: AUTO</button><span class="copy">&copy;&nbsp;<span id="yr">2026</span>&nbsp;Diyelo Dulay</span><span class="copy">Build 46</span></footer>
+<footer class="status"><span class="branch">&#9095; main</span><span class="errs">0 errors</span><span class="hint">Ctrl K search</span><span class="sp"></span><button id="termBtn" type="button">&gt;_ Terminal</button><button class="fx-btn" id="fxBtn" type="button" aria-live="polite">FX: AUTO</button><span class="copy">&copy;&nbsp;<span id="yr">2026</span>&nbsp;Diyelo Dulay</span><span class="copy">Build 49</span></footer>
 </div>
 
 <!-- ========== COMMAND PALETTE ========== -->
@@ -4258,9 +4269,10 @@ const FILES=[
  {id:'bench',n:'bench.run',ic:'▶',dir:'lab/',cmd:'./bench.run --example',d:'A generic troubleshooting case with test points and a scope.'},
  {id:'breadboard',n:'breadboard.sim',ic:'\u2593',dir:'lab/',cmd:'./breadboard.sim',d:'Virtual breadboard with capacitors, inductors, AC, transistors, a pot and a scope.'},
  {id:'drawing',n:'drawing.cad',ic:'\u25B1',dir:'lab/',cmd:'./drawing.cad',d:'Caliper and micrometer practice, isometric with views, limits and fits, mm/inch.'},
+ {id:'monitor',n:'monitor.lab',ic:'\u25C9',dir:'lab/',cmd:'./monitor.lab',d:'DIY solar monitoring: live dashboard on your Assemble system, sensor map, shunt and CT calculators, Modbus map and firmware outline.'},
  {id:'motor',n:'motor.ctl',ic:'\u21BB',dir:'lab/',cmd:'./motor.ctl --sim',d:'DOL, forward/reverse and star-delta with a live ladder and power circuit.'},
  {id:'schematics',n:'schematics.sim',ic:'⎓',dir:'lab/',cmd:'./schematics.sim',d:'Sixteen power circuits from half bridge to flyback, PFC, 3-phase inverter, gate driver, snubber, class A, AB and D amplifiers and a linear supply.'},
- {id:'solar',n:'solar.guide',ic:'\u2600',dir:'lab/',cmd:'cat solar.guide',d:'On-grid, off-grid and hybrid: energy flow, sizing, string check, payback, battery tools and install order.'},
+ {id:'solar',n:'solar.guide',ic:'\u2600',dir:'lab/',cmd:'cat solar.guide',d:'Assemble a solar system from real parts and run a 24-hour day, plus on-grid, off-grid and hybrid flow, sizing, string check, payback, battery tools and install order.'},
  {id:'wiring',n:'wiring.dwg',ic:'\u2301',dir:'lab/',cmd:'./wiring.dwg --sim',d:'One-way, two-way and intermediate lighting circuits you can switch.'},
  {id:'contact',n:'contact.sh',ic:'@',dir:'work/',cmd:'./contact.sh',d:'Email, phone, address and map.'},
  {id:'guides',n:'guides.md',ic:'\u00a7',dir:'work/',cmd:'cat guides.md',d:'Formula sheet, bench how-to for meter, scope and soldering, a generic failure-mode atlas and a link list.'},
@@ -5832,7 +5844,7 @@ renderQuiz();
     watch:['Costs more than grid-tie','Export still needs the utility approval','The battery adds a cost and a safety responsibility'],
     parts:[['Hybrid inverter','Check the PV input voltage range, battery voltage and the backup output rating.'],['Battery','Make sure it is on the inverter approved list or has a compatible BMS link.'],['Backup loads','Put critical circuits on the backup output so the battery is not drained by big loads.'],['Net meter','Only if you export. Rules depend on the utility.']]}
   };
-  let mode='ongrid',scn='day',tab='types';
+  let mode='ongrid',scn='day',tab='asm';
   const W=112,H=48;
   const port=(b,s,f)=>{const x=b[0],y=b[1];return s==='r'?[x+W,y+H*f]:s==='l'?[x,y+H*f]:s==='t'?[x+W*f,y]:[x+W*f,y+H]};
   function route(p1,s1,p2,s2){
@@ -5933,11 +5945,426 @@ renderQuiz();
     let total=0,done=0;const h=CHK.map((g,gi)=>`<h4>${esc(g[0])}</h4><ul class="sol-chk">${g[1].map((t,i)=>{const k=gi+'.'+i;total++;const d=!!chk[k];if(d)done++;return `<li class="${d?'done':''}"><label><input type="checkbox" data-k="${k}"${d?' checked':''}>${esc(t)}</label></li>`}).join('')}</ul>`).join('');
     return `<div class="sol-bar"><i style="width:${Math.round(done/total*100)}%"></i></div><div class="bc-note" style="margin:0 0 4px">${done} of ${total} steps done. Saved on this device.</div>${h}<div class="sol-info" style="margin-top:16px"><b>Safety</b><p>DC from panels is live whenever there is light and cannot be switched off at the panel. Batteries can deliver very high current. This guide is for learning; a real system needs a licensed professional, the local electrical code and the utility rules.</p></div>`;
   }
+  /* ---------- virtual build: place parts step by step, then run a 24-hour day ---------- */
+  const VB_PANELS={400:{wp:400,voc:41.3,vmp:34.5,isc:12.3},550:{wp:550,voc:49.5,vmp:41.5,isc:13.9},600:{wp:600,voc:52.0,vmp:43.5,isc:14.5}};
+  const VB_INV=[1000,2000,3000,5000,8000];
+  const VB_LOADS=[['LED lights',60,18,23,1],['Fridge',90,0,24,1],['TV',80,18,22,1],['Wi-Fi router',12,0,24,1],['Laptop',60,8,17,1],['Electric fan',55,12,17,0],['Water pump',400,6,7,0],['Air conditioner',900,20,24,0],['Rice cooker',600,11,12,0]];
+  const VB_STEPS=['System type','Panels','Strings','Inverter','Battery','Loads','Run the day'];
+  let vb=Object.assign({type:'hybrid',step:1,panel:550,n:6,ns:3,inv:3000,ctl:60,bv:48,chem:'lfp',ah:200,cloud:0,hour:12,on:VB_LOADS.map(l=>l[4])},store('dc_sol_build',{}));
+  if(!Array.isArray(vb.on)||vb.on.length!==VB_LOADS.length)vb.on=VB_LOADS.map(l=>l[4]);
+  const vbHas=()=>({bat:vb.type!=='ongrid',grid:vb.type!=='offgrid'});
+  /* generic 24 h energy balance: c={dcW,limit,inv,bat,cap,dod,eff,grid,ld[24],gl[24],cloud} */
+  function simCore(c){
+    const invEff=.95,cap=c.cap||0,minS=cap*(1-c.dod);let soc=cap*.6;const r={pv:[],ld:[],bt:[],gr:[],un:[],soc:[],clip:0};
+    for(let day=0;day<3;day++){
+      for(let H=0;H<24;H++){
+        const irr=(H>=6&&H<18)?Math.sin(Math.PI*(H+.5-6)/12)*.75*(1-c.cloud*.75):0;
+        const pvRaw=c.dcW*irr*.8,pv=Math.min(pvRaw,c.limit);let ld=c.ld[H],un=0,bt=0,gr=0;
+        if(ld>c.inv){un=ld-c.inv;ld=c.inv}
+        let net=pv-ld/invEff;
+        if(net>=0){
+          if(c.bat){const ch=Math.min(net,(cap-soc)/c.eff);bt=ch;soc+=ch*c.eff;net-=ch}
+          if(c.grid)gr=-net*invEff;
+        }else{
+          let need=-net;
+          if(c.bat){const d=Math.min(need,Math.max(0,soc-minS)*c.eff);bt=-d;soc-=d/c.eff;need-=d}
+          if(need>0.5){if(c.grid)gr=need*invEff;else{un+=need*invEff;ld-=need*invEff}}
+        }
+        if(day===2){r.pv.push(pv);r.ld.push(Math.max(0,ld)+(c.gl?c.gl[H]:0));r.bt.push(bt);r.gr.push(gr+(c.gl?c.gl[H]:0));r.un.push(un);r.soc.push(cap?soc/cap*100:0);r.clip+=Math.max(0,pvRaw-pv)}
+      }
+    }
+    const sum=a=>a.reduce((x,y)=>x+y,0);
+    r.cap=cap;r.dc=c.dcW;r.pvk=sum(r.pv)/1000;r.ldk=sum(r.ld)/1000;r.imp=sum(r.gr.map(x=>Math.max(0,x)))/1000;r.exp=sum(r.gr.map(x=>Math.max(0,-x)))/1000;r.unk=sum(r.un)/1000;
+    r.self=r.ldk>0?Math.max(0,Math.min(100,(r.ldk-r.imp)/r.ldk*100)):0;
+    return r;
+  }
+  function vbSim(){
+    const P=VB_PANELS[vb.panel],h=vbHas(),chem=vb.chem==='lfp'?{dod:.8,eff:.95}:{dod:.5,eff:.85};
+    const ld=Array.from({length:24},(_,H)=>VB_LOADS.reduce((a,l,i)=>a+(vb.on[i]&&H>=l[2]&&H<l[3]?l[1]:0),0));
+    return simCore({dcW:vb.n*P.wp,limit:vb.type==='offgrid'?Math.min(vb.ctl*vb.bv,vb.inv*1.3):vb.inv*1.3,inv:vb.inv,bat:h.bat,cap:vb.bv*vb.ah,dod:chem.dod,eff:chem.eff,grid:h.grid,ld,cloud:vb.cloud});
+  }
+  function vbChecks(){
+    const P=VB_PANELS[vb.panel],h=vbHas(),np=Math.floor(vb.n/vb.ns),V=vb.bv;
+    const vc=P.voc*(1+.0027*10),vh=P.vmp*(1-.0035*40),vocS=vb.ns*vc,vmpS=vb.ns*vh,iS=np*P.isc*1.25;
+    const vmax=vb.type==='offgrid'?150:500,vmin=vb.type==='offgrid'?V+20:100,imax=vb.type==='offgrid'?vb.ctl:(vb.inv>=3000?36:18);
+    const peak=Math.max(...Array.from({length:24},(_,H)=>VB_LOADS.reduce((s,l,i)=>s+(vb.on[i]&&H>=l[2]&&H<l[3]?l[1]:0),0)));
+    const night=VB_LOADS.reduce((s,l,i)=>{if(!vb.on[i])return s;let e=0;for(let H=0;H<24;H++)if((H<6||H>=18)&&H>=l[2]&&H<l[3])e+=l[1];return s+e},0);
+    const chem=vb.chem==='lfp'?.8:.5,usable=V*vb.ah*chem*(vb.chem==='lfp'?.95:.85);
+    const ratio=vb.n*P.wp/vb.inv,L=[];
+    L.push([vb.n%vb.ns===0,'Strings','All strings have the same length ('+np+' string'+(np>1?'s':'')+' of '+vb.ns+').','Panels do not divide evenly into strings. '+(vb.n%vb.ns)+' panel(s) would be left out.']);
+    L.push([vocS<=vmax*.95,'Cold Voc','String Voc is '+vocS.toFixed(0)+' V in the cold, under the '+(vmax*.95).toFixed(0)+' V limit.','String Voc is '+vocS.toFixed(0)+' V in the cold. It is over the '+(vmax*.95).toFixed(0)+' V limit and can damage the controller. Use fewer panels in series.']);
+    L.push([vmpS>=vmin,'Hot Vmp','String Vmp is '+vmpS.toFixed(0)+' V when hot, above the '+vmin.toFixed(0)+' V the MPPT needs.','String Vmp is '+vmpS.toFixed(0)+' V when hot. It falls below the '+vmin.toFixed(0)+' V the MPPT needs. Add panels in series.']);
+    L.push([iS<=imax,'Input current','Isc × 1.25 is '+iS.toFixed(1)+' A, within '+imax+' A.','Isc × 1.25 is '+iS.toFixed(1)+' A, over the '+imax+' A input limit. Use fewer parallel strings.']);
+    L.push([ratio>=1&&ratio<=1.4,'Array / inverter','The array is '+ratio.toFixed(2)+' × the inverter rating, a good ratio.',ratio<1?'The array is smaller than the inverter ('+ratio.toFixed(2)+' ×). The inverter is oversized.':'The array is '+ratio.toFixed(2)+' × the inverter. Midday power gets clipped.']);
+    L.push([peak*1.25<=vb.inv,'Inverter size','Peak load '+peak+' W × 1.25 fits the '+vb.inv+' W inverter.','Peak load '+peak+' W × 1.25 is over the '+vb.inv+' W inverter. Pick a bigger one or switch a load off.']);
+    if(h.bat){
+      L.push([!((V===12&&vb.inv>1500)||(V===24&&vb.inv>3000)),'Battery voltage',V+' V suits a '+vb.inv+' W inverter.','At '+V+' V a '+vb.inv+' W inverter draws very high current. Go to '+(V===12?'24':'48')+' V.']);
+      L.push([usable>=night,'Night autonomy','The battery holds '+(usable/1000).toFixed(1)+' kWh usable, enough for the '+(night/1000).toFixed(1)+' kWh of night load.','The battery holds '+(usable/1000).toFixed(1)+' kWh usable but the night load is '+(night/1000).toFixed(1)+' kWh. Add Ah or switch loads off.']);
+      L.push([vb.type!=='offgrid'||vb.n*P.wp/V<=vb.ctl*1.1,'Charge current','The controller can take the array.','The array can push '+(vb.n*P.wp/V).toFixed(0)+' A into the battery, more than the '+vb.ctl+' A controller. Part of it will be clipped.']);
+      L.push([true,'Battery fuse','Fuse the battery positive at about '+Math.ceil(vb.inv/V/.9*1.25)+' A, and keep the cables short.','']);
+    }
+    return L;
+  }
+  function vbDiagram(R,H){
+    const P=VB_PANELS[vb.panel],h=vbHas(),s=vb.step,np=Math.floor(vb.n/vb.ns),O='#E8590C',G='#2F8F5B',BL='#1F5FAE',INK='#14181B';
+    const ghost=(n)=>s<n?' opacity=".22"':'';
+    const strCols=['#E8590C','#B7791F','#1F5FAE','#2F8F5B','#7A3FB0','#B3261E'];
+    let o=`<svg viewBox="0 0 660 340" role="img" aria-label="Virtual solar system diagram" style="width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line)">`;
+    o+=`<defs><style>.vbf{stroke-dasharray:7 6;animation:vbd 1s linear infinite}@keyframes vbd{to{stroke-dashoffset:-26}}@media(prefers-reduced-motion:reduce){.vbf{animation:none}}</style></defs>`;
+    const irr=R.pv[H]>0?1:0;
+    o+=`<circle cx="44" cy="44" r="${irr?16:12}" fill="${irr?'#F5B301':'#C9CED2'}"/>`;
+    if(irr)for(let a=0;a<8;a++){const t=a*Math.PI/4;o+=`<line x1="${44+22*Math.cos(t)}" y1="${44+22*Math.sin(t)}" x2="${44+30*Math.cos(t)}" y2="${44+30*Math.sin(t)}" stroke="#F5B301" stroke-width="2"/>`}
+    if(vb.cloud>0)o+=`<ellipse cx="70" cy="50" rx="${18+vb.cloud*16}" ry="${9+vb.cloud*5}" fill="#B9C0C6" opacity="${.5+vb.cloud*.4}"/>`;
+    o+=`<polygon points="20,200 70,108 230,108 280,200" fill="#EFE9DC" stroke="${INK}" stroke-width="1.5"/><rect x="40" y="200" width="220" height="110" fill="#fff" stroke="${INK}" stroke-width="1.5"/><rect x="132" y="248" width="36" height="62" fill="#DCD3BF" stroke="${INK}"/>`;
+    o+=`<g${ghost(2)}>`;
+    const cols=Math.min(6,vb.n);
+    for(let i=0;i<vb.n;i++){const cx=i%cols,cy=Math.floor(i/cols);const x=150-cols*12+cx*24+2,y=116+cy*18;const si=Math.floor(i/vb.ns);const inS=i<np*vb.ns;o+=`<rect x="${x}" y="${y}" width="20" height="14" fill="${s>=3&&inS?strCols[si%6]:'#1F3A5F'}" fill-opacity="${s>=3?.85:1}" stroke="#fff" stroke-width="1"/>`}
+    o+=`</g>`;
+    o+=`<text x="150" y="96" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#555">${vb.n} × ${P.wp} W${s>=3?' · '+np+'P × '+vb.ns+'S':''}</text>`;
+    const box=(x,y,w,hh,t,sub,n,col)=>`<g${ghost(n)}><rect x="${x}" y="${y}" width="${w}" height="${hh}" fill="#fff" stroke="${col||INK}" stroke-width="2"/><text x="${x+w/2}" y="${y+hh/2-2}" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="14" fill="${INK}">${t}</text><text x="${x+w/2}" y="${y+hh/2+13}" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#555">${sub}</text></g>`;
+    const line=(x1,y1,x2,y2,p,col,n)=>{const a=Math.abs(p);const wd=a<1?1.5:Math.min(9,2+a/700);const d=p<0?[x2,y2,x1,y1]:[x1,y1,x2,y2];return `<g${ghost(n)}><line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#C9CED2" stroke-width="1.5"/>${a>=1?`<line class="vbf" x1="${d[0]}" y1="${d[1]}" x2="${d[2]}" y2="${d[3]}" stroke="${col}" stroke-width="${wd}"/><text x="${(x1+x2)/2}" y="${(y1+y2)/2-6}" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="${col}">${Math.round(a)} W</text>`:''}</g>`};
+    const pv=R.pv[H],ld=R.ld[H],bt=R.bt[H],gr=R.gr[H];
+    o+=box(330,110,130,64,vb.type==='ongrid'?'Grid-tie inverter':vb.type==='offgrid'?'MPPT + inverter':'Hybrid inverter',vb.inv+' W',4,O);
+    o+=line(250,140,330,140,pv,O,2);
+    o+=box(540,110,100,64,'Loads',Math.round(ld)+' W now',6);
+    o+=line(460,142,540,142,ld,INK,6);
+    if(h.bat){o+=box(330,250,130,64,'Battery',vb.bv+' V · '+vb.ah+' Ah · '+Math.round(R.soc[H])+'%',5,G);o+=line(395,174,395,250,bt,G,5)}
+    if(h.grid){o+=box(540,250,100,64,'Utility grid',gr>1?'importing':gr<-1?'exporting':'idle',4,BL);o+=line(460,164,540,264,-gr,BL,4);}
+    if(R.un[H]>1)o+=`<text x="500" y="204" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#B3261E">BLACKOUT: ${Math.round(R.un[H])} W unmet</text>`;
+    return o+'</svg>';
+  }
+  function vbChart(R,H,hb){if(hb===undefined)hb=vbHas().bat;
+    const W=660,Ht=170,X0=36,Y0=10,w=W-X0-10,h=Ht-Y0-24,mx=Math.max(1000,...R.pv,...R.ld)*1.1,bw=w/24;
+    let o=`<svg viewBox="0 0 ${W} ${Ht}" role="img" aria-label="24 hour power chart" style="width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line)">`;
+    for(let k=0;k<=4;k++){const y=Y0+h-h*k/4;o+=`<line x1="${X0}" y1="${y}" x2="${X0+w}" y2="${y}" stroke="#E6E1D6"/><text x="${X0-4}" y="${y+3}" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="9" fill="#777">${(mx*k/4/1000).toFixed(1)}</text>`}
+    for(let i=0;i<24;i++){const x=X0+i*bw;o+=`<rect x="${x+1}" y="${Y0+h-R.ld[i]/mx*h}" width="${bw-2}" height="${R.ld[i]/mx*h}" fill="#14181B" fill-opacity=".75"/>`;if(i%3===0)o+=`<text x="${x}" y="${Ht-8}" font-family="JetBrains Mono,monospace" font-size="9" fill="#777">${i}h</text>`}
+    o+=`<polyline fill="none" stroke="#E8590C" stroke-width="2.5" points="${R.pv.map((p,i)=>(X0+(i+.5)*bw).toFixed(1)+','+(Y0+h-p/mx*h).toFixed(1)).join(' ')}"/>`;
+    if(hb)o+=`<polyline fill="none" stroke="#2F8F5B" stroke-width="2" stroke-dasharray="4 3" points="${R.soc.map((p,i)=>(X0+(i+.5)*bw).toFixed(1)+','+(Y0+h-p/100*h).toFixed(1)).join(' ')}"/>`;
+    o+=`<rect x="${X0+H*bw}" y="${Y0}" width="${bw}" height="${h}" fill="#1F5FAE" fill-opacity=".12" stroke="#1F5FAE"/>`;
+    o+=`<text x="${X0+4}" y="${Y0+10}" font-family="JetBrains Mono,monospace" font-size="9" fill="#E8590C">— solar (kW)</text><text x="${X0+90}" y="${Y0+10}" font-family="JetBrains Mono,monospace" font-size="9" fill="#14181B">■ load (kW)</text>${hb?`<text x="${X0+170}" y="${Y0+10}" font-family="JetBrains Mono,monospace" font-size="9" fill="#2F8F5B">- - battery % (full scale = 100)</text>`:''}</svg>`;
+    return o;
+  }
+  function vbStepUI(){
+    const s=vb.step,P=VB_PANELS[vb.panel],np=Math.floor(vb.n/vb.ns);
+    const seg=(k,opts,cur)=>`<div class="sol-seg" role="group" aria-label="${k}">${opts.map(o=>`<button type="button" data-vb="${k}" data-v="${o[0]}" class="${String(o[0])===String(cur)?'on':''}">${o[1]}</button>`).join('')}</div>`;
+    let h='';
+    if(s===1)h=`<p class="bc-note">Pick the kind of system you want to build. The diagram shows only the parts that kind needs.</p>${seg('type',[['ongrid','On-grid'],['offgrid','Off-grid'],['hybrid','Hybrid']],vb.type)}<p class="bc-note" style="margin-top:10px">${esc(SYS[vb.type].sum)}</p>`;
+    if(s===2)h=`<p class="bc-note">Choose the panel and how many to put on the roof.</p>${seg('panel',[[400,'400 W'],[550,'550 W'],[600,'600 W']],vb.panel)}<div class="sol-seg" style="margin-top:10px"><button type="button" data-vb="n" data-v="-1" aria-label="One panel fewer">−</button><button type="button" class="on" aria-live="polite" style="min-width:110px">${vb.n} panels</button><button type="button" data-vb="n" data-v="1" aria-label="One panel more">+</button></div><p class="bc-note" style="margin-top:10px">Array: ${(vb.n*P.wp/1000).toFixed(2)} kWp. Panel Voc ${P.voc} V, Vmp ${P.vmp} V, Isc ${P.isc} A.</p>`;
+    if(s===3){const divs=[];for(let k=1;k<=vb.n;k++)divs.push(k);h=`<p class="bc-note">Panels in series add voltage. Strings in parallel add current. Choose how many panels go in each series string.</p>${seg('ns',divs.map(k=>[k,k+' in series']),vb.ns)}<p class="bc-note" style="margin-top:10px">Layout: ${np} parallel string${np>1?'s':''} of ${vb.ns} panels${vb.n%vb.ns?' (+'+(vb.n%vb.ns)+' panel left over)':''}. Colours on the roof show each string.</p>`}
+    if(s===4)h=`<p class="bc-note">Choose the inverter rating${vb.type==='offgrid'?' and the MPPT charge controller':''}.</p>${seg('inv',VB_INV.map(v=>[v,v/1000+' kW']),vb.inv)}${vb.type==='offgrid'?`<p class="bc-note" style="margin:10px 0 6px">Charge controller</p>${seg('ctl',[[40,'40 A'],[60,'60 A'],[80,'80 A']],vb.ctl)}`:''}`;
+    if(s===5)h=vbHas().bat?`<p class="bc-note">Size the battery bank.</p><p class="bc-note" style="margin:6px 0">System voltage</p>${seg('bv',[[12,'12 V'],[24,'24 V'],[48,'48 V']],vb.bv)}<p class="bc-note" style="margin:10px 0 6px">Chemistry</p>${seg('chem',[['lfp','LiFePO4 (80 % usable)'],['pb','Lead-acid (50 % usable)']],vb.chem)}<p class="bc-note" style="margin:10px 0 6px">Capacity</p>${seg('ah',[[100,'100 Ah'],[200,'200 Ah'],[300,'300 Ah'],[400,'400 Ah'],[600,'600 Ah']],vb.ah)}<p class="bc-note" style="margin-top:10px">Stored: ${(vb.bv*vb.ah/1000).toFixed(1)} kWh.</p>`:`<p class="bc-note">On-grid has no battery. The grid is the storage. Go on to the loads.</p>`;
+    if(s===6)h=`<p class="bc-note">Switch the loads on or off, and set the weather.</p><div class="sol-vbl">${VB_LOADS.map((l,i)=>`<label><input type="checkbox" data-vbl="${i}"${vb.on[i]?' checked':''}> ${esc(l[0])} <span>${l[1]} W, ${l[2]}:00–${l[3]}:00</span></label>`).join('')}</div><div class="bc-f" style="margin-top:12px;max-width:320px"><label for="vbCloud">Cloud cover: ${Math.round(vb.cloud*100)} %</label><input type="range" id="vbCloud" min="0" max="1" step=".05" value="${vb.cloud}"></div>`;
+    if(s===7)h=`<p class="bc-note">The build is complete. Slide the clock to see where the energy goes each hour. Change any earlier step to try a different design.</p>`;
+    return h;
+  }
+  function vbView(){
+    const R=vbSim(),H=vb.hour,ck=vbChecks(),bad=ck.filter(c=>!c[0]).length;
+    const kpi=[['Solar made',R.pvk.toFixed(1)+' kWh'],['Load used',R.ldk.toFixed(1)+' kWh'],vbHas().grid?['From grid',R.imp.toFixed(1)+' kWh']:['Blackout',R.unk.toFixed(1)+' kWh'],vbHas().grid?['Exported',R.exp.toFixed(1)+' kWh']:['Battery used',(R.cap?Math.max(0,100-Math.min(...R.soc)):0).toFixed(0)+' % swing'],['Self-supply',R.self.toFixed(0)+' %']];
+    return `${vbDiagram(R,H)}<div class="bc-f" style="margin:10px 0"><label for="vbHour">Time of day: ${String(H).padStart(2,'0')}:00 – ${String(H+1).padStart(2,'0')}:00 · solar ${Math.round(R.pv[H])} W, load ${Math.round(R.ld[H])} W${vbHas().bat?', battery '+Math.round(R.soc[H])+' %':''}</label><input type="range" id="vbHour" min="0" max="23" step="1" value="${H}"></div>${vbChart(R,H)}<div class="bc-out">${kpi.map(k=>`<div><small>${k[0]}</small><b style="font-size:24px">${k[1]}</b></div>`).join('')}</div><h3 style="margin:16px 0 6px;font:700 11px var(--mono);letter-spacing:1.2px;text-transform:uppercase">Design checks: ${bad?bad+' to fix':'all clear'}</h3><ul class="sol-ck">${ck.map(c=>`<li><span class="${c[0]?'sol-ok':'sol-no'}">${c[0]?'OK':'CHECK'}</span> <b>${esc(c[1])}</b> ${esc(c[0]?c[2]:(c[3]||c[2]))}</li>`).join('')}</ul><p class="bc-note">A simplified model: about 4.6 peak sun hours, 80 % performance ratio, ${vb.type==='offgrid'?'no grid':'grid import and export unlimited'}. A teaching tool, not a design.</p>`;
+  }
+  function buildTab(){
+    return `<div class="sol-seg vb-steps" id="vbSteps" role="group" aria-label="Build steps">${VB_STEPS.map((t,i)=>`<button type="button" data-vb="step" data-v="${i+1}" class="${vb.step===i+1?'on':''}">${i+1}. ${t}</button>`).join('')}</div><div class="sol-info" id="vbCtl" style="margin:12px 0">${vbStepUI()}<div class="sol-seg" style="margin-top:12px"><button type="button" data-vb="go" data-v="-1"${vb.step===1?' disabled':''}>Back</button><button type="button" data-vb="go" data-v="1"${vb.step===7?' disabled':''}>Next step</button><button type="button" data-vb="reset">Reset</button></div></div><div id="vbView">${vbView()}</div>`;
+  }
+  function vbSave(){persist('dc_sol_build',vb)}
+  root.addEventListener('click',e=>{
+    const b=e.target.closest('[data-vb]');if(!b||tab!=='build')return;
+    const k=b.dataset.vb,v=b.dataset.v;
+    if(k==='step')vb.step=+v;else if(k==='go')vb.step=Math.max(1,Math.min(7,vb.step+(+v)));
+    else if(k==='reset'){vb=Object.assign({},vb,{type:'hybrid',step:1,panel:550,n:6,ns:3,inv:3000,ctl:60,bv:48,chem:'lfp',ah:200,cloud:0,hour:12,on:VB_LOADS.map(l=>l[4])})}
+    else if(k==='type'){vb.type=v;vb.step=Math.max(vb.step,1)}
+    else if(k==='n')vb.n=Math.max(1,Math.min(24,vb.n+(+v)));
+    else if(k==='chem')vb.chem=v;
+    else vb[k]=+v;
+    if(vb.ns>vb.n)vb.ns=vb.n;
+    vbSave();render();
+  });
+  root.addEventListener('input',e=>{
+    if(tab!=='build')return;
+    if(e.target.id==='vbHour'){vb.hour=+e.target.value;vbSave();$('vbView').innerHTML=vbView();const r=$('vbHour');if(r)r.focus();return}
+    if(e.target.id==='vbCloud'){vb.cloud=+e.target.value;vbSave();const l=e.target.previousElementSibling;if(l)l.textContent='Cloud cover: '+Math.round(vb.cloud*100)+' %';$('vbView').innerHTML=vbView();return}
+  });
+  root.addEventListener('change',e=>{
+    if(tab==='build'&&e.target.dataset&&e.target.dataset.vbl!==undefined){vb.on[+e.target.dataset.vbl]=e.target.checked?1:0;vbSave();$('vbView').innerHTML=vbView()}
+  });
+  /* ---------- assemble: place real parts on a canvas, wire them, run the day ---------- */
+  const LS={all:['All day',[[0,24]]],morn:['Morning 6-9',[[6,9]]],day:['Daytime 9-16',[[9,16]]],eve:['Evening 17-22',[[17,22]]],night:['Night 22-6',[[22,24],[0,6]]],cook:['Meals 11-12, 18-19',[[11,12],[18,19]]]};
+  const T2=(d,a)=>Object.assign({},d,a);
+  const LD=(n,ic,w,duty,sch,note)=>({n,ic,w:132,h:44,load:1,rw:w,duty,sch,note,t:{'AC':[-66,0,'ac']}});
+  const AP={
+   pv:{n:'Solar panel',ic:'☀',w:64,h:40,t:{'+':[32,0,'dc'],'-':[-32,0,'dc']},p:{wp:550}},
+   bat:{n:'Battery 12.8 V',ic:'▮',w:64,h:40,t:{'+':[32,0,'dc'],'-':[-32,0,'dc']},p:{ah:100}},
+   hyb:{n:'Hybrid inverter',ic:'⌁',w:150,h:96,t:{'PV+':[-75,-28,'dc'],'PV-':[-75,-10,'dc'],'BAT-':[-34,48,'dc'],'BAT+':[10,48,'dc'],'GRID':[75,-24,'ac'],'LOAD':[75,12,'ac']},p:{kw:3,bv:48}},
+   gti:{n:'Grid-tie inverter',ic:'⌁',w:130,h:70,t:{'PV+':[-65,-14,'dc'],'PV-':[-65,10,'dc'],'AC':[65,0,'ac']},p:{kw:3}},
+   mppt:{n:'MPPT controller',ic:'↯',w:110,h:70,t:{'PV+':[-55,-14,'dc'],'PV-':[-55,10,'dc'],'BAT+':[55,-14,'dc'],'BAT-':[55,10,'dc']},p:{amps:60,bv:24}},
+   oginv:{n:'Off-grid inverter',ic:'⌁',w:130,h:70,t:{'BAT+':[-65,-14,'dc'],'BAT-':[-65,10,'dc'],'AC':[65,0,'ac']},p:{kw:3,bv:24}},
+   grid:{n:'Utility grid',ic:'⎓',w:84,h:40,t:{'AC':[-42,0,'ac']},p:{}},
+   fridge:LD('Refrigerator','❄',150,.4,'all','Compressor cycles, so average 40 % of 150 W.'),
+   fan:LD('Electric fan','✲',55,1,'night',''),
+   cooker:LD('Induction cooker','◎',1800,.7,'cook','High power for short periods.'),
+   ev:LD('E-vehicle charger','⚡',2300,1,'day','About 2.3 kW from a 230 V, 10 A outlet.'),
+   pump:LD('Water pump','≈',750,1,'morn','A motor: starting surge is about 3×.'),
+   aircon:LD('Air conditioner','❆',900,.6,'night','Inverter aircon, compressor on about 60 %.'),
+   lights:LD('LED lights','✦',60,1,'eve',''),
+   tv:LD('TV + router','▭',92,1,'eve','')
+  };
+  const GROUPS=[['Generate and store',['pv','bat']],['Power electronics',['hyb','gti','mppt','oginv','grid']],['Loads',['fridge','fan','cooker','ev','pump','aircon','lights','tv']]];
+  let asm=Object.assign({parts:[],wires:[],sel:null,pend:null,place:null,hour:12,cloud:0,nid:1,msg:''},store('dc_sol_asm',{}));
+  if(!Array.isArray(asm.parts))asm.parts=[];if(!Array.isArray(asm.wires))asm.wires=[];
+  const aSave=()=>persist('dc_sol_asm',{parts:asm.parts,wires:asm.wires,hour:asm.hour,cloud:asm.cloud,nid:asm.nid});
+  const defP=t=>JSON.parse(JSON.stringify(AP[t].p||{}));
+  const pById=id=>asm.parts.find(p=>p.id===id);
+  const tPos=(p,n)=>{const d=AP[p.t].t[n];return [p.x+d[0],p.y+d[1]]};
+  function addPart(t,x,y){const p={id:'p'+asm.nid++,t,x:Math.round(x/10)*10,y:Math.round(y/10)*10,p:defP(t)};if(AP[t].load){p.p.on=1;p.p.sch=AP[t].sch}asm.parts.push(p);return p}
+  function addWire(a,ta,b,tb){asm.wires.push({id:'w'+asm.nid++,a:[a.id,ta],b:[b.id,tb]})}
+  /* ----- presets ----- */
+  function preset(k){
+    asm.parts=[];asm.wires=[];asm.sel=null;asm.pend=null;asm.nid=1;
+    const row=(t,n,x0,y,dx)=>{const r=[];for(let i=0;i<n;i++)r.push(addPart(t,x0+i*dx,y));for(let i=0;i<n-1;i++)addWire(r[i],'+',r[i+1],'-');return r};
+    const loads=(L,x,y0,dy)=>L.map((t,i)=>addPart(t,x,y0+i*dy));
+    if(k==='hybrid'){
+      const s1=row('pv',4,60,60,80),s2=row('pv',4,60,120,80),I=addPart('hyb',480,190);I.p.kw=5;
+      addWire(s1[0],'-',s2[0],'-');addWire(s1[3],'+',s2[3],'+');addWire(s1[3],'+',I,'PV+');addWire(s1[0],'-',I,'PV-');
+      const b=row('bat',4,60,330,80);b.forEach(x=>x.p.ah=200);addWire(b[3],'+',I,'BAT+');addWire(b[0],'-',I,'BAT-');
+      const g=addPart('grid',690,60);addWire(I,'GRID',g,'AC');
+      const L=loads(['fridge','fan','cooker','ev'],690,150,60);L[2].p.sch='eve';L.forEach(l=>addWire(I,'LOAD',l,'AC'));
+    }else if(k==='offgrid'){
+      const s1=row('pv',2,60,60,80),s2=row('pv',2,60,120,80),M=addPart('mppt',330,100);M.p.amps=80;s1.concat(s2).forEach(x=>x.p.wp=400);
+      addWire(s1[0],'-',s2[0],'-');addWire(s1[1],'+',s2[1],'+');addWire(s1[1],'+',M,'PV+');addWire(s1[0],'-',M,'PV-');
+      const b1=row('bat',2,60,260,80),b2=row('bat',2,60,320,80);addWire(b1[0],'-',b2[0],'-');addWire(b1[1],'+',b2[1],'+');
+      const I=addPart('oginv',470,290);addWire(M,'BAT+',I,'BAT+');addWire(M,'BAT-',I,'BAT-');addWire(b1[1],'+',M,'BAT+');addWire(b1[0],'-',M,'BAT-');
+      loads(['lights','tv','pump','fan'],690,120,70).forEach(l=>addWire(I,'AC',l,'AC'));
+    }else if(k==='gridtie'){
+      const s1=row('pv',3,60,60,80),s2=row('pv',3,60,120,80),I=addPart('gti',420,120);
+      addWire(s1[0],'-',s2[0],'-');addWire(s1[2],'+',s2[2],'+');addWire(s1[2],'+',I,'PV+');addWire(s1[0],'-',I,'PV-');
+      const g=addPart('grid',690,60);addWire(I,'AC',g,'AC');
+      loads(['fridge','aircon','cooker'],690,170,70).forEach(l=>addWire(I,'AC',l,'AC'));
+    }
+    aSave();
+  }
+  if(!asm.parts.length)preset('hybrid');
+  /* ----- net analysis ----- */
+  function reduceNet(edges,A,B){
+    if(A===B)return {err:'Short circuit: both terminals are on the same wire net.'};
+    let E=edges.map(e=>Object.assign({},e)),reach=new Set([A,B]),ch=true;
+    while(ch){ch=false;E.forEach(e=>{if(reach.has(e.a)!==reach.has(e.b)){reach.add(e.a);reach.add(e.b);ch=true}})}
+    const used=E.filter(e=>reach.has(e.a)&&reach.has(e.b)),unused=E.length-used.length;E=used;
+    if(!E.length)return {err:'Nothing is connected to these terminals.',unused};
+    let mm=false;
+    for(let g=0;g<400;g++){
+      let did=false;
+      for(let i=0;i<E.length&&!did;i++)for(let j=i+1;j<E.length&&!did;j++){const x=E[i],y=E[j];
+        if(x.a===y.a&&x.b===y.b){if(x.ns!==y.ns||x.wp!==y.wp)mm=true;E.splice(j,1);E[i]={a:x.a,b:x.b,ns:Math.min(x.ns,y.ns),np:x.np+y.np,wp:Math.min(x.wp||0,y.wp||0)||x.wp,ah:x.ah};did=true}
+        else if(x.a===y.b&&x.b===y.a)return {err:'A panel or battery is wired backwards (reverse polarity).',unused};}
+      if(did)continue;
+      const nodes=new Set();E.forEach(e=>{nodes.add(e.a);nodes.add(e.b)});
+      for(const n of nodes){if(n===A||n===B)continue;const inc=E.filter(e=>e.a===n||e.b===n);
+        if(inc.length===1)return {err:'A wire leads to a dead end (open connection).',unused};
+        if(inc.length===2){const[x,y]=inc;
+          if(x.b===n&&y.a===n){E=E.filter(e=>e!==x&&e!==y);if(x.np!==y.np||x.wp!==y.wp)mm=true;E.push({a:x.a,b:y.b,ns:x.ns+y.ns,np:Math.min(x.np,y.np),wp:Math.min(x.wp||0,y.wp||0)||x.wp,ah:x.ah});did=true;break}
+          if(y.b===n&&x.a===n){E=E.filter(e=>e!==x&&e!==y);if(x.np!==y.np||x.wp!==y.wp)mm=true;E.push({a:y.a,b:x.b,ns:x.ns+y.ns,np:Math.min(x.np,y.np),wp:Math.min(x.wp||0,y.wp||0)||x.wp,ah:x.ah});did=true;break}
+          return {err:'Two parts meet head-on (reverse polarity).',unused}}}
+      if(!did)break;
+    }
+    if(E.length===1&&E[0].a===A&&E[0].b===B)return {ns:E[0].ns,np:E[0].np,wp:E[0].wp,ah:E[0].ah,mm,unused};
+    if(E.length===1&&E[0].a===B&&E[0].b===A)return {err:'The whole group is connected backwards (reverse polarity).',unused};
+    return {err:'These parts are not wired as clean series strings in parallel.',unused};
+  }
+  function analyze(){
+    const par={},find=x=>{if(par[x]===undefined)par[x]=x;while(par[x]!==x){par[x]=par[par[x]];x=par[x]}return x},K=(id,n)=>id+'|'+n;
+    asm.wires.forEach(w=>{par[find(K(...w.a))]=find(K(...w.b))});
+    const net=(p,n)=>find(K(p.id,n)),wired=(p,n)=>asm.wires.some(w=>(w.a[0]===p.id&&w.a[1]===n)||(w.b[0]===p.id&&w.b[1]===n));
+    const o={checks:[],notes:[],cfg:null,nets:{},core:null,hasBat:false,hasGrid:false};
+    const add=(ok,k,good,bad)=>o.checks.push([ok,k,good,bad||good]);
+    const by=t=>asm.parts.filter(p=>p.t===t),hyb=by('hyb')[0],gti=by('gti')[0],og=by('oginv')[0],mp=by('mppt')[0];
+    const core=hyb||gti||og;o.core=core;
+    asm.parts.forEach(p=>{const d=AP[p.t];if(d.t['+']||p.t==='hyb'||true)Object.keys(d.t).forEach(n=>{if(d.t[n][2]==='dc'&&(p.t==='pv'||p.t==='bat')){}})});
+    if(!core){add(false,'Inverter','','Add an inverter: hybrid, grid-tie, or an off-grid inverter with an MPPT controller.');return o}
+    const kw=core.p.kw,inv=kw*1000;
+    if((hyb?1:0)+(gti?1:0)+(og?1:0)>1)add(false,'One system','','More than one inverter is on the canvas. The first is used: '+AP[core.t].n+'.');
+    const panels=by('pv').map(p=>({a:net(p,'-'),b:net(p,'+'),ns:1,np:1,wp:p.p.wp})),cells=by('bat').map(p=>({a:net(p,'-'),b:net(p,'+'),ns:1,np:1,ah:p.p.ah}));
+    let arr=null,bank=null,pvT=core.t==='oginv'?mp:core;
+    const need=(p,names)=>names.filter(n=>!wired(p,n));
+    if(core.t==='oginv'&&!mp)add(false,'MPPT controller','','An off-grid inverter needs an MPPT controller to charge the battery from the panels.');
+    if(pvT){const miss=need(pvT,['PV+','PV-']);if(miss.length)add(false,'PV input','','Connect '+miss.join(' and ')+' on the '+AP[pvT.t].n+'.');
+      else{arr=reduceNet(panels,net(pvT,'PV-'),net(pvT,'PV+'));if(arr.err)add(false,'PV array','',arr.err);else{if(arr.mm)add(false,'Mismatch','','Strings or panels differ in length or rating. The weakest one limits the array.');if(arr.unused)add(false,'Unused panels','',arr.unused+' panel(s) are not connected to the inverter.')}}}
+    const bt=core.t==='hyb'?core:core.t==='oginv'?core:null;
+    if(bt){const miss=need(bt,['BAT+','BAT-']);
+      if(miss.length){if(core.t==='oginv')add(false,'Battery input','','Connect '+miss.join(' and ')+' on the off-grid inverter.')}
+      else{bank=reduceNet(cells,net(bt,'BAT-'),net(bt,'BAT+'));if(bank.err)add(false,'Battery bank','',bank.err);else if(bank.mm)add(false,'Battery mismatch','','Battery strings differ in size.')}}
+    if(core.t==='oginv'&&mp&&og&&(net(mp,'BAT+')!==net(og,'BAT+')||net(mp,'BAT-')!==net(og,'BAT-')))add(false,'Battery bus','','The MPPT battery terminals and the inverter battery terminals must be on the same battery wires.');
+    const ok=arr&&!arr.err,nS=ok?arr.ns:0,nP=ok?arr.np:0,wp=ok?arr.wp:0,pnl=VB_PANELS[wp]||VB_PANELS[550];
+    o.arr=ok?{ns:nS,np:nP,wp}:null;
+    if(ok){
+      const vc=pnl.voc*1.027,vh=pnl.vmp*.86,vocS=nS*vc,vmpS=nS*vh,iS=nP*pnl.isc*1.25;
+      const vmax=core.t==='oginv'||core.t==='hyb'&&false?150:500;
+      const isOff=core.t==='oginv',mvmax=isOff?150:500,bvv=isOff?mp.p.bv:(core.t==='hyb'?core.p.bv:0),mvmin=isOff?bvv+20:100,imax=isOff?mp.p.amps:(kw>=3?36:18);
+      add(vocS<=mvmax*.95,'Cold Voc','String Voc is '+vocS.toFixed(0)+' V in the cold, under the '+(mvmax*.95).toFixed(0)+' V limit.','String Voc is '+vocS.toFixed(0)+' V in the cold, over the '+(mvmax*.95).toFixed(0)+' V limit. Too many panels in series.');
+      add(vmpS>=mvmin,'Hot Vmp','String Vmp is '+vmpS.toFixed(0)+' V when hot, above the '+mvmin.toFixed(0)+' V the MPPT needs.','String Vmp is '+vmpS.toFixed(0)+' V when hot, under the '+mvmin.toFixed(0)+' V the MPPT needs. Add panels in series.');
+      if(!isOff)add(iS<=imax,'Input current','Isc × 1.25 is '+iS.toFixed(1)+' A, within '+imax+' A.','Isc × 1.25 is '+iS.toFixed(1)+' A, over '+imax+' A. Too many parallel strings.');
+      const r=nS*nP*wp/inv;add(r>=.8&&r<=1.4||isOff,'Array / inverter','The array is '+r.toFixed(2)+' × the inverter.',r<.8?'The array is '+r.toFixed(2)+' × the inverter. The inverter is oversized.':'The array is '+r.toFixed(2)+' × the inverter. Midday power is clipped.');
+    }
+    /* loads and grid */
+    const loadsOn=n=>asm.parts.filter(p=>AP[p.t].load&&wired(p,'AC')&&net(p,'AC')===n);
+    let L=[],GL=[],grid=false;
+    const gridIn=n=>by('grid').some(g=>wired(g,'AC')&&net(g,'AC')===n);
+    if(core.t==='hyb'){
+      if(wired(core,'LOAD'))L=loadsOn(net(core,'LOAD'));else add(false,'Load output','','Connect the LOAD terminal of the hybrid inverter to your loads.');
+      if(wired(core,'GRID')){const gn=net(core,'GRID');grid=gridIn(gn);GL=grid?loadsOn(gn).filter(x=>!L.includes(x)):[]}
+      o.nets.load=wired(core,'LOAD')?net(core,'LOAD'):null;o.nets.grid=wired(core,'GRID')?net(core,'GRID'):null;
+    }else{
+      if(wired(core,'AC')){const n=net(core,'AC');L=loadsOn(n);grid=core.t==='gti'&&gridIn(n);o.nets.load=n;if(grid)o.nets.grid=n}else add(false,'AC output','','Connect the AC terminal to your loads'+(core.t==='gti'?' and the utility grid':'')+'.');
+    }
+    if(core.t==='gti'&&!grid)add(false,'Utility grid','','A grid-tie inverter needs the utility grid on its AC side. Without it, it will not run (anti-islanding).');
+    const unwired=asm.parts.filter(p=>AP[p.t].load&&!L.includes(p)&&!GL.includes(p));
+    if(unwired.length)add(false,'Unpowered loads','',unwired.map(p=>AP[p.t].n).join(', ')+' not connected to the inverter output.');
+    const sched=(p,H)=>p.p.on&&(LS[p.p.sch]||LS.all)[1].some(w=>H>=w[0]&&H<w[1]);
+    const hr=(arr,fn)=>Array.from({length:24},(_,H)=>arr.reduce((s,p)=>s+(sched(p,H)?fn(p):0),0));
+    const ld=hr(L,p=>AP[p.t].rw*AP[p.t].duty),gl=hr(GL,p=>AP[p.t].rw*AP[p.t].duty),rated=hr(L,p=>AP[p.t].rw);
+    const peak=Math.max(...rated,0);
+    if(L.length)add(peak*1.25<=inv,'Inverter size','Peak load '+peak+' W × 1.25 fits the '+inv+' W inverter.','Peak load '+peak+' W × 1.25 is over the '+inv+' W inverter. Switch a load off or use a bigger inverter.');
+    const mot=L.filter(p=>p.t==='pump'||p.t==='aircon'||p.t==='fridge').map(p=>AP[p.t].n);
+    if(mot.length)add(true,'Motor surge','Check the starting surge of: '+mot.join(', ')+'. A pump can pull about 3× its running watts for a moment.');
+    let cap=0,hasBat=false;
+    if(bank&&!bank.err){hasBat=true;cap=bank.ns*12.8*bank.np*bank.ah;const vb2=bank.ns*12.8,want=core.p.bv||0;
+      const okv=Math.round(vb2/12.8)===({12:1,24:2,48:4})[want];
+      add(okv,'Battery voltage',bank.ns+' in series makes about '+Math.round(vb2)+' V, matching the '+want+' V system.',bank.ns+' in series makes about '+Math.round(vb2)+' V, but the inverter is set for '+want+' V. Use '+({12:1,24:2,48:4})[want]+' in series.');
+      const night=Array.from({length:24},(_,H)=>H<6||H>=18?ld[H]:0).reduce((a,b)=>a+b,0),use=cap*.8*.95;
+      add(use>=night,'Night autonomy','The bank holds '+(use/1000).toFixed(1)+' kWh usable (LiFePO4), enough for '+(night/1000).toFixed(1)+' kWh of night load.','The bank holds '+(use/1000).toFixed(1)+' kWh usable but the night load is '+(night/1000).toFixed(1)+' kWh. Add batteries in parallel or switch loads off.');
+      add(true,'Battery fuse','Fuse the battery positive at about '+Math.ceil(inv/(bank.ns*12.8)/.9*1.25)+' A and keep the cables short.');
+    }else if(core.t==='oginv'||core.t==='hyb'&&false){}
+    o.hasBat=hasBat;o.hasGrid=grid;
+    const isOff=core.t==='oginv';
+    const bvv=isOff?mp&&mp.p.bv:core.p.bv;
+    const limit=isOff?Math.min((mp?mp.p.amps:0)*(bvv||0),inv*1.3):inv*1.3;
+    if(isOff&&ok&&mp){const ia=nS*nP*wp/bvv;add(ia<=mp.p.amps*1.1,'Charge current','The controller can take the array ('+ia.toFixed(0)+' A into the battery).','The array can push '+ia.toFixed(0)+' A into the battery, over the '+mp.p.amps+' A controller. Part is clipped.')}
+    if(isOff&&mp&&mp.p.bv!==og.p.bv)add(false,'Voltage setting','','MPPT is set to '+mp.p.bv+' V but the inverter to '+og.p.bv+' V. Set both the same.');
+    const chem={dod:.8,eff:.95};
+    o.cfg={dcW:ok?nS*nP*wp:0,limit,inv,bat:hasBat,cap,dod:chem.dod,eff:chem.eff,grid,ld,gl,cloud:asm.cloud};
+    o.L=L;o.GL=GL;o.bank=hasBat?bank:null;o.inv=inv;
+    /* net roles for wire colours */
+    const role={};
+    by('pv').forEach(p=>{role[net(p,'+')]='pv';role[net(p,'-')]='pv'});
+    by('bat').forEach(p=>{role[net(p,'+')]='bat';role[net(p,'-')]='bat'});
+    if(o.nets.load)role[o.nets.load]='load';if(o.nets.grid)role[o.nets.grid]='grid';
+    o.role=role;o.net=net;
+    return o;
+  }
+  /* ----- drawing ----- */
+  const ACOL={pv:'#E8590C',bat:'#2F8F5B',load:'#14181B',grid:'#1F5FAE'};
+  function asmSvg(A,R,H){
+    const act=r=>r==='pv'?R&&R.pv[H]>1:r==='bat'?R&&Math.abs(R.bt[H])>1:r==='load'?R&&R.ld[H]>1:r==='grid'?R&&Math.abs(R.gr[H])>1:false;
+    let o=`<svg id="asmSvg" viewBox="0 0 780 460" role="group" aria-label="Solar assembly canvas" style="width:100%;min-width:700px;height:auto;display:block;background:#fff;border:1px solid var(--line);touch-action:none">`;
+    o+=`<defs><pattern id="asmG" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#EFEBE2"/></pattern></defs><rect width="780" height="460" fill="url(#asmG)" data-bg="1"/>`;
+    asm.wires.forEach(w=>{const a=pById(w.a[0]),b=pById(w.b[0]);if(!a||!b)return;const [x1,y1]=tPos(a,w.a[1]),[x2,y2]=tPos(b,w.b[1]),mx=(x1+x2)/2;const r=A.role&&A.role[A.net(a,w.a[1])],on=act(r),col=on?ACOL[r]:(r&&ACOL[r]?'#9AA3AA':'#9AA3AA');
+      const d=`M${x1} ${y1}C${mx} ${y1} ${mx} ${y2} ${x2} ${y2}`,sel=asm.sel===w.id;
+      o+=`<path d="${d}" fill="none" stroke="${sel?'#1F5FAE':col}" stroke-width="${sel?4:2.5}" stroke-linecap="round"/>${on?`<path d="${d}" fill="none" stroke="#fff" stroke-width="2" class="asm-f"/>`:''}<path d="${d}" fill="none" stroke="transparent" stroke-width="14" data-wire="${w.id}" style="cursor:pointer"/>`});
+    asm.parts.forEach(p=>{const d=AP[p.t],sel=asm.sel===p.id,isL=d.load,off=isL&&!p.p.on;
+      o+=`<g data-part="${p.id}" style="cursor:move"${off?' opacity=".5"':''}><rect x="${p.x-d.w/2}" y="${p.y-d.h/2}" width="${d.w}" height="${d.h}" rx="3" fill="${p.t==='pv'?'#1F3A5F':'#fff'}" stroke="${sel?'#1F5FAE':'#14181B'}" stroke-width="${sel?3:1.5}"/>`;
+      const tc=p.t==='pv'?'#fff':'#14181B';
+      if(d.load||p.t==='grid'){
+        o+=`<text x="${p.x-d.w/2+20}" y="${p.y+6}" text-anchor="middle" font-size="16" fill="#E8590C" pointer-events="none">${d.ic}</text><text x="${p.x+12}" y="${p.y+(d.load?-2:4)}" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="12.5" fill="#14181B" pointer-events="none">${d.n}</text>${d.load?`<text x="${p.x+12}" y="${p.y+12}" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#666" pointer-events="none">${d.rw} W</text>`:''}`;
+      }else{
+      o+=`<text x="${p.x}" y="${p.y-(d.h>50?10:2)}" text-anchor="middle" font-size="${d.h>50?18:15}" fill="${p.t==='pv'?'#F5B301':'#E8590C'}" pointer-events="none">${d.ic}</text>`;
+      let sub=p.t==='pv'?p.p.wp+' W':p.t==='bat'?p.p.ah+' Ah':p.t==='hyb'||p.t==='gti'||p.t==='oginv'?p.p.kw+' kW'+(p.p.bv?' \u00b7 '+p.p.bv+' V':''):p.t==='mppt'?p.p.amps+' A \u00b7 '+p.p.bv+' V':'';
+      const tc=p.t==='pv'?'#fff':'#14181B';
+      o+=`<text x="${p.x}" y="${p.y+(d.h>50?10:12)}" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="${p.t==='pv'||p.t==='bat'?11:12}" fill="${tc}" pointer-events="none">${p.t==='pv'||p.t==='bat'?sub:d.n}</text>`;
+      if(p.t!=='pv'&&p.t!=='bat'&&sub)o+=`<text x="${p.x}" y="${p.y+(d.h>50?24:20)}" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#666" pointer-events="none">${sub}</text>`;
+      }
+      o+=`</g>`;
+      Object.keys(d.t).forEach(n=>{const [x,y]=tPos(p,n),pend=asm.pend&&asm.pend[0]===p.id&&asm.pend[1]===n,dc=d.t[n][2]==='dc';const lx=d.t[n][0]>0?x-4:d.t[n][0]<0?x+4:x,ly=d.t[n][1]>20?y-6:y+3,anc=d.t[n][0]>0?'end':d.t[n][0]<0?'start':'middle';
+        o+=`<circle cx="${x}" cy="${y}" r="11" fill="transparent" data-term="${p.id}|${n}" style="cursor:crosshair"/><circle cx="${x}" cy="${y}" r="${pend?8:6}" pointer-events="none" fill="${pend?'#E8590C':dc?(n.indexOf('+')>=0?'#B3261E':'#14181B'):'#1F5FAE'}" stroke="#fff" stroke-width="1.5"/>`;
+        if(p.t==='hyb'||p.t==='gti'||p.t==='mppt'||p.t==='oginv'||p.t==='pv'||p.t==='bat')o+=`<text x="${lx}" y="${ly+(d.t[n][1]>20?0:0)}" text-anchor="${anc}" font-family="JetBrains Mono,monospace" font-size="8" fill="${p.t==='pv'?'#fff':'#444'}" pointer-events="none">${n.length>1?n:''}</text>`});
+    });
+    return o+'</svg>';
+  }
+  function asmPalette(){
+    return GROUPS.map(g=>`<div class="asm-grp"><small>${g[0]}</small><div class="sol-seg">${g[1].map(t=>`<button type="button" data-asm="place" data-v="${t}" class="${asm.place===t?'on':''}">${AP[t].ic} ${AP[t].n}</button>`).join('')}</div></div>`).join('');
+  }
+  function asmInspector(){
+    const sel=asm.sel;if(!sel)return '<p class="bc-note">Tap a part or a wire to edit it. Drag a part to move it. Tap one terminal, then another, to run a wire.</p>';
+    if(sel[0]==='w')return `<p class="bc-note">Wire selected.</p><div class="sol-seg"><button type="button" data-asm="del">Delete wire</button></div>`;
+    const p=pById(sel);if(!p)return '';const d=AP[p.t],f=(k,l,opts)=>`<div class="bc-f"><label for="ai_${k}">${l}</label><select class="input" id="ai_${k}" data-ai="${k}">${opts.map(o=>`<option value="${o[0]}"${String(p.p[k])===String(o[0])?' selected':''}>${o[1]}</option>`).join('')}</select></div>`;
+    let h=`<b>${d.n}</b>`;
+    if(p.t==='pv')h+=f('wp','Rating',[[400,'400 W'],[550,'550 W'],[600,'600 W']]);
+    if(p.t==='bat')h+=f('ah','Capacity',[[100,'100 Ah'],[200,'200 Ah']])+'<p class="bc-note">LiFePO4, 12.8 V. Wire 1 for 12 V, 2 for 24 V, 4 in series for 48 V.</p>';
+    if(p.t==='hyb'||p.t==='gti'||p.t==='oginv')h+=f('kw','Rating',VB_INV.map(v=>[v/1000,v/1000+' kW']));
+    if(p.t==='hyb'||p.t==='oginv'||p.t==='mppt')h+=f('bv','Battery system',[[12,'12 V'],[24,'24 V'],[48,'48 V']]);
+    if(p.t==='mppt')h+=f('amps','Charge current',[[40,'40 A'],[60,'60 A'],[80,'80 A']]);
+    if(d.load)h+=`<label class="asm-on"><input type="checkbox" data-ai="on"${p.p.on?' checked':''}> Switched on</label>`+f('sch','Runs',Object.keys(LS).map(k=>[k,LS[k][0]]))+`<p class="bc-note">${d.rw} W rated${d.duty<1?', average '+Math.round(d.rw*d.duty)+' W':''}. ${esc(d.note||'')}</p>`;
+    return h+`<div class="sol-seg" style="margin-top:10px"><button type="button" data-asm="del">Delete part</button></div>`;
+  }
+  function asmResults(){
+    const A=analyze(),R=A.cfg?simCore(A.cfg):null,H=asm.hour,bad=A.checks.filter(c=>!c[0]).length;
+    window.__asmA=A;
+    let h='';
+    if(!R)return `<ul class="sol-ck">${A.checks.map(c=>`<li><span class="sol-no">CHECK</span> ${esc(c[3])}</li>`).join('')}</ul>`;
+    const kpi=[['Solar made',R.pvk.toFixed(1)+' kWh'],['Load used',R.ldk.toFixed(1)+' kWh'],A.hasGrid?['From grid',R.imp.toFixed(1)+' kWh']:['Blackout',R.unk.toFixed(1)+' kWh'],A.hasGrid?['Exported',R.exp.toFixed(1)+' kWh']:['Battery swing',A.hasBat?(100-Math.min(...R.soc)).toFixed(0)+' %':'none'],['Self-supply',R.self.toFixed(0)+' %']];
+    h+=`<div class="bc-f" style="margin:10px 0"><label for="asmHour">Time of day: ${String(H).padStart(2,'0')}:00 – ${String(H+1).padStart(2,'0')}:00 · solar ${Math.round(R.pv[H])} W, load ${Math.round(R.ld[H])} W${A.hasBat?', battery '+Math.round(R.soc[H])+' %':''}${A.hasGrid?', grid '+(R.gr[H]>1?'import '+Math.round(R.gr[H])+' W':R.gr[H]<-1?'export '+Math.round(-R.gr[H])+' W':'idle'):''}${R.un[H]>1?', BLACKOUT '+Math.round(R.un[H])+' W unmet':''}</label><input type="range" id="asmHour" min="0" max="23" step="1" value="${H}"></div>`;
+    h+=`<div class="bc-f" style="margin:0 0 10px;max-width:320px"><label for="asmCloud">Cloud cover: ${Math.round(asm.cloud*100)} %</label><input type="range" id="asmCloud" min="0" max="1" step=".05" value="${asm.cloud}"></div>`;
+    h+=vbChart(R,H,A.hasBat)+`<div class="bc-out">${kpi.map(k=>`<div><small>${k[0]}</small><b style="font-size:24px">${k[1]}</b></div>`).join('')}</div>`;
+    h+=`<h3 style="margin:16px 0 6px;font:700 11px var(--mono);letter-spacing:1.2px;text-transform:uppercase">Design checks: ${bad?bad+' to fix':'all clear'}</h3><ul class="sol-ck">${A.checks.map(c=>`<li><span class="${c[0]?'sol-ok':'sol-no'}">${c[0]?'OK':'CHECK'}</span> ${c[0]?esc(c[2]):esc(c[3])}</li>`).join('')}</ul><p class="bc-note">Wires glow when power flows at the chosen hour. Simplified: about 4.6 peak sun hours, 80 % performance ratio, LiFePO4 at 80 % usable, no cable losses. A teaching tool, not a design.</p>`;
+    return h;
+  }
+  function asmTab(){
+    return `<p class="bc-note" style="margin-bottom:10px">Pick a part, then tap the canvas to place it. Tap one terminal and then another to run a wire. Red dots are DC positive, dark dots DC negative, blue dots AC. Wire panels in series for voltage and in parallel for current.</p><div id="asmPal">${asmPalette()}</div><div class="sol-seg" style="margin:8px 0"><button type="button" data-asm="preset" data-v="hybrid">Example: hybrid home</button><button type="button" data-asm="preset" data-v="offgrid">Example: off-grid cabin</button><button type="button" data-asm="preset" data-v="gridtie">Example: grid-tie</button><button type="button" data-asm="clear">Clear canvas</button></div><div class="bc-note" id="asmMsg" aria-live="polite">${esc(asm.msg||'')}</div><div id="asmCv" style="overflow-x:auto"></div><div class="sol-info" id="asmIns" style="margin:12px 0">${asmInspector()}</div><div id="asmRes"></div>`;
+  }
+  function asmDraw(){const A=window.__asmA||analyze(),R=A.cfg?simCore(A.cfg):null;const e=$('asmCv');if(e)e.innerHTML=asmSvg(A,R,asm.hour)}
+  function asmAll(){const e=$('asmRes');if(!e)return;e.innerHTML=asmResults();asmDraw();const i=$('asmIns');if(i)i.innerHTML=asmInspector();const pl=$('asmPal');if(pl)pl.innerHTML=asmPalette();const m=$('asmMsg');if(m)m.textContent=asm.msg||''}
+  function asmInit(){asmAll()}
+  const svgPt=e=>{const s=$('asmSvg'),pt=s.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const q=pt.matrixTransform(s.getScreenCTM().inverse());return [q.x,q.y]};
+  let drag=null;
+  root.addEventListener('pointerdown',e=>{
+    if(tab!=='asm')return;const g=e.target.closest('[data-part]');if(!g||e.target.closest('[data-term]'))return;
+    const p=pById(g.dataset.part);if(!p)return;asm.sel=p.id;asm.pend=null;const [x,y]=svgPt(e);drag={id:p.id,dx:p.x-x,dy:p.y-y,moved:false};
+    const i=$('asmIns');if(i)i.innerHTML=asmInspector();
+  });
+  root.addEventListener('pointermove',e=>{
+    if(!drag||tab!=='asm')return;const p=pById(drag.id),[x,y]=svgPt(e);const nx=Math.max(40,Math.min(715,Math.round((x+drag.dx)/10)*10)),ny=Math.max(30,Math.min(430,Math.round((y+drag.dy)/10)*10));
+    if(nx!==p.x||ny!==p.y){p.x=nx;p.y=ny;drag.moved=true;asmDraw()}
+  });
+  const endDrag=()=>{if(drag){const m=drag.moved;drag=null;if(m){aSave();asmDraw()}else asmDraw()}};
+  root.addEventListener('pointerup',endDrag);root.addEventListener('pointercancel',endDrag);
+  root.addEventListener('click',e=>{
+    if(tab!=='asm')return;
+    const b=e.target.closest('[data-asm]');
+    if(b){const k=b.dataset.asm,v=b.dataset.v;
+      if(k==='place'){asm.place=asm.place===v?null:v;asm.pend=null;asm.msg=asm.place?'Tap an empty spot on the canvas to place the '+AP[v].n+'.':'';asmAll()}
+      else if(k==='preset'){preset(v);asm.msg='Example loaded. Change anything and watch the checks.';asmAll()}
+      else if(k==='clear'){asm.parts=[];asm.wires=[];asm.sel=null;asm.pend=null;asm.msg='Canvas cleared. Place a solar panel to begin.';aSave();asmAll()}
+      else if(k==='del'){const s=asm.sel;if(s){if(s[0]==='w')asm.wires=asm.wires.filter(w=>w.id!==s);else{asm.parts=asm.parts.filter(p=>p.id!==s);asm.wires=asm.wires.filter(w=>w.a[0]!==s&&w.b[0]!==s)}asm.sel=null;aSave();asmAll()}}
+      return}
+    const t=e.target.closest('[data-term]');
+    if(t){const [pid,n]=t.dataset.term.split('|'),p=pById(pid);
+      if(!asm.pend){asm.pend=[pid,n];asm.msg='Wire started at '+AP[p.t].n+' '+n+'. Tap the other terminal.';asmDraw();const m=$('asmMsg');if(m)m.textContent=asm.msg;return}
+      const [p0,n0]=asm.pend;const a=pById(p0);asm.pend=null;
+      if(p0===pid&&n0===n){asm.msg='Wire cancelled.'}
+      else if(AP[a.t].t[n0][2]!==AP[p.t].t[n][2]){asm.msg='DC terminals connect only to DC, and AC only to AC.'}
+      else if(p0===pid){asm.msg='A wire must join two different parts.'}
+      else if(asm.wires.some(w=>(w.a[0]===p0&&w.a[1]===n0&&w.b[0]===pid&&w.b[1]===n)||(w.b[0]===p0&&w.b[1]===n0&&w.a[0]===pid&&w.a[1]===n)))asm.msg='Those terminals are already wired.';
+      else{addWire(a,n0,p,n);asm.msg='Wire added.';aSave()}
+      asmAll();return}
+    const w=e.target.closest('[data-wire]');
+    if(w){asm.sel=w.dataset.wire;asm.pend=null;asmAll();return}
+    if(e.target.closest('#asmSvg')&&!e.target.closest('[data-part]')){
+      if(asm.place){const [x,y]=svgPt(e);const p=addPart(asm.place,x,y);asm.sel=p.id;asm.msg=AP[p.t].n+' placed. Place more, or wire it up.';aSave();asmAll()}
+      else{asm.sel=null;asm.pend=null;asmAll()}
+    }
+  });
+  root.addEventListener('input',e=>{
+    if(tab!=='asm')return;
+    if(e.target.id==='asmHour'){asm.hour=+e.target.value;aSave();const A=window.__asmA,R=A&&A.cfg?simCore(A.cfg):null;const keep=e.target;asmResultsKeep();return}
+    if(e.target.id==='asmCloud'){asm.cloud=+e.target.value;aSave();asmResultsKeep();return}
+  });
+  function asmResultsKeep(){const id=document.activeElement&&document.activeElement.id,e=$('asmRes');e.innerHTML=asmResults();asmDraw();if(id){const n=$(id);if(n)n.focus()}}
+  root.addEventListener('change',e=>{
+    if(tab!=='asm')return;const k=e.target.dataset&&e.target.dataset.ai;if(!k||!asm.sel)return;const p=pById(asm.sel);if(!p)return;
+    p.p[k]=e.target.type==='checkbox'?(e.target.checked?1:0):(isNaN(+e.target.value)?e.target.value:+e.target.value);aSave();asmAll();
+  });
   function render(){
-    const T=[['types','System types'],['size','Sizing'],['string','String check'],['money','Payback'],['batt','Battery tools'],['check','Install checklist']];
-    const body=tab==='types'?types():tab==='size'?sizing():tab==='string'?stringTab():tab==='money'?moneyTab():tab==='batt'?battTab():checklist();
+    const T=[['asm','Assemble'],['build','Quick design'],['types','System types'],['size','Sizing'],['string','String check'],['money','Payback'],['batt','Battery tools'],['check','Install checklist']];
+    const body=tab==='asm'?asmTab():tab==='build'?buildTab():tab==='types'?types():tab==='size'?sizing():tab==='string'?stringTab():tab==='money'?moneyTab():tab==='batt'?battTab():checklist();
     root.innerHTML=`<div class="sol-tabs" id="solTabs">${T.map(t=>`<button type="button" data-t="${t[0]}" class="${t[0]===tab?'on':''}">${t[1]}</button>`).join('')}</div><div id="solBody">${body}</div>`;
-    runTab();
+    if(tab==='asm')asmInit();runTab();
   }
   root.addEventListener('click',e=>{
     const t=e.target.closest('[data-t]'),m=e.target.closest('[data-m]'),s=e.target.closest('[data-s]');
@@ -5957,7 +6384,176 @@ renderQuiz();
     runTab();
   });
   render();
-  window.__sol={moneyRun,battRun,set:(m,s)=>{mode=m;scn=s;tab='types';render()},tab:t=>{tab=t;render()},flowEdges:()=>root.querySelectorAll('.e1').length};
+  window.__vbChart=vbChart;window.__sol={AP,LS,get asm(){return asm},analyze,preset:k=>{preset(k);asmAll()},simCore,get vb(){return vb},vbSim,vbChecks,moneyRun,battRun,set:(m,s)=>{mode=m;scn=s;tab='types';render()},tab:t=>{tab=t;render()},flowEdges:()=>root.querySelectorAll('.e1').length};
+})();
+
+/* ========== MONITOR: simulated dashboard on the Assemble system, plus the sensing hardware design ========== */
+(function(){
+  const root=$('monRoot');if(!root)return;
+  const esc=escapeHTML;
+  const VMP={400:34.5,550:41.5,600:43.5};
+  let tab='dash',H=12,play=false,outage=false,timer=null,spd=700;
+  const TABS=[['dash','Dashboard'],['map','Sensor map'],['calc','Sensor calculators'],['fw','Firmware and data'],['safe','Safety']];
+  function ctx(){
+    const S=window.__sol;if(!S||!S.asm||!S.asm.parts.length)return null;
+    const A=S.analyze();if(!A.cfg)return {A,none:true};
+    const cfg=Object.assign({},A.cfg,{cloud:S.asm.cloud});let gl=cfg.gl;
+    if(outage&&cfg.grid){cfg.grid=false;gl=gl.map(()=>0);cfg.gl=gl}
+    const R=S.simCore(cfg);return {A,R,cfg,S};
+  }
+  const sched=(S,p,h)=>p.p.on&&(S.LS[p.p.sch]||S.LS.all)[1].some(w=>h>=w[0]&&h<w[1]);
+  const loadP=(S,p,h)=>sched(S,p,h)?S.AP[p.t].rw*S.AP[p.t].duty:0;
+  const kwh=(arr,to)=>arr.slice(0,to+1).reduce((a,b)=>a+b,0)/1000;
+  function derive(c){
+    const {A,R,S}=c,h=H,pv=R.pv[h],ld=R.ld[h],bt=R.bt[h],gr=R.gr[h],soc=R.soc[h],un=R.un[h];
+    const arr=A.arr,bank=A.bank,vpv=arr&&pv>1?arr.ns*(VMP[arr.wp]||41.5)*.93:0,ipv=vpv?pv/vpv:0;
+    const vbat=bank?bank.ns*(12.2+.9*soc/100):0,ibat=vbat?bt/vbat:0;
+    const gl=c.cfg.gl[h],acOut=Math.max(0,ld-gl);
+    const loads=(A.L||[]).concat(A.GL||[]).map(p=>{const w=loadP(S,p,h),day=Array.from({length:24},(_,x)=>loadP(S,p,x));return {n:S.AP[p.t].n,w,i:w/(230*.95),k:kwh(day,h),grid:(A.GL||[]).includes(p)}});
+    const cap=R.cap||0,usable=cap*.8*.95,reserve=cap*.2,remain=Math.max(0,(soc/100*cap-reserve)*.95);
+    const hrs=bt<-1&&ld>0?remain/ld:null;
+    const alerts=[];
+    if(un>1)alerts.push(['bad','Outage: '+Math.round(un)+' W of load is not being supplied.']);
+    if(A.hasBat&&soc<30&&bt<=0)alerts.push([soc<20?'bad':'warn','Battery at '+Math.round(soc)+' %. '+(c.cfg.grid?'Backup from the line is needed soon.':'No line to fall back on. Switch off large loads.')]);
+    if(gr>1)alerts.push(['warn','Importing '+Math.round(gr)+' W from the line.']);
+    if(gr<-1)alerts.push(['ok','Exporting '+Math.round(-gr)+' W to the line.']);
+    if(A.inv&&ld/A.inv>.8)alerts.push(['warn','Inverter at '+Math.round(ld/A.inv*100)+' % of its rating. Near the limit.']);
+    const exp=c.cfg.dcW*.75*.8*Math.max(0,Math.sin(Math.PI*(h+.5-6)/12));
+    if(h>=9&&h<15&&exp>0&&pv<exp*.45&&S.asm.cloud<.3)alerts.push(['warn','Harvest is '+Math.round(pv)+' W but about '+Math.round(exp)+' W is expected. Check shading, dirt or a tripped breaker.']);
+    else if(h>=9&&h<15&&S.asm.cloud>=.3)alerts.push(['info','Cloud cover is cutting the harvest.']);
+    if(c.cfg.dcW>0&&pv>=c.cfg.limit-1&&pv>0)alerts.push(['info','The array is clipped at '+Math.round(c.cfg.limit)+' W.']);
+    let st,sc;
+    if(un>1){st='OUTAGE: LOADS NOT SUPPLIED';sc='bad'}
+    else if(A.hasBat&&soc<20&&c.cfg.grid){st='BACKUP FROM LINE NEEDED';sc='warn'}
+    else if(gr>1){st='USING THE LINE';sc='warn'}
+    else if(bt>1&&pv>ld){st='HARVESTING AND CHARGING';sc='ok'}
+    else if(pv>1&&bt>=-1){st=gr<-1?'HARVESTING, EXPORTING':'SOLAR POWERING THE LOADS';sc='ok'}
+    else if(bt<-1){st='RUNNING ON BATTERY';sc='info'}
+    else{st='IDLE';sc='info'}
+    const need=(A.hasBat&&soc<25&&bt<=0)||gr>1||un>1;
+    return {pv,ld,bt,gr,soc,un,vpv,ipv,vbat,ibat,acOut,gl,loads,hrs,alerts,st,sc,need,usable,
+      ePV:kwh(R.pv,h),eLD:kwh(R.ld,h),eIMP:kwh(R.gr.map(x=>Math.max(0,x)),h),eEXP:kwh(R.gr.map(x=>Math.max(0,-x)),h)};
+  }
+  const f0=x=>Math.round(x).toLocaleString(),f1=x=>x.toFixed(1),f2=x=>x.toFixed(2);
+  function dash(){
+    const c=ctx();
+    if(!c)return `<div class="sol-info"><b>No system to monitor yet.</b><p>Build one on the Solar page, Assemble tab, or load an example, then come back.</p><div class="sol-seg"><button type="button" data-mx="ex" data-v="hybrid">Load hybrid home</button><button type="button" data-mx="ex" data-v="offgrid">Load off-grid cabin</button><button type="button" data-mx="ex" data-v="gridtie">Load grid-tie</button></div></div>`;
+    if(c.none)return `<div class="sol-info"><b>The system is not complete.</b><p>${esc((c.A.checks.filter(x=>!x[0])[0]||[0,0,0,'Add an inverter on the Solar page.'])[3])}</p><div class="sol-seg"><button type="button" data-mx="go">Open Solar / Assemble</button></div></div>`;
+    const d=derive(c),{A,R}=c;
+    const tile=(k,v,sub,cls)=>`<div class="mon-t ${cls||''}"><small>${k}</small><b>${v}</b><span>${sub||''}</span></div>`;
+    const rows=[];
+    rows.push(['M1','PV array',A.arr?A.arr.ns+'S × '+A.arr.np+'P':'-','INA228 + shunt',f1(d.vpv)+' V',f1(d.ipv)+' A',f0(d.pv)+' W',f2(d.ePV)]);
+    if(A.hasBat)rows.push(['M2','Battery bank',A.bank?A.bank.ns+'S × '+A.bank.np+'P · '+A.bank.ah+' Ah':'-','INA228 + shunt',f1(d.vbat)+' V',(d.ibat>=0?'+':'')+f1(d.ibat)+' A',(d.bt>=0?'+':'')+f0(d.bt)+' W',Math.round(d.soc)+' % SOC']);
+    rows.push(['M3','Inverter AC out','230 V 60 Hz','PZEM-004T + CT','230 V',f1(d.acOut/(230*.95))+' A',f0(d.acOut)+' W',f2(kwh(R.ld.map((x,i)=>x-c.cfg.gl[i]),H))]);
+    if(A.hasGrid)rows.push(['M4','Utility line','import / export','CT + energy IC','230 V',f1(Math.abs(d.gr)/(230*.95))+' A',(d.gr>1?'+':d.gr<-1?'-':'')+f0(Math.abs(d.gr))+' W','in '+f2(d.eIMP)+' / out '+f2(d.eEXP)]);
+    d.loads.forEach((l,i)=>rows.push(['L'+(i+1),l.n,l.grid?'line side':'backed up','CT / smart plug','230 V',f1(l.i)+' A',f0(l.w)+' W',f2(l.k)]));
+    const bars=d.loads.map(l=>{const w=Math.max(...[1,l.w]);return `<div class="mon-bar"><span>${esc(l.n)}</span><i style="width:${Math.min(100,l.w/Math.max(1,d.ld)*100)}%"></i><b>${f0(l.w)} W</b></div>`}).join('');
+    return `<div class="mon-top"><span class="mon-st ${d.sc}" role="status">${d.st}</span><div class="sol-seg"><button type="button" data-mx="play">${play?'Pause':'Play the day'}</button><button type="button" data-mx="out" class="${outage?'on':''}" aria-pressed="${outage}">Line outage</button><button type="button" data-mx="go">Edit system</button></div></div>
+    <div class="bc-f" style="margin:10px 0"><label for="monH">Time ${String(H).padStart(2,'0')}:00 – ${String(H+1).padStart(2,'0')}:00 (the clock moves while playing)</label><input type="range" id="monH" min="0" max="23" value="${H}"></div>
+    <div class="mon-g">${tile('Harvesting',f0(d.pv)+' W',f2(d.ePV)+' kWh today','pv')}${tile('Consumption',f0(d.ld)+' W',f2(d.eLD)+' kWh today','ld')}${A.hasBat?tile('Battery',Math.round(d.soc)+' %',(d.bt>1?'charging '+f0(d.bt):d.bt<-1?'discharging '+f0(-d.bt):'idle')+' W'+(d.hrs!==null?' · about '+f1(d.hrs)+' h left':''),'bt'):''}${A.hasGrid?tile('Line',d.gr>1?'IN '+f0(d.gr)+' W':d.gr<-1?'OUT '+f0(-d.gr)+' W':'idle',f2(d.eIMP)+' kWh in · '+f2(d.eEXP)+' kWh out','gr'):''}${tile('Backup from line?',d.need?'YES':'NO',d.need?(c.cfg.grid?'line is covering the gap':'no line available'):'solar and battery are enough',d.need?'warn':'ok')}</div>
+    ${vbChartMon(R,H,A.hasBat)}
+    <h3 class="mon-h">Alerts now</h3><ul class="sol-ck">${d.alerts.length?d.alerts.map(a=>`<li><span class="${a[0]==='ok'||a[0]==='info'?'sol-ok':'sol-no'}">${a[0]==='bad'?'ALERT':a[0]==='warn'?'WATCH':a[0]==='ok'?'OK':'INFO'}</span> ${esc(a[1])}</li>`).join(''):'<li><span class="sol-ok">OK</span> Nothing to report at this hour.</li>'}</ul>
+    <h3 class="mon-h">Consumption by device</h3><div class="mon-bars">${bars||'<p class="bc-note">No loads connected.</p>'}</div>
+    <h3 class="mon-h">Sensor readings</h3><div style="overflow-x:auto"><table class="gd-t" style="min-width:640px"><tr><th>Pt</th><th>Device</th><th>Layout</th><th>Sensor</th><th>V</th><th>I</th><th>P</th><th>kWh today</th></tr>${rows.map(r=>`<tr>${r.map(x=>`<td>${esc(x)}</td>`).join('')}</tr>`).join('')}</table></div>
+    <p class="bc-note">Every row is one measurement point the hardware would read. Energy is summed up to the chosen hour. The line outage button cuts the grid so you can see how the monitor reacts.</p>`;
+  }
+  function vbChartMon(R,h,hb){return typeof window.__vbChart==='function'?window.__vbChart(R,h,hb):''}
+  /* ---------- sensor map ---------- */
+  function mapTab(){
+    const box=(x,y,w,h,t,s,c)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#fff" stroke="${c||'#14181B'}" stroke-width="2"/><text x="${x+w/2}" y="${y+h/2-1}" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="14">${t}</text><text x="${x+w/2}" y="${y+h/2+13}" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#555">${s||''}</text>`;
+    const tap=(x,y,n)=>`<circle cx="${x}" cy="${y}" r="11" fill="#E8590C" stroke="#fff" stroke-width="2"/><text x="${x}" y="${y+4}" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#fff">${n}</text>`;
+    let o=`<svg viewBox="0 0 760 450" role="img" aria-label="Measurement points in a solar system and the data path to the hub" style="width:100%;min-width:640px;height:auto;display:block;background:#fff;border:1px solid var(--line)">`;
+    o+=`<g stroke="#14181B" stroke-width="2" fill="none"><path d="M120 70H215"/><path d="M335 70H440"/><path d="M560 70H640"/><path d="M275 100V150"/><path d="M500 95V150"/></g>`;
+    o+=box(20,45,100,50,'PV array','strings','#E8590C')+box(215,40,120,60,'Inverter','hybrid / grid-tie')+box(440,45,120,50,'AC board','breakers')+box(640,45,100,50,'Loads','fridge, fan, EV...')+box(215,150,120,50,'Battery bank','48 V LiFePO4','#2F8F5B')+box(440,150,120,50,'Utility line','import / export','#1F5FAE');
+    o+=`<g stroke="#E8590C" stroke-width="2" stroke-dasharray="5 4" fill="none"><path d="M168 81V290"/><path d="M286 125H350V290"/><path d="M388 81V290"/><path d="M489 125H420V290"/><path d="M600 81V290"/></g>`;
+    o+=tap(168,70,'M1')+tap(275,125,'M2')+tap(388,70,'M3')+tap(500,125,'M4')+tap(600,70,'L');
+    o+=box(150,290,470,50,'ESP32 hub','reads every node over an RS-485 bus (Modbus RTU), publishes over Wi-Fi','#E8590C')+`<path d="M270 340V365M520 340V365M340 390H420" stroke="#14181B" stroke-width="2" fill="none"/>`+box(200,365,140,50,'MQTT broker','local or cloud')+box(420,365,140,50,'Dashboard','phone / PC')+`<text x="20" y="438" font-family="JetBrains Mono,monospace" font-size="10" fill="#555">Orange dots are sensor nodes. Dashed orange is the RS-485 bus to the hub.</text></svg>`;
+    const N=[['M1','PV array','DC volts and amps','INA228 + 75 mV shunt (or hall sensor for big arrays)','up to 85 V bus; shunt on the negative lead','RS-485 node'],['M2','Battery','DC volts and amps, both directions, SOC','INA228 + 100 to 300 A / 75 mV shunt','shunt on the battery negative, before every other connection','RS-485 node'],['M3','Inverter AC output','AC volts, amps, watts, kWh, power factor','PZEM-004T v3 with split-core CT','230 V, up to 100 A with the external CT','UART to node'],['M4','Utility line','Import and export direction, kWh both ways','CT + ATM90E26 / ADE7953 energy IC','needs a signed (bidirectional) reading','RS-485 node'],['L1..Ln','Each load or circuit','Amps, watts, kWh per device','SCT-013 CTs or smart plugs (Tasmota)','clamp one live wire only; plug type for small loads','ADC or Wi-Fi']];
+    return `<p class="bc-note">The idea: measure at the boundary of every device, so it works on any brand. The loads and the battery are measured where they connect to the rest of the system, not inside them.</p><div style="overflow-x:auto">${o}</div><h3 class="mon-h">Measurement points</h3><div style="overflow-x:auto"><table class="gd-t" style="min-width:760px"><tr><th>Pt</th><th>Where</th><th>Measures</th><th>Sensor</th><th>Notes</th><th>Link</th></tr>${N.map(r=>`<tr>${r.map(x=>`<td>${esc(x)}</td>`).join('')}</tr>`).join('')}</table></div>
+    <h3 class="mon-h">Why a shunt and not a hall sensor</h3><p class="bc-note">A shunt with a precision amplifier (INA228) reads small currents accurately and works both ways, which is needed for a battery. A hall sensor like the ACS712 drifts with temperature and is poor at low current, so it is fine for a quick estimate but not for state of charge.</p>
+    <h3 class="mon-h">What the hub decides</h3><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Harvest</a><span>M1 volts × amps. Compare it with the expected value for the hour to spot shading, dirt or a tripped breaker.</span></li><li><a style="color:var(--ink);cursor:default">Consumption</a><span>M3 plus any loads on the line side, with each load from its own clamp.</span></li><li><a style="color:var(--ink);cursor:default">Backup from line</a><span>Needed when the battery is below the set limit and the harvest is less than the load, or the inverter is already importing.</span></li><li><a style="color:var(--ink);cursor:default">Battery</a><span>SOC from coulomb counting at M2, corrected by the resting voltage.</span></li></ul>`;
+  }
+  /* ---------- calculators ---------- */
+  const fld=(id,l,v,h)=>`<div class="bc-f"><label for="${id}">${l}</label><input class="input" id="${id}" value="${v}" autocomplete="off" inputmode="decimal"${h?` title="${h}"`:''}></div>`;
+  function calcTab(){
+    return `<h3 class="mon-h" style="margin-top:0">Current shunt</h3><div class="bc-grid">${fld('mcI','Maximum current (A)','100','Highest continuous current you expect')}${fld('mcV','Shunt drop at full current (mV)','75','Common shunts: 50 or 75 mV')}${fld('mcR','ADC full-scale (mV)','163.84','INA228: 163.84 or 40.96 mV')}</div><div id="mcOut"></div>
+    <h3 class="mon-h">CT clamp burden resistor</h3><div class="bc-grid">${fld('mtI','Maximum current (A rms)','30','')}${fld('mtN','CT ratio (turns)','2000','SCT-013-000: 100 A to 50 mA = 2000')}${fld('mtV','ADC supply (V)','3.3','ESP32 ADC input range about 0 to 3.3 V')}</div><div id="mtOut"></div>
+    <h3 class="mon-h">Voltage divider for a bare ADC</h3><div class="bc-grid">${fld('mdV','Maximum DC voltage (V)','60','')}${fld('mdR','Lower resistor (kΩ)','4.7','')}${fld('mdA','ADC full-scale (V)','3.3','')}</div><div id="mdOut"></div>
+    <p class="bc-note">These are starting values. Check the part datasheet, and keep the shunt cool: its heat is I² × R.</p>`;
+  }
+  function calcRun(){
+    const n=id=>{const v=parseFloat(String($(id).value).replace(',','.'));return isFinite(v)?v:0};
+    const I=n('mcI'),mv=n('mcV'),fs=n('mcR');
+    if($('mcOut'))$('mcOut').innerHTML=I>0&&mv>0&&fs>0?(()=>{const R=mv/1000/I,P=I*I*R,lsb=fs/1000/524288/R,headroom=fs/mv;return `<div class="bc-out"><div><small>Shunt resistance</small><b>${(R*1000).toFixed(3)} mΩ</b></div><div><small>Heat in shunt</small><b>${P.toFixed(2)} W</b></div><div><small>Current resolution</small><b>${(lsb*1000).toFixed(3)} mA</b></div><div><small>ADC headroom</small><b>${headroom.toFixed(2)}×</b></div></div><p class="bc-note">${headroom<1?'The shunt drop at full current is higher than the ADC range. Pick the 163.84 mV range or a lower-drop shunt.':'Use a shunt rated for at least '+Math.ceil(I*1.25)+' A continuous. Resolution assumes a 20-bit converter.'}</p>`})():'<p class="bc-note">Fill in the values.</p>';
+    const Ia=n('mtI'),N=n('mtN'),V=n('mtV');
+    if($('mtOut'))$('mtOut').innerHTML=Ia>0&&N>0&&V>0?(()=>{const ip=Ia*Math.SQRT2/N,R=V/2/ip,std=[10,15,22,33,47,56,62,68,75,82,100,120,150,180,220,330].filter(x=>x<=R).pop()||10;return `<div class="bc-out"><div><small>Secondary peak</small><b>${(ip*1000).toFixed(1)} mA</b></div><div><small>Burden resistor</small><b>${R.toFixed(0)} Ω</b></div><div><small>Nearest lower standard</small><b>${std} Ω</b></div></div><p class="bc-note">The CT output is biased at half the supply by two equal resistors and a capacitor. Never leave a CT with a current inside and no burden: the open secondary voltage can be dangerous. Use a CT with a built-in burden (voltage output) if unsure.</p>`})():'<p class="bc-note">Fill in the values.</p>';
+    const Vm=n('mdV'),Rl=n('mdR'),Fa=n('mdA');
+    if($('mdOut'))$('mdOut').innerHTML=Vm>0&&Rl>0&&Fa>0&&Vm>Fa?(()=>{const Ru=Rl*(Vm/Fa-1),std=[10,12,15,18,22,27,33,39,47,56,68,82,100,120,150,180,220,270,330,390,470].find(x=>x>=Ru)||Ru;return `<div class="bc-out"><div><small>Upper resistor</small><b>${Ru.toFixed(1)} kΩ</b></div><div><small>Nearest standard</small><b>${std} kΩ</b></div><div><small>Divider ratio</small><b>1 : ${(Vm/Fa).toFixed(2)}</b></div><div><small>Divider current</small><b>${(Vm/(Ru+Rl)*1000).toFixed(2)} mA</b></div></div><p class="bc-note">Add a 100 nF capacitor across the lower resistor and a clamp diode to the supply to protect the ADC. The INA228 reads up to 85 V directly, so it needs no divider.</p>`})():'<p class="bc-note">The maximum voltage must be larger than the ADC full-scale.</p>';
+  }
+  /* ---------- firmware and data ---------- */
+  const CODE=`// ESP32 hub outline (Arduino style). One poll loop, one publish, a few rules.
+struct Reading { float v, i, p; };
+Reading pv, bat, acOut, grid;      // grid.p is signed: + import, - export
+float socPct = 60;                 // start value, corrected by rest voltage
+const float SOC_LOW = 25.0;        // line backup limit, set in the dashboard
+
+void loop() {
+  pv     = modbusRead(NODE_PV);    // M1  INA228 node, RS-485
+  bat    = modbusRead(NODE_BAT);   // M2  signed current: + charge
+  acOut  = pzemRead();             // M3  UART
+  grid   = modbusRead(NODE_GRID);  // M4
+  float dt = (millis() - last) / 3.6e6;     // hours
+  socPct += bat.i * dt * 100.0 / CAP_AH;    // coulomb counting
+  if (restingFor(bat, 30 * 60000)) socPct = socFromVoltage(bat.v);
+
+  bool needLine = (socPct < SOC_LOW && bat.i <= 0) || grid.p > 0;
+  bool overLoad = acOut.p > 0.8 * INV_W;
+  bool lowHarvest = pv.p < 0.45 * expectedW(hourNow()) && clearSky();
+
+  publish("solar/pv/power", pv.p);
+  publish("solar/battery/soc", socPct);
+  publish("solar/grid/power", grid.p);
+  publish("solar/alert/backup", needLine);
+  delay(1000);
+}`;
+  function fwTab(){
+    const reg=[['0x0000','Voltage','V × 0.01','u16','read'],['0x0001','Current (signed)','A × 0.001','s32 (2 regs)','read'],['0x0003','Power','W × 0.1','u32 (2 regs)','read'],['0x0005','Energy in','Wh','u32 (2 regs)','read'],['0x0007','Energy out','Wh','u32 (2 regs)','read'],['0x0009','Alarm flags','bit0 over-current, bit1 over-voltage, bit2 sensor fault','u16','read'],['0x0010','Node address','1 to 247','u16','read / write']];
+    const top=[['solar/pv/{v,i,power}','M1 readings, once a second'],['solar/battery/{v,i,power,soc}','M2 readings and the SOC estimate'],['solar/ac/{v,i,power,energy}','M3, inverter output'],['solar/grid/{power,import,export}','M4, signed power and totals'],['solar/load/<name>/{power,energy}','one topic per measured load'],['solar/alert/{backup,overload,lowharvest,outage}','true or false, retained']];
+    return `<h3 class="mon-h" style="margin-top:0">Node register map (Modbus RTU)</h3><p class="bc-note">Each sensor node answers on an RS-485 bus at 9600 or 19200 baud, 8N1, with a different address. The map is the same for every node, so the hub uses one reader.</p><div style="overflow-x:auto"><table class="gd-t" style="min-width:600px"><tr><th>Register</th><th>Value</th><th>Scale</th><th>Type</th><th>Access</th></tr>${reg.map(r=>`<tr>${r.map(x=>`<td>${esc(x)}</td>`).join('')}</tr>`).join('')}</table></div>
+    <h3 class="mon-h">MQTT topics</h3><div style="overflow-x:auto"><table class="gd-t" style="min-width:520px"><tr><th>Topic</th><th>Content</th></tr>${top.map(r=>`<tr><td><code>${esc(r[0])}</code></td><td>${esc(r[1])}</td></tr>`).join('')}</table></div>
+    <h3 class="mon-h">Hub firmware outline</h3><div class="term-block"><div class="tb-bar"><span class="dots"><i></i><i></i><i></i></span><span>hub.ino (outline)</span></div><div class="tb-body"><pre style="margin:0;white-space:pre;overflow-x:auto;font-size:12px;line-height:1.5">${esc(CODE)}</pre></div></div>
+    <h3 class="mon-h">Rules the dashboard uses</h3><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Backup needed</a><span>Battery below the set limit and not charging, or the line is already importing.</span></li><li><a style="color:var(--ink);cursor:default">Overload</a><span>Inverter above 80 % of its rating.</span></li><li><a style="color:var(--ink);cursor:default">Low harvest</a><span>Under 45 % of the expected output on a clear midday.</span></li><li><a style="color:var(--ink);cursor:default">Outage</a><span>Loads draw power the system cannot supply.</span></li></ul>`;
+  }
+  function safeTab(){
+    const L=[['Isolate the mains side','Do not connect a microcontroller directly to 230 V. Use a PZEM or a certified energy meter module with isolation, and a CT that clamps around one insulated conductor.'],['Fuse every tap','Fuse the sense wires close to the source. A voltage tap on a battery can carry a short-circuit current if it chafes.'],['Shunt on the negative lead','Place the battery shunt between the battery negative and the rest of the system, and keep all other negative connections on the load side of it.'],['Use RS-485 between nodes','I²C is for short runs on a board. Between enclosures use RS-485 with twisted pair and a terminator at each end.'],['Enclosures and cable glands','DC and AC wiring go in separate, closed enclosures with strain relief. Label each point M1 to M4.'],['A licensed electrician signs off','This page is a design study. A real installation of the AC and battery side must be done and inspected by a licensed electrician.']];
+    return `<ul class="gd-l">${L.map(l=>`<li><a style="color:var(--ink);cursor:default">${esc(l[0])}</a><span>${esc(l[1])}</span></li>`).join('')}</ul>`;
+  }
+  function stop(){play=false;if(timer){clearInterval(timer);timer=null}}
+  function render(){
+    const body=tab==='dash'?dash():tab==='map'?mapTab():tab==='calc'?calcTab():tab==='fw'?fwTab():safeTab();
+    root.innerHTML=`<div class="sol-tabs" id="monTabs">${TABS.map(t=>`<button type="button" data-mt="${t[0]}" class="${t[0]===tab?'on':''}">${t[1]}</button>`).join('')}</div><div id="monBody">${body}</div>`;
+    if(tab==='calc')calcRun();
+  }
+  function tick(){
+    if(!root.offsetParent||tab!=='dash'){stop();return}
+    H=(H+1)%24;render();
+  }
+  root.addEventListener('click',e=>{
+    const t=e.target.closest('[data-mt]');if(t){stop();tab=t.dataset.mt;render();return}
+    const b=e.target.closest('[data-mx]');if(!b)return;const k=b.dataset.mx;
+    if(k==='play'){if(play)stop();else{play=true;timer=setInterval(tick,spd)}render()}
+    else if(k==='out'){outage=!outage;render()}
+    else if(k==='go'){stop();window.__ide.go('solar');window.__sol.tab('asm')}
+    else if(k==='ex'){window.__sol.preset(b.dataset.v);render()}
+  });
+  root.addEventListener('input',e=>{
+    if(e.target.id==='monH'){H=+e.target.value;const y=document.activeElement===e.target;render();const r=$('monH');if(r&&y)r.focus();return}
+    if(tab==='calc')calcRun();
+  });
+  window.__mon={get H(){return H},set H(v){H=v},tab:t=>{stop();tab=t;render()},render,ctx,derive:()=>{const c=ctx();return c&&!c.none?derive(c):null},outage:v=>{outage=v;render()},stop};
+  const view=document.getElementById('monitor');
+  if(view)new MutationObserver(()=>{if(view.classList.contains('on'))render();else stop()}).observe(view,{attributes:true,attributeFilter:['class']});
+  render();
 })();
 
 /* ========== MOTOR CONTROL: DOL, forward/reverse and star-delta, with a live ladder and power circuit ========== */
