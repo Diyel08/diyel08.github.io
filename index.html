@@ -1334,6 +1334,23 @@ html .win .win-body .bench-steps button:hover:not(.on){background:rgba(120,120,1
 html .win .win-body .bench-steps button.on{background:#0a7aff!important;color:#fff!important;box-shadow:none}
 html .win .win-body .bench-steps button.on b{background:rgba(255,255,255,.28);color:#fff}
 html .win .win-body .bench-info{border:0;border-radius:14px;background:var(--card);box-shadow:var(--lg-edge)}
+/* BUILD 64: phone fit (Settings and small screens) */
+@media(max-width:700px){
+  .ss{grid-template-columns:minmax(0,1fr)}
+  .ss-side,.ss-main,.ss-p{min-width:0;max-width:100%}
+  .ss-side{border-right:0;border-bottom:.5px solid rgba(60,60,67,.14);padding:12px}
+  .ss-me{flex-direction:row;gap:10px;text-align:left;padding:0 0 10px}.ss-me b{margin-top:0}.ss-me .ss-av{width:44px;height:44px}
+  .ss-tabs{flex-direction:row;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}.ss-tabs button{width:auto;white-space:nowrap}
+  .ss-main{padding:16px}
+  .ss-p .wallp-g{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}
+  .win .view{padding-top:8px}
+  .ide{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+  .ide input,.ide textarea,.ide [contenteditable]{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}
+  .ide .win-body :is(p,li,pre,code,td,blockquote,.ss-story p){-webkit-user-select:text;user-select:text}
+  .gl>div{gap:12px;align-items:center}.gl dt{flex:1 1 0;min-width:0}.gl dt small{max-width:none}.gl dd{flex:none;max-width:60%}
+  .mot-ctl input[type=range]{touch-action:pan-y}
+  #micSvg,#verSvg{transform:translateZ(0);contain:paint}
+}
 /* 2D motion */
 svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
@@ -8220,9 +8237,10 @@ void loop() {
     const pr=t.closest('[data-pre]');if(pr){const P={L:[[2,2,2,0,0],[2,0,0,0,0],[2,0,0,0,0],[1,1,0,0,0],[0,0,0,0,0]],S:[[0,0,0,0,1],[0,0,0,2,0],[0,0,3,0,0],[0,4,0,0,0],[0,0,0,0,0]],C:[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]}[pr.dataset.pre];st.hm=P.map(r=>r.slice());build();return}
     const fp=t.closest('[data-fp]');if(fp){const k=fp.dataset.fp;st.fit.key=k;st.fit.hole=PRE[k][0].slice();st.fit.shaft=PRE[k][1].slice();build();return}
   });
+  let rq={};
   root.addEventListener('input',e=>{
     const id=e.target.id;
-    if(id==='verR'||id==='micR'){const k=id.slice(0,3);st[k].v=+e.target.value;upd(k);return}
+    if(id==='verR'||id==='micR'){const k=id.slice(0,3);st[k].v=+e.target.value;if(!rq[k])rq[k]=requestAnimationFrame(()=>{rq[k]=0;upd(k)});return}
     if(/^f(N|H0|H1|S0|S1)$/.test(id)){const v=parseFloat(e.target.value.replace(',','.'));if(!isFinite(v))return;const f=st.fit;if(id==='fN')f.nom=v;if(id==='fH0')f.hole[0]=v;if(id==='fH1')f.hole[1]=v;if(id==='fS0')f.shaft[0]=v;if(id==='fS1')f.shaft[1]=v;f.key='';const keep=id;build();const el=$(keep);if(el){el.focus();el.setSelectionRange(el.value.length,el.value.length)}return}
     if(id==='cM'){st.cnv.mm=e.target.value;const mm=parseFloat(e.target.value.replace(',','.')),o=$('cOut');if(isFinite(mm)){$('cI').value=r2(mm/25.4,4);const inch=mm/25.4,n=Math.round(inch*64),w=Math.floor(n/64),rem=n%64;let a=rem,b=64;while(a&&a%2===0){a/=2;b/=2}o.innerHTML=`<span class="on">${r2(mm,3)} mm = ${r2(inch,4)} in</span><span>${esc((w?w+' ':'')+(rem?a+'/'+b:(w?'':'0'))+' in (nearest 1/64)')}</span>`}return}
     if(id==='cI'){const i=parseFloat(e.target.value.replace(',','.'));if(isFinite(i)){st.cnv.mm=r2(i*25.4,3);$('cM').value=st.cnv.mm;$('cM').dispatchEvent(new Event('input',{bubbles:true}));$('cI').value=e.target.value}}
