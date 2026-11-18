@@ -14,7 +14,7 @@ Diyelo Dulay is a Failure Analysis technician in Laguna, Philippines. The site c
 - **Simulators.** Breadboard, Motor Control, Schematics, Wiring and Sound Room.
   - Sound Room (sound.sim): pick a 2.0 to 7.1 layout or add speakers, drag them (and the listener) around a top-down room, and read each speaker's distance, angle, delay, trim and cable run. Turn Sound on to hear it with Web Audio: tap a speaker for noise, run Calibrate, or play the Demo. Headphones give the best 3D effect. It is a teaching model, not a room-acoustics simulation.
   - Breadboard editing: drag a placed part to move it (a selected group moves together), Shift-tap, Multi or box-select for several, Delete or Backspace to remove, arrow keys to nudge, Undo/Redo (Ctrl+Z), and Clear (undoable).
-- **Labs.** Analog, Audio, Bench, Drawing, Monitor and Solar. These are teaching tools with ideal-part maths, not designs for real installations.
+- **Labs.** Analog, Audio, Bench, Drawing, Monitor, Solar, Parts Atlas, Appliances and Circuit Sim. These are teaching tools with ideal-part maths, not designs for real installations.
 - **Launchpad.** All apps grouped by type, with search (F4, the Go menu or Control Center).
 - **Control Center and Notification Center.** Toggles for Dark Mode, Sound, Stage Manager, Widgets, Dock Magnify and Effects, brightness and volume sliders, accent colors and shortcuts. Notifications can be dismissed one by one.
 - **Appearance.** Light, Dark or Auto, seven accent colors and several wallpapers, all in System Settings.
@@ -98,3 +98,37 @@ Email: diyelodulay@gmail.com · GitHub: [Diyel08](https://github.com/Diyel08)
 - Long press: the connectivity cluster and Now Playing tile open their full pages; Dark Mode, Sound, flashlight and timer open option sheets; Display opens the brightness panel.
 - Connectivity switches are demo state saved on the device (Airplane Mode really hides the signal and Wi-Fi icons). Now Playing plays a short generated tune; AirPlay opens sound.sim.
 
+
+## Look updates (Builds 80-84)
+- Build 80: Liquid Glass slider in System Settings (phone glass tint and blur), saved in `dc_lg`.
+- Build 81: iOS 27.2 touches: squircle home-screen icons with a glass layer, specular rims on glass controls.
+- Build 82: Icon style (Default, Dark, Clear, Tinted) in System Settings, saved in `dc_icst`.
+- Build 83: macOS 27 desktop pass: glass menu bar, translucent sidebars, glossy title bars, deeper window shadows.
+- Build 84: compact macOS 27 push buttons across apps and a more translucent window body.
+
+## Electrical and electronics labs (Builds 85-136)
+Everything here is teaching software with simple part models. It is not a design tool for real installations.
+
+**Wiring and schematics (85-89).** Schematics has an RCD (earth leakage) circuit and a socket radial vs ring circuit. Wiring has a meter with a continuity mode and a Wiring sandbox where you join terminals and the circuit is solved for real. Forward/reverse motor control has a RUN/JOG selector.
+
+**Phone and look (90-119).** iOS 27 style notification screen and status bar, a Back button that returns to where you came from, rebuilt Weather, Calculator, Settings, Files and Budget lists, tab rows as scrolling chips, round-key Calculator on the desktop, and the accent colour followed through every app. Builds 112-118 were review passes for dark mode, overflow and tap targets.
+
+**Field labs (120-128).**
+- Audio Build plays real generated sound through the system you build, with clipping, speaker response and wrong-part faults.
+- Motor Control has a Real panel view (breaker, contactors, overload, timer, terminals, lamps, ammeter), a two-motor sequence, a variable frequency drive, more faults and instruments (clamp meter, megger, ohm tests).
+- Breadboard looks like a real bench: coloured resistor bands, domed LEDs, electrolytic and ceramic capacitors, trimmer pot, TO-92 and TO-220 parts and jumpers.
+- Parts Atlas (parts.atlas) shows 30 electrical and electronics parts with the symbol, how to read each one, how to test it, how it fails and a name-it quiz.
+- Appliances (appliances.atlas) has 40 household appliances. Set any part in the power path to open, shorted or degraded, then use the symptom finder.
+- Wiring has a Panel and outlets tab: a breaker panel with live wires, an outlet tester and faults such as a short, overload, open neutral, reversed polarity, open ground and a ground fault with or without GFCI.
+- Solar has an Array simulator with panels that have bypass diodes, tap-to-shade, live I-V and P-V curves, simple and global MPPT, the inverter window, daily energy and faults.
+
+**Circuit Sim (129-136).** circuit.sim is a real solver: modified nodal analysis with backward Euler steps and Newton iterations for diodes, a transistor (Ebers-Moll), a zener and an op-amp with supply rails.
+- Ten built-in circuits (RC, rectifier, LED, transistor, op-amp, buck converter, 555 timer, RLC resonance, common-emitter amplifier, zener regulator) with faults, a scope, a time cursor and late-time averages.
+- A Free-form editor: place parts on a grid, wire them, add a ground, then probe any node. Parts are resistor, capacitor, electrolytic capacitor (with ESR), inductor, transformer (two coupled coils with a turns ratio), diode, LED, zener, transistor, op-amp, potentiometer, fuse, switch and DC, AC and square sources. The circuit is saved in the browser (`dc_fr`). The scope has a Measurements table per probe: peak to peak, frequency, duty cycle, 10 to 90 percent rise time and overshoot.
+- A Bode view: gain and phase against frequency from the source to each probe, using small-signal analysis around the DC operating point (the op-amp has a 1 MHz gain-bandwidth limit). It reports the peak, the -3 dB points, the 0 dB crossover with phase and gain margin (meaningful for a loop gain) and a phase margin estimated from closed-loop peaking. A DC offset field lets diode and transistor circuits be swept at a real bias point.
+- Parts Atlas and Breadboard are linked: ten Atlas parts open a ready demo circuit on the Breadboard, and a part selected on the Breadboard opens its Atlas page.
+
+Limits: diodes and transistors are single simple models, the transformer has no core saturation, and the fuse is scaled to a few milliseconds so it shows on the scope. The Breadboard saves in `dc_bb`.
+
+## Icon credits
+App icon glyphs (Build 95) are from Phosphor Icons, Copyright (c) 2020 Phosphor Icons, MIT licence: https://github.com/phosphor-icons/core
