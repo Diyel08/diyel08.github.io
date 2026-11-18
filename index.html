@@ -557,6 +557,8 @@ html[data-fx=full] .hero .pcb{display:block}
 .bb-nets{margin-top:10px;font:12px var(--mono)}.bb-nets summary{cursor:pointer;font-weight:700;padding:6px 0}
 #bbSvg .hl{fill:none;stroke:#E8590C;stroke-width:2.5;pointer-events:none}
 #bbSvg .hl2{fill:none;stroke:#E8590C;stroke-opacity:.28;stroke-width:15;stroke-linecap:round;pointer-events:none}
+#bbSvg .bbh{fill:rgba(232,89,12,.22);stroke:#E8590C;stroke-width:2;cursor:crosshair;pointer-events:all;touch-action:none}
+#bbSvg .bbh:hover{fill:rgba(232,89,12,.5)}
 #bbSvg .bbmq{fill:rgba(232,89,12,.12);stroke:#E8590C;stroke-width:1.5;stroke-dasharray:5 3;pointer-events:none}
 .bb-sel-mode #bbSvg .comp{cursor:grab}
 .bb-bar button:disabled{opacity:.38;cursor:not-allowed}
@@ -1275,8 +1277,9 @@ html[data-wall=graphite] .wall{background:radial-gradient(50% 55% at 12% 36%,#8b
   .ih-wg{background:rgba(44,44,48,.62);border-color:rgba(255,255,255,.12);color:#f5f5f7}.ih-wg span{color:#c7c7cc}
   .home-ind i{background:rgba(255,255,255,.7)}
 }
-@keyframes iosIn{from{opacity:0;transform:scale(.88);border-radius:34px}to{opacity:1;transform:none}}
-@keyframes iosOut{to{opacity:0;transform:scale(.88);border-radius:34px}}
+@keyframes iosIn{from{opacity:0;transform:scale(.9);border-radius:34px}to{opacity:1;transform:none}}
+@keyframes iosOut{from{opacity:1;transform:none}to{opacity:0;transform:scale(.9);border-radius:34px}}
+@keyframes ihOut{from{opacity:1;transform:none}to{opacity:0;transform:scale(1.14)}}
 @keyframes ihIn{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.ide .win.front,.ide .win.front.ios-out,.ide.home .ios-home{animation:none!important}}
 /* ========== BUILD 61: dark theme for window contents ========== */
@@ -1369,7 +1372,6 @@ html .win .win-body .bench-info{border:0;border-radius:14px;background:var(--car
   .ncp{top:52px}
   .ide{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
   .ide input,.ide textarea,.ide [contenteditable]{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}
-  .ide .win-body :is(p,li,pre,code,td,blockquote,.ss-story p){-webkit-user-select:text;user-select:text}
   .gl>div{gap:12px;align-items:center}.gl dt{flex:1 1 0;min-width:0}.gl dt small{max-width:none}.gl dd{flex:none;max-width:60%}
   .mot-ctl input[type=range]{touch-action:pan-y}
   #micSvg,#verSvg{transform:translateZ(0);contain:paint}
@@ -1756,7 +1758,7 @@ iframe.passgen,iframe.tracker{background:transparent!important}
 .cc-loc i{width:34px;height:34px;border-radius:50%;background:#0a84ff;display:grid;place-items:center}.cc-loc i svg{width:18px;height:18px}.cc-loc em{opacity:.5;font-style:normal}
 .cc-st{display:flex;justify-content:space-between;align-items:flex-start;width:100%;max-width:334px;margin:0 auto 16px;color:#fff;font:600 17px/1.2 var(--sf,system-ui)}
 .cc-st>div{display:flex;align-items:center;gap:7px}.cc-st .r{flex-direction:column;align-items:flex-end;gap:4px}
-.cc-st .sb-sig svg{width:21px;height:14px}.cc-st .sb-wifi svg{width:19px;height:15px}.cc-st .bt{width:30px;height:14px;font-size:11px;line-height:14px}.cc-st .bt-f b,.cc-st .bt-n{width:30px}.cc-st .bt{display:inline-block}
+.cc-st .r>div{gap:9px}.cc-st .sb-pct{margin-right:2px}.cc-st .sb-sig svg{width:21px;height:14px}.cc-st .sb-wifi svg{width:19px;height:15px}.cc-st .bt{width:30px;height:14px;font-size:11px;line-height:14px}.cc-st .bt-f b,.cc-st .bt-n{width:30px}.cc-st .bt{display:inline-block}
 .cc-st .bt b{display:none}.cc-st .sb-or{display:none;width:20px;height:20px}.cc-p0>.cc-b{aspect-ratio:1;width:100%;height:auto}.cc-st .sb-or.on{display:block}
 .cc-pgs{flex:1;min-height:0;width:100%;max-width:334px;margin:0 auto;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
 .cc-pgs::-webkit-scrollbar{display:none}
@@ -1883,14 +1885,14 @@ iframe.passgen,iframe.tracker{background:transparent!important}
 .win-body button:not(.l-c):not(.l-m):not(.l-z):not(.dk):not(.clk-c){border-radius:8px}
 .win-body .calc-btn{border-radius:8px}
 .win-body .mot-rv{font:500 12px var(--body);letter-spacing:0;text-transform:none;padding:4px 12px;border:0;border-radius:7px;background:rgba(255,255,255,.72);box-shadow:inset 0 .5px 0 rgba(255,255,255,.9),0 0 0 .5px rgba(0,0,0,.14),0 1px 1.5px rgba(0,0,0,.08)}
-.win-body{background-color:rgba(251,251,253,.74);-webkit-backdrop-filter:blur(28px) saturate(1.6);backdrop-filter:blur(28px) saturate(1.6)}
+.win-body{background-color:rgba(251,251,253,.96);-webkit-backdrop-filter:blur(28px) saturate(1.6);backdrop-filter:blur(28px) saturate(1.6)}
 .win.mv .win-body{background-color:#fbfbfd!important}
 .ss-side,.fnd-side{background-color:rgba(238,238,242,.5)}
 }
 @media(min-width:701px) and (prefers-color-scheme:dark){
 .win-body .btn.ghost,.win-body .btn.light,.win-body .mot-rv{background:rgba(255,255,255,.14)!important;color:#f5f5f7!important;box-shadow:inset 0 .5px 0 rgba(255,255,255,.18),0 0 0 .5px rgba(255,255,255,.14)!important}
 .win-body .btn.ghost:hover,.win-body .btn.light:hover{background:rgba(255,255,255,.22)!important}
-.win-body{background-color:rgba(28,28,30,.76)!important}
+.win-body{background-color:rgba(28,28,30,.97)!important}
 .win.mv .win-body{background-color:#1c1c1e!important}
 .ss-side,.fnd-side{background-color:rgba(44,44,46,.5)!important}
 }
@@ -1942,6 +1944,344 @@ iframe.passgen,iframe.tracker{background:transparent!important}
 .gf{filter:drop-shadow(0 1px 1px rgba(0,0,0,.18))}
 .ih-ic:not(.ih-fi)>.gf{width:58%!important;height:58%!important}
 .dk>.gf{width:56%!important;height:56%!important}
+/* BUILD 96: remove the old orange guide line that ran down every window on wide screens */
+@media(min-width:1240px){.win-body section:before,.win-body section.alt:before,#ide section:before,#ide section.alt:before{content:none!important;display:none!important}}
+/* BUILD 98: no selection highlight on drag or long press */
+#ide,#ide *,.ide,.ide *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+#ide input,#ide textarea,#ide [contenteditable],.ide input,.ide textarea,.ide [contenteditable]{-webkit-user-select:text;user-select:text}
+#ide ::selection,.ide ::selection{background:transparent}
+#ide input::selection,#ide textarea::selection{background:rgba(10,132,255,.35)}
+/* BUILD 99: no nested backdrop blur inside windows (caused a white flash while a window opens) */
+.win .win-body,.win .win-body *{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+/* BUILD 100: opaque 'settling' windows follow the theme (was light for 0.4s on open, a white flash in dark) */
+@media(prefers-color-scheme:dark){.win.mv{background:#2a2a2e!important}.win.mv .win-body{background-color:#1c1c1e!important}}
+/* BUILD 101: iOS-style Calculator on phones */
+.ioc-top,.ioc-menu,.ioc-sheet{display:none}
+@media(max-width:700px){
+.win-body:has(>#calc){--cbg:#fff;--cdg:#e4e4e9;--ctp:#d1d1d6;--cx:#000;--cmu:#8e8e93;--csh:rgba(246,246,248,.86);--cch:rgba(0,0,0,.06);background:var(--cbg)!important;padding:0!important}
+.win:has(#calc){background:var(--cbg)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.win:has(#calc) .win-bar{background:transparent!important}
+.win:has(#calc) .win-title{visibility:hidden}
+#calc{position:relative;color:var(--cx);min-height:calc(100dvh - 130px)}
+#calc>.wrap{padding:4px 16px calc(16px + env(safe-area-inset-bottom,0px));max-width:none;display:flex;flex-direction:column;min-height:inherit}
+#calc #calcTabs{display:none!important}
+#calc .panel{background:none!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-radius:0!important;margin:0}
+#calc .panel-header{display:none}
+#calc .cm:not([hidden]){display:flex;flex-direction:column;flex:1}
+#calc .cm:not([hidden])>.panel{flex:1;display:flex;flex-direction:column}
+#calc .cm:not([hidden])>.panel>.panel-body{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0!important}
+.ioc-top{display:flex;justify-content:space-between;align-items:center;padding:2px 0 6px;position:relative;z-index:3}
+.ioc-r{display:inline-flex;border-radius:22px;background:var(--cdg);overflow:hidden}
+.ioc-top button{width:44px;height:44px;border:0;border-radius:50%;background:var(--cdg);color:var(--cx);display:inline-flex;align-items:center;justify-content:center;padding:0;cursor:pointer;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.ioc-r button{background:none;border-radius:0;width:44px}
+.ioc-r .more{display:none}
+#calc[data-mode=notes] .ioc-r .more{display:inline-flex;width:62px}
+#calc[data-mode=notes] #iocHist,#calc[data-mode=conv] #iocHist,#calc[data-mode=prog] #iocHist,#calc[data-mode=elec] #iocHist{visibility:hidden}
+.ioc-menu{position:absolute;top:58px;right:16px;width:min(280px,calc(100% - 32px));z-index:9;background:var(--csh);-webkit-backdrop-filter:blur(30px) saturate(1.6);backdrop-filter:blur(30px) saturate(1.6);border-radius:30px;padding:10px 8px;box-shadow:0 12px 40px rgba(0,0,0,.35),inset 0 0 0 .5px rgba(255,255,255,.2)}
+.ioc-menu:not([hidden]){display:block}
+.ioc-menu button{display:flex;align-items:center;gap:10px;width:100%;border:0;background:none;color:var(--cx);font:500 17px/1.2 var(--body);padding:12px 10px;border-radius:18px;text-align:left;cursor:pointer}
+.ioc-menu button:active{background:var(--cch)}
+.ioc-menu button:disabled{opacity:.4}
+.ioc-menu .ck{width:20px;flex:none;display:inline-flex}
+.ioc-menu .ic{width:28px;flex:none;display:inline-flex;justify-content:center}
+.ioc-menu small{display:block;color:var(--cmu);font-size:14px;font-weight:400;margin-top:2px}
+.ioc-menu hr{border:0;height:1px;background:var(--cch);margin:8px 14px}
+.ioc-menu2 .ic{width:32px}
+/* big display */
+#calc .calc-display{background:none!important;border:0!important;padding:0 4px!important;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-end;text-align:right;margin-bottom:10px;flex:1}
+#calc .calc-display .cur{font:400 96px/1.05 var(--sf,-apple-system,system-ui,sans-serif)!important;color:var(--cx)!important;letter-spacing:-.5px;white-space:nowrap;overflow:hidden;max-width:100%;text-shadow:none}
+#calc .calc-display .history{color:var(--cmu)!important;font:400 20px/1.3 var(--sf,-apple-system,system-ui,sans-serif)!important;min-height:26px}
+#calc [data-cm=sci] .calc-display .cur{font-size:64px!important}
+/* basic keypad: round buttons */
+#calc #calcGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:none!important;border:0!important;padding:0}
+#calc #calcGrid .calc-btn{aspect-ratio:1;height:auto;padding:0;border:0;border-radius:50%!important;font:400 38px/1 var(--sf,-apple-system,system-ui,sans-serif);background:var(--cdg);color:var(--cx);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 .5px 0 rgba(255,255,255,.2)}
+#calc #calcGrid [data-k="←"],#calc #calcGrid [data-k="AC"],#calc #calcGrid [data-k="%"]{background:var(--ctp)}
+#calc #calcGrid [data-k="÷"],#calc #calcGrid [data-k="×"],#calc #calcGrid [data-k="−"],#calc #calcGrid [data-k="+"],#calc #calcGrid [data-k="="]{background:#f39a3c;color:#fff}
+#calc #calcGrid [data-k="÷"],#calc #calcGrid [data-k="×"],#calc #calcGrid [data-k="−"],#calc #calcGrid [data-k="+"],#calc #calcGrid [data-k="="]{font-size:44px}
+#calc #calcGrid .calc-btn:active,#calc #sciGrid .calc-btn:active{filter:brightness(1.25);transform:scale(.97)}
+/* scientific: pills */
+#calc #sciGrid.ios{display:grid;grid-template-columns:repeat(12,1fr);gap:8px;background:none!important;border:0!important;padding:0}
+#calc #sciGrid .calc-btn{border:0;font-family:var(--sf,-apple-system,system-ui,sans-serif);background:var(--cdg);color:var(--cx);padding:0}
+#calc #sciGrid .u{grid-column:span 2;height:40px;border-radius:20px!important;font-size:17px;font-weight:400}
+#calc #sciGrid .u.on{background:var(--cx);color:var(--cbg)}
+#calc #sciGrid .l{grid-column:span 3;height:54px;border-radius:27px!important;font-size:28px;font-weight:400;display:flex;align-items:center;justify-content:center}
+#calc #sciGrid .l.g{background:var(--ctp)}
+#calc #sciGrid .l.op{background:#f39a3c;color:#fff;font-size:34px}
+#calc #sciGrid sup{font-size:.62em;vertical-align:.45em;line-height:0}#calc #sciGrid sub{font-size:.6em;vertical-align:-.25em;line-height:0}
+/* history sheet */
+.ioc-sheet:not([hidden]){display:block;position:absolute;left:8px;right:8px;bottom:8px;top:38%;z-index:8;border-radius:40px;background:var(--csh);-webkit-backdrop-filter:blur(34px) saturate(1.5);backdrop-filter:blur(34px) saturate(1.5);box-shadow:0 -6px 40px rgba(0,0,0,.3),inset 0 0 0 .5px rgba(255,255,255,.18);color:var(--cx);overflow:hidden}
+.ioc-sheet .grab{position:absolute;top:8px;left:50%;width:84px;height:5px;margin-left:-42px;border-radius:3px;background:var(--cmu);opacity:.7}
+.ioc-sheet .x{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:0;background:var(--cdg);color:var(--cx);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.ioc-sheet .hl{position:absolute;inset:66px 0 0;overflow:auto;padding:0 22px 22px}
+.ioc-sheet .empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--cmu);font-size:20px}
+.ioc-sheet .r{display:flex;flex-direction:column;align-items:flex-end;padding:10px 0;border-bottom:1px solid var(--cch)}
+.ioc-sheet .r .e{color:var(--cmu);font-size:17px}.ioc-sheet .r b{font:500 30px/1.2 var(--sf,-apple-system,system-ui,sans-serif)}
+.ioc-sheet .clr{margin:14px auto 0;display:block;border:0;background:none;color:#f39a3c;font:500 17px var(--body);cursor:pointer;padding:8px 14px}
+/* math notes + convert */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.mn,.cvt{display:flex;flex-direction:column;flex:1;color:var(--cx);position:relative}
+.mn-h{font:800 38px/1.1 var(--sf,-apple-system,system-ui,sans-serif);margin:18px 0 2px;letter-spacing:-.4px}
+.mn-s{margin:0 0 10px;color:var(--cmu);font-size:17px}
+.mn-empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--cmu)}.mn-empty b{color:var(--cx);font-size:26px}
+.mn-list{flex:1;overflow:auto}.mn-list h3{font:700 19px var(--body);margin:14px 0 6px}
+.mn-row{display:flex;justify-content:space-between;gap:12px;width:100%;border:0;background:var(--cdg);color:var(--cx);padding:14px 16px;font:400 17px var(--body);border-radius:16px;margin-bottom:6px;text-align:left;cursor:pointer}.mn-row b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mn-row span{color:var(--cmu);flex:none}
+.mn-bar{display:flex;gap:12px;align-items:center;margin-top:12px}
+.mn-q{flex:1;min-width:0;display:flex;align-items:center;gap:10px;height:52px;border-radius:26px;background:var(--cdg);padding:0 18px;color:var(--cmu)}.mn-q input{flex:1;min-width:0;border:0;background:none;color:var(--cx);font:400 20px var(--body);outline:0}
+.mn-new{width:52px;height:52px;border-radius:50%;border:0;background:var(--cdg);color:var(--cx);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.mn-ed{display:flex;flex-direction:column;flex:1;gap:12px}
+.mn-eh{display:flex;justify-content:space-between}
+.pill{border:0;border-radius:22px;background:var(--cdg);color:var(--cx);height:44px;padding:0 16px;font:500 17px var(--body);cursor:pointer;display:inline-flex;align-items:center;gap:4px}.pill.ic{width:44px;padding:0;justify-content:center}
+#mnTa{width:100%;min-height:180px;border:0;background:none;color:var(--cx);font:400 24px/1.5 var(--sf,-apple-system,system-ui,sans-serif);outline:0;resize:none}
+.mn-res{border-top:1px solid var(--cch);padding-top:10px}.mn-res div{display:flex;justify-content:space-between;gap:10px;padding:6px 0;font-size:20px}.mn-res span{color:var(--cmu)}.mn-res b{font-weight:600}
+.cvt-cats{display:flex;gap:8px;overflow:auto;padding:12px 0}.cvt-cats button{flex:none;border:0;border-radius:20px;height:40px;padding:0 16px;background:var(--cdg);color:var(--cx);font:500 16px var(--body);cursor:pointer}.cvt-cats .on{background:#f39a3c;color:#fff}
+.cvt-row{display:flex;align-items:center;gap:10px;background:var(--cdg);border-radius:20px;padding:12px 16px;margin-top:8px}
+.cvt-row input,.cvt-row output{flex:1;min-width:0;border:0;background:none;color:var(--cx);font:300 44px/1.1 var(--sf,-apple-system,system-ui,sans-serif);outline:0;overflow:hidden;text-overflow:ellipsis}
+.cvt-row select{border:0;background:var(--ctp);color:var(--cx);border-radius:16px;height:40px;padding:0 10px;font:500 17px var(--body)}
+.cvt-row.out{background:none;box-shadow:inset 0 0 0 1px var(--cch)}
+.cvt-sw{display:flex;justify-content:center;margin:6px 0 -2px}.cvt-sw button{border:0;border-radius:50%;width:40px;height:40px;background:var(--cdg);color:var(--cx);display:flex;align-items:center;justify-content:center;cursor:pointer;transform:rotate(90deg)}
+}
+@media(max-width:700px) and (prefers-color-scheme:dark){
+.win-body:has(>#calc){--cbg:#000;--cdg:#333335;--ctp:#636366;--cx:#fff;--cmu:#8e8e93;--csh:rgba(34,34,36,.84);--cch:rgba(255,255,255,.1)}
+}
+@media(max-width:700px){#calc .mn-q input,#calc #mnTa,#calc .cvt-row input{background:none!important;border:0!important;box-shadow:none!important;color:var(--cx)!important}#calc #mnTa:focus{outline:0}.win-body:has(>#calc){--csh:rgba(246,246,248,.95)}}
+@media(max-width:700px) and (prefers-color-scheme:dark){.win-body:has(>#calc){--csh:rgba(34,34,36,.9)}}
+/* BUILD 102: Programmer and Electronics follow the iOS look on phones */
+@media(max-width:700px){
+#calc .pg-top{padding:4px 0 8px;color:var(--cx)}
+#calc .pg-top select,#calc #bcRoot select,#calc #bcRoot input{background:var(--cdg)!important;color:var(--cx)!important;border:0!important;border-radius:16px!important;min-height:44px;font-family:var(--body);box-shadow:none!important}
+#calc .pg-rows{gap:6px;margin:6px 0 10px}
+#calc .pg-rows button{border:0;border-radius:18px;background:var(--cdg);color:var(--cx);padding:10px 16px}
+#calc .pg-rows button.on{background:var(--ctp)}
+#calc .pg-rows button.on b{color:#f39a3c}
+#calc #pgGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;background:none!important;border:0!important;padding:0}
+#calc #pgGrid .calc-btn{aspect-ratio:1;height:auto;padding:0;border:0;border-radius:50%!important;font:400 17px/1 var(--sf,-apple-system,system-ui,sans-serif);background:var(--cdg);color:var(--cx);display:flex;align-items:center;justify-content:center;box-shadow:none;min-width:0}
+#calc #pgGrid .calc-btn.fn,#calc #pgGrid .calc-btn.clr{background:var(--ctp);color:var(--cx)}
+#calc #pgGrid .calc-btn.op,#calc #pgGrid .calc-btn.eq{background:#f39a3c;color:#fff;font-size:24px}
+#calc #pgGrid .calc-btn:disabled{opacity:.3}
+#calc #pgGrid .calc-btn:active{filter:brightness(1.25);transform:scale(.96)}
+#calc #bcRoot .bc-tabs button{border:0;border-radius:20px;background:var(--cdg);color:var(--cx);min-height:36px;padding:0 14px;font:500 15px var(--body);box-shadow:none}
+#calc #bcRoot .bc-tabs button.on,#calc #bcRoot .bc-tabs button[aria-selected=true]{background:#f39a3c;color:#fff}
+#calc #bcRoot .bc-grp>span{color:var(--cmu)}
+#calc #bcRoot .bc-btn{border:0;border-radius:24px;background:#f39a3c;color:#fff;min-height:44px;padding:0 20px;font:600 15px var(--body);letter-spacing:0;text-transform:none}
+#calc #bcRoot .bc-out>div{background:var(--cdg);border:0;border-radius:18px;color:var(--cx)}
+#calc #bcRoot .bc-out small,#calc #bcRoot label,#calc #bcRoot .bc-note{color:var(--cmu)}
+#calc #bcRoot .bc-out b,#calc #bcRoot .bc-h{color:var(--cx)}
+#calc #exp-calc{background:none!important;border:0!important;box-shadow:none!important}
+#calc #exp-calc .panel-header{display:none}
+}
+@media(max-width:700px){.win .win-bar .lights .l-c:after,.win .win-bar .lights:hover .l-c:after,.win .win-bar .lights .l-c:active:after,.win .win-bar .l-c:after{content:var(--bk,"Back")!important;text-transform:none;white-space:nowrap;max-width:130px;overflow:hidden;text-overflow:ellipsis}}
+@media(max-width:700px){
+.ide .win.front{animation-duration:.42s;animation-timing-function:cubic-bezier(.22,.9,.28,1)}
+.ide .win.front.ios-out{animation:iosOut .38s cubic-bezier(.3,.7,.3,1) forwards;pointer-events:none}
+.ide.home.ih-closing .win.ios-out{display:flex!important;z-index:20}
+.ide.home.ih-closing .ios-home,.ide.home.ih-closing .dock{animation:ihIn .4s cubic-bezier(.22,.9,.28,1)}
+.ide.ih-opening:not(.home) .ios-home{display:flex;animation:ihOut .34s cubic-bezier(.3,.7,.3,1) forwards;pointer-events:none;z-index:5}
+.ide.ih-opening:not(.home) .dock{display:flex;opacity:0;transition:opacity .2s;pointer-events:none}
+}
+@media(max-width:700px) and (prefers-reduced-motion:reduce){.ide .win.front.ios-out{animation:none!important}.ide.ih-opening:not(.home) .ios-home{display:none}}
+/* BUILD 109: iOS-style Weather on phones */
+.wxi{display:none}
+@media(max-width:700px){
+.win-body:has(>#weather){background:#14152b!important;padding:0!important;color:#fff}
+.win:has(#weather){background:#14152b!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.win:has(#weather) .win-bar{background:transparent!important}
+.win:has(#weather) .win-title{visibility:hidden}
+#weather>.wrap{display:none}
+#weather{min-height:calc(100dvh - 130px);position:relative}
+.wxi{display:block;color:#fff;min-height:inherit}
+.wxi button{font-family:var(--body);color:inherit;border:0;cursor:pointer}
+.wx-l{padding:0 16px 96px;min-height:calc(100dvh - 130px);position:relative}
+.wx-top{display:flex;justify-content:space-between;align-items:center;padding:4px 0 6px}
+.wx-top h2{margin:0;font:800 38px/1.1 var(--sf,-apple-system,system-ui,sans-serif);letter-spacing:-.4px}
+.wx-rb{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);display:inline-flex;align-items:center;justify-content:center;padding:0}
+.wx-cards{display:grid;gap:12px;margin-top:8px}
+.wx-row{display:flex;align-items:center;gap:10px}
+.wx-card{flex:1;min-width:0;position:relative;height:148px;border-radius:26px;padding:16px 18px;text-align:left;color:#fff;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto 1fr;box-shadow:inset 0 0 0 .5px rgba(255,255,255,.18);overflow:hidden;transition:transform .2s}
+.wx-card:active{transform:scale(.98)}
+.wx-card .a b{display:block;font:700 23px/1.1 var(--sf,-apple-system,system-ui,sans-serif)}.wx-card .a small{display:block;margin-top:2px;font:600 15px var(--body);opacity:.75}
+.wx-card .t{font:300 56px/1 var(--sf,-apple-system,system-ui,sans-serif);justify-self:end}
+.wx-card .c{align-self:end;font:600 16px var(--body);opacity:.82}.wx-card .h{align-self:end;justify-self:end;font:700 15px var(--body)}
+.wx-cards.ed .wx-card{height:86px}.wx-cards.ed .wx-card .t{font-size:44px}
+.wx-minus{width:30px;height:30px;border-radius:50%;background:#ff453a;display:inline-flex;align-items:center;justify-content:center;padding:0;flex:none}.wx-minus i{width:14px;height:3px;background:#fff;border-radius:2px}
+.wx-foot{text-align:center;font-size:14px;opacity:.65;margin:22px 8px}.wx-foot a{color:inherit}
+.wx-bar{position:sticky;bottom:calc(14px + env(safe-area-inset-bottom,0px));margin-top:22px}
+.wx-q{display:flex;align-items:center;gap:10px;height:52px;border-radius:26px;background:rgba(60,62,100,.9);box-shadow:inset 0 0 0 .5px rgba(255,255,255,.18);padding:0 18px;color:rgba(255,255,255,.6)}
+.wx-q input{flex:1;min-width:0;border:0!important;background:none!important;color:#fff!important;font:400 19px var(--body);outline:0;box-shadow:none!important}
+.wx-res button{display:flex;justify-content:space-between;align-items:baseline;width:100%;background:rgba(255,255,255,.1);padding:14px 16px;border-radius:16px;margin:8px 0;font:600 18px var(--body);text-align:left}.wx-res small{opacity:.6;font-weight:400}.wx-res p{text-align:center;opacity:.7;margin-top:40px}
+/* detail */
+.wx-d{background:linear-gradient(180deg,var(--g1),var(--g2));min-height:calc(100dvh - 130px);padding:0 14px 110px;animation:wxIn .35s cubic-bezier(.22,.9,.28,1)}
+@keyframes wxIn{from{opacity:0;transform:scale(.96)}}
+.wx-hero{text-align:center;padding:26px 0 40px}.wx-hero small{font:700 15px var(--body);letter-spacing:.8px;opacity:.9}
+.wx-hero h2{margin:2px 0 0;font:500 38px/1.15 var(--sf,-apple-system,system-ui,sans-serif)}
+.wx-hero .big{font:200 108px/1.02 var(--sf,-apple-system,system-ui,sans-serif);margin-left:20px}
+.wx-hero p{margin:2px 0 0;font:600 20px/1.3 var(--body)}
+.wx-c{background:rgba(25,27,60,.38);border-radius:26px;padding:16px 16px 10px;margin-bottom:12px;box-shadow:inset 0 0 0 .5px rgba(255,255,255,.14)}
+.wx-c header{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.wx-c header b{display:block;font:700 20px var(--body)}.wx-c header small{display:block;opacity:.65;font:500 15px var(--body);margin-top:2px}
+.wx-seg{display:inline-flex;border-radius:22px;background:rgba(0,0,0,.22);padding:3px;gap:2px}.wx-seg button{width:46px;height:34px;border-radius:17px;background:none!important;box-shadow:none!important;color:rgba(255,255,255,.75);display:inline-flex;align-items:center;justify-content:center;padding:0}.wx-seg [aria-selected=true]{background:rgba(255,255,255,.22)!important;color:#fff}
+.wx-hs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin:0 -6px;padding:0 6px 8px}
+.wx-h{flex:0 0 17%;display:flex;flex-direction:column;align-items:center;gap:12px;font:600 17px var(--body);padding:4px 0}.wx-h b{font-weight:700}.wx-h .p{color:#69c4ff}
+.wx-day{display:grid;grid-template-columns:62px 54px 40px 1fr 40px;align-items:center;gap:8px;padding:10px 0;border-top:1px solid rgba(255,255,255,.14);font:600 19px var(--body)}
+.wx-day b{font-weight:600}.wx-day .i{display:flex;flex-direction:column;align-items:center;line-height:1}.wx-day .i small{font:700 13px var(--body);color:#69c4ff;margin-top:-2px}
+.wx-day em{font-style:normal;text-align:right;opacity:.6}.wx-day em.hi{opacity:1}
+.wx-day .bar{position:relative;height:6px;border-radius:3px;background:rgba(0,0,0,.28)}.wx-day .bar u{position:absolute;top:0;bottom:0;border-radius:3px;background:linear-gradient(90deg,#6fd0e8,#f6b73c 70%,#f08a3c)}
+.wx-src{text-align:center;opacity:.6;font-size:13px;margin:14px 0 0}
+.wx-nav{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;align-items:center;padding:0 14px;margin-top:-84px;pointer-events:none;z-index:4}
+.wx-nav>*{pointer-events:auto}
+.wx-nav button{width:58px;height:58px;border-radius:50%;background:rgba(60,70,120,.85);box-shadow:inset 0 0 0 .5px rgba(255,255,255,.25),0 6px 20px rgba(0,0,0,.25);display:inline-flex;align-items:center;justify-content:center;padding:0}
+.wx-pg{display:inline-flex;align-items:center;gap:10px;height:58px;border-radius:29px;background:rgba(60,70,120,.85);padding:0 22px;box-shadow:inset 0 0 0 .5px rgba(255,255,255,.25),0 6px 20px rgba(0,0,0,.25)}
+.wx-pg i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35)}.wx-pg i.on{background:#fff}
+/* menu + sheets */
+.wx-menu:not([hidden]){display:block;position:absolute;top:58px;right:16px;width:min(280px,calc(100% - 32px));z-index:30;background:rgba(48,50,84,.96);border-radius:30px;padding:10px 8px;box-shadow:0 14px 40px rgba(0,0,0,.4),inset 0 0 0 .5px rgba(255,255,255,.2)}
+.wx-menu button{display:flex;align-items:center;gap:10px;width:100%;background:none;font:500 17px var(--body);padding:12px 10px;border-radius:18px;text-align:left}.wx-menu button:active{background:rgba(255,255,255,.1)}
+.wx-menu .ck{width:20px;display:inline-flex;flex:none}.wx-menu .ic{width:28px;display:inline-flex;justify-content:center;flex:none}.wx-menu hr{border:0;height:1px;background:rgba(255,255,255,.12);margin:8px 14px}
+.wx-sheet:not([hidden]){display:block;position:absolute;left:8px;right:8px;bottom:8px;top:30%;z-index:40;border-radius:36px;background:rgba(28,30,56,.97);box-shadow:0 -8px 40px rgba(0,0,0,.4),inset 0 0 0 .5px rgba(255,255,255,.16);overflow:auto;padding:18px 16px 24px}
+.wx-sheet h3{text-align:center;margin:8px 0 14px;font:700 20px var(--body)}.wx-sheet h4{margin:14px 6px 8px;font:700 16px var(--body);opacity:.6}
+.wx-sheet .done{position:absolute;top:14px;right:14px}
+.wx-sheet .grp{background:rgba(255,255,255,.09);border-radius:22px;overflow:hidden}
+.wx-sheet .r{display:flex;justify-content:space-between;align-items:center;width:100%;padding:15px 18px;background:none;font:500 18px var(--body);text-align:left;border-top:1px solid rgba(255,255,255,.1)}.wx-sheet .r:first-child{border-top:0}
+.wx-sheet .r i{color:#3b9bff;display:inline-flex}
+.wx-sheet .rst{margin-top:22px;background:rgba(255,255,255,.09);border-radius:22px;border:0;opacity:.8}
+.wx-sheet .hd{display:flex;align-items:center;gap:12px;margin-bottom:14px}.wx-sheet .hd>span:nth-child(2){flex:1}.wx-sheet .hd b{display:block;font:700 22px var(--body)}.wx-sheet .hd small{opacity:.65;font-size:16px}
+.wx-sheet .lst .r{font-size:19px}.wx-sheet .lst .r span b{display:block;font-weight:500}.wx-sheet .lst .r small{display:block;opacity:.65;font-size:15px;margin-top:2px}.wx-sheet .lst em{font-style:normal;opacity:.85}
+}
+@media(prefers-reduced-motion:reduce){.wx-d{animation:none}}
+/* BUILD 110: iOS pass over the small apps on phones */
+@media(max-width:700px){
+.win:has(.appv) .win-bar{background:transparent!important}
+.win:has(.appv) .win-title{visibility:hidden}
+.appv .wrap{padding-left:16px;padding-right:16px;margin-left:0!important;margin-right:0!important;max-width:none!important;width:auto!important}
+.appv .app-h{font:800 34px/1.1 var(--sf,-apple-system,system-ui,sans-serif);letter-spacing:-.3px;margin:0 0 12px}
+html .win-body .appv .panel{background:none!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;padding:0!important;border-radius:0}
+/* Reminders */
+#reminders .panel-body{padding:0}
+#reminders .row{order:2;margin:12px 0 0;align-items:center}
+#reminders .panel-body{display:flex;flex-direction:column}
+#reminders .row .input{flex:1;min-width:0;height:46px;border-radius:23px;padding:0 18px;border:0!important;background:rgba(120,120,128,.16)!important;font-size:17px;box-shadow:none}
+#reminders .todo-list{background:var(--card);border-radius:14px;box-shadow:0 0 0 .5px var(--hair);padding:0 14px;margin:0;order:1}
+#reminders .todo-list:empty{display:none}
+#reminders .todo-item{padding:13px 0}#reminders .todo-item:last-child{border-bottom:0}
+#reminders .todo-text{font-size:17px}
+#reminders .todo-stats{order:0;margin:0 4px 10px;font:600 15px var(--body);color:var(--sec);text-transform:none;letter-spacing:0}
+/* Notes */
+#notes .panel-body{padding:0}
+#notes .notes-wrap{display:flex;flex-direction:column;gap:14px;background:none;box-shadow:none;border-radius:0}
+#notes .notes-wrap>div:first-child{padding:0;border:0;display:flex;flex-direction:column-reverse;gap:10px}
+#notes #noteNew{width:auto!important;align-self:flex-end;margin:0!important;background:none!important;box-shadow:none!important;color:#d8a400!important;font:600 17px var(--body);padding:4px 2px;border:0}
+#notes .note-list{max-height:none;min-height:0;background:var(--card);border-radius:14px;box-shadow:0 0 0 .5px var(--hair);padding:4px 0;overflow:visible}
+#notes .note-item{border-radius:0;margin:0;padding:12px 16px;font:600 17px var(--body);border-bottom:.5px solid var(--hair);position:relative}
+#notes .note-item:last-child{border-bottom:0}
+#notes .note-item.active{background:rgba(255,204,0,.16)!important}
+#notes .notes-wrap>div:last-child{background:var(--card);border-radius:14px;box-shadow:0 0 0 .5px var(--hair);padding:14px 16px}
+#notes #noteBody{min-height:34dvh;resize:none;font-size:17px}
+#notes #noteTitle{font-size:24px}
+#notes #noteDel{background:none!important;box-shadow:none!important;color:#ff453a!important;border:0;padding:4px}
+/* Clock */
+#clock .panel-body,#clock .wrap{padding-bottom:96px}
+#clock .clock-main{background:none!important;color:inherit!important;padding:6px 2px 14px;text-align:left}
+#clock .clock-main .t{font:200 56px/1 var(--sf,-apple-system,system-ui,sans-serif);text-align:left}
+#clock .clock-main .d{font:600 15px var(--body);color:var(--sec);text-transform:none;letter-spacing:0;text-align:left}
+#clock .world{display:block;background:var(--card)!important;border-radius:14px;box-shadow:0 0 0 .5px var(--hair);padding:0 16px;overflow:hidden}
+#clock .world div{display:flex;flex-direction:row-reverse;justify-content:space-between;align-items:center;background:none!important;box-shadow:none!important;border-radius:0;padding:14px 0;border-bottom:.5px solid var(--hair)}
+#clock .world div:last-child{border-bottom:0}
+#clock .world b{font:300 38px/1 var(--sf,-apple-system,system-ui,sans-serif)}
+#clock .world span{font:500 17px var(--body);color:var(--ink)}
+#clock .clk-tabs{position:fixed;left:0;right:0;bottom:0;max-width:none;margin:0;border-radius:0;padding:8px 8px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(28,28,30,.92);border-top:.5px solid var(--hair);gap:0;z-index:6}
+#clock .clk-tabs button{flex:1;background:none!important;box-shadow:none!important;font:600 11px var(--body);color:var(--sec);padding:8px 0}
+#clock .clk-tabs button.on,#clock .clk-tabs [aria-selected=true]{color:#ff9f0a!important}
+/* Messages */
+#messages .panel-body{padding:0;display:flex;flex-direction:column}
+#messages .chat-log{height:calc(100dvh - 330px);min-height:240px;padding:4px 0;margin-bottom:8px}
+#messages .msg{font-size:17px;max-width:78%}
+#messages .row{margin:0}
+#messages .row .input{flex:1;min-width:0;height:44px;border-radius:22px;border:.5px solid var(--hair)!important;background:none!important;padding:0 16px;font-size:17px}
+#messages .mono-note{text-align:center;font:500 12px var(--body);color:var(--sec);margin-top:8px}
+/* Calendar */
+#calendar .cal-add{display:grid;grid-template-columns:1fr auto;gap:8px}
+#calendar .cal-add .input[type=text],#calendar #calIn{grid-column:1/-1}
+#calendar .cal-add .input{height:44px;border-radius:12px;font-size:17px}
+#calendar #calAdd{height:44px;border-radius:12px;padding:0 22px}
+/* Mail */
+#mail .ml-box{background:var(--card);border-radius:14px;box-shadow:0 0 0 .5px var(--hair);padding:0 16px 14px}
+#mail .ml-row{border-bottom:.5px solid var(--hair);padding:4px 0}
+#mail .ml-row label,#mail .ml-row .input,#mail #mlBody{font-size:17px}
+#mail #mlBody{min-height:34dvh;resize:none;border:0!important;background:none!important;padding:12px 0;box-shadow:none}
+/* Quiz + Links */
+#quiz .panel-body{padding:0}
+#quiz .q-text{font-size:24px}
+#quiz .q-opt{border-radius:14px;padding:15px 16px;font-size:17px;margin-bottom:8px}
+#links .panel-body{padding:0}
+#links .row .input{flex:1;min-width:0;height:46px;border-radius:23px;padding:0 18px;border:0!important;background:rgba(120,120,128,.16)!important;font-size:17px}
+#links #urlList{background:var(--card);border-radius:14px;box-shadow:0 0 0 .5px var(--hair);padding:0 14px}
+#links #urlList:empty{display:none}
+}
+/* BUILD 111: iOS Settings + Files on phones */
+.ss-big{display:none}
+@media(max-width:700px){
+.win:has(#ssx) .win-bar,.win:has(#bdRoot) .win-bar,.win:has(#fndGrid) .win-bar{background:transparent!important}
+.win:has(#ssx) .win-title,.win:has(#fndGrid) .win-title{visibility:hidden}
+#ssx{display:block!important}#bdRoot{display:block!important}
+#ssx[data-sv=list] .ss-main{display:none!important}#bdRoot[data-sv=list] .ss-main{display:none!important}
+#ssx[data-sv=detail] .ss-side{display:none!important}#bdRoot[data-sv=detail] .ss-side{display:none!important}
+#ssx .ss-side{background:none!important;border:0!important;padding:0 16px 24px!important}#bdRoot .ss-side{background:none!important;border:0!important;padding:0 16px 24px!important}
+#ssx .ss-big{display:block;font:800 34px/1.1 var(--sf,-apple-system,system-ui,sans-serif);letter-spacing:-.3px;margin:2px 0 14px;color:var(--ink)}#bdRoot .ss-big{display:block;font:800 34px/1.1 var(--sf,-apple-system,system-ui,sans-serif);letter-spacing:-.3px;margin:2px 0 14px;color:var(--ink)}
+#ssx .ss-tabs{display:block!important;overflow:visible!important;background:var(--card);border-radius:14px;box-shadow:0 0 0 .5px var(--hair);padding:0 0 0 16px}#bdRoot .ss-tabs{display:block!important;overflow:visible!important;background:var(--card);border-radius:14px;box-shadow:0 0 0 .5px var(--hair);padding:0 0 0 16px}
+#ssx .ss-tabs button{display:flex!important;width:100%!important;gap:14px;align-items:center;border-radius:0!important;padding:11px 14px 11px 0!important;font:400 17px var(--body)!important;white-space:normal!important;border-bottom:.5px solid var(--hair)!important;background:none!important;box-shadow:none!important;color:var(--ink)!important;position:relative}#bdRoot .ss-tabs button{display:flex!important;width:100%!important;gap:14px;align-items:center;border-radius:0!important;padding:11px 14px 11px 0!important;font:400 17px var(--body)!important;white-space:normal!important;border-bottom:.5px solid var(--hair)!important;background:none!important;box-shadow:none!important;color:var(--ink)!important;position:relative}
+#ssx .ss-tabs button:last-child{border-bottom:0!important}#bdRoot .ss-tabs button:last-child{border-bottom:0!important}
+#ssx .ss-tabs button:after{content:"";width:8px;height:8px;border-right:2px solid var(--sec);border-top:2px solid var(--sec);transform:rotate(45deg);margin-left:auto;opacity:.6;flex:none}#bdRoot .ss-tabs button:after{content:"";width:8px;height:8px;border-right:2px solid var(--sec);border-top:2px solid var(--sec);transform:rotate(45deg);margin-left:auto;opacity:.6;flex:none}
+#ssx .ss-tabs i{width:30px;height:30px;border-radius:8px}#bdRoot .ss-tabs i{width:30px;height:30px;border-radius:8px}#ssx .ss-tabs i svg{width:18px;height:18px}
+#ssx .ss-main{padding:6px 16px 30px!important}#bdRoot .ss-main{padding:6px 16px 30px!important}
+#ssx .ss-main h2{font:800 28px/1.1 var(--sf,-apple-system,system-ui,sans-serif)}#bdRoot .ss-main h2{font:800 28px/1.1 var(--sf,-apple-system,system-ui,sans-serif)}
+/* Files */
+.fnd{flex-direction:column}
+.fnd-side{display:flex!important;flex-direction:row;width:auto!important;margin:0!important;padding:4px 14px 6px!important;gap:8px;overflow-x:auto;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;scrollbar-width:none;flex:none}
+.fnd-side h4{display:none}
+.fnd-side button{flex:none;width:auto!important;white-space:nowrap;border-radius:999px!important;padding:7px 14px!important;background:rgba(120,120,128,.16)!important;font:600 14px var(--body)!important}
+.fnd-side button.on{background:var(--acc,#0a7aff)!important;color:#fff!important}.fnd-side button.on svg{color:#fff}
+.fnd-side button .n{display:none}
+.fnd-bar{flex-wrap:wrap;padding:2px 16px 8px!important}
+.fnd-bar #fndTitle{flex:1 0 100%;font:800 34px/1.1 var(--sf,-apple-system,system-ui,sans-serif);letter-spacing:-.3px;order:0;margin-bottom:8px}
+.fnd-bar input{order:1;flex:1 0 100%;width:100%!important;max-width:none!important;margin:0!important;height:40px;border-radius:12px!important;background:rgba(120,120,128,.16)!important;box-shadow:none!important;font-size:17px!important;padding:0 14px!important}
+.fnd-grid{display:block!important;margin:0 16px 20px;padding:0 0 0 16px!important;background:var(--card);border-radius:14px;box-shadow:0 0 0 .5px var(--hair);flex:none;overflow:visible}
+.fnd-grid:empty{display:none!important}
+.fnd-grid .fnd-t{display:grid!important;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;align-content:center;align-items:center;text-align:left;column-gap:14px!important;row-gap:0!important;padding-right:28px!important;width:100%;padding:10px 12px 10px 0!important;border-radius:0!important;border-bottom:.5px solid var(--hair)!important;position:relative}
+.fnd-grid .fnd-t:last-child{border-bottom:0!important}
+.fnd-grid .fnd-t .ico{grid-row:1/3;width:44px!important;height:44px!important;flex:none;border-radius:11px!important;font-size:22px}
+.fnd-grid .fnd-t b{display:block;font:500 17px var(--body);color:var(--ink)}
+.fnd-grid .fnd-t span:not(.ico){-webkit-line-clamp:1!important;font:400 14px var(--body)!important;color:var(--sec)!important}
+.fnd-grid .fnd-t:after{content:"";width:8px;height:8px;border-right:2px solid var(--sec);border-top:2px solid var(--sec);transform:rotate(45deg);position:absolute;right:14px;top:50%;margin-top:-4px;opacity:.6}
+.fnd-main{overflow:auto}
+}
+/* BUILD 112: phone fixes found in review */
+@media(max-width:700px){
+.win-bar:not(.term-bar) .win-title{visibility:hidden}
+.win-bar:not(.term-bar){background:transparent!important}
+/* Notification Center and Control Center: nothing from the app behind them */
+#ide:has(#ncp.on) .win,#ide:has(#ccp.on) .win{opacity:0!important;pointer-events:none;transition:opacity .15s}
+/* tab strips: one scrolling row of chips */
+html .win .win-body :is(.sol-tabs,.sch-tabs){display:flex!important;flex-wrap:nowrap!important;flex-direction:row!important;overflow-x:auto!important;gap:8px!important;padding:2px 0 8px!important;margin:0 -2px 8px!important;background:none!important;border:0!important;box-shadow:none!important;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+html .win .win-body :is(.sol-tabs,.sch-tabs)::-webkit-scrollbar{display:none}
+html:not(#z) .win .win-body :is(.sol-tabs,.sch-tabs) button{flex:none!important;width:auto!important;white-space:nowrap!important;padding:8px 15px!important;border:0!important;border-radius:999px!important;background:rgba(120,120,128,.16)!important;color:var(--ink)!important;font:600 14px var(--body)!important;box-shadow:none!important;text-align:center!important}
+html:not(#z) .win .win-body :is(.sol-tabs,.sch-tabs) button.on,html:not(#z) .win .win-body :is(.sol-tabs,.sch-tabs) button[aria-selected=true]{background:var(--acc,#0a7aff)!important;color:#fff!important}
+/* controls that stayed white in dark mode */
+html .win .win-body :is(.mot-ctl button,.mot-ctl label,.mot-mv,.mot-rv,.mot-stat span,.sol-info,.bc-btn,.bench-info):not(.go):not(.stop):not(.on){background:rgba(120,120,128,.18)!important;color:var(--ink)!important;border:0!important;border-radius:12px!important;box-shadow:none!important;text-transform:none!important;letter-spacing:0!important;font-family:var(--body)!important}
+html .win .win-body .mot-ctl :is(button,label){font-size:15px!important;font-weight:600;padding:11px 16px!important}
+html .win .win-body .mot-ctl .go{border-radius:12px!important;border-color:transparent!important}
+html .win .win-body .mot-ctl .stop{border-radius:12px!important;border-color:transparent!important}
+html .win .win-body .mot-ctl .on{background:var(--acc,#0a7aff)!important;border-color:transparent!important;border-radius:12px!important}
+html .win .win-body .mot-mv{font:700 20px var(--mono)!important;padding:12px 16px!important}
+html .win .win-body :is(.mot-note,.bc-note){background:rgba(120,120,128,.14)!important;border:0!important;border-radius:16px!important;padding:14px 16px!important;color:var(--ink)}
+html .win .win-body .mot-note b{font:700 15px var(--body);letter-spacing:0;text-transform:none}
+html .win .win-body .mot-stat{display:flex;gap:8px;flex-wrap:wrap}
+html .win .win-body .mot-stat span{padding:7px 12px!important;font-size:14px!important;font-weight:600}
+html .win .win-body .mot-rv{padding:10px 18px!important;font-size:15px!important;font-weight:600}
+html .win .win-body .sol-seg{display:flex!important;flex-wrap:wrap!important;gap:8px!important;background:none!important;border:0!important;box-shadow:none!important;padding:2px 0!important}
+html:not(#z) .win .win-body .sol-seg button{flex:none!important;width:auto!important;padding:8px 15px!important;border:0!important;border-radius:999px!important;background:rgba(120,120,128,.16)!important;color:var(--ink)!important;font:600 14px var(--body)!important;box-shadow:none!important}
+html:not(#z) .win .win-body .sol-seg button.on,html:not(#z) .win .win-body .sol-seg button[aria-pressed=true],html:not(#z) .win .win-body .sol-seg button[aria-selected=true]{background:var(--acc,#0a7aff)!important;color:#fff!important}
+.win-body .eyb-dup{display:none!important}
+#bdRoot .ss-main{padding:6px 0 30px!important}
+#bdRoot .ss-p>h2{padding:0 16px}
+#budget iframe.tracker,#passwords iframe.passgen{border-radius:0;min-height:0!important}
+}
 /* 2D motion */
 svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
@@ -1965,7 +2305,6 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
       <button class="boot-go" id="bootGo" type="button" aria-label="Enter the workspace"><span>Enter workspace</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       <small class="lk-hint">or press Enter</small>
     </div>
-    <button class="boot-skip" id="bootSkip" type="button">Skip</button>
   </div>
 </div>
 
@@ -2277,6 +2616,9 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 
 <section class="view appv" id="calc" data-title="calculator.app">
   <div class="wrap">
+    <div class="ioc-top"><button type="button" id="iocHist" aria-label="History" aria-haspopup="dialog"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12H8.5"/></svg></button><span class="ioc-r"><button type="button" id="iocMode" aria-label="Calculator mode" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M7 2.5h10A2.5 2.5 0 0 1 19.5 5v14a2.5 2.5 0 0 1-2.5 2.5H7A2.5 2.5 0 0 1 4.5 19V5A2.5 2.5 0 0 1 7 2.5zm.3 2.8a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h9.4a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM8 12a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM8 15.8a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></button><button type="button" id="iocMore" class="more" aria-label="More options" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="19" cy="12" r="2.1"/></svg></button></span></div>
+    <div class="ioc-menu" id="iocMenu" role="menu" aria-label="Calculator mode" hidden></div>
+    <div class="ioc-menu ioc-menu2" id="iocMenu2" role="menu" aria-label="Notes options" hidden></div>
     <div class="sol-tabs" id="calcTabs" role="tablist" aria-label="Calculator mode"><button type="button" role="tab" data-m="std">Standard</button><button type="button" role="tab" data-m="sci">Scientific</button><button type="button" role="tab" data-m="prog">Programmer</button><button type="button" role="tab" data-m="elec">Electronics</button></div>
     <div data-cm="std" class="cm">
       <div class="panel"><div class="panel-header"><div class="panel-title"><i>EXP-02</i>Precision Calculator</div><div class="panel-spec">DC-CALC-V1.0</div></div>
@@ -2299,11 +2641,14 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
         <div class="calc-grid g6" id="pgGrid"></div>
       </div></div>
     </div>
+    <div data-cm="notes" class="cm" hidden><div class="mn" id="mnRoot"></div></div>
+    <div data-cm="conv" class="cm" hidden><div class="cvt" id="cvRoot"></div></div>
     <div data-cm="elec" class="cm" hidden>
       <div id="exp-calc" class="panel wide"><div class="panel-header"><div class="panel-title"><i>EXP-12</i>Bench Calculators</div><div class="panel-spec">DC-BENCH-V1.0</div></div>
         <div class="panel-body"><div id="bcRoot"></div></div></div>
     </div>
   </div>
+  <div class="ioc-sheet" id="iocSheet" role="dialog" aria-label="History" hidden><i class="grab"></i><button type="button" class="x" id="iocSX" aria-label="Close history"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div class="hl" id="iocHL"></div></div>
 </section>
 <section class="view appv" id="passwords" data-title="passwords.app">
   <div class="wrap">
@@ -2377,7 +2722,7 @@ button.primary{width:100%;padding:13px!important;font-size:15px!important}
 .qrwrap:has(canvas[width=&quot;1&quot;]){display:none}
 canvas{border-radius:12px;border:.5px solid var(--line)!important}
 .btns button{background:rgba(120,120,128,.2);color:var(--ink)}
-button.primary:hover{background:var(--accent)!important;filter:brightness(1.1)}</style></head><body><main>
+button.primary:hover{background:var(--accent)!important;filter:brightness(1.1)}button.primary,button.primary:hover{color:#fff!important}</style></head><body><main>
   <section class=&quot;card&quot;>
     <div class=&quot;row&quot;><label for=&quot;len&quot;>Length</label><input type=&quot;range&quot; id=&quot;len&quot; min=&quot;12&quot; max=&quot;26&quot; step=&quot;1&quot; value=&quot;22&quot;><span id=&quot;lenOut&quot;>22</span></div>
     <label class=&quot;check&quot;><input type=&quot;checkbox&quot; id=&quot;tail&quot; checked> Add a symbol and 2 digits</label>
@@ -5156,7 +5501,7 @@ h1{font:700 28px/1.1 var(--sf)!important;text-transform:none!important;letter-sp
 .arrow-btn,.small-btn,.edit-btn{border-radius:8px!important}
 .modal{background:rgba(0,0,0,.45)!important}.close{background:transparent!important;color:var(--ink)!important}
 #storage-warning{border-radius:10px;margin-bottom:8px}
-</style></head>
+.tab.active{background:var(--accent)!important;color:#fff!important}</style></head>
 <body>
 <div id=&quot;storage-warning&quot; class=&quot;hidden&quot; style=&quot;background:#8a1f11;color:#fff;padding:10px 14px;font-size:12px;font-weight:700;text-align:center&quot;>Your browser is blocking saved data. Changes you make right now may not be kept. Please open this file in your phone's normal browser (like Chrome or Safari), not inside another app.</div>
 <main class=&quot;app&quot;>
@@ -5612,6 +5957,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
           <div class="mono-note" id="wxSrc">Source: open-Meteo (free, no key)</div>
         </div></div>
   </div>
+  <div class="wxi" id="wxi" aria-live="polite"></div>
 </section>
 <section class="view appv" id="messages" data-title="messages.app">
   <div class="wrap">
@@ -5702,7 +6048,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
   <div class="wrap">
     <div class="sec-head"><div class="k">Version notes</div><h2>Changelog</h2></div>
     <p class="mono-note" style="margin:0 0 12px">What changed in each build of this portfolio, newest first.</p>
-    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 95</a><span>App icons are redrawn like real iOS and macOS icons: bigger solid glyphs instead of thin outlines, no inner frame, and a bright full-bleed colour with a soft top highlight. The glyphs come from Phosphor Icons (MIT licence).</span></li><li><a style="color:var(--ink);cursor:default">Build 94</a><span>The calendar is removed from the phone notification screen, like on iOS 27. The desktop notification panel keeps it.</span></li><li><a style="color:var(--ink);cursor:default">Build 93</a><span>The phone status bar no longer shows the signal bars, only 5G, then Wi-Fi and the battery. This applies on the lock screen, the status bar and Control Center.</span></li><li><a style="color:var(--ink);cursor:default">Build 92</a><span>Top status icons on the phone follow iOS 27: on the lock screen and when the notification screen or Control Center is open, the clock leaves the status bar (the big time is shown instead) and a small grabber line sits under the signal, Wi-Fi and battery icons.</span></li><li><a style="color:var(--ink);cursor:default">Build 91</a><span>Phone notification screen now looks like the real iOS 27 one: the wallpaper shows clearly with no dark flat panel, the home screen fades out, the clock is clear glass, the day widget is a progress ring, there is a Now Playing card with working controls when music is playing, and the list has a large Notification Center heading with a round close button. The calendar sits below the notifications.</span></li><li><a style="color:var(--ink);cursor:default">Build 90</a><span>Notification screen on the phone: the calendar days are round again (today was stretched into an oval), and the backdrop is blurred more so the home-screen widgets no longer show through as a ghost shape behind the time.</span></li><li><a style="color:var(--ink);cursor:default">Build 89</a><span>Motor Control: Forward / reverse now has the RUN / JOG selector. In JOG, hold FWD or REV and the motor runs only while the button is held, and the interlock still blocks the opposite direction. The ladder shows the S4 RUN contact in both seal-in branches.</span></li><li><a style="color:var(--ink);cursor:default">Build 88</a><span>New Wiring sandbox tab in the Wiring app: drag from one terminal to another to wire a 230 V supply, two switches and two lamps. The circuit is solved for real, so lamps in series are dim, lamps in parallel are bright, an open switch cuts the loop and joining live to neutral is flagged as a short circuit. Tap a wire to remove it.</span></li><li><a style="color:var(--ink);cursor:default">Build 87</a><span>Fault finding with a meter has a continuity mode: check live and neutral continuity with the power off, hear the beep when the path is good, and see a missing beep for reversed polarity, an open neutral or a loose joint with a high reading.</span></li><li><a style="color:var(--ink);cursor:default">Build 86</a><span>Schematics adds a Socket radial vs ring circuit: compare one cable to a ring that feeds sockets from both sides, see what happens when one leg is broken, and use the calculator for the current in each leg.</span></li><li><a style="color:var(--ink);cursor:default">Build 85</a><span>Schematics has a new RCD (earth leakage) circuit: step through a healthy circuit, an earth fault and the trip, and use the calculator for fault current, trip check and the earth resistance needed for a 50 V touch limit.</span></li><li><a style="color:var(--ink);cursor:default">Build 84</a><span>macOS 27 push buttons: compact 26px buttons with 7px corners, a soft blue gradient on primary buttons and glass for secondary ones, across every app, in light and dark. Windows are also more translucent, so the wallpaper shows through the window body.</span></li><li><a style="color:var(--ink);cursor:default">Build 83</a><span>Desktop follows macOS 27 more closely: a frosted glass menu bar with hover highlights, vibrant translucent sidebars in System Settings and Finder with gradient selection, glossy window title bars and traffic lights, deeper window shadows with a specular top edge, and a glass sheen on every dock icon.</span></li><li><a style="color:var(--ink);cursor:default">Build 82</a><span>macOS 27 icon styles: Icon style in System Settings switches the dock, Launchpad and phone Home Screen icons between Default, Dark, Clear (glass) and Tinted (follows the accent color). Icons now use a squircle shape.</span></li><li><a style="color:var(--ink);cursor:default">Build 81</a><span>Phone look follows iOS 27.2: home-screen app icons are squircles with a middle glass layer, and the glass buttons, Control Center tiles, widgets and dock get a bright specular rim.</span></li><li><a style="color:var(--ink);cursor:default">Build 80</a><span>New Liquid Glass slider in System Settings, in the iOS 27 style: slide from Clear to Frosted to change the tint and blur of Control Center, the notification screen, the dock and the lock-screen widgets on the phone. Saved on this device.</span></li><li><a style="color:var(--ink);cursor:default">Build 79</a><span>Phone follows the iOS 27 layout. The status bar now reads signal bars, 5G, Wi-Fi and a battery with its percentage (also on the lock screen). Swipe down from the top left for the notification screen with the big time, date and widgets, or from the top right for Control Center; it follows your finger and you can also tap the clock or the icons. Control Center has three pages (Favorites, Media, Connectivity) with the dots on the right edge, a connectivity cluster, a Now Playing tile that really plays a short generated tune, flashlight, timer, calculator, notes and your existing portfolio controls. Hold the connectivity cluster or the Now Playing tile to open their full pages; hold Dark Mode, Sound, the flashlight or the timer for more options; hold Display for the brightness panel as before. Swipe up from the bottom to close.</span></li><li><a style="color:var(--ink);cursor:default">Build 78</a><span>New Sound Room (sound.sim): drag speakers around a top-down room, see each angle, delay, trim and cable run, and hear the result with Web Audio (tap a speaker, calibration noise, or a surround demo). Layouts from 2.0 to 7.1.</span></li>
+    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 115</a><span>Tab chips in Schematics and Solar now all show their pill background, not only the selected one.</span></li><li><a style="color:var(--ink);cursor:default">Build 114</a><span>Payment Tracker and Passphrase on phones: the embedded page now grows to fit its content instead of scrolling inside a cut-off box, uses the full width, and the active tab is highlighted in dark mode.</span></li><li><a style="color:var(--ink);cursor:default">Build 113</a><span>Budget on phones is now an iOS-style list that opens each section. Passwords button text is white again, app content no longer has extra side margin, and the Control Center battery percentage no longer overlaps its icon.</span></li><li><a style="color:var(--ink);cursor:default">Build 112</a><span>Phone fixes from review: tab rows are now one scrolling row of chips, buttons and readouts that stayed white in dark mode (Motor control) follow the theme, the app title is hidden under Back, the duplicate heading line is gone, and the Notification Center and Control Center no longer show the app behind them.</span></li><li><a style="color:var(--ink);cursor:default">Build 111</a><span>Settings on phones is now an iOS-style list that opens each section, with Back returning to the list. Files is a list with folder chips and a search field.</span></li><li><a style="color:var(--ink);cursor:default">Build 110</a><span>iOS pass on phones for Reminders, Notes, Clock, Messages, Calendar, Mail, Quiz and Links: large titles, grouped lists, bottom tab bar on Clock, pill inputs.</span></li><li><a style="color:var(--ink);cursor:default">Build 109</a><span>Weather on phones rebuilt like the iOS app: city cards, a detail screen with hourly Conditions and a 10-day forecast, search, Edit List, Celsius/Fahrenheit and Units. App open/close now animates on an opaque window so it stays smooth on iPhone Safari.</span></li><li><a style="color:var(--ink);cursor:default">Build 108</a><span>Smoother app open and close on phones: the Home Screen and the app now cross-fade together instead of one after the other.</span></li><li><a style="color:var(--ink);cursor:default">Build 107</a><span>Back on phones returns to the exact Home Screen page and open folder you launched the app from.</span></li><li><a style="color:var(--ink);cursor:default">Build 106</a><span>Back on phones: apps opened from the Home Screen go back to the Home Screen. It only returns to another app when you jumped from inside that app.</span></li><li><a style="color:var(--ink);cursor:default">Build 105</a><span>The back button on phones simply says Back.</span></li><li><a style="color:var(--ink);cursor:default">Build 104</a><span>Back button on phones now remembers the apps you used before, even when you went through the Home Screen in between, so it returns to the previous app instead of always Home.</span></li><li><a style="color:var(--ink);cursor:default">Build 103</a><span>The back button on phones no longer always jumps to Home: it closes menus and sheets first, steps out of an open note, and returns to the app you came from, showing its name. Home only when there is nothing to go back to.</span></li><li><a style="color:var(--ink);cursor:default">Build 102</a><span>Calculator: the Programmer keypad is now round like the others, and the Electronics tools use the same pill buttons and colours on phones.</span></li><li><a style="color:var(--ink);cursor:default">Build 101</a><span>Calculator on phones now looks like the iOS one: round keys, history sheet, a mode menu (Basic, Scientific, Math Notes, Convert, Programmer, Electronics), the 6-column scientific pad with memory, 2nd and hyperbolic keys, Math Notes with live results, and a unit converter.</span></li><li><a style="color:var(--ink);cursor:default">Build 100</a><span>Breadboard: select a part and drag the orange handle on either end to move just that leg to another hole. The white flash when an app opens in dark mode is gone (windows were light for the first 0.4 s).</span></li><li><a style="color:var(--ink);cursor:default">Build 99</a><span>Fixed the white flash when an app window opens: windows no longer stack blur layers inside each other.</span></li><li><a style="color:var(--ink);cursor:default">Build 98</a><span>Removed the Skip button from the boot screen on both modes, and turned off the selection highlight when dragging or long-pressing.</span></li><li><a style="color:var(--ink);cursor:default">Build 97</a><span>Fixed the Appearance toggle leaving window bodies and sidebars light under forced dark (and the reverse).</span></li><li><a style="color:var(--ink);cursor:default">Build 96</a><span>Fixed a thin orange vertical line that ran down every window and full-screen app on wide screens (it was a leftover page guide line).</span></li><li><a style="color:var(--ink);cursor:default">Build 95</a><span>App icons are redrawn like real iOS and macOS icons: bigger solid glyphs instead of thin outlines, no inner frame, and a bright full-bleed colour with a soft top highlight. The glyphs come from Phosphor Icons (MIT licence).</span></li><li><a style="color:var(--ink);cursor:default">Build 94</a><span>The calendar is removed from the phone notification screen, like on iOS 27. The desktop notification panel keeps it.</span></li><li><a style="color:var(--ink);cursor:default">Build 93</a><span>The phone status bar no longer shows the signal bars, only 5G, then Wi-Fi and the battery. This applies on the lock screen, the status bar and Control Center.</span></li><li><a style="color:var(--ink);cursor:default">Build 92</a><span>Top status icons on the phone follow iOS 27: on the lock screen and when the notification screen or Control Center is open, the clock leaves the status bar (the big time is shown instead) and a small grabber line sits under the signal, Wi-Fi and battery icons.</span></li><li><a style="color:var(--ink);cursor:default">Build 91</a><span>Phone notification screen now looks like the real iOS 27 one: the wallpaper shows clearly with no dark flat panel, the home screen fades out, the clock is clear glass, the day widget is a progress ring, there is a Now Playing card with working controls when music is playing, and the list has a large Notification Center heading with a round close button. The calendar sits below the notifications.</span></li><li><a style="color:var(--ink);cursor:default">Build 90</a><span>Notification screen on the phone: the calendar days are round again (today was stretched into an oval), and the backdrop is blurred more so the home-screen widgets no longer show through as a ghost shape behind the time.</span></li><li><a style="color:var(--ink);cursor:default">Build 89</a><span>Motor Control: Forward / reverse now has the RUN / JOG selector. In JOG, hold FWD or REV and the motor runs only while the button is held, and the interlock still blocks the opposite direction. The ladder shows the S4 RUN contact in both seal-in branches.</span></li><li><a style="color:var(--ink);cursor:default">Build 88</a><span>New Wiring sandbox tab in the Wiring app: drag from one terminal to another to wire a 230 V supply, two switches and two lamps. The circuit is solved for real, so lamps in series are dim, lamps in parallel are bright, an open switch cuts the loop and joining live to neutral is flagged as a short circuit. Tap a wire to remove it.</span></li><li><a style="color:var(--ink);cursor:default">Build 87</a><span>Fault finding with a meter has a continuity mode: check live and neutral continuity with the power off, hear the beep when the path is good, and see a missing beep for reversed polarity, an open neutral or a loose joint with a high reading.</span></li><li><a style="color:var(--ink);cursor:default">Build 86</a><span>Schematics adds a Socket radial vs ring circuit: compare one cable to a ring that feeds sockets from both sides, see what happens when one leg is broken, and use the calculator for the current in each leg.</span></li><li><a style="color:var(--ink);cursor:default">Build 85</a><span>Schematics has a new RCD (earth leakage) circuit: step through a healthy circuit, an earth fault and the trip, and use the calculator for fault current, trip check and the earth resistance needed for a 50 V touch limit.</span></li><li><a style="color:var(--ink);cursor:default">Build 84</a><span>macOS 27 push buttons: compact 26px buttons with 7px corners, a soft blue gradient on primary buttons and glass for secondary ones, across every app, in light and dark. Windows are also more translucent, so the wallpaper shows through the window body.</span></li><li><a style="color:var(--ink);cursor:default">Build 83</a><span>Desktop follows macOS 27 more closely: a frosted glass menu bar with hover highlights, vibrant translucent sidebars in System Settings and Finder with gradient selection, glossy window title bars and traffic lights, deeper window shadows with a specular top edge, and a glass sheen on every dock icon.</span></li><li><a style="color:var(--ink);cursor:default">Build 82</a><span>macOS 27 icon styles: Icon style in System Settings switches the dock, Launchpad and phone Home Screen icons between Default, Dark, Clear (glass) and Tinted (follows the accent color). Icons now use a squircle shape.</span></li><li><a style="color:var(--ink);cursor:default">Build 81</a><span>Phone look follows iOS 27.2: home-screen app icons are squircles with a middle glass layer, and the glass buttons, Control Center tiles, widgets and dock get a bright specular rim.</span></li><li><a style="color:var(--ink);cursor:default">Build 80</a><span>New Liquid Glass slider in System Settings, in the iOS 27 style: slide from Clear to Frosted to change the tint and blur of Control Center, the notification screen, the dock and the lock-screen widgets on the phone. Saved on this device.</span></li><li><a style="color:var(--ink);cursor:default">Build 79</a><span>Phone follows the iOS 27 layout. The status bar now reads signal bars, 5G, Wi-Fi and a battery with its percentage (also on the lock screen). Swipe down from the top left for the notification screen with the big time, date and widgets, or from the top right for Control Center; it follows your finger and you can also tap the clock or the icons. Control Center has three pages (Favorites, Media, Connectivity) with the dots on the right edge, a connectivity cluster, a Now Playing tile that really plays a short generated tune, flashlight, timer, calculator, notes and your existing portfolio controls. Hold the connectivity cluster or the Now Playing tile to open their full pages; hold Dark Mode, Sound, the flashlight or the timer for more options; hold Display for the brightness panel as before. Swipe up from the bottom to close.</span></li><li><a style="color:var(--ink);cursor:default">Build 78</a><span>New Sound Room (sound.sim): drag speakers around a top-down room, see each angle, delay, trim and cable run, and hear the result with Web Audio (tap a speaker, calibration noise, or a surround demo). Layouts from 2.0 to 7.1.</span></li>
 <li><a style="color:var(--ink);cursor:default">Build 77</a><span>Wiring: voltage drop calculator and a fault-finding bench with a meter. Motor control: jog/run and hand-off-auto circuits, live amps and rpm, save diagram as SVG, insert faults (open fuse, stop chain, coil, welded pole, lost phase, or a random hidden one), read the 230 V control circuit with a meter, and tick off a commissioning checklist. Breadboard hover lights up the whole strip and shows its voltage, drag from hole to hole to place a part, and a net voltage table. Fixes the ghosting and flicker when windows, Control Center, Launchpad, menus, folders and toasts animate. Breadboard: drag placed parts to new holes, select several (Shift-tap, Multi or box-select), Delete, Undo and Redo, arrow-key nudge, safer Clear, clearer hints.</span></li>
 <li><a style="color:var(--ink);cursor:default">Build 76</a><span>Phone Home Screen gets an App Library as its last page: apps grouped in glass cards (Portfolio, Applications, Simulators, Labs). Tap an icon to open an app, or the small cluster to open the whole group.</span></li><li><a style="color:var(--ink);cursor:default">Build 75</a><span>New Mail app: a compose form addressed to the public portfolio email. Send opens your own email app with the subject and message filled in, and Copy address copies the address. The page itself sends nothing.</span></li><li><a style="color:var(--ink);cursor:default">Build 74</a><span>New Calendar app: month grid with today highlighted, previous and next month, arrow key navigation, and events with an optional time that you can add and delete. Events are saved in this browser.</span></li><li><a style="color:var(--ink);cursor:default">Build 73</a><span>Hold the Display slider in phone Control Center to open the expanded panel with a tall brightness slider plus Dark Mode, Night Shift (warm tint) and True Tone (light warm tint) buttons.</span></li><li><a style="color:var(--ink);cursor:default">Build 72</a><span>Phone lock screen in the iOS style: large time, three glass widgets (day progress, next alarm, Focus), swipe up for a passcode keypad (any 6 digits unlock the demo). The Control Center power button opens a slide to power off screen, and a new Focus list (Do Not Disturb, Reduce Interruptions, Personal, Work, Sleep) sits in Control Center.</span></li><li><a style="color:var(--ink);cursor:default">Build 71</a><span>On phones, Control Center and Notification Center now open full screen over a dark glass blur, so nothing is cut off by the dock. Control Center has round glass buttons, an accent tile and tall vertical Display and Sound sliders. Notification Center has a close button.</span></li><li><a style="color:var(--ink);cursor:default">Build 70</a><span>Control Center on phones is rebuilt in the iOS 26 style: larger glass tiles with the icon on top and a status line, two big slider tiles for Display and Sound, and it scrolls if the screen is short. Weather on phones is centered in a sky gradient card.</span></li><li><a style="color:var(--ink);cursor:default">Build 69</a><span>Phone apps follow the iOS look. Clock now has World Clock, Alarms, Stopwatch and Timers tabs with a floating tab bar and green switches. Reminders, Messages, Notes and Weather get large titles, a bottom input pill and round action buttons.</span></li><li><a style="color:var(--ink);cursor:default">Build 68</a><span>Launchpad (F4, Go menu or Control Center) shows every app grouped as Portfolio, Applications, Simulators and Labs, with search. Finder now has separate Simulators and Labs folders. On phones the Home Screen has Simulators, Labs and Applications folders that open as a sheet.</span></li><li><a style="color:var(--ink);cursor:default">Build 67</a><span>Control Center is now a real panel with toggles (Dark Mode, Sound, Stage Manager, Widgets, Dock Magnify, Effects), brightness and volume sliders, accent colors and shortcuts. Notification Center has a date header and dismissable notifications. On phones, swipe down from the top edge: left side for Notifications, right side for Control Center.</span></li><li><a style="color:var(--ink);cursor:default">Build 66</a><span>The new apps now look like Mac apps. Budget has a sidebar (Summary, Bills, Loan and savings, Savings goals, Payments, Backup) and the Payment Tracker and Passwords were redesigned, with Dark mode inside them too. Reminders, Notes, Clock, Weather, Messages, Quiz and Links got a cleaner look.</span></li><li><a style="color:var(--ink);cursor:default">Build 65</a><span>The Playground and Tools windows are gone. Every tool is now its own app: Calculator (Standard, Scientific, Programmer with HEX and BIN, and Electronics), Passwords, Budget (Payday and Bills), Reminders, Notes, Clock, Weather, Messages, Quiz and Links. They live in a new Applications folder in Finder.</span></li><li><a style="color:var(--ink);cursor:default">Build 64</a><span>Phone fixes from real iPhone testing: System Settings now fits the screen, long press no longer highlights the interface, the Home button no longer shows a stray close mark, and the Drawing sliders update smoothly. Removed unused map code.</span></li><li><a style="color:var(--ink);cursor:default">Build 63</a><span>The labs, Skills, Guides and the bench now use the same macOS look: rounded grouped cards, readable labels instead of tiny mono capitals, rounded result tiles, level bars on Skills, and a numbered step list on the bench with the current step in blue.</span></li><li><a style="color:var(--ink);cursor:default">Build 62</a><span>README is now a Welcome screen: the app icon, a large headline with a gradient, a short intro, blue buttons and rounded stat tiles. The file list below it shows each app as an icon with its name and a short description.</span></li><li><a style="color:var(--ink);cursor:default">Build 61</a><span>Dark mode now covers the window contents, not just the menu bar and dock: cards, fields, tabs, lists and text all switch together. Diagrams and the CV keep their white paper so they stay readable and print correctly.</span></li><li><a style="color:var(--ink);cursor:default">Build 60</a><span>iOS mode on phones: a Home Screen with widgets, app icons on swipeable pages and a floating dock; apps open full screen with a Back to Home button, swipe from the left edge or up from the bottom to return, and pull down on the Home Screen for Search.</span></li><li><a style="color:var(--ink);cursor:default">Build 59</a><span>Finder: view as Icons, List (sortable by name, kind and location) or Columns with a live preview; a path bar at the bottom; a Get Info panel; right-click menus on files and on empty space; sidebar with Favorites and Folders and SF-style icons. The view you pick is remembered.</span></li>
     <li><a style="color:var(--ink);cursor:default">Build 58</a><span>System Settings app (Appearance with Light, Dark or Auto and seven accent colors, Wallpaper, Desktop and Dock, Sound, About). The Apple menu can Lock Screen, Restart and Shut Down. Stage Manager keeps the front window in the middle with the others on the left. Hold Alt and press the backtick key for a window switcher with icons. Optional hot corners and dock magnification switches.</span></li>
@@ -6091,16 +6437,29 @@ $('yrs').textContent=Math.max(1,new Date().getFullYear()-2019)+'+';
   function full(id){const w=wins[id];if(!w)return;settle(w);const on=w.classList.toggle('fs');ide.classList.toggle('has-fs',!!document.querySelector('.win.fs'));if(on)go(id,{keep:1});setTimeout(()=>dispatchEvent(new Event('resize')),260)}
   function unfull(){document.querySelectorAll('.win.fs').forEach(w=>{settle(w);w.classList.remove('fs')});ide.classList.remove('has-fs')}
   function zoom(id){const w=wins[id];if(!w)return;settle(w);w.classList.toggle('max');store1(id);setTimeout(()=>dispatchEvent(new Event('resize')),260)}
+  let navStack=[],homeMem=null;
+  function restoreHome(){const m=homeMem;if(!m)return;if(!ide.classList.contains('home'))return;ihPages.scrollLeft=m.left;if(m.fold){setTimeout(()=>{const b=document.createElement('button');b.dataset.fold=m.fold;b.hidden=true;ide.appendChild(b);b.click();b.remove()},180)}}
+  window.__back=window.__back||{};window.__backLabel=window.__backLabel||{};
+  function updBack(){if(!ios())return;navStack=navStack.filter(k=>wins[k]);Object.keys(wins).forEach(k=>{const w=wins[k];if(!w)return;let t='Home';const il=window.__backLabel[k]&&window.__backLabel[k]();if(il)t=il;else{const pv=navStack.slice().reverse().find(x=>wins[x]&&x!==k);if(pv){const te=wins[pv].querySelector('.win-title');t=(te&&((te.firstElementChild&&te.firstElementChild.textContent)||te.textContent).trim())||'Back'}}w.style.setProperty('--bk','"Back"')})}
+  function backOne(id){
+    if(window.__back[id]&&window.__back[id]()){updBack();return true}
+    while(navStack.length){const pv=navStack.pop();if(pv!==id&&wins[pv]){go(pv,{keep:1,noPush:1});updBack();return true}}
+    return false}
+  addEventListener('backchg',updBack);
   function go(id,o){
     o=o||{};const f=byId(id);if(!f)return false;
     if(!wins[id]){wins[id]=mkWin(id);if(!open.includes(id))open.push(id);if(bounceOn){bounceId=id;setTimeout(()=>{if(bounceId===id){bounceId='';const d=dockIn.querySelector('.bounce');if(d)d.classList.remove('bounce')}},950)}}
-    if(ios())setHome(false);const w=wins[id];w.classList.remove('min','closing');
+    if(ios()&&!o.noPush&&!ide.classList.contains('home')&&cur&&cur!==id&&wins[cur]){navStack=navStack.filter(k=>k!==cur);navStack.push(cur);if(navStack.length>8)navStack.shift()}
+    if(ios())navStack=navStack.filter(k=>k!==id);
+    if(ios()&&ide.classList.contains('home'))homeMem={left:ihPages.scrollLeft,fold:window.__foldOpen||(performance.now()-(window.__foldAt||-1e9)<600?window.__foldLast:null)||null};
+    if(ios()&&ide.classList.contains('home')&&!matchMedia('(prefers-reduced-motion:reduce)').matches){ide.classList.add('ih-opening');clearTimeout(ide._iho);ide._iho=setTimeout(()=>ide.classList.remove('ih-opening'),360)}
+    if(ios())setHome(false);const w=wins[id];w.classList.remove('min','closing');if(ios())settle(w,520);
     document.getElementById(id).classList.add('on');
     focus(id);
     const body=w.querySelector('.win-body');
     if(o.target){setTimeout(()=>{body.scrollTop=o.target.getBoundingClientRect().top-body.getBoundingClientRect().top+body.scrollTop-12},30)}else if(!o.keep&&!o.quiet)body.scrollTop=0;
     try{if(!o.quiet)history.replaceState(null,'','#'+id)}catch(e){}
-    renderDock();saveL();menuRefresh();
+    renderDock();saveL();menuRefresh();updBack();
     setTimeout(()=>dispatchEvent(new Event('resize')),60);
     return true;
   }
@@ -6135,7 +6494,7 @@ $('yrs').textContent=Math.max(1,new Date().getFullYear()-2019)+'+';
     const w=e.target.closest('.win');if(!w)return;const id=w.dataset.win;
     if(e.target.closest('.wt-b')){const u=location.href.split('#')[0]+'#'+id;try{navigator.clipboard.writeText(u).then(()=>toast('Link copied: '+(APPN[id]||id)),()=>toast(u))}catch(_){toast(u)}return}
     setTimeout(()=>tagLists(w),70);
-    if(e.target.closest('.l-c')){if(ios())goHome();else close(id)}else if(e.target.closest('.l-m'))minimize(id);else if(e.target.closest('.l-z')){e.altKey?full(id):zoom(id)}
+    if(e.target.closest('.l-c')){if(ios()){if(!backOne(id)){goHome();restoreHome()}}else close(id)}else if(e.target.closest('.l-m'))minimize(id);else if(e.target.closest('.l-z')){e.altKey?full(id):zoom(id)}
   });
   /* dock */
   const APPN={top:'README',about:'About',experience:'Experience',skills:'Skills',analog:'Analog Lab',audio:'Audio Lab',bench:'Bench',breadboard:'Breadboard',drawing:'Drawing',monitor:'Monitor',motor:'Motor Control',schematics:'Schematics',solar:'Solar',wiring:'Wiring',contact:'Contacts',guides:'Guides',modules:'Modules',calc:'Calculator',passwords:'Passwords',budget:'Budget',reminders:'Reminders',notes:'Notes',clock:'Clock',weather:'Weather',messages:'Messages',quiz:'Quiz',links:'Links',calendar:'Calendar',mail:'Mail',soundroom:'Sound Room',finder:'Finder',settings:'System Settings',changelog:'Changelog',cv:'CV'};
@@ -6174,8 +6533,8 @@ $('yrs').textContent=Math.max(1,new Date().getFullYear()-2019)+'+';
   })();
   (function(){
     const sh=document.createElement('div');sh.className='ih-fs';sh.hidden=true;sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');ide.appendChild(sh);
-    const close=()=>{if(sh.hidden)return;sh.classList.remove('on');setTimeout(()=>{if(!sh.classList.contains('on'))sh.hidden=true},200)};
-    document.addEventListener('click',e=>{const f=e.target.closest('[data-fold]');if(f&&ios()){const d=window.__FD.find(x=>x[0]===f.dataset.fold);if(!d)return;sh.innerHTML=window.__fold(d);sh.setAttribute('aria-label',d[1]);sh.hidden=false;requestAnimationFrame(()=>sh.classList.add('on'));return}
+    const close=()=>{if(sh.hidden)return;window.__foldLast=window.__foldOpen;window.__foldAt=performance.now();window.__foldOpen=null;sh.classList.remove('on');setTimeout(()=>{if(!sh.classList.contains('on'))sh.hidden=true},200)};
+    document.addEventListener('click',e=>{const f=e.target.closest('[data-fold]');if(f&&ios()){const d=window.__FD.find(x=>x[0]===f.dataset.fold);if(!d)return;window.__foldOpen=d[0];sh.innerHTML=window.__fold(d);sh.setAttribute('aria-label',d[1]);sh.hidden=false;requestAnimationFrame(()=>sh.classList.add('on'));return}
       if(!sh.hidden&&(e.target===sh||e.target.closest('#ihPages,[data-open]')&&e.target.closest('.ih-fs')||e.target.closest('.ih-fs')&&!e.target.closest('.ih-fs-b')))close()},true);
     addEventListener('keydown',e=>{if(e.key==='Escape'&&!sh.hidden){e.stopPropagation();close()}},true);
     new MutationObserver(()=>{if(!ide.classList.contains('home'))close()}).observe(ide,{attributes:true,attributeFilter:['class']});
@@ -6184,14 +6543,14 @@ $('yrs').textContent=Math.max(1,new Date().getFullYear()-2019)+'+';
   function setHome(on){
     if(!ios()){ide.classList.remove('home');return}
     if(ide.classList.contains('home')===on)return;
-    if(on){ide.classList.add('home');ihPages.scrollLeft=0;try{history.replaceState(null,'','#')}catch(e){}}
+    if(on){navStack=[];ide.classList.add('home');ihPages.scrollLeft=0;try{history.replaceState(null,'','#')}catch(e){}}
     else ide.classList.remove('home');
     menuRefresh()
   }
   function goHome(){
     if(!ios()||ide.classList.contains('home'))return;
     const w=cur&&wins[cur];
-    if(w&&w.classList.contains('front')){w.classList.add('ios-out');setTimeout(()=>{w.classList.remove('ios-out');setHome(true)},200)}else setHome(true);
+    if(w&&w.classList.contains('front')){settle(w,520);ide.classList.add('ih-closing');w.classList.add('ios-out');setHome(true);setTimeout(()=>{w.classList.remove('ios-out');ide.classList.remove('ih-closing')},400)}else setHome(true);
   }
   $('homeInd').addEventListener('click',goHome);
   $('homeInd').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();goHome()}});
@@ -6390,7 +6749,7 @@ $('yrs').textContent=Math.max(1,new Date().getFullYear()-2019)+'+';
   if(seen){booted=true;boot.hidden=true}
   else if(reduce){bl.textContent='Ready';$('bootFill').style.width='100%';card()}
   else{const P=[7,17,26,38,47,61,70,83,92,100];let i=0;bt=setInterval(()=>{bl.textContent=LINES[Math.min(LINES.length-1,Math.floor(i/P.length*LINES.length))];$('bootFill').style.width=P[i]+'%';if(++i>=P.length){clearInterval(bt);setTimeout(card,800)}},390)}
-  $('bootGo').onclick=finish;$('bootSkip').onclick=finish;
+  $('bootGo').onclick=finish;
   boot.addEventListener('keydown',e=>{if(e.key==='Escape'||e.key==='Enter'||e.key===' '){if(e.target.id!=='bootGo'||e.key==='Escape'){e.preventDefault();finish()}}});
   addEventListener('keydown',e=>{if(!booted&&(e.key==='Escape'))finish()});
   boot.addEventListener('click',e=>{if(e.target===boot&&boot.classList.contains('card'))finish();else if(!boot.classList.contains('card')&&!e.target.closest('button')){clearInterval(bt);$('bootFill').style.width='100%';setTimeout(card,250)}});
@@ -6422,12 +6781,14 @@ renderTodos();
 
 /* ========== 02 CALCULATOR ========== */
 const calc={cur:'0',prev:null,op:null,fresh:true};
-const calcKeys=[['AC','clr'],['±','op'],['%','op'],['÷','op'],['7'],['8'],['9'],['×','op'],['4'],['5'],['6'],['−','op'],['1'],['2'],['3'],['+','op'],['←','op'],['0'],['.'],['=','eq']];
-$('calcGrid').innerHTML=calcKeys.map(k=>`<button class="calc-btn ${k[1]||''}" data-k="${k[0]}">${k[0]}</button>`).join('');
+const calcKeys=[['←','op'],['AC','clr'],['%','op'],['÷','op'],['7'],['8'],['9'],['×','op'],['4'],['5'],['6'],['−','op'],['1'],['2'],['3'],['+','op'],['±','op'],['0'],['.'],['=','eq']];
+const CK_ICON={'←':'<svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 5.5h9.3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9.2L3.4 12z"/><path d="M12.6 9.4l4.2 4.2M16.8 9.4l-4.2 4.2"/></svg>','±':'<svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 6.2h5.4M7.7 3.5v5.4M6 20.5L18 3.5M13.6 19.5H19"/></svg>'};
+$('calcGrid').innerHTML=calcKeys.map(k=>`<button class="calc-btn ${k[1]||''}" data-k="${k[0]}"${CK_ICON[k[0]]?' aria-label="'+(k[0]==='←'?'Delete':'Plus or minus')+'"':''}>${CK_ICON[k[0]]||k[0]}</button>`).join('');
 function calcCompute(a,b,op){a=parseFloat(a);b=parseFloat(b);let r;
   if(op==='+')r=a+b;else if(op==='−')r=a-b;else if(op==='×')r=a*b;else if(op==='÷')r=b===0?NaN:a/b;else r=b;
   return isFinite(r)?String(Math.round(r*1e10)/1e10):'ERR'}
-function calcShow(){$('calcDisplay').textContent=calc.cur;$('calcHistory').innerHTML=calc.prev!==null?escapeHTML(calc.prev+' '+(calc.op||'')):'&nbsp;'}
+function calcFmt(t){if(t==='ERR'||/e/i.test(t))return t;const m=/^(-?)(\d+)(\.\d*)?$/.exec(t);return m?m[1]+m[2].replace(/\B(?=(\d{3})+(?!\d))/g,',')+(m[3]||''):t}
+function calcShow(){$('calcDisplay').textContent=calcFmt(calc.cur);window.__iocFit&&window.__iocFit($('calcDisplay'),96);$('calcHistory').innerHTML=calc.prev!==null?escapeHTML(calc.prev+' '+(calc.op||'')):'&nbsp;'}
 function calcPress(k){
   if(calc.cur==='ERR'&&k!=='AC'){return}
   if(/^\d$/.test(k)){calc.cur=(calc.fresh||calc.cur==='0')?k:calc.cur+k;calc.fresh=false}
@@ -6436,7 +6797,7 @@ function calcPress(k){
   else if(k==='±'){if(calc.cur!=='0')calc.cur=calc.cur.startsWith('-')?calc.cur.slice(1):'-'+calc.cur}
   else if(k==='%'){calc.cur=String(parseFloat(calc.cur)/100)}
   else if(k==='←'){if(!calc.fresh){calc.cur=calc.cur.length>1?calc.cur.slice(0,-1):'0';if(calc.cur==='-')calc.cur='0'}}
-  else if(k==='='){if(calc.op&&calc.prev!==null){calc.cur=calcCompute(calc.prev,calc.cur,calc.op);calc.prev=null;calc.op=null;calc.fresh=true}}
+  else if(k==='='){if(calc.op&&calc.prev!==null){const hx=calc.prev+' '+calc.op+' '+calc.cur;calc.cur=calcCompute(calc.prev,calc.cur,calc.op);window.__chist&&window.__chist(hx,calc.cur);calc.prev=null;calc.op=null;calc.fresh=true}}
   else{ /* operator */
     if(calc.op&&calc.prev!==null&&!calc.fresh){calc.cur=calcCompute(calc.prev,calc.cur,calc.op)}
     calc.prev=calc.cur;calc.op=k;calc.fresh=true;
@@ -6447,13 +6808,14 @@ $('calcGrid').addEventListener('click',e=>{if(e.target.dataset.k)calcPress(e.tar
 
 /* CALC ENGINE: Scientific expression parser and Programmer integer maths (no eval) */
 function sciEval(src,deg,ans){
+  src=String(src);{const o=(src.match(/\(/g)||[]).length,c=(src.match(/\)/g)||[]).length;if(o>c)src+=')'.repeat(o-c)}
   const s=String(src).replace(/\s+/g,'').replace(/×/g,'*').replace(/÷/g,'/').replace(/−/g,'-').replace(/π/g,'pi').replace(/√/g,'sqrt');
   let i=0;
   const fail=m=>{throw new Error(m||'Syntax error')};
   const peek=()=>s[i];
   const toRad=x=>deg?x*Math.PI/180:x, fromRad=x=>deg?x*180/Math.PI:x;
   const fact=n=>{if(n<0||Math.floor(n)!==n||n>170)fail('Math error');let r=1;for(let k=2;k<=n;k++)r*=k;return r};
-  const F={sin:x=>Math.sin(toRad(x)),cos:x=>Math.cos(toRad(x)),tan:x=>Math.tan(toRad(x)),asin:x=>fromRad(Math.asin(x)),acos:x=>fromRad(Math.acos(x)),atan:x=>fromRad(Math.atan(x)),ln:Math.log,log:Math.log10,sqrt:Math.sqrt,abs:Math.abs,exp:Math.exp};
+  const F={sin:x=>Math.sin(toRad(x)),cos:x=>Math.cos(toRad(x)),tan:x=>Math.tan(toRad(x)),asin:x=>fromRad(Math.asin(x)),acos:x=>fromRad(Math.acos(x)),atan:x=>fromRad(Math.atan(x)),ln:Math.log,log:Math.log10,sqrt:Math.sqrt,abs:Math.abs,exp:Math.exp,sinh:Math.sinh,cosh:Math.cosh,tanh:Math.tanh,asinh:Math.asinh,acosh:Math.acosh,atanh:Math.atanh};
   function expr(){let v=term();while(peek()==='+'||peek()==='-'){const o=s[i++];const r=term();v=o==='+'?v+r:v-r}return v}
   function term(){let v=unary();while(true){const c=peek();if(c==='*'||c==='/'){i++;const r=unary();v=c==='*'?v*r:v/r}else if(c==='('||/[a-z]/.test(c||'')&&true){const r=unary();v=v*r}else if(/\d|\./.test(c||'')){fail()}else break}return v}
   function unary(){if(peek()==='-'){i++;return -unary()}if(peek()==='+'){i++;return unary()}return power()}
@@ -6512,10 +6874,13 @@ const PROG={
   const tabs=$('calcTabs');if(!tabs)return;
   const panes=[...document.querySelectorAll('[data-cm]')];
   let mode='std';
-  function setMode(m){mode=m;tabs.querySelectorAll('button').forEach(b=>{const on=b.dataset.m===m;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});panes.forEach(p=>{p.hidden=p.dataset.cm!==m});try{localStorage.setItem('dc_calcm',m)}catch(e){}}
+  const PHM=matchMedia('(max-width:700px)');
+  const root3=document.getElementById('calc');
+  function setMode(m){mode=m;tabs.querySelectorAll('button').forEach(b=>{const on=b.dataset.m===m;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});panes.forEach(p=>{p.hidden=p.dataset.cm!==m});root3.dataset.mode=m;try{localStorage.setItem('dc_calcm',m)}catch(e){}if(window.__iocSync)window.__iocSync()}
   tabs.addEventListener('click',e=>{const b=e.target.closest('button[data-m]');if(b)setMode(b.dataset.m)});
   let m0='std';try{m0=localStorage.getItem('dc_calcm')||'std'}catch(e){}
-  setMode(['std','sci','prog','elec'].includes(m0)?m0:'std');
+  setMode((['std','sci','prog','elec'].includes(m0)||(PHM.matches&&['notes','conv'].includes(m0)))?m0:'std');
+  window.__calcMode={get:()=>mode,set:setMode};
 
   /* ----- Scientific ----- */
   const SK=[['DEG','fn'],['(','fn'],[')','fn'],['⌫','fn'],['AC','clr'],
@@ -6527,23 +6892,46 @@ const PROG={
     ['1'],['2'],['3'],['−','op'],['+','op'],
     ['0'],['.'],['=','eq wide']];
   const sg=$('sciGrid');
-  sg.innerHTML=SK.map(k=>`<button type="button" class="calc-btn ${k[1]||''}" data-s="${k[0]}">${k[0]}</button>`).join('');
-  const S={ex:'',hist:'',deg:true,ans:0,fresh:false,err:''};
-  const INS={'sin':'sin(','cos':'cos(','tan':'tan(','ln':'ln(','log':'log(','asin':'asin(','acos':'acos(','atan':'atan(','√':'√(','x²':'^2','Ans':'ans','π':'π'};
-  const OPS=['+','−','×','÷','^','!','%','x²'];
+  const S={ex:'',hist:'',deg:true,ans:0,fresh:false,err:'',sec:false,mem:0};
+  const SUP={'x²':'x<sup>2</sup>','x³':'x<sup>3</sup>','^':'x<sup>y</sup>','eˣ':'e<sup>x</sup>','10ˣ':'10<sup>x</sup>','1/x':'<sup>1</sup>&#8260;<sub>x</sub>','²√x':'<sup>2</sup>&radic;x','³√x':'<sup>3</sup>&radic;x','ʸ√x':'<sup>y</sup>&radic;x','log':'log<sub>10</sub>','!':'x!','2nd':'2<sup>nd</sup>','e':'<i>e</i>'};
+  const UP=[['(',''],[')',''],['mc',''],['m+',''],['m-',''],['mr',''],['2nd',''],['x²',''],['x³',''],['^',''],['eˣ',''],['10ˣ',''],['1/x',''],['²√x',''],['³√x',''],['ʸ√x',''],['ln',''],['log',''],['!',''],['sin',''],['cos',''],['tan',''],['e',''],['E',''],['rand',''],['sinh',''],['cosh',''],['tanh',''],['π',''],['DEG','']];
+  const LO=[['⌫','l g'],['AC','l g'],['%','l g'],['÷','l op'],['7','l'],['8','l'],['9','l'],['×','l op'],['4','l'],['5','l'],['6','l'],['−','l op'],['1','l'],['2','l'],['3','l'],['+','l op'],['±','l'],['0','l'],['.','l'],['=','l op']];
+  const LBL={'rand':'Rand','E':'EE','DEG':'Rad','π':'π','⌫':'<svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 5.5h9.3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9.2L3.4 12z"/><path d="M12.6 9.4l4.2 4.2M16.8 9.4l-4.2 4.2"/></svg>','±':'<svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 6.2h5.4M7.7 3.5v5.4M6 20.5L18 3.5M13.6 19.5H19"/></svg>'};
+  function buildSci(){
+    if(PHM.matches){
+      sg.className='calc-grid ios';
+      sg.innerHTML=UP.map(k=>`<button type="button" class="calc-btn u fn" data-s="${k[0]}">${SUP[k[0]]||LBL[k[0]]||k[0]}</button>`).concat(LO.map(k=>`<button type="button" class="calc-btn ${k[1]}" data-s="${k[0]}">${LBL[k[0]]||k[0]}</button>`)).join('');
+    }else{
+      sg.className='calc-grid g5';
+      sg.innerHTML=SK.map(k=>`<button type="button" class="calc-btn ${k[1]||''}" data-s="${k[0]}">${k[0]}</button>`).join('');
+    }
+  }
+  buildSci();PHM.addEventListener&&PHM.addEventListener('change',()=>{buildSci();sciShow()});
+  const INS={'x³':'^3','eˣ':'e^(','10ˣ':'10^(','1/x':'^(-1)','²√x':'√(','³√x':'^(1÷3)','ʸ√x':'^(1÷(','sinh':'sinh(','cosh':'cosh(','tanh':'tanh(','asinh':'asinh(','acosh':'acosh(','atanh':'atanh(','E':'E','sin':'sin(','cos':'cos(','tan':'tan(','ln':'ln(','log':'log(','asin':'asin(','acos':'acos(','atan':'atan(','√':'√(','x²':'^2','Ans':'ans','π':'π'};
+  const OPS=['+','−','×','÷','^','!','%','x²','x³','1/x','³√x'];
   function sciShow(){
-    sg.querySelector('[data-s=DEG]').textContent=S.deg?'DEG':'RAD';
+    const dk=sg.querySelector('[data-s=DEG]');if(dk)dk.textContent=PHM.matches?(S.deg?'Rad':'Deg'):(S.deg?'DEG':'RAD');
+    if(PHM.matches){const q=k=>sg.querySelector('[data-s="'+k+'"]');const sk=q('2nd');if(sk)sk.classList.toggle('on',S.sec);
+      [['sin','sin'],['cos','cos'],['tan','tan'],['sinh','sinh'],['cosh','cosh'],['tanh','tanh']].forEach(([k,t])=>{const b=q(k);if(b)b.innerHTML=S.sec?t+'<sup>&minus;1</sup>':t});
+      const ac=q('AC');if(ac)ac.textContent=S.ex?'C':'AC'}
     let small=S.fresh?S.hist:'';
     if(!S.fresh&&S.ex){try{if(/[+\−×÷^!%(]|sin|cos|tan|ln|log|√|ans|π/.test(S.ex)||/\d[-]/.test(S.ex)){small='= '+sciFmt(sciEval(S.ex,S.deg,S.ans))}}catch(e){small=''}}
     const h=$('sciHist');h.classList.toggle('err',!!S.err);h.textContent=S.err||small||'\u00a0';
-    $('sciCur').textContent=S.ex||'0';
+    $('sciCur').textContent=S.ex||'0';window.__iocFit&&window.__iocFit($('sciCur'),64);
   }
   function sciPress(k){
     S.err='';
-    if(k==='AC'){S.ex='';S.hist='';S.fresh=false}
+    if(S.sec&&['sin','cos','tan','sinh','cosh','tanh'].includes(k))k='a'+k;
+    if(k==='2nd'){S.sec=!S.sec}
+    else if(k==='mc'){S.mem=0}
+    else if(k==='m+'||k==='m-'){try{const v=S.ex?sciEval(S.ex,S.deg,S.ans):S.ans;S.mem+=(k==='m+'?v:-v)}catch(e){S.err=e.message}}
+    else if(k==='mr'){if(S.fresh){S.ex='';S.fresh=false}S.ex+=sciFmt(S.mem)}
+    else if(k==='±'){S.fresh=false;S.ex=S.ex.startsWith('-')?S.ex.slice(1):(/[+\u2212\u00d7\u00f7^]/.test(S.ex)?'-('+S.ex+')':'-'+S.ex)}
+    else if(k==='rand'){if(S.fresh){S.ex='';S.fresh=false}S.ex+=sciFmt(+Math.random().toFixed(6))}
+    else if(k==='AC'){S.ex='';S.hist='';S.fresh=false}
     else if(k==='DEG'){S.deg=!S.deg}
     else if(k==='⌫'){if(S.fresh){S.ex='';S.fresh=false}else S.ex=S.ex.replace(/(asin\(|acos\(|atan\(|sin\(|cos\(|tan\(|ln\(|log\(|√\(|ans|.)$/,'')}
-    else if(k==='='){if(S.ex){try{const v=sciEval(S.ex,S.deg,S.ans);S.hist=S.ex+' =';S.ans=v;S.ex=sciFmt(v);S.fresh=true}catch(e){S.err=e.message}}}
+    else if(k==='='){if(S.ex){try{const v=sciEval(S.ex,S.deg,S.ans);window.__chist&&window.__chist(S.ex,sciFmt(v));S.hist=S.ex+' =';S.ans=v;S.ex=sciFmt(v);S.fresh=true}catch(e){S.err=e.message}}}
     else{
       if(S.fresh){if(!OPS.includes(k))S.ex='';S.fresh=false}
       S.ex+=(INS[k]!==undefined?INS[k]:k)
@@ -6613,6 +7001,100 @@ const PROG={
   },true);
 })();
 
+/* ========== CALCULATOR: iOS look on phones (Build 101) ========== */
+(function(){
+  const root=document.getElementById('calc');if(!root)return;
+  const PH=matchMedia('(max-width:700px)');
+  const $=id=>document.getElementById(id);
+  const IC={
+    basic:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 6h6M8 3v6M14 7h6M5 17h6M5 21l6-6M5 15l6 6M14 16h6M14 20h6"/></svg>',
+    sci:'<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><text x="12" y="17" text-anchor="middle" font-size="16" font-style="italic" font-weight="700" fill="currentColor" font-family="serif">f(x)</text></svg>',
+    notes:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 5l7 7M11 5l-7 7M6 18c4-8 8-8 11-13M14 19l5 3M19 19l-5 3"/></svg>',
+    conv:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"/></svg>',
+    prog:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></svg>',
+    elec:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg>'
+  };
+  const ITEMS=[['std','Basic','basic'],['sci','Scientific','sci'],['notes','Math Notes','notes'],['|'],['conv','Convert','conv'],['prog','Programmer','prog'],['elec','Electronics','elec']];
+  const CM=()=>window.__calcMode;
+  /* ---- shrink the big number to fit ---- */
+  window.__iocFit=(el,base)=>{if(!el)return;if(!PH.matches){el.style.fontSize='';return}const n=el.textContent.length;el.style.fontSize=Math.round(n<=6?base:n<=8?base*.78:n<=10?base*.62:base*.5)+'px'};
+  /* ---- mode menu ---- */
+  const menu=$('iocMenu'),menu2=$('iocMenu2'),bm=$('iocMode'),bmore=$('iocMore'),bh=$('iocHist'),sheet=$('iocSheet');
+  const CK='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
+  function drawMenu(){const cur=CM()?CM().get():'std';menu.innerHTML=ITEMS.map(i=>i[0]==='|'?'<hr>':`<button type="button" role="menuitemradio" aria-checked="${cur===i[0]}" data-m="${i[0]}"><span class="ck">${cur===i[0]?CK:''}</span><span class="ic">${IC[i[2]]}</span>${i[1]}</button>`).join('')}
+  function closeMenus(){menu.hidden=true;menu2.hidden=true;bm.setAttribute('aria-expanded','false');bmore.setAttribute('aria-expanded','false')}
+  bm.addEventListener('click',e=>{e.stopPropagation();const o=menu.hidden;closeMenus();sheet.hidden=true;if(o){drawMenu();menu.hidden=false;bm.setAttribute('aria-expanded','true')}});
+  menu.addEventListener('click',e=>{const b=e.target.closest('[data-m]');if(!b)return;e.stopPropagation();CM().set(b.dataset.m);closeMenus()});
+  root.addEventListener('click',e=>{if(!menu.hidden||!menu2.hidden){if(!e.target.closest('.ioc-menu')&&!e.target.closest('.ioc-top'))closeMenus()}});
+  addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenus();sheet.hidden=true}});
+  /* ---- history ---- */
+  let H=[];try{H=JSON.parse(localStorage.getItem('dc_chist')||'[]')}catch(e){}
+  window.__chist=(ex,r)=>{if(r==='ERR')return;H.unshift({e:ex,r});H=H.slice(0,40);try{localStorage.setItem('dc_chist',JSON.stringify(H))}catch(e){}drawHist()};
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function drawHist(){const l=$('iocHL');if(!l)return;l.innerHTML=H.length?H.map(h=>`<div class="r"><span class="e">${esc(h.e)}</span><b>${esc(h.r)}</b></div>`).join('')+'<button type="button" class="clr" id="iocHC">Clear</button>':'<div class="empty"><svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12H8.5"/></svg><b>No History</b></div>'}
+  bh.addEventListener('click',e=>{e.stopPropagation();closeMenus();drawHist();sheet.hidden=!sheet.hidden;bh.setAttribute('aria-expanded',!sheet.hidden)});
+  $('iocSX').addEventListener('click',()=>{sheet.hidden=true});
+  $('iocHL').addEventListener('click',e=>{if(e.target.id==='iocHC'){H=[];try{localStorage.setItem('dc_chist','[]')}catch(x){}drawHist()}});
+  drawHist();
+  /* ---- Math Notes ---- */
+  const NK='dc_mnotes';let notes=[];try{notes=JSON.parse(localStorage.getItem(NK)||'[]')}catch(e){}
+  const saveN=()=>{try{localStorage.setItem(NK,JSON.stringify(notes))}catch(e){}};
+  let nopen=null,nsort=localStorage.getItem('dc_mnsort')||'edited',ngroup=localStorage.getItem('dc_mngroup')!=='0',nq='';
+  const mn=$('mnRoot');
+  const dayLabel=t=>{const d=new Date(t),n=new Date(),z=x=>new Date(x.getFullYear(),x.getMonth(),x.getDate()).getTime(),df=Math.round((z(n)-z(d))/864e5);return df<=0?'Today':df===1?'Yesterday':df<8?'Previous 7 Days':df<31?'Previous 30 Days':d.toLocaleDateString(undefined,{month:'long',year:'numeric'})};
+  const hm=t=>new Date(t).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
+  function solveLines(txt){return txt.split('\n').map(l=>{const m=/^(.*\S)\s*=\s*$/.exec(l);if(!m)return null;try{return [m[1],sciFmt(sciEval(m[1].replace(/\*/g,'×').replace(/\//g,'÷'),true,0))]}catch(e){return [m[1],'?']}}).filter(Boolean)}
+  function mnDraw(){
+    if(!mn)return;
+    if(nopen!==null){
+      const n=notes.find(x=>x.id===nopen);if(!n){nopen=null;return mnDraw()}
+      mn.innerHTML=`<div class="mn-ed"><div class="mn-eh"><button type="button" class="pill" id="mnBack" aria-label="Back to Math Notes">&#8249; Math Notes</button><button type="button" class="pill ic" id="mnDel" aria-label="Delete note"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></button></div><label class="sr" for="mnTa">Note</label><textarea id="mnTa" placeholder="Type a sum and end the line with =, for example 12 + 5 × 3 =" spellcheck="false">${esc(n.t)}</textarea><div class="mn-res" id="mnRes"></div></div>`;
+      const ta=$('mnTa'),rs=$('mnRes');const upd=()=>{rs.innerHTML=solveLines(ta.value).map(r=>`<div><span>${esc(r[0])} =</span><b>${esc(r[1])}</b></div>`).join('')};upd();
+      ta.addEventListener('input',()=>{n.t=ta.value;n.ts=Date.now();saveN();upd()});
+      $('mnBack').onclick=()=>{if(!n.t.trim())notes=notes.filter(x=>x!==n);saveN();nopen=null;mnDraw();dispatchEvent(new Event('backchg'))};
+      $('mnDel').onclick=()=>{notes=notes.filter(x=>x!==n);saveN();nopen=null;mnDraw();dispatchEvent(new Event('backchg'))};
+      return;
+    }
+    let L=notes.filter(n=>!nq||n.t.toLowerCase().includes(nq.toLowerCase()));
+    L=L.slice().sort((a,b)=>nsort==='title'?(a.t.split('\n')[0]||'').localeCompare(b.t.split('\n')[0]||''):b.ts-a.ts);
+    let body='';
+    if(!L.length)body=`<div class="mn-empty"><svg viewBox="0 0 24 24" width="64" height="64" fill="currentColor" aria-hidden="true"><path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm1.5 3.2v9.6h11V7.2zM8.5 9h7v1.4h-7zm0 2.8h4v1.4h-4z" opacity=".55"/></svg><b>${nq?'No Results':'No Notes'}</b></div>`;
+    else{let last='';body='<div class="mn-list">'+L.map(n=>{const g=ngroup&&nsort!=='title'?dayLabel(n.ts):'';let h='';if(g&&g!==last){h=`<h3>${esc(g)}</h3>`;last=g}return h+`<button type="button" class="mn-row" data-id="${n.id}"><b>${esc(n.t.split('\n')[0]||'New Note')}</b><span>${hm(n.ts)}</span></button>`}).join('')+'</div>'}
+    mn.innerHTML=`<h2 class="mn-h">Math Notes</h2><p class="mn-s">${notes.length?notes.length+(notes.length===1?' Note':' Notes'):'No Notes'}</p>${body}<div class="mn-bar"><label class="mn-q"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><input id="mnQ" type="search" placeholder="Search" aria-label="Search notes" value="${esc(nq)}"></label><button type="button" class="mn-new" id="mnNew" aria-label="New note"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-6M17.5 3.5a2 2 0 0 1 3 3L12 15l-4 1 1-4z"/></svg></button></div>`;
+    $('mnNew').onclick=()=>{const n={id:Date.now(),t:'',ts:Date.now()};notes.push(n);saveN();nopen=n.id;mnDraw();dispatchEvent(new Event('backchg'));const t=$('mnTa');if(t)t.focus()};
+    const q=$('mnQ');q.oninput=()=>{nq=q.value;const p=q.selectionStart;mnDraw();const q2=$('mnQ');q2.focus();q2.setSelectionRange(p,p)};
+    mn.querySelectorAll('.mn-row').forEach(b=>b.onclick=()=>{nopen=+b.dataset.id;mnDraw();dispatchEvent(new Event('backchg'))});
+  }
+  function drawMenu2(){menu2.innerHTML=`<button type="button" role="menuitem" data-a="sel" ${notes.length?'':'disabled'}><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Delete All Notes</button><button type="button" role="menuitem" data-a="sort"><span class="ic">${IC.conv}</span><span>Sort By<small>${nsort==='title'?'Title':'Default (Date Edited)'}</small></span></button><button type="button" role="menuitem" data-a="grp"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><span>Group By Date<small>${ngroup?'Default (On)':'Off'}</small></span></button>`}
+  bmore.addEventListener('click',e=>{e.stopPropagation();const o=menu2.hidden;closeMenus();if(o){drawMenu2();menu2.hidden=false;bmore.setAttribute('aria-expanded','true')}});
+  menu2.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b||b.disabled)return;e.stopPropagation();const a=b.dataset.a;
+    if(a==='sel'){notes=[];saveN();nopen=null}
+    else if(a==='sort'){nsort=nsort==='title'?'edited':'title';try{localStorage.setItem('dc_mnsort',nsort)}catch(x){}}
+    else if(a==='grp'){ngroup=!ngroup;try{localStorage.setItem('dc_mngroup',ngroup?'1':'0')}catch(x){}}
+    closeMenus();mnDraw()});
+  /* ---- Convert ---- */
+  const CV={Length:{m:1,km:1000,cm:.01,mm:.001,mi:1609.344,yd:.9144,ft:.3048,in:.0254},Weight:{kg:1,g:.001,mg:1e-6,lb:.45359237,oz:.028349523,t:1000},Volume:{L:1,mL:.001,gal:3.785411784,qt:.946352946,cup:.2365882365,'fl oz':.0295735296},Speed:{'m/s':1,'km/h':1/3.6,mph:.44704,kn:.514444},Data:{B:1,KB:1024,MB:1048576,GB:1073741824,TB:1099511627776},Temperature:{'°C':1,'°F':1,K:1}};
+  const cv=$('cvRoot');let cvc=localStorage.getItem('dc_cvc')||'Length',cvv='1',cvf=null,cvt=null;
+  const toC=(v,u)=>u==='°F'?(v-32)*5/9:u==='K'?v-273.15:v,fromC=(v,u)=>u==='°F'?v*9/5+32:u==='K'?v+273.15:v;
+  const cvFmt=n=>!isFinite(n)?'0':String(parseFloat(n.toPrecision(10)));
+  function cvCalc(){const u=CV[cvc],v=parseFloat(cvv);if(isNaN(v))return '';if(cvc==='Temperature')return cvFmt(fromC(toC(v,cvf),cvt));return cvFmt(v*u[cvf]/u[cvt])}
+  function cvDraw(){
+    if(!cv)return;if(!CV[cvc])cvc='Length';const us=Object.keys(CV[cvc]);if(!us.includes(cvf))cvf=us[0];if(!us.includes(cvt))cvt=us[1];
+    const opt=sel=>us.map(u=>`<option${u===sel?' selected':''}>${esc(u)}</option>`).join('');
+    cv.innerHTML=`<h2 class="mn-h">Convert</h2><div class="cvt-cats" role="tablist" aria-label="Category">${Object.keys(CV).map(c=>`<button type="button" role="tab" aria-selected="${c===cvc}" data-c="${c}" class="${c===cvc?'on':''}">${c}</button>`).join('')}</div><div class="cvt-row"><label class="sr" for="cvIn">Value</label><input id="cvIn" inputmode="decimal" value="${esc(cvv)}"><label class="sr" for="cvF">From unit</label><select id="cvF">${opt(cvf)}</select></div><div class="cvt-sw"><button type="button" id="cvSw" aria-label="Swap units">${IC.conv}</button></div><div class="cvt-row out"><output id="cvOut" aria-live="polite">${esc(cvCalc())}</output><label class="sr" for="cvT">To unit</label><select id="cvT">${opt(cvt)}</select></div>`;
+    $('cvIn').oninput=e=>{cvv=e.target.value;$('cvOut').textContent=cvCalc()};
+    $('cvF').onchange=e=>{cvf=e.target.value;$('cvOut').textContent=cvCalc()};$('cvT').onchange=e=>{cvt=e.target.value;$('cvOut').textContent=cvCalc()};
+    $('cvSw').onclick=()=>{[cvf,cvt]=[cvt,cvf];cvDraw()};
+    cv.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{cvc=b.dataset.c;cvf=null;cvt=null;try{localStorage.setItem('dc_cvc',cvc)}catch(e){}cvDraw()});
+  }
+  window.__back.calc=()=>{if(!menu.hidden||!menu2.hidden){closeMenus();return true}if(!sheet.hidden){sheet.hidden=true;return true}if(nopen!==null){const n=notes.find(x=>x.id===nopen);if(n&&!n.t.trim())notes=notes.filter(x=>x!==n);saveN();nopen=null;mnDraw();dispatchEvent(new Event('backchg'));return true}return false};
+  window.__backLabel.calc=()=>'';
+  window.__iocSync=()=>{const m=CM()?CM().get():'std';root.dataset.mode=m;closeMenus();if(m==='notes')mnDraw();if(m==='conv')cvDraw()};
+  window.__iocSync();
+  PH.addEventListener&&PH.addEventListener('change',()=>{if(!PH.matches&&CM()&&['notes','conv'].includes(CM().get()))CM().set('std');window.__iocFit($('calcDisplay'),96)});
+  setTimeout(()=>{window.__iocFit($('calcDisplay'),96);window.__iocFit($('sciCur'),64)},0);
+})();
+
 /* ========== BUDGET APP: sidebar layout (Build 66) ========== */
 (function(){
   function build(){
@@ -6655,6 +7137,175 @@ async function wxLoad(){
   }catch(e){wxDraw(31,'Partly cloudy',74,12,'OFFLINE SAMPLE · live data unavailable')}
 }
 $('wxCity').onchange=wxLoad;wxLoad();
+
+/* ========== WEATHER: iOS look on phones (Build 109) ========== */
+(function(){
+  const root=document.getElementById('weather'),host=document.getElementById('wxi');if(!root||!host)return;
+  const PH=matchMedia('(max-width:700px)');
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const PHC={'Santa Rosa City':[14.3122,121.1114],'Manila':[14.5995,120.9842],'Davao City':[7.1907,125.4553],'Cebu City':[10.3157,123.8854],'Baguio':[16.4023,120.596],'Quezon City':[14.676,121.0437],'Tagaytay':[14.1153,120.9621],'Batangas City':[13.7565,121.0583],'Iloilo City':[10.7202,122.5621],'Cagayan de Oro':[8.4542,124.6319],'Zamboanga City':[6.9214,122.079],'Puerto Princesa':[9.7392,118.7353],'Legazpi City':[13.1391,123.7438],'Tacloban':[11.2543,124.9632]};
+  const ld=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+  let list=ld('dc_wxl',['Santa Rosa City','Manila','Davao City','Cebu City']).filter(n=>PHC[n]);if(!list.length)list=['Santa Rosa City'];
+  let U=Object.assign({t:'C',w:'kmh'},ld('dc_wxu',{}));
+  let view='list',cur=0,tab='t',edit=false,menu=null,sheet=null,q='';
+  const D={};
+  /* ---- conditions ---- */
+  const WC={0:['Clear','clear'],1:['Mostly Clear','clear'],2:['Partly Cloudy','part'],3:['Overcast','cloud'],45:['Fog','fog'],48:['Fog','fog'],51:['Light Drizzle','rain'],53:['Drizzle','rain'],55:['Heavy Drizzle','rain'],61:['Light Rain','rain'],63:['Rain','rain'],65:['Heavy Rain','rain'],80:['Showers','rain'],81:['Showers','rain'],82:['Heavy Showers','rain'],95:['Thunderstorms','storm'],96:['Thunderstorms','storm'],99:['Thunderstorms','storm']};
+  const cond=(c,day)=>{const w=WC[c]||['Cloudy','cloud'];let k=w[1],l=w[0];if(!day&&c===0)l='Clear';if(k==='part'&&!day)l='Mostly Cloudy';return{l,k}};
+  const THEME={clearD:['#2f6fcf','#8ec4ff'],clearN:['#0c1230','#2b3170'],partD:['#4a73ad','#9fbbd8'],partN:['#1b1e40','#42456f'],cloudD:['#55708f','#a3b5c7'],cloudN:['#1c1e3b','#3c3f66'],rainD:['#2a3a4f','#5d7188'],rainN:['#161d2a','#33445a'],stormD:['#2a2d3c','#555b78'],stormN:['#14151f','#363a52'],fogD:['#6e7a86','#b4bcc4'],fogN:['#22262d','#444b55']};
+  const theme=(k,day)=>THEME[(k==='part'?'part':k)+(day?'D':'N')]||THEME.cloudN;
+  /* ---- little original icons ---- */
+  function wi(k,day,sz){sz=sz||30;const sun='<circle cx="16" cy="16" r="6" fill="#ffd33d"/><g stroke="#ffd33d" stroke-width="2" stroke-linecap="round"><path d="M16 3v3M16 26v3M3 16h3M26 16h3M6.8 6.8l2.1 2.1M23.1 23.1l2.1 2.1M25.2 6.8l-2.1 2.1M8.9 23.1l-2.1 2.1"/></g>';
+    const moon='<path d="M21 4a11 11 0 1 0 7 17.5A9 9 0 0 1 21 4z" fill="#e8eaf6"/>';
+    const cl=(x,y,f)=>`<g transform="translate(${x} ${y})"><path d="M9 22h14a5 5 0 0 0 .7-9.95A7 7 0 0 0 10.2 10.6 6 6 0 0 0 9 22z" fill="${f}"/></g>`;
+    let b='';
+    if(k==='clear')b=day?sun:moon;
+    else if(k==='part')b=(day?'<g transform="translate(-3 -3) scale(.8)">'+sun+'</g>':'<g transform="translate(-3 -3) scale(.8)">'+moon+'</g>')+cl(1,1,'#f4f6fa');
+    else if(k==='cloud'||k==='fog')b=cl(0,0,'#eef1f6');
+    else if(k==='rain')b=cl(0,-3,'#dfe5ee')+'<g stroke="#5ab8ff" stroke-width="2" stroke-linecap="round"><path d="M11 24l-1.4 3.4M17 24l-1.4 3.4M23 24l-1.4 3.4"/></g>';
+    else b=cl(0,-3,'#c9cedb')+'<path d="M17 18l-4 6h4l-2 5 6-7h-4l2-4z" fill="#ffd33d"/>';
+    return `<svg viewBox="0 0 32 32" width="${sz}" height="${sz}" aria-hidden="true">${b}</svg>`}
+  /* ---- units ---- */
+  const T=c=>Math.round(U.t==='F'?c*9/5+32:c)+'°';
+  const WS=v=>U.w==='ms'?(v/3.6).toFixed(0):U.w==='mph'?(v*.621371).toFixed(0):Math.round(v);
+  const WU=()=>U.w==='ms'?'m/s':U.w==='mph'?'mph':'km/h';
+  const dir=d=>['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'][Math.round(((d%360)+360)%360/22.5)%16];
+  /* ---- data ---- */
+  function sample(name){
+    const lat=PHC[name][0],seed=[...name].reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7),r=i=>{const x=Math.sin(seed+i*12.9898)*43758.5453;return x-Math.floor(x)};
+    const now=new Date(),h0=now.getHours(),hi=31-(lat-7)*.3+(r(1)-.5)*2,lo=hi-6;
+    const hourly=[];for(let i=0;i<24;i++){const hr=(h0+i)%24;const t=lo+(hi-lo)*(.5+.5*Math.sin((hr-9)/24*2*Math.PI));hourly.push({t,pop:Math.round(10+r(i+3)*40),c:r(i+9)>.8?61:r(i+9)>.4?3:2,w:6+r(i+5)*10,day:hr>=6&&hr<18})}
+    const dn=['Today'];const days=[];for(let i=0;i<10;i++){const d=new Date(now.getTime()+i*864e5);const h=hi+(r(20+i)-.5)*2,l=lo+(r(40+i)-.5)*2;days.push({d:i?d.toLocaleDateString(undefined,{weekday:'short'}):'Today',hi:h,lo:l,pop:Math.round(20+r(60+i)*45),c:r(70+i)>.5?61:3})}
+    return{src:'sample',cur:{t:hourly[0].t,c:hourly[0].c,day:hourly[0].day,w:hourly[0].w,g:hourly[0].w*2.2,dir:Math.round(r(8)*360)},hourly,days}
+  }
+  async function load(name){
+    const [la,lo]=PHC[name];
+    try{
+      const ctl=new AbortController(),to=setTimeout(()=>ctl.abort(),6000);
+      const r=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&current=temperature_2m,weather_code,wind_speed_10m,wind_gusts_10m,wind_direction_10m,is_day&hourly=temperature_2m,precipitation_probability,weather_code,wind_speed_10m,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FManila&forecast_days=10`,{signal:ctl.signal});clearTimeout(to);
+      if(!r.ok)throw 0;const j=await r.json(),c=j.current;
+      let i0=j.hourly.time.findIndex(t=>t.slice(0,13)>=c.time.slice(0,13));if(i0<0)i0=0;
+      const hourly=[];for(let i=i0;i<i0+24&&i<j.hourly.time.length;i++)hourly.push({t:j.hourly.temperature_2m[i],pop:j.hourly.precipitation_probability[i]||0,c:j.hourly.weather_code[i],w:j.hourly.wind_speed_10m[i],day:!!j.hourly.is_day[i]});
+      const days=j.daily.time.map((d,i)=>({d:i?new Date(d+'T12:00').toLocaleDateString(undefined,{weekday:'short'}):'Today',hi:j.daily.temperature_2m_max[i],lo:j.daily.temperature_2m_min[i],pop:j.daily.precipitation_probability_max[i]||0,c:j.daily.weather_code[i]}));
+      D[name]={src:'live',cur:{t:c.temperature_2m,c:c.weather_code,day:!!c.is_day,w:c.wind_speed_10m,g:c.wind_gusts_10m,dir:c.wind_direction_10m},hourly,days};
+    }catch(e){D[name]=sample(name)}
+    draw()
+  }
+  const need=()=>list.forEach(n=>{if(!D[n]){D[n]=sample(n);D[n].pending=1;load(n)}});
+  /* ---- drawing ---- */
+  const IC={more:'<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="19" cy="12" r="2.1"/></svg>',check:'<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>',list:'<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg>',map:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></svg>',loc:'<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20 3L3 10.5l7 2.5 2.5 7z"/></svg>',x:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',search:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>',pen:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 20l1-4L16.5 4.5a2 2 0 0 1 3 3L8 19z"/></svg>',units:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="12" width="4.5" height="8" rx="1.5"/><rect x="9.8" y="8" width="4.5" height="12" rx="1.5"/><rect x="16.5" y="4" width="4.5" height="16" rx="1.5"/></svg>'};
+  const CK='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
+  const clock=n=>{try{return new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Manila'})}catch(e){return ''}};
+  function cardBg(n){const d=D[n];if(!d)return'';const c=cond(d.cur.c,d.cur.day),t=theme(c.k,d.cur.day);return`background:linear-gradient(160deg,${t[0]},${t[1]})`}
+  function drawList(){
+    const matches=q?Object.keys(PHC).filter(n=>!list.includes(n)&&n.toLowerCase().includes(q.toLowerCase())):[];
+    let body='';
+    if(q){body=`<div class="wx-res">${matches.length?matches.map(n=>`<button type="button" data-add="${esc(n)}">${esc(n)}<small>Philippines</small></button>`).join(''):'<p>No Results</p>'}</div>`}
+    else body=`<div class="wx-cards${edit?' ed':''}">${list.map((n,i)=>{const d=D[n],c=d?cond(d.cur.c,d.cur.day):{l:'',k:'cloud'},hi=d?Math.max(...d.days.slice(0,1).map(x=>x.hi)):0,lo=d?d.days[0].lo:0;
+      return`<div class="wx-row">${edit&&i>0?`<button type="button" class="wx-minus" data-del="${i}" aria-label="Remove ${esc(n)}"><i></i></button>`:''}<button type="button" class="wx-card" data-i="${i}" style="${cardBg(n)}"><span class="a"><b>${esc(n)}</b><small>${i===0?'My Location':clock()}</small></span><span class="t">${d?T(d.cur.t):'--'}</span>${edit?'':`<span class="c">${esc(c.l)}</span><span class="h">H:${d?T(hi):'--'}&nbsp; L:${d?T(lo):'--'}</span>`}</button></div>`}).join('')}</div><p class="wx-foot">Learn more about <a href="https://open-meteo.com/" target="_blank" rel="noopener">weather data</a>${list.some(n=>D[n]&&D[n].src==='sample')?'. Showing sample numbers where live data is unavailable.':'.'}</p>`;
+    host.innerHTML=`<div class="wx-l"><div class="wx-top"><h2>Weather</h2><button type="button" class="wx-rb" id="wxMore" aria-label="${edit?'Done':'More options'}" aria-haspopup="menu">${edit?IC.check:IC.more}</button></div>${body}<div class="wx-bar"><label class="wx-q">${IC.search}<input id="wxQ" type="search" placeholder="Search for a city or airport" aria-label="Search for a city" value="${esc(q)}"></label></div></div>`;
+    const qi=$$('wxQ');qi.oninput=()=>{q=qi.value;const p=qi.selectionStart;drawList();const n=$$('wxQ');n.focus();n.setSelectionRange(p,p)};
+  }
+  const $$=id=>document.getElementById(id);
+  function drawDetail(){
+    const n=list[cur],d=D[n];if(!d){view='list';return drawList()}
+    const c=cond(d.cur.c,d.cur.day),th=theme(c.k,d.cur.day);
+    const gmin=Math.min(...d.days.map(x=>x.lo)),gmax=Math.max(...d.days.map(x=>x.hi)),span=Math.max(1,gmax-gmin);
+    const sub=tab==='t'?`Temperature (°${U.t})`:tab==='p'?'Chance of rain (%)':`Wind (${WU()})`;
+    const val=h=>tab==='t'?T(h.t):tab==='p'?Math.round(h.pop)+'%':WS(h.w);
+    const hours=d.hourly.map((h,i)=>{const now=new Date();const hr=(now.getHours()+i)%24;const lab=i===0?'Now':String(hr).padStart(2,'0');return`<div class="wx-h"><b>${lab}</b>${wi(cond(h.c,h.day).k,h.day,32)}<span${tab==='p'?' class="p"':''}>${val(h)}</span></div>`}).join('');
+    const days=d.days.map(x=>{const cc=cond(x.c,true);return`<div class="wx-day"><b>${esc(x.d)}</b><span class="i">${wi(cc.k,true,30)}${x.pop>=30?`<small>${Math.round(x.pop/5)*5}%</small>`:''}</span><em>${T(x.lo)}</em><i class="bar"><u style="left:${((x.lo-gmin)/span*100).toFixed(1)}%;width:${(Math.max(.06,(x.hi-x.lo)/span)*100).toFixed(1)}%"></u></i><em class="hi">${T(x.hi)}</em></div>`}).join('');
+    const dots=list.map((_,i)=>`<i class="${i===cur?'on':''}"></i>`).join('');
+    host.innerHTML=`<div class="wx-d" style="--g1:${th[0]};--g2:${th[1]}"><div class="wx-hero"><small>${cur===0?'MY LOCATION':'CITY'}</small><h2>${esc(n)}</h2><div class="big">${T(d.cur.t)}</div><p>${esc(c.l)}<br>H:${T(d.days[0].hi)}&nbsp; L:${T(d.days[0].lo)}</p></div>
+    <section class="wx-c"><header><div><b>Conditions</b><small>${sub}</small></div><div class="wx-seg" role="tablist" aria-label="Chart"><button type="button" role="tab" aria-selected="${tab==='t'}" data-tab="t" aria-label="Temperature">${wi('part',true,22)}</button><button type="button" role="tab" aria-selected="${tab==='p'}" data-tab="p" aria-label="Rain chance"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3C8 9 6 12 6 15a6 6 0 0 0 12 0c0-3-2-6-6-12z" fill="currentColor"/></svg></button><button type="button" role="tab" aria-selected="${tab==='w'}" data-tab="w" aria-label="Wind"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 9h11a3 3 0 1 0-3-3M3 14h15a3 3 0 1 1-3 3M3 19h7"/></svg></button></div></header><div class="wx-hs">${hours}</div></section>
+    <section class="wx-c"><header><div><b>10-Day Forecast</b></div></header>${days}</section><p class="wx-src">${d.src==='live'?'Live data from Open-Meteo.':'Sample numbers: live data was unavailable.'}</p></div>
+    <div class="wx-nav"><button type="button" id="wxMap" aria-label="Wind and layers">${IC.map}</button><span class="wx-pg" aria-label="Location ${cur+1} of ${list.length}">${IC.loc}${dots}</span><button type="button" id="wxList" aria-label="Locations">${IC.list}</button></div>`;
+  }
+  function drawMenu(){
+    let h='';
+    if(menu==='main')h=`<button type="button" role="menuitem" data-m="edit"><span class="ic">${IC.pen}</span>Edit List</button><hr><button type="button" role="menuitemradio" aria-checked="${U.t==='C'}" data-m="C"><span class="ck">${U.t==='C'?CK:''}</span><span class="ic"><b>°C</b></span>Celsius</button><button type="button" role="menuitemradio" aria-checked="${U.t==='F'}" data-m="F"><span class="ck">${U.t==='F'?CK:''}</span><span class="ic"><b>°F</b></span>Fahrenheit</button><hr><button type="button" role="menuitem" data-m="units"><span class="ic">${IC.units}</span>Units</button>`;
+    else if(menu==='layers')h=['t','p','w'].map(k=>`<button type="button" role="menuitemradio" aria-checked="${lay===k}" data-lay="${k}"><span class="ck">${lay===k?CK:''}</span>${k==='t'?'Temperature':k==='p'?'Precipitation':'Wind'}</button>`).join('');
+    const m=$$('wxMenu');if(m){m.innerHTML=h;m.hidden=!menu}
+  }
+  let lay='w';
+  function drawSheet(){
+    const sh=$$('wxSheet');if(!sh)return;
+    if(!sheet){sh.hidden=true;return}
+    let b='';
+    if(sheet==='units'){
+      const row=(k,v,l)=>`<button type="button" data-u="${k}:${v}" class="r">${l}${U[k]===v?`<i>${CK}</i>`:''}</button>`;
+      b=`<h3>Units</h3><button type="button" class="wx-rb done" data-sh="x" aria-label="Done">${IC.check}</button><h4>Temperature</h4><div class="grp">${row('t','C','Celsius (°C)')}${row('t','F','Fahrenheit (°F)')}</div><h4>Wind</h4><div class="grp">${row('w','kmh','Kilometres per hour (km/h)')}${row('w','ms','Metres per second (m/s)')}${row('w','mph','Miles per hour (mph)')}</div><button type="button" class="r rst" data-u="reset">Restore Defaults</button>`;
+    }else{
+      const L=list.map(n=>{const d=D[n];if(!d)return'';const v=lay==='t'?T(d.cur.t):lay==='p'?Math.round(d.hourly[0].pop)+'%':WS(d.cur.w)+' '+WU()+(d.cur.dir!=null?' '+dir(d.cur.dir):'');const s2=lay==='w'?`${WS(d.cur.g||d.cur.w*1.8)} ${WU()} gusts`:cond(d.cur.c,d.cur.day).l;return`<div class="r"><span><b>${esc(n)}</b><small>${s2}</small></span><em>${v}</em></div>`}).join('');
+      b=`<div class="hd"><span>${wi(lay==='w'?'cloud':lay==='p'?'rain':'part',true,34)}</span><span><b>${lay==='t'?'Temperature':lay==='p'?'Precipitation':'Wind'}</b><small>Your Locations</small></span><button type="button" class="wx-rb" data-m="layers" aria-label="Choose layer" aria-haspopup="menu">${IC.more}</button><button type="button" class="wx-rb" data-sh="x" aria-label="Close">${IC.x}</button></div><div class="grp lst">${L}</div>`;
+    }
+    sh.innerHTML=b;sh.hidden=false;
+  }
+  function draw(){
+    if(!PH.matches)return;
+    if(!$$('wxMenu')){}
+    if(view==='list')drawList();else drawDetail();
+    host.insertAdjacentHTML('beforeend','<div class="wx-menu" id="wxMenu" role="menu" hidden></div><div class="wx-sheet" id="wxSheet" role="dialog" hidden></div>');
+    drawMenu();drawSheet();
+    root.dataset.wxv=view;window.dispatchEvent(new Event('backchg'));
+  }
+  host.addEventListener('click',e=>{
+    const t=e.target;let b;
+    if((b=t.closest('[data-sh]'))){sheet=null;menu=null;drawMenu();drawSheet();return}
+    if((b=t.closest('[data-lay]'))){lay=b.dataset.lay;menu=null;draw();return}
+    if((b=t.closest('[data-u]'))){const k=b.dataset.u;if(k==='reset')U={t:'C',w:'kmh'};else{const [a,v]=k.split(':');U[a]=v}sv('dc_wxu',U);draw();return}
+    if((b=t.closest('[data-m]'))){const m=b.dataset.m;
+      if(m==='layers'){menu='layers';drawMenu();return}
+      if(m==='edit'){edit=true;menu=null}else if(m==='C'||m==='F'){U.t=m;sv('dc_wxu',U);menu=null}else if(m==='units'){sheet='units';menu=null}
+      draw();return}
+    if(t.closest('#wxMore')){if(edit){edit=false}else menu=menu?null:'main';draw();return}
+    if(menu&&!t.closest('#wxMenu')){menu=null;drawMenu();return}
+    if((b=t.closest('[data-tab]'))){tab=b.dataset.tab;draw();return}
+    if((b=t.closest('[data-del]'))){list.splice(+b.dataset.del,1);sv('dc_wxl',list);draw();return}
+    if((b=t.closest('[data-add]'))){const n=b.dataset.add;if(!list.includes(n))list.push(n);sv('dc_wxl',list);q='';need();cur=list.indexOf(n);view='detail';draw();return}
+    if((b=t.closest('[data-i]'))&&!edit){cur=+b.dataset.i;view='detail';draw();return}
+    if(t.closest('#wxList')){view='list';draw();return}
+    if(t.closest('#wxMap')){sheet='map';draw();return}
+  });
+  /* swipe between places on the detail screen */
+  let sx=null;host.addEventListener('touchstart',e=>{if(view==='detail'&&!e.target.closest('.wx-hs'))sx=e.touches[0].clientX},{passive:true});
+  host.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>70){const n=cur+(dx<0?1:-1);if(n>=0&&n<list.length){cur=n;draw()}}},{passive:true});
+  window.__back=window.__back||{};
+  window.__back.weather=()=>{if(menu){menu=null;drawMenu();return true}if(sheet){sheet=null;drawSheet();return true}if(edit){edit=false;draw();return true}if(q){q='';draw();return true}if(view==='detail'){view='list';draw();return true}return false};
+  PH.addEventListener&&PH.addEventListener('change',()=>draw());
+  need();draw();
+})();
+
+/* ========== SETTINGS: iOS list to detail on phones (Build 111) ========== */
+(function(){
+  [['ssx','settings','Settings'],['bdRoot','budget','Budget']].forEach(([rid,wid,ttl])=>{
+  const boot=()=>{const ss=document.getElementById(rid);if(!ss||!ss.querySelector('.ss-side')||ss.dataset.sv)return !!(ss&&ss.dataset.sv);const PH=matchMedia('(max-width:700px)');
+  ss.dataset.sv='list';
+  const side=ss.querySelector('.ss-side');
+  const h=document.createElement('h1');h.className='ss-big';h.textContent=ttl;side.insertBefore(h,side.firstChild);
+  ss.addEventListener('click',e=>{if(PH.matches&&e.target.closest('.ss-tabs button')){ss.dataset.sv='detail';window.dispatchEvent(new Event('backchg'));const m=ss.querySelector('.ss-main');if(m)m.scrollTop=0;const w=ss.closest('.win-body');if(w)w.scrollTop=0}});
+  window.__back=window.__back||{};window.__backLabel=window.__backLabel||{};
+  window.__back[wid]=()=>{if(PH.matches&&ss.dataset.sv==='detail'){ss.dataset.sv='list';window.dispatchEvent(new Event('backchg'));return true}return false};
+  window.__backLabel[wid]=()=>(PH.matches&&ss.dataset.sv==='detail')?ttl:'';return true};
+  if(!boot()){const mo=new MutationObserver(()=>{if(boot())mo.disconnect()});mo.observe(document.body,{childList:true,subtree:true});setTimeout(()=>mo.disconnect(),15000)}
+  });
+})();
+
+/* ========== Build 112: hide an eyebrow that only repeats the heading ========== */
+(function(){const n=t=>(t||'').replace(/\s+/g,' ').trim().toLowerCase();
+  document.querySelectorAll('.win-body, section.view, .view').forEach(()=>{});
+  document.querySelectorAll('section.view').forEach(sec=>{const h=sec.querySelector('h1,h2');if(!h)return;const p=h.previousElementSibling;if(p&&p.textContent&&n(p.textContent)===n(h.textContent))p.classList.add('eyb-dup')});
+})();
+
+/* ========== Build 114: embedded apps grow to their content on phones ========== */
+(function(){const PH=matchMedia('(max-width:700px)');
+  document.querySelectorAll('iframe.passgen,iframe.tracker').forEach(f=>{
+    let ro=null;const fit=()=>{try{if(!PH.matches){f.style.height='';return}const d=f.contentDocument;if(!d)return;const h=Math.max(d.documentElement.scrollHeight,d.body?d.body.scrollHeight:0);if(h>200)f.style.height=(h+4)+'px'}catch(e){}};
+    const hook=()=>{try{fit();if(ro)ro.disconnect();if('ResizeObserver' in window){ro=new ResizeObserver(fit);ro.observe(f.contentDocument.documentElement);if(f.contentDocument.body)ro.observe(f.contentDocument.body)}f.contentDocument.addEventListener('click',()=>setTimeout(fit,60));f.contentDocument.addEventListener('input',()=>setTimeout(fit,60))}catch(e){}};
+    f.addEventListener('load',hook);if(f.contentDocument&&f.contentDocument.readyState==='complete')hook();
+    PH.addEventListener&&PH.addEventListener('change',fit);
+  });
+})();
 
 /* ========== 04 QUIZ ========== */
 const quiz=[
@@ -7811,6 +8462,7 @@ renderQuiz();
     comps.filter(c=>c.type!=='wire').forEach(c=>s+=drawComp(c,nm[c.id]));
     if(pend)pend.forEach(h=>{const [x,y]=hpos(h);s+=`<circle class="hl" cx="${x}" cy="${y}" r="9"/>`})
     probe.forEach((h,i)=>{const [x,y]=hpos(h);s+=`<circle cx="${x}" cy="${y}" r="7" fill="${i?'#212121':'#E53935'}" stroke="#fff" stroke-width="2"/>`});
+    if(tool==='select'&&S.size===1){const c=comps.find(x=>x.id===[...S][0]);if(c)legs(c).forEach(k=>{const [x,y]=hpos(c[k]);s+=`<circle class="bbh" data-leg="${k}" data-cid2="${c.id}" cx="${x}" cy="${y}" r="9"/>`})}
     $('bbL').innerHTML=s;
   }
   /* ---------- UI ---------- */
@@ -7858,6 +8510,7 @@ renderQuiz();
   let flash='';function msg(t){flash=t;refresh(true)}
   svg.addEventListener('click',e=>{
     if(supp){supp=false;return}
+    if(e.target.closest&&e.target.closest('.bbh'))return;
     const hh=e.target.closest('[data-h]');
     if(hh&&tool!=='select'){
       const h=hh.dataset.h;
@@ -7937,11 +8590,19 @@ renderQuiz();
   }
   svg.addEventListener('pointerdown',e=>{
     if(tool!=='select'||(e.pointerType==='mouse'&&e.button!==0))return;
+    const hd=e.target.closest&&e.target.closest('.bbh');
+    if(hd){const c=comps.find(x=>x.id===+hd.dataset.cid2);if(c){const q0=sp(e);drag={id:c.id,leg:hd.dataset.leg,x:q0.x,y:q0.y,pid:e.pointerId,on:false,orig:{[c.id]:Object.fromEntries(legs(c).map(k=>[k,c[k]]))},res:null};e.preventDefault();return}}
     const cc=e.target.closest('[data-cid]'),q=sp(e),mod=e.shiftKey||e.ctrlKey||e.metaKey;
     if(cc){const id=+cc.dataset.cid;if(mod||(multi&&!S.has(id)))return;drag={id,x:q.x,y:q.y,pid:e.pointerId,on:false,orig:null,res:null};return}
     if(e.pointerType==='mouse')mq={x:q.x,y:q.y,pid:e.pointerId,on:false,add:mod,el:null,r:null};
   });
   addEventListener('pointermove',e=>{
+    if(drag&&drag.leg&&e.pointerId===drag.pid){
+      const q=sp(e),c=comps.find(x=>x.id===drag.id);
+      if(!drag.on){if(Math.hypot(q.x-drag.x,q.y-drag.y)<3)return;drag.on=true;try{svg.setPointerCapture(e.pointerId)}catch(_){}svg.style.cursor='grabbing'}
+      const n=nearest(q.x,q.y);
+      if(c&&n.d<30&&!legs(c).some(k=>k!==drag.leg&&c[k]===n.h)&&c[drag.leg]!==n.h){c[drag.leg]=n.h;drawDyn()}
+      if(e.cancelable)e.preventDefault();return}
     if(drag&&e.pointerId===drag.pid){
       const q=sp(e),dx=q.x-drag.x,dy=q.y-drag.y;
       if(!drag.on){
@@ -7970,7 +8631,7 @@ renderQuiz();
         svg.style.cursor='';supp=true;setTimeout(()=>{supp=false},80);
         if(cancel){comps.forEach(c=>{const o=d.orig[c.id];if(o)setLegs(c,o)});drawDyn();return}
         const ids=Object.keys(d.orig),moved=ids.some(id=>{const c=comps.find(x=>x.id==id),o=d.orig[id];return legs(o).some(k=>c[k]!==o[k])});
-        flash=moved?(ids.length>1?'Moved '+ids.length+' parts.':'Part moved.'):'';refresh(true);
+        flash=moved?(d.leg?'Leg moved.':ids.length>1?'Moved '+ids.length+' parts.':'Part moved.'):'';refresh(true);
       }
     }
     if(mq){
@@ -10093,7 +10754,7 @@ void loop() {
     if(ic){e.preventDefault();const x=IC[+ic.dataset.ic];dt.querySelectorAll('.dt-i.sel').forEach(z=>z.classList.remove('sel'));ic.classList.add('sel');showCtx(e.clientX,e.clientY,[{t:'Open',fn:x.fn},{sep:1},{t:'Get Info',fn:()=>I.toast(x.n+': desktop shortcut')}]);return}
     e.preventDefault();
     const allOn=ORDER.every(k=>!hidden.includes(k));
-    showCtx(e.clientX,e.clientY,[{t:'New Folder',fn:()=>{extra++;IC.push({k:'n'+extra,n:'untitled folder'+(extra>1?' '+extra:''),svg:FOLD,fn:()=>I.toast('This folder is empty')});drawIc()}},{t:'Get Info',fn:()=>I.toast('Diyelo Dulay portfolio, Build 83')},{t:'Change Wallpaper\u2026',fn:()=>window.__b56&&window.__b56.wall.open()},{sep:1},{t:'Open Finder',fn:()=>I.go('finder')},{t:'Search',k:'Ctrl K',fn:()=>$('palBtn').click()},{sep:1},{t:allOn?'Hide Widgets':'Show Widgets',fn:()=>{hidden=allOn?ORDER.slice():[];save();drawWg()}}]);
+    showCtx(e.clientX,e.clientY,[{t:'New Folder',fn:()=>{extra++;IC.push({k:'n'+extra,n:'untitled folder'+(extra>1?' '+extra:''),svg:FOLD,fn:()=>I.toast('This folder is empty')});drawIc()}},{t:'Get Info',fn:()=>I.toast('Diyelo Dulay portfolio, Build 115')},{t:'Change Wallpaper\u2026',fn:()=>window.__b56&&window.__b56.wall.open()},{sep:1},{t:'Open Finder',fn:()=>I.go('finder')},{t:'Search',k:'Ctrl K',fn:()=>$('palBtn').click()},{sep:1},{t:allOn?'Hide Widgets':'Show Widgets',fn:()=>{hidden=allOn?ORDER.slice():[];save();drawWg()}}]);
   });
   /* status */
   const wifi=$('mbWifi');const net=()=>{if(wifi)wifi.classList.toggle('off',navigator.onLine===false)};addEventListener('online',net);addEventListener('offline',net);net();
@@ -10188,7 +10849,7 @@ void loop() {
   /* appearance: flip the prefers-color-scheme media rules */
   const scheme={mode:ls('dc_scheme','auto'),rules:null};
   scheme.scan=()=>{if(scheme.rules)return;scheme.rules=[];const walk=rs=>{for(const r of rs){if(r.type===4&&/prefers-color-scheme/.test(r.media.mediaText))scheme.rules.push([r,r.media.mediaText]);else if(r.cssRules&&r.type!==7&&r.type!==1)walk(r.cssRules)}};for(const sh of document.styleSheets){try{walk(sh.cssRules)}catch(e){}}};
-  scheme.apply=m=>{scheme.mode=m;scheme.scan();scheme.rules.forEach(([r,o])=>{let t=o;if(m!=='auto')t=o.replace(/\(prefers-color-scheme:\s*dark\)/g,m==='dark'?'all':'not all').replace(/\(prefers-color-scheme:\s*light\)/g,m==='dark'?'not all':'all');try{if(r.media.mediaText!==t)r.media.mediaText=t}catch(e){}});root.style.colorScheme=m==='auto'?'':m;ss('dc_scheme',m);sync()};
+  scheme.apply=m=>{scheme.mode=m;scheme.scan();scheme.rules.forEach(([r,o])=>{let t=o;const Y='(min-width:0px)',N='(min-width:1px) and (max-width:0px)';if(m!=='auto')t=o.replace(/\(prefers-color-scheme:\s*dark\)/g,m==='dark'?Y:N).replace(/\(prefers-color-scheme:\s*light\)/g,m==='dark'?N:Y);try{if(r.media.mediaText!==t)r.media.mediaText=t}catch(e){}});root.style.colorScheme=m==='auto'?'':m;ss('dc_scheme',m);sync()};
   scheme.label=()=>({auto:'Auto',light:'Light',dark:'Dark'}[scheme.mode]);
   scheme.dark=()=>scheme.mode==='dark'||(scheme.mode==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches);
   scheme.frames=()=>{const t=scheme.dark()?'dark':'light';document.querySelectorAll('iframe.passgen,iframe.tracker').forEach(f=>{try{f.contentDocument.documentElement.setAttribute('data-theme',t)}catch(e){}})};
