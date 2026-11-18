@@ -9,10 +9,19 @@ Diyelo Dulay is a Failure Analysis technician in Laguna, Philippines. The site c
 ## What is in it
 
 - **Desktop workspace.** Every section opens as a window with a menu bar, a dock, desktop widgets and folders, Spotlight search, Quick Look, Mission Control, window tiling, Stage Manager, wallpapers and sound.
-- **Apps.** README (welcome screen), About, Experience, Contact, CV, Skills, Finder (Icons, List and Columns views), System Settings and a changelog.
-- **Labs.** Analog, Audio, Bench, Breadboard, Drawing and Shop, Monitor, Motor Control, Schematics, Solar and Wiring, plus Guides. They are teaching tools with ideal-part maths, not designs for real installations.
+- **Portfolio apps.** README (welcome screen), About, Experience, Contact, CV, Skills, Guides, Finder (Icons, List and Columns views), System Settings and a changelog.
+- **Applications.** Calculator (Standard, Scientific, Programmer and Electronics modes), Passwords (passphrase generator with QR), Budget (payday, bills, loans, savings goals, payments and backup), Reminders, Notes, Clock, Weather, Messages, Quiz and Links.
+- **Simulators.** Breadboard, Motor Control, Schematics and Wiring.
+- **Labs.** Analog, Audio, Bench, Drawing, Monitor and Solar. These are teaching tools with ideal-part maths, not designs for real installations.
+- **Launchpad.** All apps grouped by type, with search (F4, the Go menu or Control Center).
+- **Control Center and Notification Center.** Toggles for Dark Mode, Sound, Stage Manager, Widgets, Dock Magnify and Effects, brightness and volume sliders, accent colors and shortcuts. Notifications can be dismissed one by one.
 - **Appearance.** Light, Dark or Auto, seven accent colors and several wallpapers, all in System Settings.
-- **Phones.** Below 700 px wide the site becomes an iPhone-style Home Screen with app icons, widgets and a dock. Apps open full screen.
+- **Phone Control Center.** On phones it opens full screen with round glass buttons, an accent tile, tall vertical Display and Sound sliders, a Focus list (Do Not Disturb, Reduce Interruptions, Personal, Work, Sleep) and shortcuts. Hold the Display slider for Dark Mode, Night Shift and True Tone. The power button opens a slide to power off screen.
+- **Phone lock screen.** Large time, three widgets (day progress, next alarm, Focus) and a passcode keypad. Any 6 digits unlock the demo.
+- **Clock and Calendar.** Clock has World Clock, Alarms, Stopwatch and Timers tabs. Calendar is a month grid with events saved in the browser.
+- **Mail.** A compose form addressed to the public email. Send opens the visitor's own email app with the message filled in; the page sends nothing itself.
+- **App Library.** The last page of the phone Home Screen groups all apps into Portfolio, Applications, Simulators and Labs cards.
+- **Phones.** Below 700 px wide the site becomes an iPhone-style Home Screen with app icons, widgets and a dock. Apps open full screen, and Simulators, Labs and Applications sit in Home Screen folders.
 
 ## Keyboard shortcuts
 
@@ -20,6 +29,7 @@ Diyelo Dulay is a Failure Analysis technician in Laguna, Philippines. The site c
 | --- | --- |
 | `/` or `Ctrl K` | Open Spotlight search |
 | `F3` or `Ctrl ↑` | Mission Control |
+| `F4` | Launchpad |
 | `Alt ←` / `Alt →` | Tile the front window to the left or right half |
 | `Alt W` | Close the front window |
 | `Alt M` | Hide (minimize) the front window |
@@ -35,6 +45,7 @@ Hot corners (turn them on or off in System Settings): top left opens Mission Con
 
 - Tap **‹ Home**, tap the bar at the bottom, swipe up from the bottom edge or swipe right from the left edge to go back to the Home Screen.
 - Pull down on the Home Screen to open Search.
+- Swipe down from the top edge: the left half opens Notification Center, the right half opens Control Center.
 
 ## Run it locally
 
