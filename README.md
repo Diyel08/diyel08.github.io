@@ -11,7 +11,9 @@ Diyelo Dulay is a Failure Analysis technician in Laguna, Philippines. The site c
 - **Desktop workspace.** Every section opens as a window with a menu bar, a dock, desktop widgets and folders, Spotlight search, Quick Look, Mission Control, window tiling, Stage Manager, wallpapers and sound.
 - **Portfolio apps.** README (welcome screen), About, Experience, Contact, CV, Skills, Guides, Finder (Icons, List and Columns views), System Settings and a changelog.
 - **Applications.** Calculator (Standard, Scientific, Programmer and Electronics modes), Passwords (passphrase generator with QR), Budget (payday, bills, loans, savings goals, payments and backup), Reminders, Notes, Clock, Weather, Messages, Quiz and Links.
-- **Simulators.** Breadboard, Motor Control, Schematics and Wiring.
+- **Simulators.** Breadboard, Motor Control, Schematics, Wiring and Sound Room.
+  - Sound Room (sound.sim): pick a 2.0 to 7.1 layout or add speakers, drag them (and the listener) around a top-down room, and read each speaker's distance, angle, delay, trim and cable run. Turn Sound on to hear it with Web Audio: tap a speaker for noise, run Calibrate, or play the Demo. Headphones give the best 3D effect. It is a teaching model, not a room-acoustics simulation.
+  - Breadboard editing: drag a placed part to move it (a selected group moves together), Shift-tap, Multi or box-select for several, Delete or Backspace to remove, arrow keys to nudge, Undo/Redo (Ctrl+Z), and Clear (undoable).
 - **Labs.** Analog, Audio, Bench, Drawing, Monitor and Solar. These are teaching tools with ideal-part maths, not designs for real installations.
 - **Launchpad.** All apps grouped by type, with search (F4, the Go menu or Control Center).
 - **Control Center and Notification Center.** Toggles for Dark Mode, Sound, Stage Manager, Widgets, Dock Magnify and Effects, brightness and volume sliders, accent colors and shortcuts. Notifications can be dismissed one by one.
@@ -84,3 +86,15 @@ All rights reserved. See [LICENSE](LICENSE). Viewing the live site is welcome; c
 ## Contact
 
 Email: diyelodulay@gmail.com · GitHub: [Diyel08](https://github.com/Diyel08)
+
+## Electrical apps (Build 78)
+- **Motor Control** has five circuits: DOL, jog/run, forward/reverse, star-delta and hand-off-auto. Live amps (with starting inrush) and rpm show in the status bar. Insert a fault (open fuse, stop chain or coil, welded pole, lost phase, or a random hidden one), read the 230 V control circuit with the meter, and tick off the commissioning checklist. Save diagram downloads the ladder and power circuits as one SVG.
+- **Wiring** adds a Voltage drop calculator (single or three phase, copper or aluminium, 3 % and 5 % limits) and a Fault finding bench with a meter (reversed polarity, open neutral, open earth, loose live joint) that shows why you test under load.
+
+## Phone iOS 27 layout (Build 79)
+- Status bar order: signal bars, 5G, Wi-Fi, battery with percentage (real level where the browser exposes it; Safari does not, so it shows 90). Same on the lock screen.
+- Swipe down from the top-left half of the status bar for the notification screen (big time, date, widgets, calendar, notifications); from the top-right half for Control Center. The panel follows the finger. Tapping the clock or the signal/Wi-Fi/battery icons does the same. In a normal Safari tab the browser may keep that top swipe for itself, so use Add to Home Screen or tap.
+- Control Center has three pages (Favorites, Media, Connectivity). Use the dots on the right edge or swipe up and down.
+- Long press: the connectivity cluster and Now Playing tile open their full pages; Dark Mode, Sound, flashlight and timer open option sheets; Display opens the brightness panel.
+- Connectivity switches are demo state saved on the device (Airplane Mode really hides the signal and Wi-Fi icons). Now Playing plays a short generated tune; AirPlay opens sound.sim.
+
