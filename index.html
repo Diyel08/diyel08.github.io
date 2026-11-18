@@ -1723,7 +1723,7 @@ iframe.passgen,iframe.tracker{background:transparent!important}
 /* BUILD 79: iOS 27 status bar, Control Center pages, notification screen */
 .mb-ph,.lk-sb,.nc-lk,.bt{display:none}
 .sb-sig svg{width:19px;height:12px;display:block}.sb-sig .dots{display:none}.sb-sig.nosvc .bars{display:none}.sb-sig.nosvc .dots{display:block}
-.sb-wifi svg{width:17px;height:13px;display:block}.sb-wifi[hidden]{display:none}
+.sb-wifi svg{width:17px;height:13px;display:block}.sb-wifi[hidden],#mbWifi[hidden]{display:none!important}
 .sb-net{font:700 13px/1 var(--sf,system-ui);letter-spacing:.01em}
 .bt{position:relative;width:26px;height:12.5px;border-radius:4px;background:rgba(150,150,155,.42);vertical-align:middle;margin-right:3px;font:700 9.5px/12.5px var(--sf,system-ui);text-align:center;--inv:#000}
 .bt::after{content:"";position:absolute;right:-3px;top:4px;width:1.6px;height:4.5px;border-radius:0 1px 1px 0;background:currentColor;opacity:.5}
@@ -1818,6 +1818,130 @@ iframe.passgen,iframe.tracker{background:transparent!important}
 .cc-pk .cc-vr{width:100%;max-width:430px;margin:0 0 14px}
 #torch{position:fixed;inset:0;pointer-events:none;z-index:9986;opacity:0;transition:opacity .25s;background:radial-gradient(120% 55% at 50% 0%,rgba(255,252,230,.95),rgba(255,244,200,.35) 45%,transparent 75%)}
 }
+/* BUILD 80: Liquid Glass slider (iOS 27 style tint and blur) */
+#lgCard .lg-row{display:flex;justify-content:space-between;align-items:center;font:500 14px var(--sf,system-ui);margin:6px 0 10px}
+#lgCard #lgR{width:100%;height:6px;appearance:none;-webkit-appearance:none;border-radius:99px;background:rgba(120,120,128,.3);padding:0;border:0;box-shadow:none;margin:0}
+#lgCard #lgR::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(0,0,0,.25),0 0 0 .5px rgba(0,0,0,.1)}
+#lgCard #lgR::-moz-range-thumb{width:26px;height:26px;border:0;border-radius:50%;background:#fff;box-shadow:0 3px 8px rgba(0,0,0,.25)}
+#lgCard .lg-ends{display:flex;justify-content:space-between;font:500 12px var(--sf,system-ui);opacity:.6;margin-top:8px}
+#lgCard .lg-n{font:400 12.5px/1.4 var(--sf,system-ui);opacity:.65;margin:10px 0 0}
+:root{--lg:.5}
+@media(max-width:700px){
+.ccp .cc-b:not([aria-pressed=true]),.ccp .cc-big,.ccp .cc-v,.ccp .cc-xp,.ccp .cc-xt,.ccp .cc-mcard,.ncp .nc-cal,.ncp .nc-n,.nc-wd div,.lk-wd div{background-color:rgba(255,255,255,calc(.02 + .28*var(--lg)))!important;-webkit-backdrop-filter:blur(calc(4px + 28px*var(--lg))) saturate(1.5)!important;backdrop-filter:blur(calc(4px + 28px*var(--lg))) saturate(1.5)!important}
+.ccp,.ncp{background-color:rgba(8,9,14,calc(.28 + .76*var(--lg)))!important;-webkit-backdrop-filter:blur(calc(8px + 52px*var(--lg))) saturate(1.6)!important;backdrop-filter:blur(calc(8px + 52px*var(--lg))) saturate(1.6)!important}
+.dock{background-color:rgba(255,255,255,calc(.06 + .44*var(--lg)))!important;-webkit-backdrop-filter:blur(calc(6px + 48px*var(--lg))) saturate(1.7)!important;backdrop-filter:blur(calc(6px + 48px*var(--lg))) saturate(1.7)!important}
+}
+/* BUILD 81: iOS 27.2 touches on the phone: squircle multi-layer app icons and specular glass rims */
+@media(max-width:700px){
+.ih-ic{position:relative;overflow:hidden;border-radius:22.4%}
+.ih-ic::before{content:"";position:absolute;inset:5px;border-radius:17%;background:linear-gradient(160deg,rgba(255,255,255,.24),rgba(255,255,255,.03) 60%);box-shadow:inset 0 0 0 .5px rgba(255,255,255,.32);pointer-events:none}
+.ih-ic>*{position:relative;z-index:1}
+.ih-fold .ih-ic::before{display:none}
+.ccp .cc-b,.ccp .cc-big,.ccp .cc-xp,.ccp .cc-xt,.ccp .cc-mcard,.nc-wd div,.lk-wd div,.dock{box-shadow:inset 0 1px 0 rgba(255,255,255,.38),inset 0 0 0 .5px rgba(255,255,255,.26),0 8px 24px rgba(0,0,0,.18)!important}
+}
+/* BUILD 82: macOS 27 icon styles and squircle icons */
+#icCard .ic-seg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+#icCard .ic-seg button{border:0;border-radius:8px;padding:8px 4px;font:500 13px var(--sf,system-ui);background:rgba(120,120,128,.18);color:inherit;cursor:pointer}
+#icCard .ic-seg button[aria-checked=true]{background:#0a7aff;color:#fff}
+.dk,.ih-ic,.lp-a .ic{border-radius:22.4%}
+.ic-dark .dk,.ic-dark .ih-ic:not(.ih-fold .ih-ic),.ic-dark .lp-a .ic{background:linear-gradient(145deg,#2c2c2e,#0a0a0b)!important}
+.ic-clear .dk,.ic-clear .ih-ic,.ic-clear .lp-a .ic{background:rgba(255,255,255,.2)!important;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.45),0 4px 12px rgba(0,0,0,.18)!important}
+.ic-tint .dk,.ic-tint .ih-ic,.ic-tint .lp-a .ic{background:linear-gradient(145deg,color-mix(in srgb,var(--ic-t,#0a7aff) 72%,#000),color-mix(in srgb,var(--ic-t,#0a7aff) 38%,#000))!important}
+/* BUILD 83: macOS 27 desktop pass: glass menu bar, vibrant sidebars, glossy title bars and lights, deeper window depth */
+@media(min-width:701px){
+.mbar{background:linear-gradient(180deg,rgba(24,28,40,.30),rgba(24,28,40,.16))!important;-webkit-backdrop-filter:blur(28px) saturate(1.9)!important;backdrop-filter:blur(28px) saturate(1.9)!important;box-shadow:inset 0 -.5px 0 rgba(255,255,255,.32),0 1px 0 rgba(0,0,0,.10),0 6px 18px rgba(10,16,40,.10)!important}
+.mbar .mb-i:hover,.mbar .mb-i[aria-expanded=true]{background:rgba(255,255,255,.2);border-radius:7px}
+.win::before{content:"";position:absolute;left:0;right:0;top:0;height:130px;border-radius:inherit;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,0))}
+.win-bar{position:relative;z-index:1}
+.win.front{box-shadow:var(--lg-edge,0 0 0 .5px rgba(0,0,0,.14)),var(--lg-rim,inset 0 1px 0 rgba(255,255,255,.7)),0 36px 90px rgba(8,14,40,.38),0 3px 8px rgba(8,14,40,.2)}
+.lights button{box-shadow:inset 0 1px 1px rgba(255,255,255,.55),inset 0 -1px 1px rgba(0,0,0,.12),0 .5px 1.5px rgba(0,0,0,.22)}
+.win-body{-webkit-backdrop-filter:blur(22px) saturate(1.5);backdrop-filter:blur(22px) saturate(1.5)}
+.ss-side,.fnd-side{background:linear-gradient(180deg,rgba(255,255,255,.46),rgba(255,255,255,.2))!important;-webkit-backdrop-filter:blur(26px) saturate(1.8);backdrop-filter:blur(26px) saturate(1.8);box-shadow:inset -.5px 0 0 rgba(255,255,255,.5)}
+.win .win-body .ss-tabs button.on{background:linear-gradient(180deg,#2f93ff,#0a7aff);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 1px 3px rgba(10,122,255,.35)}
+.win .win-body .ss-tabs button:not(.on):hover{background:rgba(255,255,255,.35)}
+.fnd-side button.on{background:rgba(10,122,255,.16);color:#0a5fd0}
+.fnd-side button:not(.on):hover{background:rgba(255,255,255,.35)}
+.dock .dk::after{content:"";position:absolute;left:12%;right:12%;top:3%;height:34%;border-radius:50% 50% 60% 60%/70% 70% 40% 40%;background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,0));pointer-events:none}
+}
+@media(min-width:701px) and (prefers-color-scheme:dark){
+.mbar{background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.26))!important}
+.win::before{background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0))}
+.ss-side,.fnd-side{background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.05))!important;box-shadow:inset -.5px 0 0 rgba(255,255,255,.14)}
+.fnd-side button.on{color:#7cb8ff}
+.win .win-body .ss-tabs button:not(.on):hover,.fnd-side button:not(.on):hover{background:rgba(255,255,255,.1)}
+}
+/* BUILD 84: macOS 27 push buttons + translucent window body (desktop) */
+@media(min-width:701px){
+.win-body .btn{padding:5px 14px;min-height:26px;border-radius:7px;font:500 13px/1.2 var(--body);background:linear-gradient(180deg,#4aa3ff,#0a74f5);box-shadow:inset 0 .5px 0 rgba(255,255,255,.45),0 0 0 .5px rgba(0,50,140,.45),0 1px 2px rgba(10,80,200,.25)}
+.win-body .btn:hover{background:linear-gradient(180deg,#58abff,#1a7df7)}
+.win-body .btn:active{background:linear-gradient(180deg,#0a74f5,#0a66da);transform:none}
+.win-body .btn.red{background:linear-gradient(180deg,#4aa3ff,#0a74f5)}
+.win-body .btn.sm{padding:3px 10px;min-height:22px;font-size:12px;border-radius:6px}
+.win-body .btn.ghost,.win-body .btn.light{background:rgba(255,255,255,.72);color:var(--ink);box-shadow:inset 0 .5px 0 rgba(255,255,255,.9),0 0 0 .5px rgba(0,0,0,.14),0 1px 1.5px rgba(0,0,0,.08)}
+.win-body .btn.ghost:hover,.win-body .btn.light:hover{background:rgba(255,255,255,.95)}
+.win-body .btn.ghost:active{background:rgba(225,225,230,.9)}
+.win-body button:not(.l-c):not(.l-m):not(.l-z):not(.dk):not(.clk-c){border-radius:8px}
+.win-body .calc-btn{border-radius:8px}
+.win-body .mot-rv{font:500 12px var(--body);letter-spacing:0;text-transform:none;padding:4px 12px;border:0;border-radius:7px;background:rgba(255,255,255,.72);box-shadow:inset 0 .5px 0 rgba(255,255,255,.9),0 0 0 .5px rgba(0,0,0,.14),0 1px 1.5px rgba(0,0,0,.08)}
+.win-body{background-color:rgba(251,251,253,.74);-webkit-backdrop-filter:blur(28px) saturate(1.6);backdrop-filter:blur(28px) saturate(1.6)}
+.win.mv .win-body{background-color:#fbfbfd!important}
+.ss-side,.fnd-side{background-color:rgba(238,238,242,.5)}
+}
+@media(min-width:701px) and (prefers-color-scheme:dark){
+.win-body .btn.ghost,.win-body .btn.light,.win-body .mot-rv{background:rgba(255,255,255,.14)!important;color:#f5f5f7!important;box-shadow:inset 0 .5px 0 rgba(255,255,255,.18),0 0 0 .5px rgba(255,255,255,.14)!important}
+.win-body .btn.ghost:hover,.win-body .btn.light:hover{background:rgba(255,255,255,.22)!important}
+.win-body{background-color:rgba(28,28,30,.76)!important}
+.win.mv .win-body{background-color:#1c1c1e!important}
+.ss-side,.fnd-side{background-color:rgba(44,44,46,.5)!important}
+}
+@media(min-width:701px){#calcTabs{display:flex;flex-wrap:nowrap;width:100%}#calcTabs button{flex:1 1 0;min-width:0;padding-left:6px;padding-right:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12.5px}}
+/* BUILD 90: round calendar days and a calmer notification backdrop (phone) */
+@media(max-width:700px){
+.nc-cal .g{gap:4px 0;justify-items:center}
+.nc-cal i{display:block;width:30px;height:30px;line-height:30px;padding:0;border-radius:50%;text-align:center;font-size:13px}
+.nc-cal i.t{box-shadow:0 1px 4px rgba(255,59,48,.45)}
+.ih-wg{transition:opacity .2s}#ide:has(#ncp.on) .ih-wg,#ide:has(#ccp.on) .ih-wg{opacity:0}
+.ncp{background-color:rgba(8,9,14,calc(.42 + .5*var(--lg)))!important;-webkit-backdrop-filter:blur(calc(28px + 30px*var(--lg))) saturate(1.5)!important;backdrop-filter:blur(calc(28px + 30px*var(--lg))) saturate(1.5)!important}
+}
+/* BUILD 91: phone notification screen follows the real iOS 27 look: clear wallpaper, glass clock, ring widget, Now Playing card, Notification Center heading with a close button */
+.nc-hx{display:none}.nc-hp{display:none}.nc-mp{display:none}
+@media(max-width:700px){
+.ncp .nc-close{display:none!important}
+#ncp.ncp{background:linear-gradient(rgba(0,0,0,.14),rgba(0,0,0,.38))!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+#ide:has(#ncp.on) .ios-home,#ide:has(#ncp.on) .dock{opacity:0;transition:opacity .2s}
+.ncp .nc-in{display:flex;flex-direction:column;max-width:none}
+.ncp .nc-lk{order:0}.ncp .nc-mp{order:1}.ncp .nc-h{order:2}.ncp .nc-n,.ncp .nc-e{order:3}.ncp .nc-cal{order:4}
+.nc-lkt{background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.22));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.55);text-shadow:none}
+.nc-wd .r{position:relative;background-image:conic-gradient(rgba(255,255,255,.92) var(--p),rgba(255,255,255,0) 0)}
+.nc-wd .r::after{content:"";position:absolute;inset:6px;border-radius:50%;background:rgba(24,28,40,.78)}
+.nc-wd .r span{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.nc-mp{display:block;margin:6px 0 4px;padding:14px 16px 12px;border-radius:28px;color:#fff;background-color:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(22px) saturate(1.5);backdrop-filter:blur(22px) saturate(1.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.38),inset 0 0 0 .5px rgba(255,255,255,.26)}
+.nc-mpt{display:flex;gap:14px;align-items:center}.nc-mpt b{display:block;font:600 19px var(--sf,system-ui)}.nc-mpt span{display:block;font:500 17px var(--sf,system-ui);opacity:.6}
+.nc-art{flex:none;width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#f6c453,#e8590c)}
+.nc-mpb{display:flex;align-items:center;gap:10px;margin-top:12px;font:500 13px var(--sf,system-ui);opacity:.8;font-variant-numeric:tabular-nums}.nc-mpb i{flex:1;height:7px;border-radius:4px;background:rgba(255,255,255,.28);overflow:hidden}.nc-mpb u{display:block;height:100%;background:rgba(255,255,255,.85);text-decoration:none}
+.nc-mpc{display:flex;justify-content:center;gap:44px;margin-top:6px}.nc-mpc button{border:0;background:none;color:#fff;padding:6px;cursor:pointer}
+.ncp .nc-h{margin:18px 4px 10px;gap:10px}.ncp .nc-h b{flex:1;font:700 25px var(--sf,system-ui);white-space:nowrap}.nc-hd{display:none}.nc-hp{display:inline}
+.nc-hx{display:grid;place-items:center;width:46px;height:46px;padding:0!important;border-radius:50%!important;border:0;background:rgba(255,255,255,.18)!important;color:#fff;font-size:28px!important;line-height:1;box-shadow:inset 0 0 0 .5px rgba(255,255,255,.3)}
+.ncp .nc-n{padding:14px 16px;border-radius:26px;gap:12px}.ncp .nc-n b{font-size:17px}.ncp .nc-n p{font-size:16px}.ncp .nc-ic{width:40px;height:40px;border-radius:10px;font-size:20px}
+.ncp .nc-cal{margin-top:12px}
+.ncp .nc-lk+.nc-cal{margin-top:12px}
+}
+/* BUILD 92: top status icons like iOS 27 on the lock and notification screens (clock hidden, grabber under the icons) */
+@media(max-width:700px){
+#ide:has(#ncp.on) #clk,#ide:has(#ccp.on) #clk{opacity:0;transition:opacity .15s}
+.mbar::after{content:"";position:absolute;right:calc(env(safe-area-inset-right,0px) + 22px);bottom:-1px;width:58px;height:4px;border-radius:3px;background:rgba(255,255,255,.55);opacity:0;transition:opacity .2s;pointer-events:none}
+#ide:has(#ncp.on) .mbar::after,#ide:has(#ccp.on) .mbar::after{opacity:1}
+.lk-sb::after{content:"";position:absolute;left:12px;right:6px;top:calc(100% + 7px);height:4px;border-radius:3px;background:rgba(255,255,255,.45)}
+}
+/* BUILD 93: no signal bars on the phone, only 5G */
+@media(max-width:700px){.sb-sig,#mbSig{display:none!important}}
+/* BUILD 94: no calendar on the phone notification screen */
+@media(max-width:700px){.ncp .nc-cal{display:none!important}}
+/* BUILD 95: app icons like real iOS: full-bleed colour, big solid glyph, no inner frame */
+.ih-ic::before{inset:0;border-radius:0;background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0) 52%,rgba(0,0,0,.1));box-shadow:none}
+.gf{filter:drop-shadow(0 1px 1px rgba(0,0,0,.18))}
+.ih-ic:not(.ih-fi)>.gf{width:58%!important;height:58%!important}
+.dk>.gf{width:56%!important;height:56%!important}
 /* 2D motion */
 svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
@@ -1913,6 +2037,8 @@ svg .on,svg .off{transition:opacity .25s ease,filter .25s ease}
             <button type="button" role="radio" aria-checked="false" data-m="dark"><span class="th th-dark"></span>Dark</button>
           </div></div>
         <div class="gcard"><div class="st-h">Accent color</div><div class="st-acc" role="radiogroup" aria-label="Accent color"><button type="button" role="radio" aria-checked="false" data-a="#0a7aff" aria-label="Blue" title="Blue" style="--c:#0a7aff"></button><button type="button" role="radio" aria-checked="false" data-a="#bf5af2" aria-label="Purple" title="Purple" style="--c:#bf5af2"></button><button type="button" role="radio" aria-checked="false" data-a="#ff375f" aria-label="Pink" title="Pink" style="--c:#ff375f"></button><button type="button" role="radio" aria-checked="false" data-a="#ff3b30" aria-label="Red" title="Red" style="--c:#ff3b30"></button><button type="button" role="radio" aria-checked="false" data-a="#ff9f0a" aria-label="Orange" title="Orange" style="--c:#ff9f0a"></button><button type="button" role="radio" aria-checked="false" data-a="#30d158" aria-label="Green" title="Green" style="--c:#30d158"></button><button type="button" role="radio" aria-checked="false" data-a="#8e8e93" aria-label="Graphite" title="Graphite" style="--c:#8e8e93"></button></div></div>
+        <div class="gcard" id="lgCard"><div class="st-h">Liquid Glass</div><div class="lg-row"><label for="lgR">Glass tint and blur</label><output id="lgO" for="lgR">50%</output></div><input type="range" id="lgR" min="0" max="100" step="1" value="50" aria-label="Liquid Glass tint and blur"><div class="lg-ends"><span>Clear</span><span>Frosted</span></div><p class="lg-n">Slide left for clearer glass with more refraction, or right for a denser frosted look. Applies to Control Center, the notification screen, the dock and the lock-screen widgets.</p></div>
+        <div class="gcard" id="icCard"><div class="st-h">Icon style</div><div class="ic-seg" role="radiogroup" aria-label="Icon style"><button type="button" role="radio" aria-checked="true" data-ic="">Default</button><button type="button" role="radio" aria-checked="false" data-ic="dark">Dark</button><button type="button" role="radio" aria-checked="false" data-ic="clear">Clear</button><button type="button" role="radio" aria-checked="false" data-ic="tint">Tinted</button></div><p class="lg-n">Applies to the dock, Launchpad and the phone Home Screen, like the icon styles in macOS 27.</p></div>
       </div>
       <div class="ss-p" id="sxP2" role="tabpanel" aria-labelledby="sxT2" hidden>
         <h2>Wallpaper</h2>
@@ -5576,7 +5702,7 @@ load();el('currency').value=state.currency;clearTrackerForm();['f-amount','f-per
   <div class="wrap">
     <div class="sec-head"><div class="k">Version notes</div><h2>Changelog</h2></div>
     <p class="mono-note" style="margin:0 0 12px">What changed in each build of this portfolio, newest first.</p>
-    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 79</a><span>Phone follows the iOS 27 layout. The status bar now reads signal bars, 5G, Wi-Fi and a battery with its percentage (also on the lock screen). Swipe down from the top left for the notification screen with the big time, date and widgets, or from the top right for Control Center; it follows your finger and you can also tap the clock or the icons. Control Center has three pages (Favorites, Media, Connectivity) with the dots on the right edge, a connectivity cluster, a Now Playing tile that really plays a short generated tune, flashlight, timer, calculator, notes and your existing portfolio controls. Hold the connectivity cluster or the Now Playing tile to open their full pages; hold Dark Mode, Sound, the flashlight or the timer for more options; hold Display for the brightness panel as before. Swipe up from the bottom to close.</span></li><li><a style="color:var(--ink);cursor:default">Build 78</a><span>New Sound Room (sound.sim): drag speakers around a top-down room, see each angle, delay, trim and cable run, and hear the result with Web Audio (tap a speaker, calibration noise, or a surround demo). Layouts from 2.0 to 7.1.</span></li>
+    <div class="panel"><div class="panel-body"><ul class="gd-l"><li><a style="color:var(--ink);cursor:default">Build 95</a><span>App icons are redrawn like real iOS and macOS icons: bigger solid glyphs instead of thin outlines, no inner frame, and a bright full-bleed colour with a soft top highlight. The glyphs come from Phosphor Icons (MIT licence).</span></li><li><a style="color:var(--ink);cursor:default">Build 94</a><span>The calendar is removed from the phone notification screen, like on iOS 27. The desktop notification panel keeps it.</span></li><li><a style="color:var(--ink);cursor:default">Build 93</a><span>The phone status bar no longer shows the signal bars, only 5G, then Wi-Fi and the battery. This applies on the lock screen, the status bar and Control Center.</span></li><li><a style="color:var(--ink);cursor:default">Build 92</a><span>Top status icons on the phone follow iOS 27: on the lock screen and when the notification screen or Control Center is open, the clock leaves the status bar (the big time is shown instead) and a small grabber line sits under the signal, Wi-Fi and battery icons.</span></li><li><a style="color:var(--ink);cursor:default">Build 91</a><span>Phone notification screen now looks like the real iOS 27 one: the wallpaper shows clearly with no dark flat panel, the home screen fades out, the clock is clear glass, the day widget is a progress ring, there is a Now Playing card with working controls when music is playing, and the list has a large Notification Center heading with a round close button. The calendar sits below the notifications.</span></li><li><a style="color:var(--ink);cursor:default">Build 90</a><span>Notification screen on the phone: the calendar days are round again (today was stretched into an oval), and the backdrop is blurred more so the home-screen widgets no longer show through as a ghost shape behind the time.</span></li><li><a style="color:var(--ink);cursor:default">Build 89</a><span>Motor Control: Forward / reverse now has the RUN / JOG selector. In JOG, hold FWD or REV and the motor runs only while the button is held, and the interlock still blocks the opposite direction. The ladder shows the S4 RUN contact in both seal-in branches.</span></li><li><a style="color:var(--ink);cursor:default">Build 88</a><span>New Wiring sandbox tab in the Wiring app: drag from one terminal to another to wire a 230 V supply, two switches and two lamps. The circuit is solved for real, so lamps in series are dim, lamps in parallel are bright, an open switch cuts the loop and joining live to neutral is flagged as a short circuit. Tap a wire to remove it.</span></li><li><a style="color:var(--ink);cursor:default">Build 87</a><span>Fault finding with a meter has a continuity mode: check live and neutral continuity with the power off, hear the beep when the path is good, and see a missing beep for reversed polarity, an open neutral or a loose joint with a high reading.</span></li><li><a style="color:var(--ink);cursor:default">Build 86</a><span>Schematics adds a Socket radial vs ring circuit: compare one cable to a ring that feeds sockets from both sides, see what happens when one leg is broken, and use the calculator for the current in each leg.</span></li><li><a style="color:var(--ink);cursor:default">Build 85</a><span>Schematics has a new RCD (earth leakage) circuit: step through a healthy circuit, an earth fault and the trip, and use the calculator for fault current, trip check and the earth resistance needed for a 50 V touch limit.</span></li><li><a style="color:var(--ink);cursor:default">Build 84</a><span>macOS 27 push buttons: compact 26px buttons with 7px corners, a soft blue gradient on primary buttons and glass for secondary ones, across every app, in light and dark. Windows are also more translucent, so the wallpaper shows through the window body.</span></li><li><a style="color:var(--ink);cursor:default">Build 83</a><span>Desktop follows macOS 27 more closely: a frosted glass menu bar with hover highlights, vibrant translucent sidebars in System Settings and Finder with gradient selection, glossy window title bars and traffic lights, deeper window shadows with a specular top edge, and a glass sheen on every dock icon.</span></li><li><a style="color:var(--ink);cursor:default">Build 82</a><span>macOS 27 icon styles: Icon style in System Settings switches the dock, Launchpad and phone Home Screen icons between Default, Dark, Clear (glass) and Tinted (follows the accent color). Icons now use a squircle shape.</span></li><li><a style="color:var(--ink);cursor:default">Build 81</a><span>Phone look follows iOS 27.2: home-screen app icons are squircles with a middle glass layer, and the glass buttons, Control Center tiles, widgets and dock get a bright specular rim.</span></li><li><a style="color:var(--ink);cursor:default">Build 80</a><span>New Liquid Glass slider in System Settings, in the iOS 27 style: slide from Clear to Frosted to change the tint and blur of Control Center, the notification screen, the dock and the lock-screen widgets on the phone. Saved on this device.</span></li><li><a style="color:var(--ink);cursor:default">Build 79</a><span>Phone follows the iOS 27 layout. The status bar now reads signal bars, 5G, Wi-Fi and a battery with its percentage (also on the lock screen). Swipe down from the top left for the notification screen with the big time, date and widgets, or from the top right for Control Center; it follows your finger and you can also tap the clock or the icons. Control Center has three pages (Favorites, Media, Connectivity) with the dots on the right edge, a connectivity cluster, a Now Playing tile that really plays a short generated tune, flashlight, timer, calculator, notes and your existing portfolio controls. Hold the connectivity cluster or the Now Playing tile to open their full pages; hold Dark Mode, Sound, the flashlight or the timer for more options; hold Display for the brightness panel as before. Swipe up from the bottom to close.</span></li><li><a style="color:var(--ink);cursor:default">Build 78</a><span>New Sound Room (sound.sim): drag speakers around a top-down room, see each angle, delay, trim and cable run, and hear the result with Web Audio (tap a speaker, calibration noise, or a surround demo). Layouts from 2.0 to 7.1.</span></li>
 <li><a style="color:var(--ink);cursor:default">Build 77</a><span>Wiring: voltage drop calculator and a fault-finding bench with a meter. Motor control: jog/run and hand-off-auto circuits, live amps and rpm, save diagram as SVG, insert faults (open fuse, stop chain, coil, welded pole, lost phase, or a random hidden one), read the 230 V control circuit with a meter, and tick off a commissioning checklist. Breadboard hover lights up the whole strip and shows its voltage, drag from hole to hole to place a part, and a net voltage table. Fixes the ghosting and flicker when windows, Control Center, Launchpad, menus, folders and toasts animate. Breadboard: drag placed parts to new holes, select several (Shift-tap, Multi or box-select), Delete, Undo and Redo, arrow-key nudge, safer Clear, clearer hints.</span></li>
 <li><a style="color:var(--ink);cursor:default">Build 76</a><span>Phone Home Screen gets an App Library as its last page: apps grouped in glass cards (Portfolio, Applications, Simulators, Labs). Tap an icon to open an app, or the small cluster to open the whole group.</span></li><li><a style="color:var(--ink);cursor:default">Build 75</a><span>New Mail app: a compose form addressed to the public portfolio email. Send opens your own email app with the subject and message filled in, and Copy address copies the address. The page itself sends nothing.</span></li><li><a style="color:var(--ink);cursor:default">Build 74</a><span>New Calendar app: month grid with today highlighted, previous and next month, arrow key navigation, and events with an optional time that you can add and delete. Events are saved in this browser.</span></li><li><a style="color:var(--ink);cursor:default">Build 73</a><span>Hold the Display slider in phone Control Center to open the expanded panel with a tall brightness slider plus Dark Mode, Night Shift (warm tint) and True Tone (light warm tint) buttons.</span></li><li><a style="color:var(--ink);cursor:default">Build 72</a><span>Phone lock screen in the iOS style: large time, three glass widgets (day progress, next alarm, Focus), swipe up for a passcode keypad (any 6 digits unlock the demo). The Control Center power button opens a slide to power off screen, and a new Focus list (Do Not Disturb, Reduce Interruptions, Personal, Work, Sleep) sits in Control Center.</span></li><li><a style="color:var(--ink);cursor:default">Build 71</a><span>On phones, Control Center and Notification Center now open full screen over a dark glass blur, so nothing is cut off by the dock. Control Center has round glass buttons, an accent tile and tall vertical Display and Sound sliders. Notification Center has a close button.</span></li><li><a style="color:var(--ink);cursor:default">Build 70</a><span>Control Center on phones is rebuilt in the iOS 26 style: larger glass tiles with the icon on top and a status line, two big slider tiles for Display and Sound, and it scrolls if the screen is short. Weather on phones is centered in a sky gradient card.</span></li><li><a style="color:var(--ink);cursor:default">Build 69</a><span>Phone apps follow the iOS look. Clock now has World Clock, Alarms, Stopwatch and Timers tabs with a floating tab bar and green switches. Reminders, Messages, Notes and Weather get large titles, a bottom input pill and round action buttons.</span></li><li><a style="color:var(--ink);cursor:default">Build 68</a><span>Launchpad (F4, Go menu or Control Center) shows every app grouped as Portfolio, Applications, Simulators and Labs, with search. Finder now has separate Simulators and Labs folders. On phones the Home Screen has Simulators, Labs and Applications folders that open as a sheet.</span></li><li><a style="color:var(--ink);cursor:default">Build 67</a><span>Control Center is now a real panel with toggles (Dark Mode, Sound, Stage Manager, Widgets, Dock Magnify, Effects), brightness and volume sliders, accent colors and shortcuts. Notification Center has a date header and dismissable notifications. On phones, swipe down from the top edge: left side for Notifications, right side for Control Center.</span></li><li><a style="color:var(--ink);cursor:default">Build 66</a><span>The new apps now look like Mac apps. Budget has a sidebar (Summary, Bills, Loan and savings, Savings goals, Payments, Backup) and the Payment Tracker and Passwords were redesigned, with Dark mode inside them too. Reminders, Notes, Clock, Weather, Messages, Quiz and Links got a cleaner look.</span></li><li><a style="color:var(--ink);cursor:default">Build 65</a><span>The Playground and Tools windows are gone. Every tool is now its own app: Calculator (Standard, Scientific, Programmer with HEX and BIN, and Electronics), Passwords, Budget (Payday and Bills), Reminders, Notes, Clock, Weather, Messages, Quiz and Links. They live in a new Applications folder in Finder.</span></li><li><a style="color:var(--ink);cursor:default">Build 64</a><span>Phone fixes from real iPhone testing: System Settings now fits the screen, long press no longer highlights the interface, the Home button no longer shows a stray close mark, and the Drawing sliders update smoothly. Removed unused map code.</span></li><li><a style="color:var(--ink);cursor:default">Build 63</a><span>The labs, Skills, Guides and the bench now use the same macOS look: rounded grouped cards, readable labels instead of tiny mono capitals, rounded result tiles, level bars on Skills, and a numbered step list on the bench with the current step in blue.</span></li><li><a style="color:var(--ink);cursor:default">Build 62</a><span>README is now a Welcome screen: the app icon, a large headline with a gradient, a short intro, blue buttons and rounded stat tiles. The file list below it shows each app as an icon with its name and a short description.</span></li><li><a style="color:var(--ink);cursor:default">Build 61</a><span>Dark mode now covers the window contents, not just the menu bar and dock: cards, fields, tabs, lists and text all switch together. Diagrams and the CV keep their white paper so they stay readable and print correctly.</span></li><li><a style="color:var(--ink);cursor:default">Build 60</a><span>iOS mode on phones: a Home Screen with widgets, app icons on swipeable pages and a floating dock; apps open full screen with a Back to Home button, swipe from the left edge or up from the bottom to return, and pull down on the Home Screen for Search.</span></li><li><a style="color:var(--ink);cursor:default">Build 59</a><span>Finder: view as Icons, List (sortable by name, kind and location) or Columns with a live preview; a path bar at the bottom; a Get Info panel; right-click menus on files and on empty space; sidebar with Favorites and Folders and SF-style icons. The view you pick is remembered.</span></li>
     <li><a style="color:var(--ink);cursor:default">Build 58</a><span>System Settings app (Appearance with Light, Dark or Auto and seven accent colors, Wallpaper, Desktop and Dock, Sound, About). The Apple menu can Lock Screen, Restart and Shut Down. Stage Manager keeps the front window in the middle with the others on the left. Hold Alt and press the backtick key for a window switcher with icons. Optional hot corners and dock magnification switches.</span></li>
@@ -5828,8 +5954,43 @@ $('yrs').textContent=Math.max(1,new Date().getFullYear()-2019)+'+';
    guides:'<path d="M12 6c-2-1.5-5-2-8-2v14c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2zM12 6v14"/>',
    modules:'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>'
   };
+  /* Phosphor Icons, Copyright (c) 2020 Phosphor Icons, MIT licence (github.com/phosphor-icons/core): fill weight, used for app icon glyphs */
+  const FILL={calc:'<path d="M200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24ZM88,200a12,12,0,1,1,12-12A12,12,0,0,1,88,200Zm0-40a12,12,0,1,1,12-12A12,12,0,0,1,88,160Zm40,40a12,12,0,1,1,12-12A12,12,0,0,1,128,200Zm0-40a12,12,0,1,1,12-12A12,12,0,0,1,128,160Zm40,40a12,12,0,1,1,12-12A12,12,0,0,1,168,200Zm0-40a12,12,0,1,1,12-12A12,12,0,0,1,168,160Zm16-56a8,8,0,0,1-8,8H80a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8h96a8,8,0,0,1,8,8Z"/>',
+   passwords:'<path d="M216.57,39.43A80,80,0,0,0,83.91,120.78L28.69,176A15.86,15.86,0,0,0,24,187.31V216a16,16,0,0,0,16,16H72a8,8,0,0,0,8-8V208H96a8,8,0,0,0,8-8V184h16a8,8,0,0,0,5.66-2.34l9.56-9.57A79.73,79.73,0,0,0,160,176h.1A80,80,0,0,0,216.57,39.43ZM180,92a16,16,0,1,1,16-16A16,16,0,0,1,180,92Z"/>',
+   budget:'<path d="M216,64H56a8,8,0,0,1,0-16H192a8,8,0,0,0,0-16H56A24,24,0,0,0,32,56V184a24,24,0,0,0,24,24H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64Zm-36,80a12,12,0,1,1,12-12A12,12,0,0,1,180,144Z"/>',
+   reminders:'<path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM117.66,149.66l-32,32a8,8,0,0,1-11.32,0l-16-16a8,8,0,0,1,11.32-11.32L80,164.69l26.34-26.35a8,8,0,0,1,11.32,11.32Zm0-64-32,32a8,8,0,0,1-11.32,0l-16-16A8,8,0,0,1,69.66,90.34L80,100.69l26.34-26.35a8,8,0,0,1,11.32,11.32ZM192,168H144a8,8,0,0,1,0-16h48a8,8,0,0,1,0,16Zm0-64H144a8,8,0,0,1,0-16h48a8,8,0,0,1,0,16Z"/>',
+   notes:'<path d="M224,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h80a8,8,0,0,1,0,16H48V208H208V128a8,8,0,0,1,16,0Zm5.66-58.34-96,96A8,8,0,0,1,128,168H96a8,8,0,0,1-8-8V128a8,8,0,0,1,2.34-5.66l96-96a8,8,0,0,1,11.32,0l32,32A8,8,0,0,1,229.66,69.66Zm-17-5.66L192,43.31,179.31,56,200,76.69Z"/>',
+   clock:'<path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm56,112H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48a8,8,0,0,1,0,16Z"/>',
+   weather:'<path d="M164,72a76.2,76.2,0,0,0-20.26,2.73,55.63,55.63,0,0,0-9.41-11.54l9.51-13.57a8,8,0,1,0-13.11-9.18L121.22,54A55.9,55.9,0,0,0,96,48c-.59,0-1.16,0-1.74,0L91.37,31.71a8,8,0,1,0-15.75,2.77L78.5,50.82A56.1,56.1,0,0,0,55.23,65.67L41.61,56.14a8,8,0,1,0-9.17,13.11L46,78.77A55.55,55.55,0,0,0,40,104c0,.57,0,1.15,0,1.72L23.71,108.6a8,8,0,0,0,1.38,15.88,8.24,8.24,0,0,0,1.39-.12l16.32-2.88a55.74,55.74,0,0,0,5.86,12.42A52,52,0,0,0,84,224h80a76,76,0,0,0,0-152ZM92.92,120.76a52.14,52.14,0,0,0-31,4.17,40,40,0,0,1,66.62-44.17A76.26,76.26,0,0,0,92.92,120.76Z"/>',
+   messages:'<path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"/>',
+   quiz:'<path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,168a12,12,0,1,1,12-12A12,12,0,0,1,128,192Zm8-48.72V144a8,8,0,0,1-16,0v-8a8,8,0,0,1,8-8c13.23,0,24-9,24-20s-10.77-20-24-20-24,9-24,20v4a8,8,0,0,1-16,0v-4c0-19.85,17.94-36,40-36s40,16.15,40,36C168,125.38,154.24,139.93,136,143.28Z"/>',
+   soundroom:'<path d="M152,160a24,24,0,1,1-24-24A24,24,0,0,1,152,160ZM208,40V216a16,16,0,0,1-16,16H64a16,16,0,0,1-16-16V40A16,16,0,0,1,64,24H192A16,16,0,0,1,208,40ZM116,68a12,12,0,1,0,12-12A12,12,0,0,0,116,68Zm52,92a40,40,0,1,0-40,40A40,40,0,0,0,168,160Z"/>',
+   mail:'<path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"/>',
+   calendar:'<path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,48H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24Z"/>',
+   links:'<path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM115.7,192.49a43.31,43.31,0,0,1-55-66.43l25.37-25.37a43.35,43.35,0,0,1,61.25,0,42.9,42.9,0,0,1,9.95,15.43,8,8,0,1,1-15,5.6A27.33,27.33,0,0,0,97.37,112L72,137.37a27.32,27.32,0,0,0,34.68,41.91,8,8,0,1,1,9,13.21Zm79.61-62.55-25.37,25.37A43,43,0,0,1,139.32,168h0a43.35,43.35,0,0,1-40.53-28.12,8,8,0,1,1,15-5.6A27.35,27.35,0,0,0,139.28,152h0a27.14,27.14,0,0,0,19.32-8L184,118.63a27.32,27.32,0,0,0-34.68-41.91,8,8,0,1,1-9-13.21,43.32,43.32,0,0,1,55,66.43Z"/>',
+   settings:'<path d="M237.94,107.21a8,8,0,0,0-3.89-5.4l-29.83-17-.12-33.62a8,8,0,0,0-2.83-6.08,111.91,111.91,0,0,0-36.72-20.67,8,8,0,0,0-6.46.59L128,41.85,97.88,25a8,8,0,0,0-6.47-.6A111.92,111.92,0,0,0,54.73,45.15a8,8,0,0,0-2.83,6.07l-.15,33.65-29.83,17a8,8,0,0,0-3.89,5.4,106.47,106.47,0,0,0,0,41.56,8,8,0,0,0,3.89,5.4l29.83,17,.12,33.63a8,8,0,0,0,2.83,6.08,111.91,111.91,0,0,0,36.72,20.67,8,8,0,0,0,6.46-.59L128,214.15,158.12,231a7.91,7.91,0,0,0,3.9,1,8.09,8.09,0,0,0,2.57-.42,112.1,112.1,0,0,0,36.68-20.73,8,8,0,0,0,2.83-6.07l.15-33.65,29.83-17a8,8,0,0,0,3.89-5.4A106.47,106.47,0,0,0,237.94,107.21ZM128,168a40,40,0,1,1,40-40A40,40,0,0,1,128,168Z"/>',
+   finder:'<path d="M216,72H131.31L104,44.69A15.88,15.88,0,0,0,92.69,40H40A16,16,0,0,0,24,56V200.62A15.41,15.41,0,0,0,39.39,216h177.5A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72ZM40,56H92.69l16,16H40Z"/>',
+   about:'<path d="M172,120a44,44,0,1,1-44-44A44.05,44.05,0,0,1,172,120Zm60,8A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88.09,88.09,0,0,0-91.47-87.93C77.43,41.89,39.87,81.12,40,128.25a87.65,87.65,0,0,0,22.24,58.16A79.71,79.71,0,0,1,84,165.1a4,4,0,0,1,4.83.32,59.83,59.83,0,0,0,78.28,0,4,4,0,0,1,4.83-.32,79.71,79.71,0,0,1,21.79,21.31A87.62,87.62,0,0,0,216,128Z"/>',
+   changelog:'<path d="M224,128A96,96,0,0,1,62.11,197.82a8,8,0,1,1,11-11.64A80,80,0,1,0,71.43,71.43C67.9,75,64.58,78.51,61.35,82L77.66,98.34A8,8,0,0,1,72,112H32a8,8,0,0,1-8-8V64a8,8,0,0,1,13.66-5.66L50,70.7c3.22-3.49,6.54-7,10.06-10.55A96,96,0,0,1,224,128ZM128,72a8,8,0,0,0-8,8v48a8,8,0,0,0,3.88,6.86l40,24a8,8,0,1,0,8.24-13.72L136,123.47V80A8,8,0,0,0,128,72Z"/>',
+   cv:'<path d="M112,120a16,16,0,1,1-16-16A16,16,0,0,1,112,120ZM232,56V200a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56ZM135.75,166a39.76,39.76,0,0,0-17.19-23.34,32,32,0,1,0-45.12,0A39.84,39.84,0,0,0,56.25,166a8,8,0,0,0,15.5,4c2.64-10.25,13.06-18,24.25-18s21.62,7.73,24.25,18a8,8,0,1,0,15.5-4ZM200,144a8,8,0,0,0-8-8H152a8,8,0,0,0,0,16h40A8,8,0,0,0,200,144Zm0-32a8,8,0,0,0-8-8H152a8,8,0,0,0,0,16h40A8,8,0,0,0,200,112Z"/>',
+   experience:'<path d="M152,112a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16h32A8,8,0,0,1,152,112Zm80-40V200a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V72A16,16,0,0,1,40,56H80V48a24,24,0,0,1,24-24h48a24,24,0,0,1,24,24v8h40A16,16,0,0,1,232,72ZM96,56h64V48a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8Zm120,57.61V72H40v41.61A184,184,0,0,0,128,136,184,184,0,0,0,216,113.61Z"/>',
+   skills:'<path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16h8V136a8,8,0,0,1,8-8H72a8,8,0,0,1,8,8v64H96V88a8,8,0,0,1,8-8h32a8,8,0,0,1,8,8V200h16V40a8,8,0,0,1,8-8h40a8,8,0,0,1,8,8V200h8A8,8,0,0,1,232,208Z"/>',
+   analog:'<path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm-4.78,91.44c-16.68,35-31.06,50.56-46.65,50.56-19.68,0-31.39-24.56-43.79-50.56C112,113,101,90,91.43,90c-3.74,0-14.37,4-32.21,41.44a8,8,0,0,1-14.44-6.88C61.46,89.59,75.84,74,91.43,74c19.68,0,31.39,24.56,43.79,50.56C144,143,155,166,164.57,166c3.74,0,14.37-4,32.21-41.44a8,8,0,1,1,14.44,6.88Z"/>',
+   audio:'<path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM72,152a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm32,32a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Zm32-16a8,8,0,0,1-16,0V88a8,8,0,0,1,16,0Zm32-16a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm32,8a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"/>',
+   bench:'<path d="M240,152v24a16,16,0,0,1-16,16H115.93a4,4,0,0,1-3.24-6.35L174.27,101a8.21,8.21,0,0,0-1.37-11.3,8,8,0,0,0-11.37,1.61l-72,99.06A4,4,0,0,1,86.25,192H32a16,16,0,0,1-16-16V153.13c0-1.79,0-3.57.13-5.33a4,4,0,0,1,4-3.8H48a8,8,0,0,0,8-8.53A8.17,8.17,0,0,0,47.73,128H23.92a4,4,0,0,1-3.87-5c12-43.84,49.66-77.13,95.52-82.28a4,4,0,0,1,4.43,4V72a8,8,0,0,0,8.53,8A8.17,8.17,0,0,0,136,71.73V44.67a4,4,0,0,1,4.43-4A112.18,112.18,0,0,1,236.23,123a4,4,0,0,1-3.88,5H208.27a8.17,8.17,0,0,0-8.25,7.47,8,8,0,0,0,8,8.53h27.92a4,4,0,0,1,4,3.86C240,149.23,240,150.61,240,152Z"/>',
+   breadboard:'<path d="M88,111.31l48,48V220a4,4,0,0,1-4,4H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32H68a4,4,0,0,1,4,4V153.38a24,24,0,1,0,16,0ZM80,184a8,8,0,1,0-8-8A8,8,0,0,0,80,184Zm104-80a8,8,0,1,0-8,8A8,8,0,0,0,184,104Zm24-72H156a4,4,0,0,0-4,4V68.69l13.66,13.66a24,24,0,1,1-11.31,11.31l-16-16A8,8,0,0,1,136,72V36a4,4,0,0,0-4-4H92a4,4,0,0,0-4,4V88.69l61.66,61.65A8,8,0,0,1,152,156v64a4,4,0,0,0,4,4h52a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Z"/>',
+   drawing:'<path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM192,108.68,147.31,64l24-24L216,84.68Z"/>',
+   monitor:'<path d="M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0c-3.35-1.8-63.55-34.69-92.68-80.89A4,4,0,0,1,34.92,144H72a8,8,0,0,0,6.66-3.56l9.34-14,25.34,38a8,8,0,0,0,9.16,3.16,8.23,8.23,0,0,0,4.28-3.34L140.28,144H160a8,8,0,0,0,8-8.53,8.18,8.18,0,0,0-8.25-7.47H136a8,8,0,0,0-6.66,3.56l-9.34,14-25.34-38a8,8,0,0,0-9.17-3.16,8.25,8.25,0,0,0-4.27,3.34L67.72,128H23.53a4,4,0,0,1-3.83-2.81A76.93,76.93,0,0,1,16,102,62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z"/>',
+   motor:'<path d="M233,135a60,60,0,0,0-89.62-35.45l16.39-65.44a8,8,0,0,0-3.45-8.68A60,60,0,1,0,95.69,128.91L30.82,147.44a8,8,0,0,0-5.8,7.32,60,60,0,0,0,44.42,60.66,60.52,60.52,0,0,0,15.62,2.07,60.07,60.07,0,0,0,59.88-62l48.48,46.92a8,8,0,0,0,9.25,1.35A60,60,0,0,0,233,135ZM130.44,147.85a20,20,0,1,1,17.41-22.29A20,20,0,0,1,130.44,147.85Z"/>',
+   schematics:'<path d="M213.85,125.46l-112,120a8,8,0,0,1-13.69-7l14.66-73.33L45.19,143.49a8,8,0,0,1-3-13l112-120a8,8,0,0,1,13.69,7L153.18,90.9l57.63,21.61a8,8,0,0,1,3,12.95Z"/>',
+   solar:'<path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm8,24a64,64,0,1,0,64,64A64.07,64.07,0,0,0,128,64ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/>',
+   wiring:'<path d="M237.66,77.66,203.31,112l26.35,26.34a8,8,0,0,1-11.32,11.32L212,143.31l-53,53a40,40,0,0,1-56.57,0L86.75,180.57,37.66,229.66a8,8,0,0,1-11.32-11.32l49.09-49.09L59.72,153.54a40,40,0,0,1,0-56.57l53-53-6.35-6.34a8,8,0,0,1,11.32-11.32L144,52.69l34.34-34.35a8,8,0,1,1,11.32,11.32L155.31,64,192,100.69l34.34-34.35a8,8,0,0,1,11.32,11.32Z"/>',
+   contact:'<path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"/>',
+   guides:'<path d="M240,56V200a8,8,0,0,1-8,8H160a24,24,0,0,0-24,23.94,7.9,7.9,0,0,1-5.12,7.55A8,8,0,0,1,120,232a24,24,0,0,0-24-24H24a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H88a32,32,0,0,1,32,32v87.73a8.17,8.17,0,0,0,7.47,8.25,8,8,0,0,0,8.53-8V80a32,32,0,0,1,32-32h64A8,8,0,0,1,240,56Z"/>',
+   modules:'<path d="M120,56v48a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V56A16,16,0,0,1,56,40h48A16,16,0,0,1,120,56Zm80-16H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm-96,96H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm96,0H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Z"/>',
+   terminal:'<path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm-91,94.25-40,32a8,8,0,1,1-10-12.5L107.19,128,75,102.25a8,8,0,1,1,10-12.5l40,32a8,8,0,0,1,0,12.5ZM176,168H136a8,8,0,0,1,0-16h40a8,8,0,0,1,0,16Z"/>'};
   const DMARK='M193 193H306A112 112 0 0 1 306 417H262Q250 417 250 405V361H306A56 56 0 0 0 306 249H205Q193 249 193 237ZM193 317Q193 305 205 305H237Q249 305 249 317V361H205Q193 361 193 349Z';
-  const glyph=(id,fb,z)=>id==='top'?`<svg viewBox="193 193 225 224" width="${z||26}" height="${z||26}" aria-hidden="true"><path d="${DMARK}" fill="currentColor"/></svg>`:SYM[id]?`<svg viewBox="0 0 24 24" width="${z||26}" height="${z||26}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${SYM[id]}</svg>`:fb;
+  const glyph=(id,fb,z)=>id==='top'?`<svg viewBox="193 193 225 224" width="${z||26}" height="${z||26}" aria-hidden="true"><path d="${DMARK}" fill="currentColor"/></svg>`:FILL[id]?`<svg class="gf" viewBox="0 0 256 256" width="${z||26}" height="${z||26}" fill="currentColor" aria-hidden="true">${FILL[id]}</svg>`:SYM[id]?`<svg viewBox="0 0 24 24" width="${z||26}" height="${z||26}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${SYM[id]}</svg>`:fb;
   const grad=id=>{const g=(GR[id]||'#7a8793,#36424b').split(',');return `linear-gradient(145deg,${g[0]},${g[1]})`};
   /* finder + home cards */
   const GRP=[['all','All files',''],['','Home','⌂'],['sim/','Simulators','⎓'],['lab/','Labs','⚙'],['apps/','Applications','▦'],['work/','Work','▣']];
@@ -7175,7 +7336,7 @@ renderQuiz();
      return W([[50,134],[50,100]])+W([[50,166],[50,260]])+W([[50,260],[420,260]])+W([[50,100],[90,100]])+W([[170,100],[248,100]])+W([[274,100],[420,100]])+W([[210,100],[210,152]])+W([[210,198],[210,260]])+W([[330,100],[330,168]])+W([[330,192],[330,260]])+W([[420,100],[420,150]])+W([[420,210],[420,260]])+dot(210,100)+dot(330,100)
      +SRC(50,150,'Vin')+IND(90,100,'L')+SWT(210,175,'Q',s===0,null)+DH(261,100,s===1,'D')+CAPV(330,180,'C')+LDV(420,180,'Load')+P(p)+T(222,92,'SW','start')}};
 
-  const order=['half','full','rect','buck','boost','fly','fwd','pfc','inv3','pp','gd','sn','clsA','clsAB','clsD','lin'];
+  const order=['half','full','rect','buck','boost','fly','fwd','pfc','inv3','pp','gd','sn','clsA','clsAB','clsD','lin','rcd','ring'];
   const notes={
    half:['Two switches in one leg share the bus. The load hangs between the switch node and the midpoint of two equal capacitors, so each polarity only gets Vbus/2.','Never turn Q1 and Q2 on together. That is shoot-through, and it puts a short across the bus. A dead time of a few hundred nanoseconds covers the turn-off delay.','The high-side gate needs a floating drive, usually a bootstrap capacitor or an isolated driver.'],
    full:['Four switches make two legs, A and B. Diagonal pairs give +Vbus or −Vbus. Both tops or both bottoms give zero (freewheel), which is what unipolar PWM uses.','Each leg needs its own dead time. A body diode or an anti-parallel diode carries the current while all switches are off.','Same bridge drives a DC motor in both directions, and with a transformer it becomes the primary stage of an isolated supply.'],
@@ -7374,6 +7535,38 @@ renderQuiz();
    lin(){const V=g('sV'),I=g('sI'),F=g('sF'),Vr=g('sVr');if(!(V>0&&I>0&&F>0&&Vr>0))return'<p class="bc-note">Enter all four values.</p>';
      const pk=V*Math.SQRT2-1.4,C=I/(2*F*Vr);return o([['Rail at no load','±'+fmt(pk,'V')],['Reservoir capacitor',fmt(C,'F')],['Capacitor voltage rating (min)',fmt(pk*1.25,'V')+' (25 % margin)'],['Transformer (rough)',(+(V*2*I*1.8).toPrecision(3))+' VA'],['Diode PIV (min)',fmt(V*2*Math.SQRT2,'V')]])+'<p class="bc-note">Peak = Vrms × √2 − 2 diode drops (about 1.4 V). C = I / (2 f ΔV). Each diode blocks up to the full secondary peak, 2 × Vrms × √2. Transformer size is a rule of thumb for a capacitor-input supply.</p>'}});
 
+  /* ---------- RCD (earth-leakage protection) ---------- */
+  C.rcd={name:'RCD (earth leakage)',
+   states:[['Healthy circuit','The same current IL goes out on the live and comes back on the neutral. Their magnetic fluxes in the ring core are equal and opposite, so the sense coil sees nothing and the contacts stay closed.'],['Earth fault','Some current now goes to earth through a person or a damaged appliance and returns through the earth, not the neutral. The neutral carries less than the live, the fluxes no longer cancel, and the sense coil gets a voltage.'],['Tripped','Once the leakage is above the rated residual current, the coil drives the relay and the contacts open on both live and neutral, in about 30 ms or less. The fault current drops to zero.']],
+   seq:[[.35,0,0],[.4,1,1],[.25,0,2]],lab:['IL − IN','0'],
+   draw(s){const cl=s<2;
+    const p=s===0?P([[50,134],[50,110],[500,110],[500,120]])+P([[500,180],[500,190],[50,190],[50,166]]):s===1?P([[50,134],[50,110],[500,110],[500,120]])+P([[500,180],[500,190],[50,190],[50,166]])+P([[410,110],[410,242]]):'';
+    const sw=y=>cl?W([[300,y],[330,y]]):`<line x1="300" y1="${y}" x2="326" y2="${y-18}" class="w"/>`;
+    return `<ellipse cx="230" cy="150" rx="22" ry="72" class="w" fill="none"/>`+W([[50,134],[50,110],[300,110]])+W([[330,110],[500,110],[500,120]])+W([[50,166],[50,190],[300,190]])+W([[330,190],[500,190],[500,180]])+sw(110)+sw(190)+dot(300,110)+dot(300,190)+dot(330,110)+dot(330,190)
+     +W([[50,190],[50,232]])+GND(50,240)+W([[230,222],[230,240]])+BOX(196,240,68,28,'Relay')+`<path d="M264 254H315V100" class="w" fill="none" stroke-dasharray="4 3"/>`
+     +W([[410,110],[410,155]])+W([[410,215],[410,242]])+GND(410,250)+LDV(410,185,'Rfault')
+     +SRC(50,150,'Mains')+LDV(500,150,'Load')+T(120,102,'L','middle')+T(120,206,'N','middle')+T(230,64,s===0?'IL = IN':s===1?'IL > IN':'open','middle')+T(300,276,'contacts','middle')+p}};
+  Object.assign(notes,{rcd:['An RCD does not measure overload or short circuit. It only compares the current going out on the live with the current coming back on the neutral. The difference is current that went somewhere else, usually through earth or through a person.','A 30 mA RCD is the usual choice for sockets and wet areas, because 30 mA for a short time is unlikely to cause ventricular fibrillation. It must still be used with a breaker or fuse for overload and short circuit.','Press the test button every month. It puts a small known leakage across the core and the RCD should trip at once. Nuisance trips often come from old appliances with leaking heaters or from too many filters (their capacitors leak to earth).']});
+  Object.assign(calc,{rcd:()=>`<div class="bc-grid">${f2('sV','Mains voltage (V)','230')}${f2('sRf','Fault resistance, e.g. the body (ohm)','1500')}${f2('sRe','Earth electrode resistance (ohm)','20')}${f2('sIn','RCD rating IΔn (mA)','30')}</div><div id="sOut"></div>`});
+  Object.assign(calcRun,{rcd(){const V=g('sV'),Rf=g('sRf'),Re=g('sRe'),In=g('sIn');if(!(V>0&&Rf>=0&&Re>=0&&In>0))return'<p class="bc-note">Enter all four values.</p>';
+     const I=V/(Rf+Re)*1000,tr=I>=In?'Yes':I>=In/2?'Maybe (between 50 % and 100 % of the rating)':'No';
+     return o([['Fault current',(+I.toPrecision(3))+' mA'],['Trips?',tr],['Voltage on the earth electrode',fmt(I/1000*Re,'V')],['Max earth resistance for 50 V',fmt(50/(In/1000),'Ω')]])+'<p class="bc-note">I = V / (Rfault + Rearth). An RCD must trip at IΔn and must not trip below IΔn / 2. The earth electrode must keep the touch voltage under 50 V: Re ≤ 50 V / IΔn.</p>'}});
+  /* ---------- socket circuits: radial vs ring final circuit ---------- */
+  C.ring={name:'Socket radial vs ring',
+   states:[['Radial','One cable runs from the breaker through the sockets and stops at the last one. All the load current flows down that single cable, so the cable has to carry the whole breaker rating by itself.'],['Ring, healthy','The cable leaves the breaker, visits every socket and comes back to the same breaker. A load is fed from both sides, so each leg carries only part of the current. Where the load sits decides the split: a socket in the middle splits it about half and half.'],['Ring, one leg broken','One cable has been cut or a terminal has come loose. The ring still works, so nothing seems wrong, but now one leg carries the whole load. If the load is more than the cable can take, it overheats and nobody notices until the end-to-end test.']],
+   seq:[[.34,1,0],[.33,.5,1],[.33,1,2]],lab:['leg current','0'],
+   draw(s){const rg=s>0,br=s===2;
+    const sk=(x,y,t)=>`<circle cx="${x}" cy="${y}" r="9" class="sc"/>`+T(x,y+(y<150?-16:24),t,'middle');
+    const p=s===0?P([[100,130],[100,60],[470,60],[470,150]]):s===1?P([[100,130],[100,60],[470,60],[470,150]])+P([[100,170],[100,240],[470,240],[470,150]]):P([[100,130],[100,60],[470,60],[470,150]]);
+    const low=br?W([[100,170],[100,240],[285,240]])+W([[305,240],[470,240],[470,150]])+`<path d="M288 232L302 248M302 232L288 248" stroke="#D33" stroke-width="2.4" fill="none"/>`:rg?W([[100,170],[100,240],[470,240],[470,150]]):'';
+    return `<rect x="30" y="115" width="70" height="70" rx="3" fill="#fff" stroke="${INK}" stroke-width="1.6"/>`+T(65,146,'Breaker')+T(65,162,'32 A')+W([[100,130],[100,60],[470,60],[470,150]])+low
+     +sk(220,60,'S1')+sk(350,60,'S2')+sk(470,150,'S3 load')+(rg?sk(350,240,'S4')+sk(220,240,'S5'):'')
+     +T(60,208,s===0?'radial':'ring','middle')+p}};
+  Object.assign(notes,{ring:['A radial circuit is the simple version: one cable out, sockets along it, end of the line. The cable and the breaker must match, for example 2.5 mm² on a 20 A breaker.','A ring final circuit (common in the UK) uses 2.5 mm² on a 32 A breaker. That only works because the current splits between two paths. This is the reason a ring must be tested: the live, neutral and earth continuity of the two legs, end to end.','A broken ring still powers everything, so the fault hides. A single leg of 2.5 mm² carries about 27 A in clips, so a 32 A load on one leg overheats. Spurs off a ring, and many high-power loads at one end of the ring, make this worse.']});
+  Object.assign(calc,{ring:()=>`<div class="bc-grid">${f2('sI','Load current (A)','20')}${f2('sX','Load position along the ring from the breaker (%)','50')}${f2('sR','Cable rating, one leg (A)','27')}${f2('sB','Breaker (A)','32')}</div><div id="sOut"></div>`});
+  Object.assign(calcRun,{ring(){const I=g('sI'),x=g('sX')/100,R=g('sR'),B=g('sB');if(!(I>0&&x>=0&&x<=1&&R>0&&B>0))return'<p class="bc-note">Enter a load, a position from 0 to 100 %, a cable rating and a breaker.</p>';
+     const a=I*(1-x),b=I*x,mx=Math.max(a,b);
+     return o([['Leg A (out)',fmt(a,'A')],['Leg B (return)',fmt(b,'A')],['Healthy ring, worst leg',mx<=R?'OK ('+(+(mx/R*100).toPrecision(3))+' % of the cable)':'Overloaded'],['One leg broken, cable current',fmt(I,'A')],['Broken ring',I<=R?'Cable still OK':'Cable overloaded, and the '+fmt(B,'A')+' breaker will not trip to protect it']])+'<p class="bc-note">Current divides in inverse proportion to the cable length from each side: Leg A = I × (1 − x), Leg B = I × x. If the ring breaks, the leg left carries all of I.</p>'}});
   let cur='half',st=0,run=null,duty=.5;
   root.innerHTML=`<div class="bc-tabs sch-tabs" role="tablist">${order.map(k=>`<button type="button" role="tab" data-c="${k}">${C[k].name}</button>`).join('')}</div><div class="sch-stage"><svg id="schSvg" viewBox="0 0 590 290" role="img" aria-label="Circuit diagram"></svg><div class="sch-side"><div class="sch-ctl"><button type="button" class="btn" id="schPrev" aria-label="Previous state">◀</button><button type="button" class="btn red" id="schPlay">Run</button><button type="button" class="btn" id="schNext" aria-label="Next state">▶</button></div><div id="schSt" class="sch-st" aria-live="polite"></div><div id="schDutyW" class="bc-f" style="display:none"><label for="schDuty">Duty cycle <span id="schDV"></span></label><input type="range" id="schDuty" min="10" max="90" value="50"></div><svg id="schWave" viewBox="0 0 300 110" role="img" aria-label="Waveform"></svg></div></div><div id="schNotes"></div><h3 class="bc-h" style="margin-top:20px">Quick numbers</h3><div id="schCalc"></div>`;
   function wave(){
@@ -8726,11 +8919,11 @@ void loop() {
      {items:[kNO('KM1','13-14')],out:{t:'lamp',l:'H1 RUN'}},
      {items:[no('F1','97-98',S=>S.trip)],out:{t:'lamp',l:'H2 TRIP'}}],
     info:['DOL is the simplest starter: the contactor puts full line voltage on the motor.','Press START. KM1 closes its power poles and its own contact KM1 (13-14), which holds the coil on after you let go. That is the seal-in (hold) circuit.','Press STOP (a normally closed button). It breaks the rung and KM1 drops.','Use Trip overload: F1 opens in the control rung, so KM1 drops even though START is held.','Starting current is about 6 to 8 times the running current, so DOL suits small motors.']},
-   fr:{name:'Forward / reverse',btn:[['FWD','go'],['REV','go'],['STOP','stop']],ilk:true,
+   fr:{name:'Forward / reverse',btn:[['FWD','go'],['REV','go'],['STOP','stop']],ilk:true,xtra:'jog',
     rungs:[
-     {items:[OL(),STOP(),no('S2 FWD','',S=>S.in.FWD),kNC('KM2','21-22',1)],block:{a:2,b:2,br:[kNO('KM1')]},out:{t:'coil',l:'KM1',k:'KM1'}},
-     {items:[OL(),STOP(),no('S3 REV','',S=>S.in.REV),kNC('KM1','21-22',1)],block:{a:2,b:2,br:[kNO('KM2')]},out:{t:'coil',l:'KM2',k:'KM2'}}],
-    info:['Reversing a three-phase motor means swapping any two phases. KM1 connects L1, L2, L3 to U, V, W. KM2 connects L3, L2, L1.','Press FWD, then REV while it runs. The motor does not reverse: the interlock (KM1 NC in the KM2 rung) blocks it, so you must press STOP first.','Switch the interlock off, then press REV while running forward. Both contactors close and L1 and L3 are shorted. The breaker trips.','In a real panel the interlock is both electrical (NC contacts) and mechanical (a bar between the contactors).']},
+     {items:[OL(),STOP(),no('S2 FWD','',S=>S.in.FWD),kNC('KM2','21-22',1)],block:{a:2,b:2,br:[kNO('KM1'),no('S4 RUN','',S=>S.runSel)]},out:{t:'coil',l:'KM1',k:'KM1'}},
+     {items:[OL(),STOP(),no('S3 REV','',S=>S.in.REV),kNC('KM1','21-22',1)],block:{a:2,b:2,br:[kNO('KM2'),no('S4 RUN','',S=>S.runSel)]},out:{t:'coil',l:'KM2',k:'KM2'}}],
+    info:['Set the selector to JOG and hold FWD or REV: the motor runs only while the button is held, because the RUN contact S4 cuts the seal-in. The interlock still works, so you cannot jog the other way while it turns.','Reversing a three-phase motor means swapping any two phases. KM1 connects L1, L2, L3 to U, V, W. KM2 connects L3, L2, L1.','Press FWD, then REV while it runs. The motor does not reverse: the interlock (KM1 NC in the KM2 rung) blocks it, so you must press STOP first.','Switch the interlock off, then press REV while running forward. Both contactors close and L1 and L3 are shorted. The breaker trips.','In a real panel the interlock is both electrical (NC contacts) and mechanical (a bar between the contactors).']},
    jog:{name:'Jog / run',btn:[['START','go'],['STOP','stop']],xtra:'jog',
     rungs:[
      {items:[OL(),STOP(),no('S2 START','',S=>S.in.START)],block:{a:2,b:2,br:[kNO('KM1'),no('S4 RUN','',S=>S.runSel)]},out:{t:'coil',l:'KM1',k:'KM1'}},
@@ -8780,7 +8973,7 @@ void loop() {
      if(ck==='dol'){if(c.KM1&&!pr.KM1&&S.in.START)ev('pull');if(c.KM1&&!S.in.START&&S.prev.st)ev('hold');if(!c.KM1&&pr.KM1&&S.in.STOP)ev('stop');if(S.trip&&!c.KM1&&pr.KM1)ev('ol');if(S.trip&&S.in.START&&!c.KM1)ev('blk')}
      if(ck==='jog'){if(!c.KM1&&pr.KM1&&!S.in.START&&!S.runSel&&!S.in.STOP)ev('jog');if(c.KM1&&!S.in.START&&S.prev.st&&S.runSel)ev('run');if(!c.KM1&&pr.KM1&&S.in.STOP)ev('stop')}
      if(ck==='hoa'){if(c.KM1&&S.hoa==='hand')ev('hand');if(c.KM1&&S.hoa==='auto'&&S.float)ev('auto');if(!c.KM1&&pr.KM1&&S.hoa==='off')ev('off')}
-     if(ck==='fr'){if(c.KM1)ev('fwd');if(c.KM2)ev('rev');if(S.in.REV&&c.KM1&&!c.KM2&&S.ilk)ev('ilk');if(!c.KM1&&!c.KM2&&pr.KM1&&S.in.STOP)ev('stop')}
+     if(ck==='fr'){if(!c.KM1&&!c.KM2&&(pr.KM1||pr.KM2)&&!S.in.FWD&&!S.in.REV&&!S.in.STOP&&!S.runSel)ev('jog');if(c.KM1)ev('fwd');if(c.KM2)ev('rev');if(S.in.REV&&c.KM1&&!c.KM2&&S.ilk)ev('ilk');if(!c.KM1&&!c.KM2&&pr.KM1&&S.in.STOP)ev('stop')}
      if(ck==='sd'){if(c.KM1&&c.KM2)ev('star');if(c.KM1&&c.KM3)ev('delta');if(c.KM1&&c.KM3&&!c.KM2&&S.kt.done)ev('xfer');if(!c.KM1&&pr.KM1&&S.in.STOP)ev('stop')}
      S.prev.st=(ck==='dol'||ck==='jog')&&!!S.in.START&&!!c.KM1}
     /* faults */
@@ -8897,7 +9090,7 @@ void loop() {
   }
   /* ---------- troubleshooting: meter + checklist ---------- */
   const CHKL={dol:[['pull','Press START: KM1 pulls in'],['hold','Release START: KM1 stays in (seal-in)'],['stop','Press STOP: KM1 drops out'],['ol','Trip the overload while running: KM1 drops'],['blk','Press START while tripped: it is ignored']],
-    fr:[['fwd','Press FWD: the motor runs forward'],['rev','Press STOP then REV: the motor runs reverse'],['ilk','Press REV while running forward: the interlock blocks it'],['stop','Press STOP: the motor stops']],
+    fr:[['fwd','Press FWD: the motor runs forward'],['rev','Press STOP then REV: the motor runs reverse'],['ilk','Press REV while running forward: the interlock blocks it'],['jog','Selector JOG: hold FWD or REV and the motor runs only while held'],['stop','Press STOP: the motor stops']],
     jog:[['jog','Selector JOG: the motor runs only while START is held'],['run','Selector RUN: START seals in and holds'],['stop','Press STOP: KM1 drops out']],
     hoa:[['hand','HAND: the pump runs'],['auto','AUTO with the float HIGH: the pump runs'],['off','OFF: the pump stops']],
     sd:[['star','Press START: the motor starts in star'],['delta','After the timer: it changes to delta'],['xfer','KM2 (star) is open once KM3 (delta) is closed'],['stop','Press STOP: the motor stops']]};
@@ -9005,7 +9198,7 @@ void loop() {
   const root=$('wirRoot');if(!root)return;
   const ACT='#E8590C',INK='#14181B',esc=escapeHTML;
   let ck='one',st={one:{s1:0},two:{s1:0,s2:0},int:{s1:0,sm:0,s3:0}};
-  const TABS=[['one','One-way (single switch)'],['two','Two-way (staircase)'],['int','Intermediate (3 places)'],['out','Breaker and wire'],['vd','Voltage drop'],['ft','Fault finding'],['sld','Single-line diagram']];
+  const TABS=[['one','One-way (single switch)'],['two','Two-way (staircase)'],['int','Intermediate (3 places)'],['out','Breaker and wire'],['vd','Voltage drop'],['ft','Fault finding'],['sld','Single-line diagram'],['sb','Wiring sandbox']];
   /* ---------- breaker and wire, and a single-line diagram with load calculation ---------- */
   const AMP={14:15,12:20,10:30,8:40,6:55,4:70,3:85,2:95,1:110,'1/0':125};
   const AMPK=['14','12','10','8','6','4','3','2','1','1/0'];
@@ -9155,9 +9348,11 @@ void loop() {
   const FT={f:'',hid:false,load:false,m:'LN',rv:false,done:{}};
   const FTL=[['','No fault'],['pol','Reversed polarity'],['onl','Open neutral'],['oe','Open earth'],['lj','Loose live joint']];
   const FTS={pol:'Everything works, but the switch is breaking the wrong wire. The socket L terminal reads 0 V to earth.',onl:'The appliance does not run when you plug it in, although the voltage at the socket looks fine with nothing connected.',oe:'The circuit works, but the earth reading is unstable and the earth continuity test is open.',lj:'The kettle runs slowly and the socket gets warm after a few minutes. The voltage sags when the load is on.'};
-  const FTCK=[['LN','Measure L to N (about 230 V)'],['LE','Measure L to E (should match L to N)'],['NE','Measure N to E (near 0 V)'],['ER','Measure earth continuity (a low value)'],['LD','Repeat with the appliance plugged in']];
+  const FTCK=[['LN','Measure L to N (about 230 V)'],['LE','Measure L to E (should match L to N)'],['NE','Measure N to E (near 0 V)'],['ER','Measure earth continuity (a low value)'],['CL','Check live continuity with the power off (beep)'],['CN','Check neutral continuity with the power off (beep)'],['LD','Repeat with the appliance plugged in']];
+  function ftBeep(){try{const A=window.AudioContext||window.webkitAudioContext,c=new A(),o=c.createOscillator(),g=c.createGain();o.frequency.value=2000;g.gain.value=.06;o.connect(g);g.connect(c.destination);o.start();setTimeout(()=>{o.stop();c.close()},140)}catch(e){}}
   function ftRead(m){
     const f=FT.f,ld=FT.load;
+    if(m==='CL'||m==='CN'){if(f==='pol'||(m==='CN'&&f==='onl'))return{t:'no beep, OL',ok:false};if(m==='CL'&&f==='lj')return{t:'beep, 3.6 Ω (high)',ok:false};return{t:'beep, '+(m==='CL'?'0.31':'0.29')+' Ω',ok:true}}
     if(m==='ER')return f==='oe'?{t:'OL (open)',ok:false}:{t:'0.42 Ω',ok:true};
     let v;
     if(m==='LN')v=f==='onl'&&ld?0:f==='lj'&&ld?196:ld?228:230;
@@ -9182,12 +9377,73 @@ void loop() {
   }
   function ftBody(){
     const n=FTCK.filter(x=>FT.done[x[0]]).length,rd=ftRead(FT.m);
-    return `<div id="ftSvg">${ftSvg()}</div><div class="mot-ctl"><label>Insert fault <select id="ftF" aria-label="Insert a fault">${FTL.map(x=>`<option value="${x[0]}"${!FT.hid&&FT.f===x[0]?' selected':''}>${x[1]}</option>`).join('')}<option value="rand"${FT.hid?' selected':''}>Random (hidden)</option></select></label><label>Meter <select id="ftM" aria-label="Meter function"><option value="LN"${FT.m==='LN'?' selected':''}>L to N volts</option><option value="LE"${FT.m==='LE'?' selected':''}>L to E volts</option><option value="NE"${FT.m==='NE'?' selected':''}>N to E volts</option><option value="ER"${FT.m==='ER'?' selected':''}>Earth continuity</option></select></label><button type="button" id="ftLd" class="${FT.load?'on':''}">Appliance: ${FT.load?'PLUGGED IN':'unplugged'}</button><output class="mot-mv" aria-live="polite"><span class="${rd.ok?'':'bad'}">${esc(rd.t)}</span></output></div>
+    return `<div id="ftSvg">${ftSvg()}</div><div class="mot-ctl"><label>Insert fault <select id="ftF" aria-label="Insert a fault">${FTL.map(x=>`<option value="${x[0]}"${!FT.hid&&FT.f===x[0]?' selected':''}>${x[1]}</option>`).join('')}<option value="rand"${FT.hid?' selected':''}>Random (hidden)</option></select></label><label>Meter <select id="ftM" aria-label="Meter function"><option value="LN"${FT.m==='LN'?' selected':''}>L to N volts</option><option value="LE"${FT.m==='LE'?' selected':''}>L to E volts</option><option value="NE"${FT.m==='NE'?' selected':''}>N to E volts</option><option value="ER"${FT.m==='ER'?' selected':''}>Earth continuity</option><option value="CL"${FT.m==='CL'?' selected':''}>Live continuity, beep (power off)</option><option value="CN"${FT.m==='CN'?' selected':''}>Neutral continuity, beep (power off)</option></select></label><button type="button" id="ftLd" class="${FT.load?'on':''}">Appliance: ${FT.load?'PLUGGED IN':'unplugged'}</button><output class="mot-mv" aria-live="polite"><span class="${rd.ok?'':'bad'}">${esc(rd.t)}</span></output></div>
     <div class="mot-stat"><span class="${rd.ok?'on':'bad'}">${rd.ok?'PASS':'FAIL'}</span></div>
     <div class="mot-note" style="${FT.f?'':'display:none'}"><b>Symptom</b><br>${FT.f?esc(FTS[FT.f]):''}<br><button type="button" id="ftRv" class="mot-rv">${FT.rv?'Hide cause':'Reveal cause'}</button>${FT.rv&&FT.f?`<br><b>Cause</b><br>${esc((FTL.find(x=>x[0]===FT.f)||[,''])[1])}`:''}</div>
     <div class="mot-note"><b>Checks ${n} / ${FTCK.length}</b><ul class="mot-chk">${FTCK.map(x=>`<li class="${FT.done[x[0]]?'ok':''}"><span aria-hidden="true">${FT.done[x[0]]?'✓':'○'}</span> ${esc(x[1])}</li>`).join('')}</ul><button type="button" id="ftCr" class="mot-rv">Reset checks</button></div>
     <div class="mot-note"><b>Why test under load</b><ol><li>An open neutral can look normal with nothing plugged in, because the neutral floats near earth. Plug a load in and the reading collapses.</li><li>A loose live joint reads 230 V with no load. Current through its extra resistance drops the voltage and heats the joint.</li><li>Reversed polarity shows as the live terminal reading 0 V to earth, and the neutral terminal reading about 230 V to earth.</li><li>Always prove a meter on a known live source before and after, and isolate before you touch a terminal. This is a teaching model.</li></ol></div>`;
   }
+  /* ---------- wiring sandbox: drag from terminal to terminal, the circuit is solved ---------- */
+  const SB={w:[],sa:0,sb:0,sel:null,drag:null};
+  const SBT={L:[40,90,'L'],N:[40,210,'N'],A1:[190,60],A2:[260,60],B1:[190,150],B2:[260,150],P1:[400,60],P2:[470,60],Q1:[400,150],Q2:[470,150]};
+  const SBR=529;
+  function sbSolve(){
+    const uf={};const f=a=>{while(uf[a]!==undefined&&uf[a]!==a)a=uf[a];return a};const un=(a,b)=>{a=f(a);b=f(b);if(a!==b)uf[a]=b};
+    SB.w.forEach(x=>un(x[0],x[1]));if(SB.sa)un('A1','A2');if(SB.sb)un('B1','B2');
+    const nL=f('L'),nN=f('N');
+    if(nL===nN)return{short:true,p:[0,0]};
+    const names=[...new Set(Object.keys(SBT).map(f))].filter(n=>n!==nL&&n!==nN),ix={};names.forEach((n,i)=>ix[n]=i);
+    const n=names.length,A=Array.from({length:n},()=>new Array(n).fill(0)),z=new Array(n).fill(0);
+    for(let i=0;i<n;i++)A[i][i]+=1e-9;
+    const lamps=[['P1','P2'],['Q1','Q2']],G=1/SBR;
+    lamps.forEach(l=>{const a=f(l[0]),b=f(l[1]);if(a===b)return;
+      [[a,b],[b,a]].forEach(([u,v])=>{if(u===nL||u===nN)return;const i=ix[u];A[i][i]+=G;if(v===nL)z[i]+=G*230;else if(v!==nN)A[i][ix[v]]-=G})});
+    for(let i=0;i<n;i++){let m=i;for(let r=i+1;r<n;r++)if(Math.abs(A[r][i])>Math.abs(A[m][i]))m=r;[A[i],A[m]]=[A[m],A[i]];[z[i],z[m]]=[z[m],z[i]];
+      for(let r=i+1;r<n;r++){const k=A[r][i]/A[i][i];if(k){for(let c=i;c<n;c++)A[r][c]-=k*A[i][c];z[r]-=k*z[i]}}}
+    const x=new Array(n).fill(0);for(let i=n-1;i>=0;i--){let v=z[i];for(let c=i+1;c<n;c++)v-=A[i][c]*x[c];x[i]=v/A[i][i]}
+    const V=nn=>nn===nL?230:nn===nN?0:x[ix[nn]];
+    return{short:false,p:lamps.map(l=>{const d=V(f(l[0]))-V(f(l[1]));return d*d/SBR}),v:lamps.map(l=>Math.abs(V(f(l[0]))-V(f(l[1]))))};
+  }
+  function sbWire(a,b){const A=SBT[a],B=SBT[b],mx=(A[0]+B[0])/2,my=(A[1]+B[1])/2+(A[1]===B[1]?-26:0);return `M${A[0]} ${A[1]}Q${mx} ${my} ${B[0]} ${B[1]}`}
+  function sbSvg(){
+    const r=sbSolve(),H=(id)=>SB.sel===id?'#E8590C':'#fff';
+    let g='';
+    g+=`<rect x="14" y="60" width="52" height="180" rx="6" fill="#fff" stroke="${INK}" stroke-width="2"/>`+T(40,52,'230 V')+T(56,94,'L','start')+T(56,214,'N','start');
+    [['A',SB.sa,'Switch 1'],['B',SB.sb,'Switch 2']].forEach(q=>{const y=q[0]==='A'?60:150,on=q[1];
+      g+=`<g data-sw="${q[0]}" style="cursor:pointer"><rect x="190" y="${y-22}" width="70" height="44" rx="6" fill="#fff" stroke="${INK}" stroke-width="1.6"/><line x1="190" y1="${y}" x2="${on?260:244}" y2="${on?y:y-16}" stroke="${INK}" stroke-width="3"/></g>`+T(225,y+36,q[2]+(on?' closed':' open'))});
+    [['P',60,'Lamp 1',0],['Q',150,'Lamp 2',1]].forEach(l=>{const pw=r.p[l[3]],br=Math.min(1,pw/100);
+      g+=`<circle cx="435" cy="${l[1]}" r="26" fill="${br>0.03?`rgba(255,205,60,${.25+br*.75})`:'#fff'}" stroke="${INK}" stroke-width="2"/><path d="M${423} ${l[1]-12}L${447} ${l[1]+12}M${447} ${l[1]-12}L${423} ${l[1]+12}" stroke="${INK}" stroke-width="1.6"/>`+T(435,l[1]+44,l[2]+(br>0.03?' '+Math.round(pw)+' W':' off'))});
+    SB.w.forEach((x,i)=>{const d=sbWire(x[0],x[1]);g+=`<path d="${d}" fill="none" stroke="${r.short?'#C62828':'#2F8F5B'}" stroke-width="3.5" stroke-linecap="round"/><path d="${d}" fill="none" stroke="transparent" stroke-width="16" data-wd="${i}" style="cursor:pointer"/>`});
+    Object.keys(SBT).forEach(id=>{const t=SBT[id];g+=`<circle cx="${t[0]}" cy="${t[1]}" r="8" fill="${H(id)}" stroke="${INK}" stroke-width="2" data-t="${id}" style="cursor:crosshair" tabindex="0" role="button" aria-label="Terminal ${t[2]||id}"/>`});
+    g+='<line id="sbRub" x1="0" y1="0" x2="0" y2="0" stroke="#E8590C" stroke-width="2.5" stroke-dasharray="5 4" style="display:none;pointer-events:none"/>';
+    return `<svg id="sbSvg" viewBox="0 0 560 290" role="img" aria-label="Wiring sandbox" style="touch-action:none;width:100%;height:auto;display:block">${g}</svg>`;
+  }
+  function sbStat(){
+    const r=sbSolve(),on=r.p.filter(x=>x>3).length;
+    if(r.short)return '<span class="bad">Short circuit: live and neutral are joined. The breaker trips. Remove the wire that joins them.</span>';
+    if(!SB.w.length)return '<span>Drag from one terminal to another to place a wire. Tap a wire to remove it, tap a switch to open or close it.</span>';
+    if(!on)return '<span>No lamp is lit. A lamp needs a path from L through it to N, and every switch on the path must be closed.</span>';
+    const ser=r.p.every(x=>x>3)&&r.p.every(x=>x<40);
+    return '<span class="on">'+on+(on===1?' lamp is lit':' lamps are lit')+(ser?'. They share the voltage in series, so each gets about '+Math.round(r.v[0])+' V and they are dim.':'.')+'</span>';
+  }
+  function sbBody(){return `<div id="sbSvgW">${sbSvg()}</div><div class="mot-ctl"><button type="button" id="sbEx">Example: switch + lamp</button><button type="button" id="sbEx2">Example: two lamps in parallel</button><button type="button" id="sbEx3">Example: two lamps in series</button><button type="button" id="sbClr">Clear wires</button></div><div class="mot-stat" id="sbSt" aria-live="polite">${sbStat()}</div><div class="mot-note"><b>How it works</b><ol><li>Each lamp is 100 W at 230 V. The sandbox solves the node voltages, so series and parallel lamps behave like real ones.</li><li>Joining L and N directly is a short circuit.</li><li>A lamp wired only to L, or only to N, stays off. It needs a complete loop.</li></ol></div>`}
+  function buildSb(){root.innerHTML=tabsHtml()+`<div id="sbBody">${sbBody()}</div>`}
+  function sbRefresh(){const b=$('sbBody');if(b)b.innerHTML=sbBody()}
+  function sbConn(a,b){if(a===b)return;if(SB.w.some(x=>(x[0]===a&&x[1]===b)||(x[0]===b&&x[1]===a)))return;SB.w.push([a,b])}
+  const sbPt=(e)=>{const sv=$('sbSvg'),r=sv.getBoundingClientRect();return[(e.clientX-r.left)*560/r.width,(e.clientY-r.top)*290/r.height]};
+  const SBEX={sbEx:[['L','A1'],['A2','P1'],['P2','N']],sbEx2:[['L','P1'],['L','Q1'],['P2','N'],['Q2','N']],sbEx3:[['L','P1'],['P2','Q1'],['Q2','N']]};
+  root.addEventListener('pointerdown',e=>{if(ck!=='sb')return;const t=e.target.closest&&e.target.closest('[data-t]');if(!t)return;e.preventDefault();const id=t.dataset.t;
+    if(SB.sel&&SB.sel!==id){sbConn(SB.sel,id);SB.sel=null;SB.drag=null;sbRefresh();return}
+    SB.sel=id;SB.drag=id;const sv=$('sbSvg');t.setAttribute('fill','#E8590C');try{sv.setPointerCapture&&0}catch(_){}});
+  root.addEventListener('pointermove',e=>{if(ck!=='sb'||!SB.drag)return;const ru=$('sbRub');if(!ru)return;const a=SBT[SB.drag],p=sbPt(e);ru.setAttribute('x1',a[0]);ru.setAttribute('y1',a[1]);ru.setAttribute('x2',p[0]);ru.setAttribute('y2',p[1]);ru.style.display=''});
+  document.addEventListener('pointerup',e=>{if(ck!=='sb'||!SB.drag)return;const from=SB.drag;SB.drag=null;const el=document.elementFromPoint(e.clientX,e.clientY),t=el&&el.closest&&el.closest('[data-t]');
+    if(t&&t.dataset.t!==from){sbConn(from,t.dataset.t);SB.sel=null;sbRefresh()}else{const ru=$('sbRub');if(ru)ru.style.display='none'}});
+  root.addEventListener('keydown',e=>{if(ck!=='sb'||(e.key!=='Enter'&&e.key!==' '))return;const t=e.target.closest&&e.target.closest('[data-t]');if(!t)return;e.preventDefault();const id=t.dataset.t;if(SB.sel&&SB.sel!==id){sbConn(SB.sel,id);SB.sel=null}else SB.sel=SB.sel===id?null:id;sbRefresh()});
+  function sbClick(e){const id=e.target.id,sw=e.target.closest&&e.target.closest('[data-sw]'),wd=e.target.closest&&e.target.closest('[data-wd]');
+    if(sw){if(sw.dataset.sw==='A')SB.sa^=1;else SB.sb^=1;sbRefresh();return}
+    if(wd){SB.w.splice(+wd.dataset.wd,1);sbRefresh();return}
+    if(id==='sbClr'){SB.w=[];SB.sel=null;SB.sa=0;SB.sb=0;sbRefresh();return}
+    if(SBEX[id]){SB.w=SBEX[id].map(x=>x.slice());SB.sa=1;SB.sb=1;SB.sel=null;sbRefresh()}}
   function buildFt(){root.innerHTML=tabsHtml()+`<div id="ftBody">${ftBody()}</div>`;}
   function ftMark(){FT.done[FT.m]=true;if(FT.load)FT.done.LD=true}
   function render(){
@@ -9198,7 +9454,7 @@ void loop() {
     $('wirStat').innerHTML=`<div class="mot-stat"><span class="${on?'on':''}">Lamp ${on?'ON':'OFF'}</span>${chips.map(c=>`<span>${esc(c[0])}: ${c[1]}</span>`).join('')}</div>`;
   }
   function build(){
-    if(ck==='out')return buildOut();if(ck==='sld')return buildSld();if(ck==='vd')return buildVd();if(ck==='ft'){ftMark();return buildFt()}
+    if(ck==='out')return buildOut();if(ck==='sld')return buildSld();if(ck==='vd')return buildVd();if(ck==='ft'){ftMark();return buildFt()}if(ck==='sb')return buildSb();
     const s=st[ck];
     const btn=(id,l)=>`<button type="button" id="${id}">${l}</button>`;
     root.innerHTML=`<div class="sol-tabs" id="wirTabs">${TABS.map(t=>`<button type="button" data-c="${t[0]}" class="${t[0]===ck?'on':''}">${t[1]}</button>`).join('')}</div>
@@ -9210,6 +9466,7 @@ void loop() {
   root.addEventListener('click',e=>{
     const c=e.target.closest('[data-c]');if(c){ck=c.dataset.c;build();return}
     if(ck==='out'){const ol=e.target.closest('[data-ol]');if(ol){OUT.load[ol.dataset.ol]^=1;buildOut();return}if(e.target.id==='oS'){OUT.short=!OUT.short;buildOut();return}if(e.target.id==='oR'){OUT.tripped=false;OUT.short=false;Object.keys(OUT.load).forEach(k=>OUT.load[k]=0);buildOut();return}return}
+    if(ck==='sb'){sbClick(e);return}
     if(ck==='ft'){const id=e.target.id;
       if(id==='ftLd'){FT.load=!FT.load;ftMark();buildFt()}else if(id==='ftRv'){FT.rv=!FT.rv;buildFt()}else if(id==='ftCr'){FT.done={};ftMark();buildFt()}return}
     if(ck==='vd'||ck==='sld')return;
@@ -9218,13 +9475,13 @@ void loop() {
     render();
   });
   root.addEventListener('change',e=>{
-    if(ck==='ft'){if(e.target.id==='ftF'){let v=e.target.value;FT.hid=false;if(v==='rand'){const l=FTL.map(x=>x[0]).filter(Boolean);v=l[Math.floor(Math.random()*l.length)];FT.hid=true}FT.f=v;FT.rv=false;FT.done={};ftMark();buildFt()}else if(e.target.id==='ftM'){FT.m=e.target.value;ftMark();buildFt()}return}
+    if(ck==='ft'){if(e.target.id==='ftF'){let v=e.target.value;FT.hid=false;if(v==='rand'){const l=FTL.map(x=>x[0]).filter(Boolean);v=l[Math.floor(Math.random()*l.length)];FT.hid=true}FT.f=v;FT.rv=false;FT.done={};ftMark();buildFt()}else if(e.target.id==='ftM'){FT.m=e.target.value;ftMark();buildFt();if(/^beep/.test(ftRead(FT.m).t))ftBeep()}return}
     if(ck==='vd'){const m={vdPh:'ph',vdSz:'sz',vdM:'mat'}[e.target.id];if(m){VD[m]=e.target.value;$('vdOut').innerHTML=vdBody()}return}
     if(ck!=='out')return;if(e.target.id==='oW'){OUT.wire=+e.target.value;OUT.tripped=false;buildOut()}if(e.target.id==='oB'){OUT.brk=+e.target.value;OUT.tripped=false;buildOut()}});
   root.addEventListener('input',e=>{if(ck==='vd'){const m={vdW:'w',vdL:'len'}[e.target.id];if(m){const v=parseFloat(e.target.value);if(v>0){VD[m]=v;$('vdOut').innerHTML=vdBody()}}return}
     const k=e.target.dataset&&e.target.dataset.sl;if(ck==='sld'&&k){const v=parseFloat(e.target.value);sldV[k]=isFinite(v)&&v>=0?v:0;sldUpd()}});
   build();
-  window.__wir={FT,VD,ftRead,vdCalc,OUT,sldV,outCalc,sldTable,use:k=>{ck=k;build()},get st(){return st},lamp:lampOn,flip:(k)=>{const s=st[ck];s[k]^=1;render()}};
+  window.__wir={SB,sbSolve,FT,VD,ftRead,vdCalc,OUT,sldV,outCalc,sldTable,use:k=>{ck=k;build()},get st(){return st},lamp:lampOn,flip:(k)=>{const s=st[ck];s[k]^=1;render()}};
 })();
 
 /* ========== TECHNICAL DRAWING & SHOP: vernier, micrometer, isometric and views, fits, converter ========== */
@@ -9836,7 +10093,7 @@ void loop() {
     if(ic){e.preventDefault();const x=IC[+ic.dataset.ic];dt.querySelectorAll('.dt-i.sel').forEach(z=>z.classList.remove('sel'));ic.classList.add('sel');showCtx(e.clientX,e.clientY,[{t:'Open',fn:x.fn},{sep:1},{t:'Get Info',fn:()=>I.toast(x.n+': desktop shortcut')}]);return}
     e.preventDefault();
     const allOn=ORDER.every(k=>!hidden.includes(k));
-    showCtx(e.clientX,e.clientY,[{t:'New Folder',fn:()=>{extra++;IC.push({k:'n'+extra,n:'untitled folder'+(extra>1?' '+extra:''),svg:FOLD,fn:()=>I.toast('This folder is empty')});drawIc()}},{t:'Get Info',fn:()=>I.toast('Diyelo Dulay portfolio, Build 79')},{t:'Change Wallpaper\u2026',fn:()=>window.__b56&&window.__b56.wall.open()},{sep:1},{t:'Open Finder',fn:()=>I.go('finder')},{t:'Search',k:'Ctrl K',fn:()=>$('palBtn').click()},{sep:1},{t:allOn?'Hide Widgets':'Show Widgets',fn:()=>{hidden=allOn?ORDER.slice():[];save();drawWg()}}]);
+    showCtx(e.clientX,e.clientY,[{t:'New Folder',fn:()=>{extra++;IC.push({k:'n'+extra,n:'untitled folder'+(extra>1?' '+extra:''),svg:FOLD,fn:()=>I.toast('This folder is empty')});drawIc()}},{t:'Get Info',fn:()=>I.toast('Diyelo Dulay portfolio, Build 83')},{t:'Change Wallpaper\u2026',fn:()=>window.__b56&&window.__b56.wall.open()},{sep:1},{t:'Open Finder',fn:()=>I.go('finder')},{t:'Search',k:'Ctrl K',fn:()=>$('palBtn').click()},{sep:1},{t:allOn?'Hide Widgets':'Show Widgets',fn:()=>{hidden=allOn?ORDER.slice():[];save();drawWg()}}]);
   });
   /* status */
   const wifi=$('mbWifi');const net=()=>{if(wifi)wifi.classList.toggle('off',navigator.onLine===false)};addEventListener('online',net);addEventListener('offline',net);net();
@@ -9897,7 +10154,7 @@ void loop() {
   window.__note=m=>{log.unshift({m:String(m),t:new Date()});if(log.length>25)log.pop();snd.ping();if(!np.hidden)drawN()};
   const np=document.createElement('div');np.className='ncp';np.id='ncp';np.hidden=true;np.setAttribute('role','dialog');np.setAttribute('aria-label','Notification Center');ide.appendChild(np);
   const cal=()=>{const d=new Date(),y=d.getFullYear(),m=d.getMonth(),f=new Date(y,m,1).getDay(),n=new Date(y,m+1,0).getDate();let h='<div class="nc-cal"><b>'+d.toLocaleDateString('en-US',{month:'long',year:'numeric'})+'</b><div class="g">'+['S','M','T','W','T','F','S'].map(x=>'<i class="w">'+x+'</i>').join('');for(let i=0;i<f;i++)h+='<i></i>';for(let i=1;i<=n;i++)h+='<i'+(i===d.getDate()?' class="t"':'')+'>'+i+'</i>';return h+'</div></div>'};
-  const drawN=()=>{np.innerHTML='<button type="button" class="nc-close" data-ncx aria-label="Close">&times;</button><div class="nc-in">'+(window.__ncHead?window.__ncHead():'')+'<div class="nc-day"><span>'+new Date().toLocaleDateString('en-US',{weekday:'long'})+'</span><b>'+new Date().toLocaleDateString('en-US',{month:'long',day:'numeric'})+'</b></div>'+cal()+'<div class="nc-h"><b>Notifications</b>'+(log.length?'<button type="button" data-clr="1">Clear</button>':'')+'</div>'+(log.length?log.map((x,i)=>`<div class="nc-n"><span class="nc-ic">D</span><div><b>Portfolio</b><p>${esc(x.m)}</p></div><time>${x.t.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}</time><button type="button" class="nc-x" data-del="${i}" aria-label="Dismiss notification">\u00d7</button></div>`).join(''):'<p class="nc-e">No Notifications</p>')+'</div>'};
+  const drawN=()=>{np.innerHTML='<button type="button" class="nc-close" data-ncx aria-label="Close">&times;</button><div class="nc-in">'+(window.__ncHead?window.__ncHead():'')+'<div class="nc-day"><span>'+new Date().toLocaleDateString('en-US',{weekday:'long'})+'</span><b>'+new Date().toLocaleDateString('en-US',{month:'long',day:'numeric'})+'</b></div>'+cal()+'<div class="nc-h"><b><span class="nc-hd">Notifications</span><span class="nc-hp">Notification Center</span></b>'+(log.length?'<button type="button" data-clr="1">Clear</button>':'')+'<button type="button" class="nc-hx" data-ncx aria-label="Close">&times;</button></div>'+(log.length?log.map((x,i)=>`<div class="nc-n"><span class="nc-ic">D</span><div><b>Portfolio</b><p>${esc(x.m)}</p></div><time>${x.t.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}</time><button type="button" class="nc-x" data-del="${i}" aria-label="Dismiss notification">\u00d7</button></div>`).join(''):'<p class="nc-e">No Notifications</p>')+'</div>'};
   nc.toggle=()=>{if(np.hidden){const c=document.getElementById('ccp');if(c&&!c.hidden)c.classList.remove('on'),c.hidden=true;drawN();np.hidden=false;requestAnimationFrame(()=>np.classList.add('on'))}else nc.close()};
   nc.close=()=>{np.classList.remove('on');setTimeout(()=>{if(!np.classList.contains('on'))np.hidden=true},180)};
   nc.prep=()=>{if(!np.hidden)return;const c=document.getElementById('ccp');if(c&&!c.hidden)c.classList.remove('on'),c.hidden=true;drawN();np.hidden=false};
@@ -10599,10 +10856,11 @@ tmDraw();
   /* ---- notification screen: big time, date and widgets ---- */
   const wdg=()=>{const d=new Date(),pct=Math.round((d.getHours()*60+d.getMinutes())/14.4);let al='OFF';try{const a=(JSON.parse(ls('dc_alarms','[]'))||[]).filter(x=>x.on).map(x=>x.t).sort();if(a.length)al=a[0]}catch(e){}
     let f='OFF';const k=ls('dc_focus','');if(k)f={dnd:'DND',ri:'Quiet',pers:'Home',work:'Work',sleep:'Sleep'}[k]||'On';
-    return '<div class="nc-wd"><div>'+pct+'%<small>DAY</small></div><div>'+al+'<small>ALARM</small></div><div>'+f+'<small>FOCUS</small></div></div>'};
+    return '<div class="nc-wd"><div class="r" style="--p:'+pct+'%"><span>'+pct+'%<small>DAY</small></span></div><div>'+al+'<small>ALARM</small></div><div>'+f+'<small>FOCUS</small></div></div>'};
   const hm=()=>new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit',hour12:false});
-  window.__ncHead=()=>'<div class="nc-lk"><div class="nc-lkd">'+new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})+'</div><div class="nc-lkt">'+hm()+'</div>'+wdg()+'</div>';
-  setInterval(()=>{const t=ncp.querySelector('.nc-lkt');if(t&&!ncp.hidden)t.textContent=hm()},1000);
+  window.__ncHead=()=>'<div class="nc-lk"><div class="nc-lkd">'+new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})+'</div><div class="nc-lkt">'+hm()+'</div>'+wdg()+'</div>'+(window.__ncMp?window.__ncMp():'');
+  setInterval(()=>{if(ncp.hidden)return;const t=ncp.querySelector('.nc-lkt');if(t)t.textContent=hm();const m=ncp.querySelector('.nc-mp');if(window.__ncMp){const h=window.__ncMp();if(m&&h){const q=document.createElement('div');q.innerHTML=h;const f=q.firstChild;m.querySelector('.nc-mpt').innerHTML=f.querySelector('.nc-mpt').innerHTML;m.querySelector('.nc-mpb').innerHTML=f.querySelector('.nc-mpb').innerHTML;m.querySelector('.nc-mpc').innerHTML=f.querySelector('.nc-mpc').innerHTML}}},1000);
+  ncp.addEventListener('click',e=>{const b=e.target.closest('[data-ncmd]');if(!b||!window.__sb||!window.__sb.mdc)return;e.stopPropagation();const k=b.dataset.ncmd;if(k==='pp')window.__sb.mdc.toggle();else window.__sb.mdc.skip(k==='next'?1:-1);const m=ncp.querySelector('.nc-mp');if(m){const q=document.createElement('div');q.innerHTML=window.__ncMp();m.innerHTML=q.firstChild.innerHTML}});
 
   /* ---- Control Center content ---- */
   const MD={i:0,on:false,el:0,ctx:null,out:null,t0:0,tick:null,step:0,seen:false};
@@ -10760,7 +11018,32 @@ tmDraw();
     if(pg.k){if(e.cancelable)e.preventDefault();(pg.k==='cc'?ccp:ncp).style.opacity=String(Math.max(0,Math.min(1,dy/170)))}},{passive:false});
   const endPull=e=>{if(!pg)return;const g=pg;pg=null;if(!g.k)return;const t=(e.changedTouches&&e.changedTouches[0])||{clientY:g.y};const el=g.k==='cc'?ccp:ncp;fin(el,t.clientY-g.y>85)};
   bar.addEventListener('touchend',endPull,{passive:true});bar.addEventListener('touchcancel',endPull,{passive:true});
-  window.__sb={D,bat,paint,setPage,peek,MD,get tl(){return tl},get page(){return page}};
+  window.__ncMp=()=>{if(!(MD.on||MD.seen))return '';const tr=TR[MD.i],el=MD.on&&MD.ctx?Math.max(0,MD.ctx.currentTime-MD.t0):MD.el,pc=Math.min(100,el/tr.len*100);
+    const ic=d=>'<svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="'+d+'"/></svg>';
+    return '<div class="nc-mp"><div class="nc-mpt"><i class="nc-art" aria-hidden="true"></i><div><b>'+escapeHTML(tr.t)+'</b><span>Bench Radio</span></div></div><div class="nc-mpb"><span>'+mmss(el)+'</span><i><u style="width:'+pc.toFixed(1)+'%"></u></i><span>\u2212'+mmss(tr.len-el)+'</span></div><div class="nc-mpc"><button type="button" data-ncmd="prev" aria-label="Previous track">'+ic('M6 6h2v12H6zM9.5 12L18 6v12z')+'</button><button type="button" data-ncmd="pp" aria-label="'+(MD.on?'Pause':'Play')+'">'+ic(MD.on?'M7 5h4v14H7zM13 5h4v14h-4z':'M8 5v14l11-7z')+'</button><button type="button" data-ncmd="next" aria-label="Next track">'+ic('M16 6h2v12h-2zM6 18V6l8.5 6z')+'</button></div></div>'};
+  window.__sb={mdc:{toggle:mdToggle,skip:mdSkip},D,bat,paint,setPage,peek,MD,get tl(){return tl},get page(){return page}};
+})();
+
+/* ========== BUILD 80: Liquid Glass slider ========== */
+(function(){
+  const r=document.getElementById('lgR'),o=document.getElementById('lgO');if(!r)return;
+  let v=50;try{const x=parseInt(localStorage.getItem('dc_lg'),10);if(x>=0&&x<=100)v=x}catch(e){}
+  const ap=n=>{v=n;document.documentElement.style.setProperty('--lg',(n/100).toFixed(2));r.value=n;if(o)o.textContent=n+'%'};
+  ap(v);
+  r.addEventListener('input',()=>{ap(+r.value);try{localStorage.setItem('dc_lg',String(v))}catch(e){}});
+  window.__lg={set:ap,get v(){return v}};
+})();
+
+/* ========== BUILD 82: icon styles ========== */
+(function(){
+  const card=document.getElementById('icCard');if(!card)return;const root=document.documentElement;
+  const bs=[...card.querySelectorAll('[data-ic]')];let v='';try{v=localStorage.getItem('dc_icst')||''}catch(e){}if(!['','dark','clear','tint'].includes(v))v='';
+  const tintc=()=>{const a=(root.style.accentColor||'').trim();root.style.setProperty('--ic-t',/^#|rgb/i.test(a)?a:'#0a7aff')};
+  const ap=x=>{v=x;['dark','clear','tint'].forEach(k=>root.classList.toggle('ic-'+k,k===x));tintc();bs.forEach(b=>b.setAttribute('aria-checked',b.dataset.ic===x?'true':'false'))};
+  ap(v);
+  card.addEventListener('click',e=>{const b=e.target.closest('[data-ic]');if(!b)return;ap(b.dataset.ic);try{localStorage.setItem('dc_icst',v)}catch(_){}});
+  document.addEventListener('click',e=>{if(e.target.closest('[data-a],.cc-sw'))setTimeout(tintc,60)});
+  window.__icst={set:ap,get v(){return v}};
 })();
 
 /* ========== ADAPTIVE EFFECTS: Light by default, Full only on devices that can handle it ========== */
